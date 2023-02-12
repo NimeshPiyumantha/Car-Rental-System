@@ -813,6 +813,12 @@ section {
     width: 78%;
 }
 
+@media (max-width: 425px) {
+    .Register-customer-new .width {
+        width: 100%;
+    }
+}
+
 .Register-customer-new .reg-customer-form button[type=button] {
     background: #218c74;
     border: 0;
