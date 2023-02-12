@@ -1,10 +1,12 @@
 package com.easy.car_rental.entity;
 
+import com.easy.car_rental.embeded.Name;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -21,7 +23,8 @@ public class Reg_User {
     @Id
     private String user_Id;
     private String role_Type;
-    private String name;
+    @Embedded
+    private Name name;
     private String contact_No;
     private String address;
     private String email;
