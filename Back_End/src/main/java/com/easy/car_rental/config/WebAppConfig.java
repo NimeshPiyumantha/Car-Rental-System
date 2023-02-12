@@ -1,6 +1,6 @@
 package com.easy.car_rental.config;
 
-import lk.ijse.spring.advisor.AppWideExceptionHandler;
+import com.easy.car_rental.advisor.AppWideExceptionHandler;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
