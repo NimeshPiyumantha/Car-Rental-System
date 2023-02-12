@@ -667,6 +667,15 @@ section {
     color: rgba(206, 18, 18, 0.8);
 }
 
+.img-size{
+    max-width: max-content;
+}
+
+@media (max-width: 1024px) {
+    .img-size{
+        max-width:130% ;
+    }
+}
 @media (max-width: 640px) {
     .hero h2 {
         font-size: 36px;
@@ -677,3 +686,10 @@ section {
         font-size: 14px;
     }
 }
+
+@media (max-width: 425px) {
+    .img-size{
+        max-width:100% ;
+    }
+}
+
