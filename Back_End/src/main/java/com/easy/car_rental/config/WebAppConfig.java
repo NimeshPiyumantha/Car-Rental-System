@@ -11,6 +11,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  **/
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackageClasses = {AppWideExceptionHandler.class}, basePackages = "lk.ijse.spring.controller")
+@ComponentScan(basePackageClasses = {AppWideExceptionHandler.class}, basePackages = "com.easy.car_rental.controller")
 public class WebAppConfig {
 }
