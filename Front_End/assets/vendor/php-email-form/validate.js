@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  let forms = document.querySelectorAll('.php-email-form');
+  let forms = document.querySelectorAll('.reg-customer-form');
 
   forms.forEach( function(e) {
     e.addEventListener('submit', function(event) {

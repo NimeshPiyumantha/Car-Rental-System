@@ -18,6 +18,17 @@
 
 }
 
+/* Error */
+.control-error {
+    color: var(--color-primary);
+    font-size: 0.9em;
+}
+
+/* Section Border */
+.sectionBorder{
+    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;    border-radius: 8px;
+}
+
 /* Smooth scroll behavior */
 :root {
     scroll-behavior: smooth;
@@ -119,11 +130,11 @@ section {
     font-size: 14px;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
     padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
     display: inline-block;
     padding-right: 10px;
     color: #676775;
@@ -316,7 +327,7 @@ section {
     font-size: 14px;
     font-weight: bolder;
     color: #fff;
-    background: var( --color-primary-red);
+    background: var(--color-primary-red);
     padding: 8px 20px;
     margin-left: 30px;
     border-radius: 30px;
@@ -353,7 +364,7 @@ section {
         position: relative;
     }
 
-    .navbar>ul>li {
+    .navbar > ul > li {
         white-space: nowrap;
         padding: 10px 0 10px 28px;
     }
@@ -380,7 +391,7 @@ section {
         margin-left: 5px;
     }
 
-    .navbar>ul>li>a:before {
+    .navbar > ul > li > a:before {
         content: "";
         position: absolute;
         width: 100%;
@@ -394,7 +405,7 @@ section {
     }
 
     .navbar a:hover:before,
-    .navbar li:hover>a:before,
+    .navbar li:hover > a:before,
     .navbar .active:before {
         visibility: visible;
         width: 100%;
@@ -403,7 +414,7 @@ section {
     .navbar a:hover,
     .navbar .active,
     .navbar .active:focus,
-    .navbar li:hover>a {
+    .navbar li:hover > a {
         color: #000;
     }
 
@@ -440,11 +451,11 @@ section {
 
     .navbar .dropdown ul a:hover,
     .navbar .dropdown ul .active:hover,
-    .navbar .dropdown ul li:hover>a {
+    .navbar .dropdown ul li:hover > a {
         color: var(--color-primary);
     }
 
-    .navbar .dropdown:hover>ul {
+    .navbar .dropdown:hover > ul {
         opacity: 1;
         top: 100%;
         visibility: visible;
@@ -456,7 +467,7 @@ section {
         visibility: hidden;
     }
 
-    .navbar .dropdown .dropdown:hover>ul {
+    .navbar .dropdown .dropdown:hover > ul {
         opacity: 1;
         top: 0;
         left: 100%;
@@ -469,7 +480,7 @@ section {
         left: -90%;
     }
 
-    .navbar .dropdown .dropdown:hover>ul {
+    .navbar .dropdown .dropdown:hover > ul {
         left: -100%;
     }
 }
@@ -532,7 +543,7 @@ section {
     }
 
     .navbar a:hover,
-    .navbar li:hover>a {
+    .navbar li:hover > a {
         color: #000;
     }
 
@@ -552,8 +563,8 @@ section {
         border: 1px solid #eee;
     }
 
-    .navbar .dropdown>.dropdown-active,
-    .navbar .dropdown .dropdown>.dropdown-active {
+    .navbar .dropdown > .dropdown-active,
+    .navbar .dropdown .dropdown > .dropdown-active {
         display: block;
     }
 
@@ -667,15 +678,16 @@ section {
     color: rgba(206, 18, 18, 0.8);
 }
 
-.img-size{
+.img-size {
     max-width: max-content;
 }
 
 @media (max-width: 1024px) {
-    .img-size{
-        max-width:130% ;
+    .img-size {
+        max-width: 130%;
     }
 }
+
 @media (max-width: 640px) {
     .hero h2 {
         font-size: 36px;
@@ -688,11 +700,151 @@ section {
 }
 
 @media (max-width: 425px) {
-    .img-size{
-        max-width:100% ;
+    .img-size {
+        max-width: 100%;
     }
 }
 
+/*--------------------------------------------------------------
+# Register New Customer Section
+--------------------------------------------------------------*/
+.Register-customer-new .register-img {
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.Register-customer-new .register-form-bg {
+    background: #dcdde1; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #dcdde1); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #dcdde1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.Register-customer-new .reg-customer-form {
+    padding: 40px;
+}
+
+@media (max-width: 575px) {
+    .Register-customer-new .reg-customer-form {
+        padding: 20px;
+    }
+}
+
+.Register-customer-new .reg-customer-form h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Register-customer-new .reg-customer-form h4 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 0 0 0;
+}
+
+.Register-customer-new .reg-customer-form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.Register-customer-new .reg-customer-form .error-message {
+    display: none;
+    color: #fff;
+    background: #df1529;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.Register-customer-new .reg-customer-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #059652;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.Register-customer-new .reg-customer-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+}
+
+.Register-customer-new .reg-customer-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #059652;
+    border-top-color: #fff;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+}
+
+.Register-customer-new .reg-customer-form input,
+.Register-customer-new .reg-customer-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.Register-customer-new .reg-customer-form input:focus {
+    border-color: var(--color-primary);
+}
+
+.Register-customer-new .reg-customer-form input {
+    padding: 12px 15px;
+}
+
+.Register-customer-new .width {
+    width: 78%;
+}
+
+.Register-customer-new .reg-customer-form button[type=button] {
+    background: #218c74;
+    border: 0;
+    padding: 14px 60px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.Register-customer-new .reg-customer-form button[type=button]:hover {
+    background: #20bf6b;
+}
+
+@-webkit-keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 
 /*--------------------------------------------------------------
@@ -700,8 +852,8 @@ section {
 --------------------------------------------------------------*/
 .footer {
     font-size: 14px;
-    background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #0F2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 50px 0;
     color: rgba(255, 255, 255, 0.7);

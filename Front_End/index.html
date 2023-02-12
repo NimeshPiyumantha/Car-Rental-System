@@ -48,7 +48,7 @@
                 <li><a href="#">Cars</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a href="#Register-customer-new">Register</a></li>
             </ul>
 
         </nav><!-- .navbar -->
@@ -71,7 +71,7 @@
                     Language. Unbeatable Prices. Destinations: Spain, France, Italy, UK, USA, Portugal, Greece,
                     Australia, Ireland, Switzerland.</p>
                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                    <a class="btn-Register-customer-new" href="#">Register</a>
+                    <a class="btn-Register-customer-new" href="#Register-customer-new">Register</a>
                     <a href="https://vimeo.com/290450151"
                        class="glightbox btn-watch-video d-flex align-items-center"><i
                             class="bi bi-play-circle"></i><span>Watch Video</span></a>
@@ -85,6 +85,93 @@
     </div>
 </section>
 <!-- End Hero Section -->
+
+<!-- ======= main ======= -->
+<main id="main">
+</main>
+<!-- End #main -->
+
+<!-- ======= Book A Table Section ======= -->
+<section id="Register-customer-new" class="Register-customer-new">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>Register A Customer</h2>
+            <p>Register <span>Your Stay</span> With Us</p>
+        </div>
+
+        <div class="row g-0">
+
+            <div class="col-lg-4 register-img" style="background-image: url(assets/img/reg_Customer_main.jpg);"
+                 data-aos="zoom-out" data-aos-delay="200"></div>
+
+            <div class="col-lg-8 d-flex align-items-center register-form-bg sectionBorder">
+                <form action="customer" method="post" role="form" class="reg-customer-form" id="customerForm"
+                      data-aos="fade-up" data-aos-delay="100">
+                    <div class="row gy-4">
+                        <div class="col-lg-6 col-md-8">
+                            <input type="text" name="id" class="form-control" id="cusId" placeholder="C00-001" disabled>
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-8">
+                            <input type="text" name="fName" class="form-control" id="firstName" placeholder="First Name">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-8">
+                            <input type="text" name="lName" class="form-control" id="lastName" placeholder="Last Name">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-8">
+                            <input type="text" name="contact" class="form-control" id="contactNum" placeholder="Contact Number">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-8">
+                            <input type="text" name="email" class="form-control" id="email" placeholder="Email Address">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-8">
+                            <input type="text" name="nic" class="form-control" id="nicNo" placeholder="National ID">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-8">
+                            <input type="text" name="license" class="form-control" id="licenseNo" placeholder="Driving License">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-8">
+                            <input type="password" name="password" class="form-control" id="userPassword" placeholder="Enter Password">
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="input-group mb-3 col-lg-6 col-md-8 width">
+                            <input type="file" class="form-control" id="nicNoImage">
+                            <label class="input-group-text" for="nicNoImage">Upload NIC</label>
+                            <span class="control-error"></span>
+                        </div>
+                        <div class="input-group mb-3 col-lg-6 col-md-8 width">
+                            <input type="file" class="form-control" id="licenseNoImage">
+                            <label class="input-group-text" for="licenseNoImage">Upload Driving License</label>
+                            <span class="control-error"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your registration request was successfully.Please click login button. Thank you!
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-success mt-2 m-2" id="btnSaveCustomer" type="button">REGISTER</button>
+                    </div>
+                </form>
+            </div><!-- End Reservation Form -->
+
+        </div>
+
+    </div>
+</section>
+<!-- End Book A Table Section -->
 
 <!-- ======= Footer ======= -->
 <footer id="footer" class="footer">
