@@ -41,6 +41,13 @@ public class Reg_UserServiceImpl implements Reg_UserService {
         repo.save(mapper.map(dto, Reg_User.class));
     }
 
+    @Override
+    public void deleteUser(String reg_ID) {
+        if (!repo.existsById(reg_ID)) {
+            throw new RuntimeException("Wrong ID..Please enter valid id..!");
+        }
+        repo.deleteById(reg_ID);
+    }
 
 
 }

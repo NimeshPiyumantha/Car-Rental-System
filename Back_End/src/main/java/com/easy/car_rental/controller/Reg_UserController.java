@@ -37,5 +37,12 @@ public class Reg_UserController {
         return new ResponseUtil("OK", "Successfully Updated. :" + dto.getUser_Id(), null);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
+    @DeleteMapping(params = {"user_Id"})
+    public ResponseUtil deleteUser(@RequestParam String user_Id){
+        service.deleteUser(user_Id);
+        return new ResponseUtil("OK","Successfully Deleted. :"+user_Id ,null);
+    }
+
 
 }

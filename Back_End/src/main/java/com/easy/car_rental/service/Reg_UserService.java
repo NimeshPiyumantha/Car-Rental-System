@@ -15,5 +15,6 @@ public interface Reg_UserService {
 
     void updateUser(Reg_UserDTO dto);
 
+    void deleteUser(String reg_ID);
 
 }
