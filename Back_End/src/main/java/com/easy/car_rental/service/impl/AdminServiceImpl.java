@@ -8,6 +8,7 @@ import com.easy.car_rental.repo.AdminRepo;
 import com.easy.car_rental.repo.Reg_UserRepo;
 import com.easy.car_rental.service.AdminService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,5 +50,11 @@ public class AdminServiceImpl implements AdminService {
             throw new RuntimeException("Wrong ID..Please enter valid id..!");
         }
         repo.deleteById(reg_ID);
+    }
+
+    @Override
+    public ArrayList<AdminDTO> getAllAdmin() {
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Admin>>() {
+        }.getType());
     }
 }
