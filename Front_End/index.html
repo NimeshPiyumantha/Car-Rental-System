@@ -45,9 +45,9 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#">Cars</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#car">Cars</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="#Register-customer-new">Register</a></li>
             </ul>
 
@@ -187,109 +187,6 @@
     </section>
     <!-- End Stats Counter Section -->
 
-    <!-- ======= Register A Customer ======= -->
-    <section id="Register-customer-new" class="Register-customer-new">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-header">
-                <h2>Register A Customer</h2>
-                <p>Register <span>Your Stay</span> With Us</p>
-            </div>
-
-            <div class="row g-0">
-
-                <div class="col-lg-4 register-img" style="background-image: url(assets/img/reg_Customer_main.jpg);"
-                     data-aos="zoom-out" data-aos-delay="200"></div>
-
-                <div class="col-lg-8 d-flex align-items-center register-form-bg sectionBorder">
-                    <form action="customer" method="post" role="form" class="reg-customer-form" id="customerForm"
-                          data-aos="fade-up" data-aos-delay="100">
-                        <div class="row gy-4">
-                            <div class="col-lg-6 col-md-8">
-                                <input type="text" name="id" class="form-control" id="user_Id" placeholder="C00-001"
-                                       disabled>
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col-lg-6 col-md-8">
-                                <input type="text" name="role" class="form-control" id="role_Type"
-                                       placeholder="Customer"
-                                       disabled>
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col-lg-6 col-md-8">
-                                <input type="text" name="fName" class="form-control" id="firstName"
-                                       placeholder="First Name">
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col-lg-6 col-md-8">
-                                <input type="text" name="lName" class="form-control" id="lastName"
-                                       placeholder="Last Name">
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col-lg-6 col-md-8">
-                                <input type="text" name="contact" class="form-control" id="contact_No"
-                                       placeholder="Contact Number">
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col-lg-6 col-md-8">
-                                <input type="text" name="address" class="form-control" id="address"
-                                       placeholder="Address">
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col-lg-6 col-md-8">
-                                <input type="text" name="email" class="form-control" id="email"
-                                       placeholder="Email Address">
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col-lg-6 col-md-8">
-                                <input type="text" name="nic" class="form-control" id="nic" placeholder="National ID">
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col-lg-6 col-md-8">
-                                <input type="text" name="license" class="form-control" id="license_No"
-                                       placeholder="Driving License">
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="col-lg-6 col-md-8">
-                                <input type="password" name="password" class="form-control" id="password"
-                                       placeholder="Enter Password">
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="input-group mb-3 col-lg-6 col-md-8 width">
-                                <input type="file" class="form-control" id="nic_Img">
-                                <label class="input-group-text" for="nic_Img">Upload NIC</label>
-                                <span class="control-error"></span>
-                            </div>
-                            <div class="input-group mb-3 col-lg-6 col-md-8 width">
-                                <input type="file" class="form-control" id="license_Img">
-                                <label class="input-group-text" for="license_Img">Upload Driving License</label>
-                                <span class="control-error"></span>
-                            </div>
-                        </div>
-
-
-                        <div class="mb-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your registration request was successfully.Please click login
-                                button.
-                                Thank you!
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <button class="btn btn-success mt-2 m-2" id="btnSaveCustomer" type="button">REGISTER
-                            </button>
-                        </div>
-                    </form>
-                </div><!-- End Reservation Form -->
-
-            </div>
-
-        </div>
-    </section>
-    <!-- End Register A Customer -->
-
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
         <div class="container" data-aos="fade-up">
@@ -426,6 +323,244 @@
     </section>
     <!-- End Testimonials Section -->
 
+    <!-- ======= Register A Customer ======= -->
+    <section id="Register-customer-new" class="Register-customer-new">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Register A Customer</h2>
+                <p>Register <span>Your Stay</span> With Us</p>
+            </div>
+
+            <div class="row g-0">
+
+                <div class="col-lg-4 register-img" style="background-image: url(assets/img/reg_Customer_main.jpg);"
+                     data-aos="zoom-out" data-aos-delay="200"></div>
+
+                <div class="col-lg-8 d-flex align-items-center register-form-bg sectionBorder">
+                    <form action="customer" method="post" role="form" class="reg-customer-form" id="customerForm"
+                          data-aos="fade-up" data-aos-delay="100">
+                        <div class="row gy-4">
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" name="id" class="form-control" id="user_Id" placeholder="C00-001"
+                                       disabled>
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" name="role" class="form-control" id="role_Type"
+                                       placeholder="Customer"
+                                       disabled>
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" name="fName" class="form-control" id="firstName"
+                                       placeholder="First Name">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" name="lName" class="form-control" id="lastName"
+                                       placeholder="Last Name">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" name="contact" class="form-control" id="contact_No"
+                                       placeholder="Contact Number">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" name="address" class="form-control" id="address"
+                                       placeholder="Address">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" name="email" class="form-control" id="email"
+                                       placeholder="Email Address">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" name="nic" class="form-control" id="nic" placeholder="National ID">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="text" name="license" class="form-control" id="license_No"
+                                       placeholder="Driving License">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <input type="password" name="password" class="form-control" id="password"
+                                       placeholder="Enter Password">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="input-group mb-3 col-lg-6 col-md-8 width">
+                                <input type="file" class="form-control" id="nic_Img">
+                                <label class="input-group-text" for="nic_Img">Upload NIC</label>
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="input-group mb-3 col-lg-6 col-md-8 width">
+                                <input type="file" class="form-control" id="license_Img">
+                                <label class="input-group-text" for="license_Img">Upload Driving License</label>
+                                <span class="control-error"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your registration request was successfully.Please click login
+                                button.
+                                Thank you!
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-success mt-2 m-2" id="btnSaveCustomer" type="button">REGISTER
+                            </button>
+                        </div>
+                    </form>
+                </div><!-- End Reservation Form -->
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Register A Customer -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>gallery</h2>
+                <p>Check <span>Our Gallery</span></p>
+            </div>
+
+            <div class="gallery-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                                                 href="assets/img/gallery/gallery-1.jpg"><img
+                            src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                                                 href="assets/img/gallery/gallery-2.jpg"><img
+                            src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                                                 href="assets/img/gallery/gallery-3.jpg"><img
+                            src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                                                 href="assets/img/gallery/gallery-4.jpg"><img
+                            src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
+                    <!--  <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                                                   href="assets/img/gallery/gallery-5.jpg"><img
+                              src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
+                      <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                                                   href="assets/img/gallery/gallery-6.jpg"><img
+                              src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
+                      <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                                                   href="assets/img/gallery/gallery-7.jpg"><img
+                              src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
+                      <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                                                   href="assets/img/gallery/gallery-8.jpg"><img
+                              src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>-->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Gallery Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Contact</h2>
+                <p>Need Help? <span>Contact Us</span></p>
+            </div>
+
+            <div class="mb-3">
+                <iframe style="border:0; width: 100%; height: 350px;"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126794.64611613179!2d79.859393417323!3d6.729201708571183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676282273985!5m2!1sen!2slk"
+                        frameborder="0" allowfullscreen></iframe>
+            </div><!-- End Google Maps -->
+
+            <div class="row gy-4">
+
+                <div class="col-md-6">
+                    <div class="info-item  d-flex align-items-center">
+                        <i class="icon bi bi-map flex-shrink-0"></i>
+                        <div>
+                            <h3>Our Address</h3>
+                            <p>No. 200,Galle Road,Panadura.</p>
+                        </div>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="col-md-6">
+                    <div class="info-item d-flex align-items-center">
+                        <i class="icon bi bi-envelope flex-shrink-0"></i>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>info@esay.com</p>
+                        </div>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="col-md-6">
+                    <div class="info-item  d-flex align-items-center">
+                        <i class="icon bi bi-telephone flex-shrink-0"></i>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+94 11 420 7354</p>
+                        </div>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="col-md-6">
+                    <div class="info-item  d-flex align-items-center">
+                        <i class="icon bi bi-share flex-shrink-0"></i>
+                        <div>
+                            <h3>Opening Hours</h3>
+                            <div><strong>Mon - Sat:</strong> 24 Hours<br>
+                                <strong>Sunday:</strong> Closed
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!-- End Info Item -->
+
+            </div>
+
+            <form action="" method="post" role="form" class="email-form p-3 p-md-4">
+                <div class="row">
+                    <div class="col-xl-6 form-group">
+                        <input type="text" name="name" class="form-control" id="contactName" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-xl-6 form-group">
+                        <input type="email" class="form-control" name="email" id="contactEmail" placeholder="Your Email"
+                               required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="subject" id="contactSubject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+            <!--End Contact Form -->
+
+        </div>
+    </section>
+    <!-- End Contact Section -->
 
 </main>
 <!-- End #main -->
@@ -485,13 +620,13 @@
             <a class="nav-link text" href="#about">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text" href="#">Car</a>
+            <a class="nav-link text" href="#car">Car</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text" href="#">Gallery</a>
+            <a class="nav-link text" href="#gallery">Gallery</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text" href="#">Contact</a>
+            <a class="nav-link text" href="#contact">Contact</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text" href="#Register-customer-new">Register</a>
