@@ -1,6 +1,9 @@
 package com.easy.car_rental.service.impl;
 
+import com.easy.car_rental.dto.AdminDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
+import com.easy.car_rental.entity.Admin;
+import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.repo.AdminRepo;
 import com.easy.car_rental.repo.Reg_UserRepo;
 import com.easy.car_rental.service.AdminService;
@@ -24,4 +27,11 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private ModelMapper mapper;
 
+    @Override
+    public void saveAdmin(AdminDTO dto) {
+        if (repo.existsById(dto.getAdmin_Id())) {
+            throw new RuntimeException("User Already Exist. Please enter another id..!");
+        }
+        repo.save(mapper.map(dto, Admin.class));
+    }
 }
