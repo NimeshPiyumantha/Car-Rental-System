@@ -1,5 +1,6 @@
 package com.easy.car_rental.service;
 
+import com.easy.car_rental.dto.AdminDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
 
 import java.util.ArrayList;
@@ -9,8 +10,8 @@ import java.util.ArrayList;
  * @since : 0.1.0
  **/
 public interface AdminService {
-    void saveAdmin(Reg_UserDTO dto);
-    void updateAdmin(Reg_UserDTO dto);
+    void saveAdmin(AdminDTO dto);
+    void updateAdmin(AdminDTO dto);
     void deleteUser(String reg_ID);
-    ArrayList<Reg_UserDTO> getAllAdmin();
+    ArrayList<AdminDTO> getAllAdmin();
 }

@@ -24,23 +24,4 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private ModelMapper mapper;
 
-    @Override
-    public void saveAdmin(Reg_UserDTO dto) {
-
-    }
-
-    @Override
-    public void updateAdmin(Reg_UserDTO dto) {
-
-    }
-
-    @Override
-    public void deleteUser(String reg_ID) {
-
-    }
-
-    @Override
-    public ArrayList<Reg_UserDTO> getAllAdmin() {
-        return null;
-    }
 }
