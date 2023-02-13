@@ -11,5 +11,6 @@ import java.util.ArrayList;
 public interface AdminService {
     void saveAdmin(Reg_UserDTO dto);
     void updateAdmin(Reg_UserDTO dto);
+    void deleteUser(String reg_ID);
 
 }
