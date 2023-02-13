@@ -21,6 +21,9 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminRepo repo;
 
+    @Autowired
+    private ModelMapper mapper;
+
     @Override
     public void saveAdmin(Reg_UserDTO dto) {
 
