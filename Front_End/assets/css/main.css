@@ -867,7 +867,7 @@ section {
 .stats-counter {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/counter-bg.jpg") center center;
     background-size: cover;
-    padding: 15px 0;
+    padding: 42px 0;
 }
 
 @media (min-width: 1365px) {
