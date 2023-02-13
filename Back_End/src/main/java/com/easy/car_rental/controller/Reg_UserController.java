@@ -27,4 +27,15 @@ public class Reg_UserController {
         System.out.println(dto);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
+
+
+
+    @PutMapping
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateUser(@RequestBody Reg_UserDTO dto) {
+        service.updateUser(dto);
+        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getUser_Id(), null);
+    }
+
+
 }

@@ -32,4 +32,15 @@ public class Reg_UserServiceImpl implements Reg_UserService {
         }
         repo.save(mapper.map(dto, Reg_User.class));
     }
+
+    @Override
+    public void updateUser(Reg_UserDTO dto) {
+        if (!repo.existsById(dto.getUser_Id())) {
+            throw new RuntimeException("Customer Not Exist. Please enter Valid id..!");
+        }
+        repo.save(mapper.map(dto, Reg_User.class));
+    }
+
+
+
 }
