@@ -28,8 +28,6 @@ public class Reg_UserController {
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
 
-
-
     @PutMapping
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateUser(@RequestBody Reg_UserDTO dto) {
@@ -39,10 +37,15 @@ public class Reg_UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @DeleteMapping(params = {"user_Id"})
-    public ResponseUtil deleteUser(@RequestParam String user_Id){
+    public ResponseUtil deleteUser(@RequestParam String user_Id) {
         service.deleteUser(user_Id);
-        return new ResponseUtil("OK","Successfully Deleted. :"+user_Id ,null);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + user_Id, null);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping
+    public ResponseUtil getAllUser() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllUser());
+    }
 
 }

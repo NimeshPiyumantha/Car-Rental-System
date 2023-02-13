@@ -49,5 +49,10 @@ public class Reg_UserServiceImpl implements Reg_UserService {
         repo.deleteById(reg_ID);
     }
 
+    @Override
+    public ArrayList<Reg_UserDTO> getAllUser() {
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Reg_User>>() {
+        }.getType());
+    }
 
 }
