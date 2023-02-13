@@ -1,5 +1,6 @@
 package com.easy.car_rental.entity;
 
+import com.easy.car_rental.embeded.Rate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
