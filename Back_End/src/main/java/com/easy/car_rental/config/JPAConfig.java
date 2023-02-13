@@ -24,7 +24,7 @@ import javax.sql.DataSource;
  **/
 @Configuration
 @EnableTransactionManagement //AOP Usage
-@EnableJpaRepositories(basePackages = "com.easy.car_rental.config")
+@EnableJpaRepositories(basePackages = "com.easy.car_rental.repo")
 @PropertySource("classpath:application.properties")
 public class JPAConfig {
     @Autowired
