@@ -1,4 +1,4 @@
-package com.easy.car_rental.entity;
+package com.easy.car_rental.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,13 +13,11 @@ import javax.persistence.Id;
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
  **/
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Car {
-    @Id
+public class CarDTO {
     private String car_Id;
     private String name;
     private String brand;
