@@ -44,7 +44,10 @@ public class AdminController {
         return new ResponseUtil("OK", "Successfully Deleted. :" + admin_Id, null);
     }
 
-
-
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping
+    public ResponseUtil getAllUser() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllAdmin());
+    }
 
 }
