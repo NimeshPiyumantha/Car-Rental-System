@@ -30,4 +30,12 @@ public class AdminController {
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
 
+    @PutMapping
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateUser(@RequestBody AdminDTO dto) {
+        service.updateAdmin(dto);
+        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getAdmin_Id(), null);
+    }
+
+
 }
