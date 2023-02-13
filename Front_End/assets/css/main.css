@@ -873,7 +873,14 @@ section {
 
 .footer h4 {
     font-size: 16px;
+    position: relative;
     font-weight: bold;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.text{
+    font-size: 15px;
     position: relative;
     padding-bottom: 5px;
     color: #fff;
