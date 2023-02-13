@@ -5,9 +5,12 @@ import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.repo.Reg_UserRepo;
 import com.easy.car_rental.service.Reg_UserService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 
 /**
  * @author : Nimesh Piyumantha

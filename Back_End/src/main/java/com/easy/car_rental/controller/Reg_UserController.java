@@ -22,10 +22,9 @@ public class Reg_UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveCustomer(@RequestBody Reg_UserDTO dto) {
+    public ResponseUtil saveUser(@RequestBody Reg_UserDTO dto) {
         service.saveUser(dto);
         System.out.println(dto);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
-
 }
