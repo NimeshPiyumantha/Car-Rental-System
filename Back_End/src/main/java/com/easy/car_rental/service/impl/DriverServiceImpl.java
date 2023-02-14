@@ -7,9 +7,12 @@ import com.easy.car_rental.repo.AdminRepo;
 import com.easy.car_rental.repo.DriverRepo;
 import com.easy.car_rental.service.DriverService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 
 /**
  * @author : Nimesh Piyumantha
@@ -47,5 +50,11 @@ public class DriverServiceImpl implements DriverService {
             throw new RuntimeException("Wrong ID..Please enter valid id..!");
         }
         repo.deleteById(driver_ID);
+    }
+
+    @Override
+    public ArrayList<DriverDTO> getAllDriver() {
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Driver>>() {
+        }.getType());
     }
 }
