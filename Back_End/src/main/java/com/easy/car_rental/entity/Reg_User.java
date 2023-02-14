@@ -1,7 +1,6 @@
 package com.easy.car_rental.entity;
 
 import com.easy.car_rental.embeded.Name;
-import enums.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,8 +20,6 @@ import javax.persistence.*;
 public class Reg_User {
     @Id
     private String user_Id;
-    @Enumerated(EnumType.STRING)
-    private RoleType role_Type;
 
     @Embedded
     private Name name;
@@ -31,7 +28,6 @@ public class Reg_User {
     private String email;
     private String nic;
     private String license_No;
-    private String password;
     private String nic_Img;
     private String license_Img;
 
