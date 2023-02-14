@@ -2,6 +2,7 @@ package com.easy.car_rental.dto;
 
 import com.easy.car_rental.embeded.Image;
 import com.easy.car_rental.embeded.Rate;
+import enums.AvailabilityType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,4 +30,5 @@ public class CarDTO {
     private String registration_Number;
     private double free_Mileage;
     private String color;
+    private AvailabilityType vehicleAvailabilityType;
 }
