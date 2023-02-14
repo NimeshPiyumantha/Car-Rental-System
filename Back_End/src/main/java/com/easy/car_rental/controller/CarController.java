@@ -35,4 +35,11 @@ public class CarController {
         service.updateCar(dto);
         return new ResponseUtil("OK", "Successfully Updated. :" + dto.getCar_Id(), null);
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @DeleteMapping(params = {"car_Id"})
+    public ResponseUtil deleteDriver(@RequestParam String car_Id) {
+        service.deleteCar(car_Id);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + car_Id, null);
+    }
 }
