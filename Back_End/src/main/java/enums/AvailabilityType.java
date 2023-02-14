@@ -5,5 +5,5 @@ package enums;
  * @since : 0.1.0
  **/
 public enum AvailabilityType {
-    AVAILABLE, UNAVAILABLE,
+    AVAILABLE, UNAVAILABLE
 }
