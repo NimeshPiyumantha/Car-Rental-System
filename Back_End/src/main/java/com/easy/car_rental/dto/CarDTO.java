@@ -29,7 +29,7 @@ public class CarDTO {
     private String fuel_Type;
     @Embedded
     private Rate rent_Duration_Price;
-    private String price_Extra_KM;
+    private double price_Extra_KM;
     private String registration_Number;
     private int car_qty;
     private String color;
