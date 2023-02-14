@@ -40,4 +40,12 @@ public class DriverServiceImpl implements DriverService {
         }
         repo.save(mapper.map(dto, Driver.class));
     }
+
+    @Override
+    public void deleteDriver(String driver_ID) {
+        if (!repo.existsById(driver_ID)) {
+            throw new RuntimeException("Wrong ID..Please enter valid id..!");
+        }
+        repo.deleteById(driver_ID);
+    }
 }
