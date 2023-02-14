@@ -1,11 +1,12 @@
 package com.easy.car_rental.entity;
 
+import enums.RoleType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author : Nimesh Piyumantha
@@ -14,15 +15,18 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 public class User {
     @Id
-    private String user_Id;
-    private String role_Type;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int user_Id;
+    @Enumerated(EnumType.STRING)
+    private RoleType role_Type;
     private String user_Name;
     private String password;
 
-    public User(String role_Type, String user_Name, String password) {
+    public User(RoleType role_Type, String user_Name, String password) {
         this.role_Type = role_Type;
         this.user_Name = user_Name;
         this.password = password;
