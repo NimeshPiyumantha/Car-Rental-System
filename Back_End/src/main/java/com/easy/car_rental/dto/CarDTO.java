@@ -19,6 +19,7 @@ import javax.persistence.Embedded;
 @ToString
 public class CarDTO {
     private String car_Id;
+    private String name;
     private String brand;
     private String type;
     @Embedded
