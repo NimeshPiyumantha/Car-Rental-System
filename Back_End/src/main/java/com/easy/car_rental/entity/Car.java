@@ -33,7 +33,7 @@ public class Car {
     @Embedded
     private Rate rent_Duration_Price;
     private String price_Extra_KM;
-    private  String registration_Number;
+    private String registration_Number;
     private int car_qty;
     private String color;
 

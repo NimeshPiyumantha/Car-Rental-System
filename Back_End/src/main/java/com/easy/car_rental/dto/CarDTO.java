@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 /**
  * @author : Nimesh Piyumantha
@@ -21,7 +19,6 @@ import javax.persistence.Id;
 @ToString
 public class CarDTO {
     private String car_Id;
-    private String name;
     private String brand;
     private String type;
     @Embedded
@@ -32,7 +29,7 @@ public class CarDTO {
     @Embedded
     private Rate rent_Duration_Price;
     private String price_Extra_KM;
-    private  String registration_Number;
+    private String registration_Number;
     private int car_qty;
     private String color;
 
