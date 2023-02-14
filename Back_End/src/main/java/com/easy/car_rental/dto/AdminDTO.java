@@ -6,10 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 /**
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
@@ -21,7 +17,6 @@ import javax.persistence.Id;
 public class AdminDTO {
     private String admin_Id;
     private String role_Type;
-    @Embedded
     private Name name;
     private String contact_No;
     private String address;

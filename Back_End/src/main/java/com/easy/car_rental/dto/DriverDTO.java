@@ -6,8 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Embedded;
-
 /**
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
@@ -19,7 +17,6 @@ import javax.persistence.Embedded;
 public class DriverDTO {
     private String driver_Id;
     private String role_Type;
-    @Embedded
     private Name name;
     private String contact_No;
     private String address;
