@@ -1,8 +1,8 @@
 package com.easy.car_rental.service.impl;
 
 import com.easy.car_rental.dto.CarDTO;
+import com.easy.car_rental.entity.Car;
 import com.easy.car_rental.repo.CarRepo;
-import com.easy.car_rental.repo.DriverRepo;
 import com.easy.car_rental.service.CarService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +21,11 @@ public class CarServiceImpl implements CarService {
     @Autowired
     private ModelMapper mapper;
 
+    @Override
+    public void saveCar(CarDTO dto) {
+        if (repo.existsById(dto.getCar_Id())) {
+            throw new RuntimeException("Car Already Exist. Please enter another id..!");
+        }
+        repo.save(mapper.map(dto, Car.class));
+    }
 }
