@@ -17,12 +17,12 @@ import lombok.ToString;
 @ToString
 public class AdminDTO {
     private String admin_Id;
-    private RoleType role_Type;
     private Name name;
     private String contact_No;
     private String address;
     private String email;
     private String nic;
-    private String password;
+
+    private AdminDTO adminDTO;
 
 }

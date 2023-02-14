@@ -21,15 +21,13 @@ import javax.persistence.*;
 public class Admin {
     @Id
     private String admin_Id;
-    @Enumerated(EnumType.STRING)
-    private RoleType role_Type;
+
     @Embedded
     private Name name;
     private String contact_No;
     private String address;
     private String email;
     private String nic;
-    private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
