@@ -1,6 +1,7 @@
 package com.easy.car_rental.entity;
 
 import com.easy.car_rental.embeded.Name;
+import enums.AvailabilityType;
 import enums.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,6 +30,8 @@ public class Driver {
     private String email;
     private String nic_No;
     private String license_No;
+    @Enumerated(EnumType.STRING)
+    private AvailabilityType driverAvailability;
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
