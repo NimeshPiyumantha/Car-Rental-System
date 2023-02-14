@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  **/
 @RestController
 @CrossOrigin
-@RequestMapping("/Driver")
+@RequestMapping("/driver")
 public class DriverController {
     @Autowired
     private DriverService service;
