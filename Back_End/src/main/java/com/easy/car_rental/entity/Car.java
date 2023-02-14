@@ -23,7 +23,6 @@ import javax.persistence.Id;
 public class Car {
     @Id
     private String car_Id;
-    private String name;
     private String brand;
     private String type;
     @Embedded
