@@ -37,4 +37,12 @@ public class CarServiceImpl implements CarService {
         }
         repo.save(mapper.map(dto, Car.class));
     }
+
+    @Override
+    public void deleteCar(String car_Id) {
+        if (!repo.existsById(car_Id)) {
+            throw new RuntimeException("Wrong ID..Please enter valid id..!");
+        }
+        repo.deleteById(car_Id);
+    }
 }
