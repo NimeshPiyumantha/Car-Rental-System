@@ -2,8 +2,6 @@ package com.easy.car_rental.service.impl;
 
 import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.entity.Car;
-import com.easy.car_rental.entity.Driver;
-import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.repo.CarRepo;
 import com.easy.car_rental.service.CarService;
 import org.modelmapper.ModelMapper;
