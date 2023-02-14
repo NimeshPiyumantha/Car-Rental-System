@@ -1,6 +1,9 @@
 package com.easy.car_rental.service;
 
+import com.easy.car_rental.dto.AdminDTO;
 import com.easy.car_rental.dto.DriverDTO;
+
+import java.util.ArrayList;
 
 /**
  * @author : Nimesh Piyumantha
@@ -8,5 +11,6 @@ import com.easy.car_rental.dto.DriverDTO;
  **/
 public interface DriverService {
     void saveDriver(DriverDTO dto);
+    void updateDriver(DriverDTO dto);
 
 }
