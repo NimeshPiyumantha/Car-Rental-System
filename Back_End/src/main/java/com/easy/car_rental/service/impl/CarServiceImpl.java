@@ -2,13 +2,17 @@ package com.easy.car_rental.service.impl;
 
 import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.entity.Car;
+import com.easy.car_rental.entity.Driver;
 import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.repo.CarRepo;
 import com.easy.car_rental.service.CarService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 
 /**
  * @author : Nimesh Piyumantha
@@ -44,5 +48,11 @@ public class CarServiceImpl implements CarService {
             throw new RuntimeException("Wrong ID..Please enter valid id..!");
         }
         repo.deleteById(car_Id);
+    }
+
+    @Override
+    public ArrayList<CarDTO> getAllCar() {
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Car>>() {
+        }.getType());
     }
 }
