@@ -35,7 +35,7 @@ public class Car {
     private Rate rent_Duration_Price;
     private double price_Extra_KM;
     private String registration_Number;
-    private int car_qty;
+    private double free_Mileage;
     private String color;
 
 }

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Embedded;
+import javax.persistence.Id;
 
 /**
  * @author : Nimesh Piyumantha
@@ -31,7 +32,6 @@ public class CarDTO {
     private Rate rent_Duration_Price;
     private double price_Extra_KM;
     private String registration_Number;
-    private int car_qty;
+    private double free_Mileage;
     private String color;
-
 }
