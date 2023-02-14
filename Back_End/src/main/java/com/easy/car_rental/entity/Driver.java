@@ -34,4 +34,6 @@ public class Driver {
     private String nic_Img;
     private String license_Img;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
 }

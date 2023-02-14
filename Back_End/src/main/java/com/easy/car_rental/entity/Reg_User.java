@@ -35,4 +35,6 @@ public class Reg_User {
     private String nic_Img;
     private String license_Img;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
 }

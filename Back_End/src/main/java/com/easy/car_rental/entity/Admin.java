@@ -31,4 +31,6 @@ public class Admin {
     private String nic;
     private String password;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
 }
