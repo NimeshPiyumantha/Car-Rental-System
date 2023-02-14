@@ -18,5 +18,9 @@ public class DriverServiceImpl implements DriverService {
 
     @Autowired
     private DriverRepo repo;
+
+    @Autowired
+    private ModelMapper mapper;
+}
 }
 
