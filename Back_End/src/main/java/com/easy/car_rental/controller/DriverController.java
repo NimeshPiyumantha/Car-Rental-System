@@ -28,4 +28,11 @@ public class DriverController {
         System.out.println(dto);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
+
+    @PutMapping
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateDriver(@RequestBody DriverDTO dto) {
+        service.updateDriver(dto);
+        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getDriver_Id(), null);
+    }
 }
