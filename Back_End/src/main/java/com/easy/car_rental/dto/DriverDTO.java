@@ -1,6 +1,7 @@
 package com.easy.car_rental.dto;
 
 import com.easy.car_rental.embeded.Name;
+import enums.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import lombok.ToString;
 @ToString
 public class DriverDTO {
     private String driver_Id;
-    private String role_Type;
+    private RoleType role_Type;
     private Name name;
     private String contact_No;
     private String address;

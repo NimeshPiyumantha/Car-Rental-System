@@ -1,14 +1,13 @@
 package com.easy.car_rental.entity;
 
 import com.easy.car_rental.embeded.Name;
+import enums.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author : Nimesh Piyumantha
@@ -22,7 +21,8 @@ import javax.persistence.Id;
 public class Admin {
     @Id
     private String admin_Id;
-    private String role_Type;
+    @Enumerated(EnumType.STRING)
+    private RoleType role_Type;
     @Embedded
     private Name name;
     private String contact_No;
