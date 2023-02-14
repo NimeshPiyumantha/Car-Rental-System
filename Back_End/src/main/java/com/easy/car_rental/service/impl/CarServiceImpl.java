@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CarServiceImpl implements CarService {
     @Autowired
     private CarRepo repo;
-
+    @Autowired
+    private ModelMapper mapper;
 
 }
