@@ -31,7 +31,7 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public void saveDriver(DriverDTO dto) {
         if (repo.existsById(dto.getDriver_Id())) {
-            throw new RuntimeException("Admin Already Exist. Please enter another id..!");
+            throw new RuntimeException("Driver Already Exist. Please enter another id..!");
         }
         repo.save(mapper.map(dto, Driver.class));
     }
@@ -39,7 +39,7 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public void updateDriver(DriverDTO dto) {
         if (!repo.existsById(dto.getDriver_Id())) {
-            throw new RuntimeException("Admin Not Exist. Please enter Valid id..!");
+            throw new RuntimeException("Driver Not Exist. Please enter Valid id..!");
         }
         repo.save(mapper.map(dto, Driver.class));
     }
