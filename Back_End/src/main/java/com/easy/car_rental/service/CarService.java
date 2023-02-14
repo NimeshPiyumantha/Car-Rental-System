@@ -10,4 +10,5 @@ import com.easy.car_rental.dto.CarDTO;
 public interface CarService {
     void saveCar(CarDTO dto);
     void updateCar(CarDTO dto);
+    void deleteCar(String car_Id);
 }
