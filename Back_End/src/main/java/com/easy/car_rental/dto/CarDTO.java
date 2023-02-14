@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Embedded;
-import javax.persistence.Id;
 
 /**
  * @author : Nimesh Piyumantha
