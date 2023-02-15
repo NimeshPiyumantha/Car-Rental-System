@@ -207,18 +207,26 @@
             </div>
 
             <div class="form-container sectionBorder">
-                <form action="">
+                <form action="" id="form-control">
                     <div class="input-box">
-                        <span>Location</span>
-                        <input type="search" name="" id="location" placeholder="Search Places">
+                        <span class="span m-1"> Car Name</span>
+                        <input type="search" name="" id="cName" placeholder="Car Name">
                     </div>
                     <div class="input-box">
-                        <span>Pick-Up Date</span>
-                        <input type="date" name="" id="date">
+                        <span class="span m-1">Car Model</span>
+                        <input type="search" name="" id="cModel" placeholder="Car Model">
                     </div>
                     <div class="input-box">
-                        <span>Return Date</span>
-                        <input type="date" name="" id="date2">
+                        <span class="span m-1">Car Color</span>
+                        <input type="search" name="" id="cColor" placeholder="Car Color">
+                    </div>
+                    <div class="input-box">
+                        <span class="span m-1">Transmission Type</span>
+                        <select class="form-control" id="cTransmission">
+                            <option value="">Choose Type</option>
+                            <option value="option1">Auto</option>
+                            <option value="option2">Manual</option>
+                        </select>
                     </div>
                     <button type="submit" name="" id="submit" class="btn">Search</button>
                 </form>
@@ -227,12 +235,13 @@
             <div class="position-relative d-flex justify-content-center mt-5 sectionBorder">
                 <div class="d-flex align-items-center col-lg-12 flex-wrap justify-content-center">
                     <a href="assets/img/cars/bmwi8.png" class="glightbox"></a>
-                    <img class="position-relative cars-img img-fluid m-3 p-2 col-lg-5" src="assets/img/cars/bmwi8.png" href="">
+                    <img class="position-relative cars-img img-fluid m-3 p-2 col-lg-5" src="assets/img/cars/bmwi8.png"
+                         href="">
 
-                    <div class="position-relative col-xl-8 col-md-10">
+                    <div class="position-relative col-xl-8 col-md-10 flex-wrap">
 
                         <h4 class="m-2 p-2 text-center txt-head">BMW I 8 <br>
-                            <p><span>Luxury Package</span><span>-</span><span>Manual</span></p></h4>
+                            <p><span>Luxury Package</span><span>&nbsp;- &nbsp;</span><span>Manual</span></p></h4>
                         <div class="row listStyle m-1">
                             <div class="col">
                                 <ul class="list-group">
@@ -251,31 +260,30 @@
                             </div>
                         </div>
 
-                        <div class="d-flex mt-2 m-3 p-2 justify-content-around">
+                        <div class="d-flex mt-2 m-3 p-2 justify-content-around flex-wrap">
                             <div class="d-flex justify-content-center mb-4">
                                 <div class="px-2">
-                                    <i class="fa-solid fa-car m-2"></i>
-                                    <span>2020</span>
+                                    <i class="fa-solid fa-car m-2 fontSize"></i>
+                                    <span class="span">2020</span>
                                 </div>
                                 <div class="px-2 border-left border-right">
-                                    <i class="fa-solid fa-gears m-2"></i>
-                                    <span>AUTO</span>
+                                    <i class="fa-solid fa-gears m-2 fontSize"></i>
+                                    <span class="span">AUTO</span>
                                 </div>
                                 <div class="px-2">
-                                    <i class="fa-solid fa-chair m-2"></i>
-                                    <span>4</span>
+                                    <i class="fa-solid fa-chair m-2 fontSize"></i>
+                                    <span class="span">4</span>
                                 </div>
                                 <div class="px-2">
-                                    <i class="fa-solid fa-road m-2"></i>
-                                    <span>50</span>
+                                    <i class="fa-solid fa-road m-2 fontSize"></i>
+                                    <span class="span">50</span>
                                 </div>
                                 <div class="px-2">
-                                    <i class="fa-sharp fa-solid fa-door-open m-2"></i>
-                                    <span>4</span>
+                                    <i class="fa-sharp fa-solid fa-door-open m-2 fontSize"></i>
+                                    <span class="span">4</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
