@@ -893,6 +893,112 @@ section {
 
 
 /*--------------------------------------------------------------
+# Car Section
+--------------------------------------------------------------*/
+
+.cars .nav-tabs {
+    border: 0;
+}
+
+.cars .contentDiv {
+    display: inline-flex;
+}
+
+.cars .nav-link {
+    margin: 0 10px;
+    padding: 10px 5px;
+    transition: 0.3s;
+    color: var(--color-secondary);
+    border-radius: 0;
+    cursor: pointer;
+    height: 100%;
+    border: 0;
+    border-bottom: 2px solid #b6b6bf;
+}
+
+@media (max-width: 575px) {
+    .cars .nav-link {
+        margin: 0 10px;
+        padding: 10px 0;
+    }
+}
+
+.cars .nav-link i {
+    padding-right: 15px;
+    font-size: 48px;
+}
+
+.cars .nav-link h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    font-family: var(--font-secondary);
+}
+
+@media (max-width: 575px) {
+    .cars .nav-link h4 {
+        font-size: 16px;
+    }
+}
+
+.cars .nav-link:hover {
+    color: var(--color-primary);
+}
+
+.cars .nav-link.active {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.cars .tab-content .tab-header {
+    padding: 30px 0;
+}
+
+.cars .tab-content .tab-header p {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #676775;
+    margin-bottom: 0;
+}
+
+.cars .tab-content .tab-header h3 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.cars .tab-content .cars-item {
+    -moz-text-align-last: center;
+    text-align-last: center;
+}
+
+.cars .tab-content .cars-item .menu-img {
+    padding: 0 60px;
+    margin-bottom: 15px;
+}
+
+.cars .tab-content .cars-item h4 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-secondary);
+    font-family: var(--font-secondary);
+    margin-bottom: 5px;
+}
+
+.cars .tab-content .cars-item .ingredients {
+    font-family: var(--font-secondary);
+    color: #8d8d9b;
+    margin-bottom: 5px;
+}
+
+.cars .tab-content .cars-item .price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+
+/*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
 
