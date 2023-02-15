@@ -23,7 +23,7 @@ $("#btnSaveCustomer").click(function () {
 
 /* User Id Gentrator */
 function generateCustomerID() {
-    $("#txtCusId").val("C00-001");
+    $("#user_Id").val("C00-001");
     $.ajax({
         url: baseUrl + "reg_User/reg_UserIdGenerate",
         method: "GET",
@@ -35,11 +35,11 @@ function generateCustomerID() {
             let tempId = parseInt(id.split("-")[1]);
             tempId = tempId + 1;
             if (tempId <= 9) {
-                $("#txtCusId").val("C00-00" + tempId);
+                $("#user_Id").val("C00-00" + tempId);
             } else if (tempId <= 99) {
-                $("#txtCusId").val("C00-0" + tempId);
+                $("#user_Id").val("C00-0" + tempId);
             } else {
-                $("#txtCusId").val("C00-" + tempId);
+                $("#user_Id").val("C00-" + tempId);
             }
         },
         error: function (ob, statusText, error) {
