@@ -17,6 +17,7 @@
     --color-primary: #ce1212;
     --color-secondary: #37373f;
     --color-primary-red: #fc5c65;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
 
 
@@ -903,8 +904,7 @@ section {
     position: relative;
     top: 1rem;
     background: white;
-    padding: 0.5rem;
-    padding-left: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
     border-radius: 0.5rem;
     box-shadow: var(--box-shadow);
 }
@@ -928,12 +928,26 @@ section {
     font-size: 1rem;
 }
 
-.form-container .btn {
-    width: calc(30% - 70px);
+.form-container .btn{
+    font-weight: 500;
     height: 40px;
     margin: 20px;
-    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 9px 36px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
+    background: var(--color-primary);
+    box-shadow: 0 8px 28px rgba(206, 18, 18, 0.2);
 }
+
+.form-container .btn:hover {
+    background: rgba(206, 18, 18, 0.8);
+    box-shadow: 0 8px 28px rgba(206, 18, 18, 0.45);
+}
+
 
 .cars .nav-tabs {
     border: 0;
