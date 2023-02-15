@@ -28,6 +28,7 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">
     <!-- Template Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
@@ -451,7 +452,8 @@
                           data-aos="fade-up" data-aos-delay="100">
                         <div class="row gy-4">
                             <div class="col-lg-6 col-md-8">
-                                <input type="text" name="user_Id" class="form-control" readonly id="user_Id" placeholder="C00-001">
+                                <input type="text" name="user_Id" class="form-control" readonly id="user_Id"
+                                       placeholder="C00-001">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
@@ -515,16 +517,6 @@
                                 <span class="control-error"></span>
                             </div>
                         </div>
-
-
-                        <div class="mb-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your registration request was successfully.Please click login
-                                button. Thank you!
-                            </div>
-                        </div>
-
                         <div class="text-center">
                             <button class="btn btn-success mt-2 m-2" id="btnSaveCustomer" type="button">REGISTER
                             </button>
@@ -789,16 +781,18 @@
 <script src="assets/vendor/swiper/swiper-bundle.min.js "></script>
 <script src="assets/vendor/php-email-form/validate.js "></script>
 <script src="assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+<script rel="script" src="assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+
 
 <!-- Template Main JS File -->
-<script src="assets/js/main.js "></script>
+<script src="assets/js/main.js" rel="script"></script>
 
 <!-- Controller JS File -->
-<script src="controller/Reg_UserController.js"></script>
+<script src="controller/Reg_UserController.js" rel="script"></script>
 
 <!-- Util JS File -->
-<script src="util/alert.js"></script>
-<script src="util/validation.js"></script>
+<script src="util/alert.js" rel="script"></script>
+<script src="util/validation.js" rel="script"></script>
 
 </body>
 </html>
