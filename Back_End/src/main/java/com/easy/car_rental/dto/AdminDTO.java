@@ -1,7 +1,6 @@
 package com.easy.car_rental.dto;
 
 import com.easy.car_rental.embeded.Name;
-import enums.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,6 +1,8 @@
 package com.easy.car_rental.controller;
 
 import com.easy.car_rental.dto.Reg_UserDTO;
+import com.easy.car_rental.dto.UserDTO;
+import com.easy.car_rental.embeded.Name;
 import com.easy.car_rental.service.Reg_UserService;
 import com.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +23,13 @@ public class Reg_UserController {
     private Reg_UserService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveUser(@RequestBody Reg_UserDTO dto) {
-        service.saveUser(dto);
-        System.out.println(dto);
+    @PostMapping
+//    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO userDTO ,@ModelAttribute Name name) {
+        regUserDTO.setName(name);
+        regUserDTO.setUserDTO(userDTO);
+        System.out.println(regUserDTO);
+        service.saveUser(regUserDTO);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
 

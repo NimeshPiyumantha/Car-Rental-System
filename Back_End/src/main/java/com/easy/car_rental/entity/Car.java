@@ -2,10 +2,10 @@ package com.easy.car_rental.entity;
 
 import com.easy.car_rental.embeded.Image;
 import com.easy.car_rental.embeded.Rate;
-import enums.AvailabilityType;
-import enums.CarType;
-import enums.FuelType;
-import enums.TransmissionType;
+import com.easy.car_rental.enums.AvailabilityType;
+import com.easy.car_rental.enums.CarType;
+import com.easy.car_rental.enums.FuelType;
+import com.easy.car_rental.enums.TransmissionType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

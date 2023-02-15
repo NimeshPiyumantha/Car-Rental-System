@@ -7,11 +7,13 @@ $("#btnSaveCustomer").click(function () {
     let formData = $("#customerForm").serialize();
     console.log(formData);
     $.ajax({
-        url: baseUrl + "customer", method: "post", data: formData, dataType: "json", success: function (res) {
-            saveUpdateAlert("Customer", res.message);
-            loadAllCustomer();
+        url: baseUrl + "reg_User",
+        method: "post",
+        data: formData,
+        success: function (res) {
+            saveUpdateAlert("User", res.message);
         }, error: function (error) {
-            unSuccessUpdateAlert("Customer", JSON.parse(error.responseText).message);
+            unSuccessUpdateAlert("User", JSON.parse(error.responseText).message);
         }
     });
 });

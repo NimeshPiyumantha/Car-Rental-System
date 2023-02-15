@@ -1,6 +1,6 @@
 package com.easy.car_rental.entity;
 
-import enums.RoleType;
+import com.easy.car_rental.enums.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

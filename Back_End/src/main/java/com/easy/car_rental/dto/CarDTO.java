@@ -2,7 +2,7 @@ package com.easy.car_rental.dto;
 
 import com.easy.car_rental.embeded.Image;
 import com.easy.car_rental.embeded.Rate;
-import enums.AvailabilityType;
+import com.easy.car_rental.enums.AvailabilityType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
