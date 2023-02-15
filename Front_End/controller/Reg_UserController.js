@@ -20,7 +20,7 @@ $("#btnSaveCustomer").click(function () {
     });
 });
 
-
+generateCustomerID();
 /* User Id Gentrator */
 function generateCustomerID() {
     $("#user_Id").val("C00-001");

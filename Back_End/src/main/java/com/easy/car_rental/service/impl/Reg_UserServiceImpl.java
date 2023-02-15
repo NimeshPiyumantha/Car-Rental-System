@@ -1,5 +1,6 @@
 package com.easy.car_rental.service.impl;
 
+import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
 import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.repo.Reg_UserRepo;
@@ -53,6 +54,11 @@ public class Reg_UserServiceImpl implements Reg_UserService {
     public ArrayList<Reg_UserDTO> getAllUser() {
         return mapper.map(repo.findAll(), new TypeToken<ArrayList<Reg_User>>() {
         }.getType());
+    }
+
+    @Override
+    public CustomDTO userIdGenerate() {
+        return new CustomDTO(repo.getLastIndex());
     }
 
 }

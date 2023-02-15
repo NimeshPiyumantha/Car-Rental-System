@@ -1,5 +1,6 @@
 package com.easy.car_rental.controller;
 
+import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
 import com.easy.car_rental.dto.UserDTO;
 import com.easy.car_rental.embeded.Name;
@@ -24,7 +25,6 @@ public class Reg_UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-//    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO userDTO ,@ModelAttribute Name name) {
         regUserDTO.setName(name);
         regUserDTO.setUserDTO(userDTO);
@@ -51,6 +51,12 @@ public class Reg_UserController {
     @GetMapping
     public ResponseUtil getAllUser() {
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllUser());
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/reg_UserIdGenerate")
+    public @ResponseBody CustomDTO customerIdGenerate() {
+        return service.userIdGenerate();
     }
 
 }
