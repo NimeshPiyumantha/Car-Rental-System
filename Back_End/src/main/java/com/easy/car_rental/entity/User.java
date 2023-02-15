@@ -19,8 +19,7 @@ import javax.persistence.*;
 @ToString
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int user_Id;
+    private String user_Id;
     @Enumerated(EnumType.STRING)
     private RoleType role_Type;
     private String user_Name;
