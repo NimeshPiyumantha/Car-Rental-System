@@ -1367,12 +1367,17 @@ section {
 }
 
 .Register-customer-new .width {
-    width: 78%;
+    width: 25.2em;
 }
 
 @media (max-width: 425px) {
     .Register-customer-new .width {
         width: 100%;
+    }
+}
+@media (max-width: 316px) {
+    .cars {
+        display: none;
     }
 }
 
