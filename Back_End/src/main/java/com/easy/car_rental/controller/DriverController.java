@@ -20,7 +20,7 @@ public class DriverController {
     private DriverService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping()
     public ResponseUtil saveDriver(@RequestBody DriverDTO dto) {
         service.saveDriver(dto);
         System.out.println(dto);
