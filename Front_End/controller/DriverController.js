@@ -28,3 +28,31 @@ checkValidity(customerValidations);
 setTextFieldValues("", "", "", "","", "", "", "","","", "", "");
 
 
+/* Driver Id Gentrator */
+function generateDriverID() {
+    $("#driver_Id").val("DRI-001");
+    $.ajax({
+        url: baseUrl + "driver/driverIdGenerate",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let id = resp.value;
+            console.log("id" + id);
+            let tempId = parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#driver_Id").val("DRI-00" + tempId);
+            } else if (tempId <= 99) {
+                $("#driver_Id").val("DRI-0" + tempId);
+            } else {
+                $("#driver_Id").val("DRI-" + tempId);
+            }
+        },
+        error: function (ob, statusText, error) {
+
+        }
+    });
+}
+
+
