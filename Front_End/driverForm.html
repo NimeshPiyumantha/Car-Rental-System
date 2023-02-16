@@ -40,53 +40,79 @@
                         <section id="sec1Driver" class="col-4">
                             <div class="mb-sm-0">
                                 <label class="form-label" for="driver_Id">Driver Id</label>
-                                <input class="form-control" id="driver_Id" name="driver_Id" placeholder="DRI-001" type="text">
+                                <input class="form-control" id="driver_Id" name="driver_Id" placeholder="DRI-001"
+                                       type="text">
                             </div>
                             <div class="mb-sm-0">
-                                <label class="form-label" for="driverFirstName">First Name</label>
-                                <input class="form-control" id="driverFirstName" name="dfname" placeholder="First Name" type="text">
+                                <label class="form-label" for="firstName">First Name</label>
+                                <input class="form-control" id="firstName" name="firstName" placeholder="Nimesh"
+                                       type="text">
                             </div>
                             <div class="mb-sm-0">
-                                <label class="form-label" for="driverLastName">Last Name</label>
-                                <input class="form-control" id="driverLastName" name="dlname" placeholder="Last Name" type="text">
+                                <label class="form-label" for="lastName">Last Name</label>
+                                <input class="form-control" id="lastName" name="lastName" placeholder="Piyumantha"
+                                       type="text">
                             </div>
                             <div class="mb-sm-0">
-                                <label class="form-label" for="contactNo">Contact Number</label>
-                                <input class="form-control" id="contactNo" name="contactNo" placeholder="Contact No" type="text">
+                                <label class="form-label" for="contact_No">Contact Number</label>
+                                <input class="form-control" id="contact_No" name="contact_No" placeholder="0777123456"
+                                       type="text">
                             </div>
-                        </section>
-                        <section id="sec2Driver" class="col-4">
                             <div class="mb-sm-0">
                                 <label class="form-label" for="address">Address</label>
-                                <input class="form-control" id="address" name="address" placeholder="Address" type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="driverEmail">Email</label>
-                                <input class="form-control" id="driverEmail" name="Email" placeholder="Email" type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="nicNo">NIC NO</label>
-                                <input class="form-control" id="nicNo" name="nicNo" placeholder="NIC NO" type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="availability">Availability</label>
-                                <input class="form-control" id="availability" name="availability" placeholder="Availability" type="text">
+                                <input class="form-control" id="address" name="address" placeholder="Galle" type="text">
                             </div>
                         </section>
-                        <section id="sec3Driver" class="col-4">
+
+                        <section id="sec2Driver" class="col-4">
                             <div class="mb-sm-0">
-                                <label for="driverUserName" class="form-label">User Name</label>
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-control" id="email" name="email" placeholder="nimma12@gmail.com"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="nic_No">NIC NUmber</label>
+                                <input class="form-control" id="nic_No" name="nic_No" placeholder="2000001123"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="license_No">Driving License ID</label>
+                                <input class="form-control" id="license_No" name="license_No" placeholder="2000301123"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="license_Img">Driving License image</label>
+                                <input class="form-control" id="license_Img" name="license_Img" type="file">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="driverAvailability">Availability</label>
+                                <select class="form-control form-control-lg" id="driverAvailability"
+                                        name="driverAvailability">
+                                    <option value="AVAILABLE">AVAILABLE</option>
+                                    <option value="UNAVAILABLE">UNAVAILABLE</option>
+                                </select>
+                            </div>
+                        </section>
+
+                        <section id="sec3" class="col">
+
+                            <div class="mb-sm-0">
+                                <label for="role_Type" class="form-label">Role type</label>
+                                <select class="form-control form-control-lg" id="role_Type" name="role_Type">
+                                    <option value="DRIVER">DRIVER</option>
+                                </select>
+                                <label for="user_Name" class="form-label">User Name</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    <input type="text" class="form-control" id="driverUserName" name="driverUserName" placeholder="User Name" aria-describedby="inputGroupPrepend" required>
-                                    <div class="invalid-feedback">
-                                        Please choose a username.
-                                    </div>
+                                    <input type="text" class="form-control" id="user_Name"
+                                           name="user_Name"
+                                           placeholder="Nimesh12" aria-describedby="inputGroupPrepend" required>
                                 </div>
                             </div>
                             <div class="mb-sm-4">
-                                <label class="form-label" for="driverPassword">Password</label>
-                                <input class="form-control" id="driverPassword" name="driverPassword" placeholder="Password" type="text">
+                                <label class="form-label" for="password">Password</label>
+                                <input class="form-control" id="password" name="password"
+                                       placeholder="Your password" type="text">
                             </div>
 
                             <div class="row-cols-4">
