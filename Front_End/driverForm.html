@@ -28,7 +28,79 @@
 </head>
 
 <body>
+<section class="container-fluid" id="manageDriver">
+    <div id="manageDriverContent">
+        <section class="container-fluid text-center bg-info text-white rounded-3">
+            <h1 class="fw-bold text-uppercase">Manage Driver</h1>
+        </section>
+        <section class="container-fluid mt-3">
+            <div class="row mt-3">
+                <div class="col-12">
+                    <form id="driverForm" class="row">
+                        <section id="sec1Driver" class="col-4">
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="driverLicenceNo">Licence NO</label>
+                                <input class="form-control" id="driverLicenceNo" name="id" placeholder="Register ID" type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="driverFirstName">First Name</label>
+                                <input class="form-control" id="driverFirstName" name="dfname" placeholder="First Name" type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="driverLastName">Last Name</label>
+                                <input class="form-control" id="driverLastName" name="dlname" placeholder="Last Name" type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="contactNo">Contact Number</label>
+                                <input class="form-control" id="contactNo" name="contactNo" placeholder="Contact No" type="text">
+                            </div>
+                        </section>
+                        <section id="sec2Driver" class="col-4">
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="address">Address</label>
+                                <input class="form-control" id="address" name="address" placeholder="Address" type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="driverEmail">Email</label>
+                                <input class="form-control" id="driverEmail" name="Email" placeholder="Email" type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="nicNo">NIC NO</label>
+                                <input class="form-control" id="nicNo" name="nicNo" placeholder="NIC NO" type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="availability">Availability</label>
+                                <input class="form-control" id="availability" name="availability" placeholder="Availability" type="text">
+                            </div>
+                        </section>
+                        <section id="sec3Driver" class="col-4">
+                            <div class="mb-sm-0">
+                                <label for="driverUserName" class="form-label">User Name</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                    <input type="text" class="form-control" id="driverUserName" name="driverUserName" placeholder="User Name" aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">
+                                        Please choose a username.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-sm-4">
+                                <label class="form-label" for="driverPassword">Password</label>
+                                <input class="form-control" id="driverPassword" name="driverPassword" placeholder="Password" type="text">
+                            </div>
 
+                            <div class="row-cols-4">
+                                <button type="button" class="btn btn-success" id="addDriverBtn">Save</button>
+                                <button type="button" class="btn btn-primary" id="updateDriver">Update</button>
+                                <button type="button" class="btn btn-danger" id="deleteDriver">Delete</button>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
 </body>
 
 </html>
