@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author : Nimesh Piyumantha
@@ -23,6 +24,7 @@ public class DriverDTO {
     private String email;
     private String nic_No;
     private String license_No;
+    private MultipartFile license_Img;
     private AvailabilityType driverAvailability;
     private UserDTO userDTO;
 }

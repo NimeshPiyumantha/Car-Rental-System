@@ -29,6 +29,7 @@ public class Driver {
     private String email;
     private String nic_No;
     private String license_No;
+    private String license_Img;
     @Enumerated(EnumType.STRING)
     private AvailabilityType driverAvailability;
 
