@@ -55,4 +55,20 @@ function generateDriverID() {
     });
 }
 
+function setTextFieldValues(firstName, lastName, contact_No, address, email, nic_No, license_No, license_Img, user_Name, password) {
+    $("#firstName").val(firstName);
+    $("#lastName").val(lastName);
+    $("#contact_No").val(contact_No);
+    $("#address").val(address);
+    $("#email").val(email);
+    $("#nic_No").val(nic_No);
+    $("#license_No").val(license_No);
+    $("#license_Img").val(license_Img);
+    $("#user_Name").val(user_Name);
+    $("#password").val(password);
+
+    $("#firstName").focus();
+    checkValidity(customerValidations);
+    $("#btnSaveCustomer").attr('disabled', true);
+}
 
