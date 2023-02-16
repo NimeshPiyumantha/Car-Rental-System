@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 /**
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
@@ -25,11 +27,15 @@ public class Reg_UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO userDTO ,@ModelAttribute Name name) {
+    public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO userDTO ,@ModelAttribute Name name){
         regUserDTO.setName(name);
         regUserDTO.setUserDTO(userDTO);
         System.out.println(regUserDTO);
-        service.saveUser(regUserDTO);
+        try {
+            service.saveUser(regUserDTO);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
 

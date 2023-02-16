@@ -8,10 +8,14 @@ let baseUrl = "http://localhost:8080/Back_End_war/";
 // $("#btnSaveCustomer").attr('disabled', true);
 
 $("#btnSaveCustomer").click(function () {
-    let formData = $("#customerForm").serialize();
+    let formData = new FormData($("#customerForm")[0]);
+    // let formData = $("#customerForm").serialize();
     console.log(formData);
     $.ajax({
-        url: baseUrl + "reg_User", method: "post", data: formData, success: function (res) {
+        url: baseUrl + "reg_User", method: "post", data: formData,
+        contentType: false,
+        processData: false,
+        success: function (res) {
             saveUpdateAlert("User", res.message);
             generateCustomerID();
         }, error: function (error) {

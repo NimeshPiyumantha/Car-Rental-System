@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author : Nimesh Piyumantha
@@ -22,8 +23,8 @@ public class Reg_UserDTO {
     private String email;
     private String nic;
     private String license_No;
-    private String nic_Img;
-    private String license_Img;
+    private MultipartFile nic_Img;
+    private MultipartFile license_Img;
 
     private UserDTO userDTO;
 
