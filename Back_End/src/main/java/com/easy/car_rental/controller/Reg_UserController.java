@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 /**
  * @author : Nimesh Piyumantha
@@ -27,15 +28,11 @@ public class Reg_UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO userDTO ,@ModelAttribute Name name){
+    public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) throws IOException, URISyntaxException {
         regUserDTO.setName(name);
         regUserDTO.setUserDTO(userDTO);
         System.out.println(regUserDTO);
-        try {
-            service.saveUser(regUserDTO);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        service.saveUser(regUserDTO);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
 
