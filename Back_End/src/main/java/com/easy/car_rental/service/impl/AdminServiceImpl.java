@@ -30,7 +30,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void saveAdmin(AdminDTO dto) {
-        if (repo.existsById(dto.getAdmin_Id())) {
+        if (repo.existsById(dto.getUser_Id())) {
             throw new RuntimeException("Admin Already Exist. Please enter another id..!");
         }
         repo.save(mapper.map(dto, Admin.class));
@@ -38,7 +38,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void updateAdmin(AdminDTO dto) {
-        if (!repo.existsById(dto.getAdmin_Id())) {
+        if (!repo.existsById(dto.getUser_Id())) {
             throw new RuntimeException("Admin Not Exist. Please enter Valid id..!");
         }
         repo.save(mapper.map(dto, Admin.class));

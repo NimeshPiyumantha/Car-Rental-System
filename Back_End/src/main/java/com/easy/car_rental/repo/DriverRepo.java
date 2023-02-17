@@ -1,6 +1,5 @@
 package com.easy.car_rental.repo;
 
-import com.easy.car_rental.entity.Admin;
 import com.easy.car_rental.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 

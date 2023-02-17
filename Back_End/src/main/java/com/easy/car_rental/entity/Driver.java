@@ -20,7 +20,7 @@ import javax.persistence.*;
 @ToString
 public class Driver {
     @Id
-    private String driver_Id;
+    private String user_Id;
 
     @Embedded
     private Name name;
@@ -35,4 +35,5 @@ public class Driver {
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
+
 }

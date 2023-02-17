@@ -32,7 +32,7 @@ public class AdminController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateAdmin(@RequestBody AdminDTO dto) {
         service.updateAdmin(dto);
-        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getAdmin_Id(), null);
+        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getUser_Id(), null);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

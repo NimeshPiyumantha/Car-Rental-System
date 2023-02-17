@@ -7,7 +7,6 @@ import com.easy.car_rental.service.DriverService;
 import com.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -22,20 +21,19 @@ public class DriverController {
     private DriverService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping()
+    @PostMapping
     public ResponseUtil saveDriver(@ModelAttribute DriverDTO driverDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
-        driverDTO.setName(name);
         driverDTO.setUserDTO(userDTO);
-        System.out.println(driverDTO);
+        driverDTO.setName(name);
         service.saveDriver(driverDTO);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PutMapping
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateDriver(@RequestBody DriverDTO dto) {
         service.updateDriver(dto);
-        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getDriver_Id(), null);
+        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getUser_Id(), null);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @since : 0.1.0
  **/
 public interface Reg_UserService {
-    void saveUser(Reg_UserDTO dto) throws IOException, URISyntaxException;
+    void saveUser(Reg_UserDTO dto);
 
     void updateUser(Reg_UserDTO dto);
 

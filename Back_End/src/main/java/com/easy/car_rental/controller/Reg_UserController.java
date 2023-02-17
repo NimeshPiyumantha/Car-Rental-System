@@ -11,9 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
 /**
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
@@ -28,7 +25,7 @@ public class Reg_UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) throws IOException, URISyntaxException {
+    public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
         regUserDTO.setName(name);
         regUserDTO.setUserDTO(userDTO);
         System.out.println(regUserDTO);
@@ -36,8 +33,7 @@ public class Reg_UserController {
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
 
-    @PutMapping
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateUser(@RequestBody Reg_UserDTO dto) {
         service.updateUser(dto);
         return new ResponseUtil("OK", "Successfully Updated. :" + dto.getUser_Id(), null);
