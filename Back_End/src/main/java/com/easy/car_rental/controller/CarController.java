@@ -27,6 +27,7 @@ public class CarController {
     public ResponseUtil saveCar(@ModelAttribute CarDTO dto,@ModelAttribute Rate rate,@ModelAttribute ImageDTO image) {
         dto.setImage(image);
         dto.setRent_Duration_Price(rate);
+
         System.out.println(dto);
         service.saveCar(dto);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
