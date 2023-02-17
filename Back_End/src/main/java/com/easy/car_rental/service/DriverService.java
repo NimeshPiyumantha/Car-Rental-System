@@ -1,6 +1,7 @@
 package com.easy.car_rental.service;
 
 import com.easy.car_rental.dto.AdminDTO;
+import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.DriverDTO;
 
 import java.util.ArrayList;
@@ -14,4 +15,5 @@ public interface DriverService {
     void updateDriver(DriverDTO dto);
     void deleteDriver(String reg_ID);
     ArrayList<DriverDTO> getAllDriver();
+    CustomDTO userIdGenerate();
 }

@@ -63,27 +63,27 @@
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label" for="front_View">Front View</label>
-                                <input class="form-control" id="front_View" type="text" name="front_View">
+                                <input class="form-control" id="front_View" type="file" name="front_View">
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label" for="back_View">Back View</label>
-                                <input class="form-control" id="back_View" type="text" name="back_View">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="side_View">Side View</label>
-                                <input class="form-control" id="side_View" type="text" name="side_View">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="interior">Interior</label>
-                                <input class="form-control" id="interior" type="text" name="interior">
+                                <input class="form-control" id="back_View" type="file" name="back_View">
                             </div>
                         </section>
 
                         <section id="sec2Driver" class="col-4">
                             <div class="mb-sm-0">
+                                <label class="form-label" for="side_View">Side View</label>
+                                <input class="form-control" id="side_View" type="file" name="side_View">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="interior">Interior</label>
+                                <input class="form-control" id="interior" type="file" name="interior">
+                            </div>
+                            <div class="mb-sm-0">
                                 <label class="form-label" for="number_Of_Passengers">Number Of Passengers</label>
-                                <input class="form-control" id="number_Of_Passengers" type="text" name="number_Of_Passengers">
-
+                                <input class="form-control" id="number_Of_Passengers" type="text"
+                                       name="number_Of_Passengers">
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label" for="transmission_Type">Transmission Type</label>
@@ -97,39 +97,42 @@
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label" for="daily_Rate">Daily Rate</label>
-                                <input class="form-control" id="daily_Rate" type="file" name="daily_Rate">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="monthly_Rate">Monthly Rate</label>
-                                <input class="form-control" id="monthly_Rate" type="file" name="monthly_Rate">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="price_Extra_KM">Price Extra KM</label>
-                                <select class="form-control" id="price_Extra_KM" name="price_Extra_KM">
-                                    <option value="AVAILABLE">AVAILABLE</option>
-                                </select>
+                                <input class="form-control" id="daily_Rate" type="text" name="daily_Rate">
                             </div>
                         </section>
 
                         <section id="sec3" class="col">
-
                             <div class="mb-sm-0">
-                                <label for="role_Type" class="form-label">Role type</label>
-                                <select class="form-control" id="role_Type" name="role_Type">
-                                    <option value="DRIVER">DRIVER</option>
-                                </select>
-                                <label for="user_Name" class="form-label">User Name</label>
-                                <div class="input-group has-validation">
-                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    <input class="form-control" id="user_Name" type="text" name="user_Name">
-                                </div>
+                                <label class="form-label" for="monthly_Rate">Monthly Rate</label>
+                                <input class="form-control" id="monthly_Rate" type="text" name="monthly_Rate">
                             </div>
-                            <div class="mb-sm-4">
-                                <label class="form-label" for="password">Password</label>
-                                <input class="form-control" id="password" type="password" name="password">
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="price_Extra_KM">Price Extra KM</label>
+                                <input class="form-control" id="price_Extra_KM" type="text" name="price_Extra_KM">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="registration_Number">Registration Number</label>
+                                <input class="form-control" id="registration_Number" type="text"
+                                       name="registration_Number">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="free_Mileage">Free Mileage</label>
+                                <input class="form-control" id="free_Mileage" type="text" name="free_Mileage">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="color">Color</label>
+                                <input class="form-control" id="color" type="text" name="color">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label" for="vehicleAvailabilityType">Vehicle Availability
+                                    Type</label>
+                                <select class="form-control" id="vehicleAvailabilityType"
+                                        name="vehicleAvailabilityType">
+                                    <option value="AVAILABLE">AVAILABLE</option>
+                                </select>
                             </div>
 
-                            <div class="row-cols-4">
+                            <div class="row-cols-4 m-2 p-2">
                                 <button class="btn btn-success mt-2 m-2" id="btnSaveDriver" type="button"
                                         formaction="driverForm">Save
                                 </button>
