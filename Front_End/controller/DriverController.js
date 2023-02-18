@@ -162,7 +162,7 @@ function blindClickEventsD() {
 /**
  * Update Action
  * */
-$("#btnUpdateCustomer").click(function () {
+$("#btnUpdateDriver").click(function () {
     let user_Id = $("#user_Id").val();
     let firstName = $("#firstName").val();
     let lastName = $("#lastName").val();
