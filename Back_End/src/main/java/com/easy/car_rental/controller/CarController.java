@@ -1,6 +1,7 @@
 package com.easy.car_rental.controller;
 
 import com.easy.car_rental.dto.CarDTO;
+import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.embeded.Image;
 import com.easy.car_rental.embeded.ImageDTO;
 import com.easy.car_rental.embeded.Rate;
@@ -52,4 +53,11 @@ public class CarController {
     public ResponseUtil getAllCar() {
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllCar());
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/carIDGenerate")
+    public @ResponseBody CustomDTO customerIdGenerate() {
+        return service.carIdGenerate();
+    }
+
 }
