@@ -60,7 +60,6 @@ h6 {
     }
 }
 
-
 /*--------------------------------------------------------------
 # Page Title
 --------------------------------------------------------------*/
@@ -109,7 +108,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Override some default Bootstrap styling
+# Override some default Bootstrap stylings
 --------------------------------------------------------------*/
 /* Dropdown menus */
 .dropdown-menu {
@@ -246,7 +245,7 @@ h6 {
     margin-bottom: 30px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 30px rgba(1, 41, 112, 0.1);
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
 }
 
 .card-header,
@@ -405,9 +404,11 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     height: 60px;
-    box-shadow: 0 2px 20px rgba(1, 41, 112, 0.1);
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
     background-color: #fff;
     padding-left: 20px;
+    /* Toggle Sidebar Button */
+    /* Search Bar */
 }
 
 .header .toggle-sidebar-btn {
@@ -429,7 +430,7 @@ h6 {
         left: 0;
         right: 0;
         padding: 20px;
-        box-shadow: 0 0 15px 0 rgba(1, 41, 112, 0.1);
+        box-shadow: 0px 0px 15px 0px rgba(1, 41, 112, 0.1);
         background: white;
         z-index: 9999;
         transition: 0.3s;
@@ -449,6 +450,7 @@ h6 {
 }
 
 .header .search-form input {
+    border: 0;
     font-size: 14px;
     color: #012970;
     border: 1px solid rgba(1, 41, 112, 0.2);
@@ -631,7 +633,7 @@ h6 {
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #aab7cf transparent;
-    box-shadow: 0 0 20px rgba(1, 41, 112, 0.1);
+    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
     background-color: #fff;
 }
 
@@ -760,6 +762,7 @@ h6 {
     color: #012970;
     transition: 0.3s;
     padding: 10px 0 10px 40px;
+    transition: 0.3s;
 }
 
 .sidebar-nav .nav-content a i {
@@ -854,4 +857,73 @@ h6 {
 .dashboard .customers-card .card-icon {
     color: #ff771d;
     background: #ffecdf;
+}
+
+/* Activity */
+.dashboard .activity {
+    font-size: 14px;
+}
+
+.dashboard .activity .activity-item .activite-label {
+    color: #888;
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 0;
+    min-width: 64px;
+}
+
+.dashboard .activity .activity-item .activite-label::before {
+    content: "";
+    position: absolute;
+    right: -11px;
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    background-color: #eceefe;
+}
+
+.dashboard .activity .activity-item .activity-badge {
+    margin-top: 3px;
+    z-index: 1;
+    font-size: 11px;
+    line-height: 0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 3px solid #fff;
+    flex-grow: 0;
+}
+
+.dashboard .activity .activity-item .activity-content {
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.dashboard .activity .activity-item:first-child .activite-label::before {
+    top: 5px;
+}
+
+.dashboard .activity .activity-item:last-child .activity-content {
+    padding-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+    padding: 20px 0;
+    font-size: 14px;
+    transition: all 0.3s;
+    border-top: 1px solid #cddfff;
+}
+
+.footer .copyright {
+    text-align: center;
+    color: #2f3640;
+}
+
+.footer .credits {
+    padding-top: 5px;
+    text-align: center;
+    font-size: 13px;
+    color: #2f3640;
 }
