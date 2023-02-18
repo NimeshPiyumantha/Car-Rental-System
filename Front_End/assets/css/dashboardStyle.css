@@ -35,6 +35,10 @@ h6 {
     font-family: "Nunito", sans-serif;
 }
 
+.control-error {
+    color: #ce1212;
+    font-size: 1em;
+}
 
 /*--------------------------------------------------------------
 # Main
@@ -915,4 +919,46 @@ h6 {
     text-align: center;
     font-size: 13px;
     color: #2f3640;
+}
+
+
+/*--------------------------------------------------------------
+# Form
+--------------------------------------------------------------*/
+
+form .form-label,.input-group-text{
+    font-size: 1em;
+    margin-bottom: 2px;
+    font-weight: bolder;
+    color: #012970;
+}
+
+form .form-control {
+    font-size: 1em;
+    margin-bottom: 2px;
+    font-weight: 600;
+    color: #2f3640;
+    border-radius: 10px;
+}
+
+form .btn {
+    font-size: 1em;
+    padding: 10px 25px;
+    border: none;
+    font-weight: 600;
+    color: #2f3640;
+    border-radius: 10px;
+}
+
+.btn-warning{
+    background: #e1b12c!important;
+    color: white!important;
+}
+
+.btn-danger{
+    background: #ce1212!important;
+}
+
+.btn-success{
+    background: #20bf6b!important;
 }
