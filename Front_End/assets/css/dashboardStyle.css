@@ -35,15 +35,6 @@ h6 {
     font-family: "Nunito", sans-serif;
 }
 
-/* Colors */
-
-:root {
-    --color-default: #212529;
-    --color-primary: #ce1212;
-    --color-secondary: #37373f;
-    --color-primary-red: #fc5c65;
-    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-}
 
 /*--------------------------------------------------------------
 # Main
@@ -87,7 +78,7 @@ h6 {
     background: #ce1212;
     width: 40px;
     height: 40px;
-    border-radius: 4px;
+    border-radius: 20px;
     transition: all 0.4s;
 }
 
@@ -108,7 +99,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Override some default Bootstrap stylings
+# Override some default Bootstrap styling
 --------------------------------------------------------------*/
 /* Dropdown menus */
 .dropdown-menu {
@@ -245,7 +236,7 @@ h6 {
     margin-bottom: 30px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+    box-shadow: 0 0 30px rgba(1, 41, 112, 0.1);
 }
 
 .card-header,
@@ -388,23 +379,23 @@ h6 {
     }
 }
 
-.logo img {
-    max-height: 26px;
-    margin-right: 6px;
+.logo span {
+    font-size: 28px;
+    font-weight: bolder;
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    margin-left:10px ;
 }
 
-.logo span {
-    font-size: 26px;
-    font-weight: 700;
-    color: #012970;
-    font-family: "Nunito", sans-serif;
+.logo span span{
+    color: #ce1212;
 }
 
 .header {
     transition: all 0.5s;
     z-index: 997;
     height: 60px;
-    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+    box-shadow: 0 2px 20px rgba(1, 41, 112, 0.1);
     background-color: #fff;
     padding-left: 20px;
     /* Toggle Sidebar Button */
@@ -430,7 +421,7 @@ h6 {
         left: 0;
         right: 0;
         padding: 20px;
-        box-shadow: 0px 0px 15px 0px rgba(1, 41, 112, 0.1);
+        box-shadow: 0 0 15px 0 rgba(1, 41, 112, 0.1);
         background: white;
         z-index: 9999;
         transition: 0.3s;
@@ -450,7 +441,6 @@ h6 {
 }
 
 .header .search-form input {
-    border: 0;
     font-size: 14px;
     color: #012970;
     border: 1px solid rgba(1, 41, 112, 0.2);
@@ -633,7 +623,7 @@ h6 {
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #aab7cf transparent;
-    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+    box-shadow: 0 0 20px rgba(1, 41, 112, 0.1);
     background-color: #fff;
 }
 
@@ -762,7 +752,6 @@ h6 {
     color: #012970;
     transition: 0.3s;
     padding: 10px 0 10px 40px;
-    transition: 0.3s;
 }
 
 .sidebar-nav .nav-content a i {
@@ -787,7 +776,7 @@ h6 {
 /* Filter dropdown */
 .dashboard .filter {
     position: absolute;
-    right: 0px;
+    right: 0;
     top: 15px;
 }
 
