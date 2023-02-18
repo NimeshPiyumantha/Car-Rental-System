@@ -122,7 +122,7 @@ function loadAllCars() {
                 $("#carTable").append(row);
                 console.log(row);
             }
-            // blindClickEventsC();
+            blindClickEventsC();
             generateCarID();
             setTextFieldValuesC("", "", "", "", "", "", "", "", "", "", "", "","","","","","");
             console.log(res.message);
@@ -133,3 +133,43 @@ function loadAllCars() {
     });
 }
 
+/**
+ * Table Listener Click and Load textFields
+ * */
+function blindClickEventsC() {
+    $("#carTable>tr").on("click", function () {
+        let car_Id = $(this).children().eq(0).text();
+        let name = $(this).children().eq(1).text();
+        let brand = $(this).children().eq(2).text();
+        let type = $(this).children().eq(3).text();
+        let number_Of_Passengers = $(this).children().eq(4).text();
+        let transmission_Type = $(this).children().eq(5).text();
+        let fuel_Type = $(this).children().eq(6).text();
+        let daily_Rate = $(this).children().eq(7).text();
+        let monthly_Rate = $(this).children().eq(8).text();
+        let price_Extra_KM = $(this).children().eq(9).text();
+        let registration_Number = $(this).children().eq(10).text();
+        let free_Mileage = $(this).children().eq(11).text();
+        let color = $(this).children().eq(12).text();
+        let vehicleAvailabilityType = $(this).children().eq(13).text();
+
+
+        console.log(car_Id,name,brand, type, number_Of_Passengers, transmission_Type, fuel_Type, daily_Rate, monthly_Rate, price_Extra_KM, registration_Number, free_Mileage, color,vehicleAvailabilityType);
+
+        $("#car_Id").val(car_Id);
+        $("#name").val(name);
+        $("#brand").val(brand);
+        $("#type").val(type);
+        $("#number_Of_Passengers").val(number_Of_Passengers);
+        $("#transmission_Type").val(transmission_Type);
+        $("#fuel_Type").val(fuel_Type);
+        $("#daily_Rate").val(daily_Rate);
+        $("#monthly_Rate").val(monthly_Rate);
+        $("#price_Extra_KM").val(price_Extra_KM);
+        $("#registration_Number").val(registration_Number);
+        $("#free_Mileage").val(free_Mileage);
+        $("#color").val(color);
+        $("#vehicleAvailabilityType").val(vehicleAvailabilityType);
+    });
+    $("#btnSaveCar").attr('disabled', true);
+}
