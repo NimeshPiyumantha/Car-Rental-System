@@ -21,7 +21,7 @@ import java.time.LocalTime;
 @Entity
 public class Rent {
     @Id
-    private String rentId;
+    private String rent_Id;
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private LocalDate returnDate;
