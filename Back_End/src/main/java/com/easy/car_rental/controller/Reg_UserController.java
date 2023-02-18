@@ -42,10 +42,10 @@ public class Reg_UserController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @DeleteMapping(params = {"user_Id"})
-    public ResponseUtil deleteUser(@RequestParam String user_Id) {
-        service.deleteUser(user_Id);
-        return new ResponseUtil("OK", "Successfully Deleted. :" + user_Id, null);
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteUser(@RequestParam String id) {
+        service.deleteUser(id);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

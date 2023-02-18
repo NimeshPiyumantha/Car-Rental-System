@@ -211,6 +211,23 @@ $("#btnUpdateCustomer").click(function () {
 
 });
 
+$("#btnDeleteCustomer").click(function () {
+    let id = $("#user_Id").val();
+    $.ajax({
+        url: baseUrl+"reg_User?id=" + id + "",
+        method: "delete",
+        dataType:"json",
+        success: function (resp) {
+            alert(resp.message);
+            loadAllRegUsers();
+        },
+        error:function (error){
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});
+
+
 
 /**
  * Auto Forces Input Fields Save
