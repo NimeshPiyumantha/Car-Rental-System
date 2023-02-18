@@ -98,6 +98,7 @@ function loadAllCars() {
             console.log(res);
 
             for (let i of res.data) {
+                let car_Id = i.car_Id;
                 let name = i.name;
                 let brand = i.brand;
                 let type = i.type;
@@ -117,13 +118,13 @@ function loadAllCars() {
                 let vehicleAvailabilityType = i.vehicleAvailabilityType;
 
 
-                let row = "<tr><td>" + name + "</td><td>" + brand + "</td><td>" + type + "</td><td>" + number_Of_Passengers + "</td><td>" + transmission_Type + "</td><td>" + fuel_Type + "</td><td>" + daily_Rate + "</td><td>" + monthly_Rate + "</td><td>" + price_Extra_KM + "</td><td>" + registration_Number + "</td><td>" + free_Mileage + "</td><td>" + color + "</td><td>" + vehicleAvailabilityType + "</td></tr>";
+                let row = "<tr><td>" + car_Id + "</td><td>" + name + "</td><td>" + brand + "</td><td>" + type + "</td><td>" + number_Of_Passengers + "</td><td>" + transmission_Type + "</td><td>" + fuel_Type + "</td><td>" + daily_Rate + "</td><td>" + monthly_Rate + "</td><td>" + price_Extra_KM + "</td><td>" + registration_Number + "</td><td>" + free_Mileage + "</td><td>" + color + "</td><td>" + vehicleAvailabilityType + "</td></tr>";
                 $("#carTable").append(row);
                 console.log(row);
             }
             // blindClickEventsC();
             generateCarID();
-            setTextFieldValuesC("", "", "", "", "", "", "", "", "", "", "", "");
+            setTextFieldValuesC("", "", "", "", "", "", "", "", "", "", "", "","","","","","");
             console.log(res.message);
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;

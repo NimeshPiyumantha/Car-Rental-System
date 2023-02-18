@@ -111,7 +111,7 @@ function loadAllRegUsers() {
             }
             blindClickEvents();
             generateCustomerID();
-            setTextFieldValues("", "", "", "", "", "", "", "", "", "", "", "");
+            setTextFieldValues("", "", "", "", "", "", "", "", "", "", "");
             console.log(res.message);
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
