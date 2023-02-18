@@ -49,7 +49,7 @@ public class CarController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @GetMapping
+    @GetMapping(path = "/loadAllCars")
     public ResponseUtil getAllCar() {
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllCar());
     }
