@@ -45,7 +45,7 @@ public class DriverController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @GetMapping
+    @GetMapping(path = "/loadAllDrivers")
     public ResponseUtil getAllDriver() {
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllDriver());
     }

@@ -86,7 +86,7 @@ function setTextFieldValues(firstName, lastName, contact_No, address, email, nic
 function loadAllDrivers() {
     $("#driverTable").empty();
     $.ajax({
-        url: baseUrl + "driver/loadAllUsers", method: "GET", dataType: "json", success: function (res) {
+        url: baseUrl + "driver/loadAllDrivers", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
 
             for (let i of res.data) {
@@ -105,7 +105,7 @@ function loadAllDrivers() {
                 let password = i.user.password;
 
                 let row = "<tr><td>" + user_Id + "</td><td>" + firstName + "</td><td>" + lastName + "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic_No + "</td><td>" + license_No + "</td><td>" + driverAvailability + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
-                $("#customerTable").append(row);
+                $("#driverTable").append(row);
             }
             // blindClickEvents();
             generateDriverID();
