@@ -43,10 +43,10 @@ public class CarController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @DeleteMapping(params = {"car_Id"})
-    public ResponseUtil deleteCar(@RequestParam String car_Id) {
-        service.deleteCar(car_Id);
-        return new ResponseUtil("OK", "Successfully Deleted. :" + car_Id, null);
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteCar(@RequestParam String id) {
+        service.deleteCar(id);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
