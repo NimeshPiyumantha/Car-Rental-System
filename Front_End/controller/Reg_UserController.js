@@ -5,9 +5,9 @@
 /*Save Users*/
 let baseUrl = "http://localhost:8080/Back_End_war/";
 loadAllRegUsers();
-// $("#btnSaveCustomer").attr('disabled', true);
-// $("#btnUpdateCustomer").attr('disabled', true);
-// $("#btnDeleteCustomer").attr('disabled', true);
+$("#btnSaveCustomer").attr('disabled', true);
+$("#btnUpdateCustomer").attr('disabled', true);
+$("#btnDeleteCustomer").attr('disabled', true);
 
 /**
  * Customer Save
@@ -177,8 +177,7 @@ $("#btnUpdateCustomer").click(function () {
     const customerOb = {
         user_Id: user_Id,
         name: {
-            firstName:firstName,
-            lastName:lastName
+            firstName: firstName, lastName: lastName
         },
         address: address,
         contact_No: contact_No,
@@ -187,10 +186,8 @@ $("#btnUpdateCustomer").click(function () {
         license_No: license_No,
         nic_Img: nic_Img,
         license_Img: license_Img,
-        user:{
-            role_Type:role_Type,
-            user_Name:user_Name,
-            password:password
+        user: {
+            role_Type: role_Type, user_Name: user_Name, password: password
         }
     };
 
@@ -200,33 +197,32 @@ $("#btnUpdateCustomer").click(function () {
         contentType: "application/json",
         data: JSON.stringify(customerOb),
         success: function (res) {
-            saveUpdateAlert("Customer", res.message);
+            saveUpdateAlert("User", res.message);
             loadAllRegUsers();
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
-            unSuccessUpdateAlert("Customer", message);
+            unSuccessUpdateAlert("User", message);
         }
     });
 
 });
 
+/**
+ * Delete Action
+ * */
 $("#btnDeleteCustomer").click(function () {
     let id = $("#user_Id").val();
     $.ajax({
-        url: baseUrl+"reg_User?id=" + id + "",
-        method: "delete",
-        dataType:"json",
-        success: function (resp) {
-            alert(resp.message);
+        url: baseUrl + "reg_User?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
+            saveUpdateAlert("User", resp.message);
             loadAllRegUsers();
-        },
-        error:function (error){
-            alert(JSON.parse(error.responseText).message);
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            unSuccessUpdateAlert("User", message);
         }
     });
 });
-
 
 
 /**
@@ -354,7 +350,11 @@ $("#password").on('keydown', function (event) {
 function setButtonState(value) {
     if (value > 0) {
         $("#btnSaveCustomer").attr('disabled', true);
+        $("#btnUpdateCustomer").attr('disabled', true);
+        $("#btnDeleteCustomer").attr('disabled', true);
     } else {
         $("#btnSaveCustomer").attr('disabled', false);
+        $("#btnUpdateCustomer").attr('disabled', false);
+        $("#btnDeleteCustomer").attr('disabled', false);
     }
 }
