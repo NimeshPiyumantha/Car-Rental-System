@@ -117,7 +117,7 @@
                                 <button class="btn btn-success mt-2 m-2" id="btnSaveDriver" type="button"
                                         formaction="driverForm">Save
                                 </button>
-                                <button type="button" class="btn btn-primary" id="btnUpdateDriver">Update</button>
+                                <button type="button" class="btn btn-warning" id="btnUpdateDriver">Update</button>
                                 <button type="button" class="btn btn-danger" id="btnDeleteDriver">Delete</button>
                             </div>
                         </section>
@@ -125,6 +125,35 @@
                 </div>
             </div>
         </section>
+
+        <!-- View Driver Details Table Start -->
+        <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
+            <div class="col-11 justify-content-around sectionBorder" style="height: 290px; background: white">
+                <div class="customerTableDiv overflow-auto" style="height: 300px;">
+                    <table class="table table-success table-striped table-bordered table-hover">
+                        <thead class="text-light table-dark text-center  table-bordered sticky-top">
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Contact No</th>
+                            <th>Address</th>
+                            <th>Email</th>
+                            <th>NIC Number</th>
+                            <th>Driving License ID</th>
+                            <th>Role Type</th>
+                            <th>User Name</th>
+                            <th>Password</th>
+
+                        </tr>
+                        </thead>
+                        <tbody id="driverTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- View Driver Details Table End -->
+
     </div>
 </section>
 
