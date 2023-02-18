@@ -240,31 +240,31 @@ const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
 let customerValidations = [];
 customerValidations.push({
-    reg: regExFirstName, field: $('#firstName'), error: 'User First Name Pattern is Wrong'
+    reg: regExFirstName, field: $('#firstName'), error: 'Customer First Name Pattern is Wrong'
 });
 customerValidations.push({
-    reg: regExLastName, field: $('#lastName'), error: 'User Last Name Pattern is Wrong'
+    reg: regExLastName, field: $('#lastName'), error: 'Customer Last Name Pattern is Wrong'
 });
 customerValidations.push({
-    reg: regExContactNum, field: $('#contact_No'), error: 'User Contact Number Pattern is Wrong'
+    reg: regExContactNum, field: $('#contact_No'), error: 'Customer Contact Number Pattern is Wrong'
 });
 customerValidations.push({
-    reg: regExCusAddress, field: $('#address'), error: 'User Address Pattern is Wrong'
+    reg: regExCusAddress, field: $('#address'), error: 'Customer Address Pattern is Wrong'
 });
 customerValidations.push({
-    reg: regExEmailCusAddress, field: $('#email'), error: 'User Email Address Pattern is Wrong'
+    reg: regExEmailCusAddress, field: $('#email'), error: 'Customer Email Address Pattern is Wrong'
 });
 customerValidations.push({
-    reg: regExNIC, field: $('#nic'), error: 'User NIC Pattern is Wrong'
+    reg: regExNIC, field: $('#nic'), error: 'Customer NIC Pattern is Wrong'
 });
 customerValidations.push({
-    reg: regExDrivingNIC, field: $('#license_No'), error: 'User Driving License Pattern is Wrong'
+    reg: regExDrivingNIC, field: $('#license_No'), error: 'Customer Driving License Pattern is Wrong'
 });
 customerValidations.push({
-    reg: regExUserName, field: $('#user_Name'), error: 'User User Name Pattern is Wrong'
+    reg: regExUserName, field: $('#user_Name'), error: 'Customer User Name Pattern is Wrong'
 });
 customerValidations.push({
-    reg: regExPassword, field: $('#password'), error: 'User Password Pattern is Wrong'
+    reg: regExPassword, field: $('#password'), error: 'Customer Password Pattern is Wrong'
 });
 //disable tab key of all four text fields using grouping selector in CSS
 $("#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('keydown', function (event) {
