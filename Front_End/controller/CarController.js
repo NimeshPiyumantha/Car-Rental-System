@@ -213,17 +213,17 @@ $("#btnUpdateCar").click(function () {
     };
 
     $.ajax({
-        url: baseUrl + "reg_User",
+        url: baseUrl + "car",
         method: "put",
         contentType: "application/json",
         data: JSON.stringify(carOb),
         success: function (res) {
-            saveUpdateAlert("User", res.message);
-            loadAllRegUsers();
+            saveUpdateAlert("Car", res.message);
+            loadAllCars();
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
-            unSuccessUpdateAlert("User", message);
+            unSuccessUpdateAlert("Car", message);
         }
     });
 });

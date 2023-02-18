@@ -38,6 +38,7 @@ public class CarController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateCar(@RequestBody CarDTO dto) {
         service.updateCar(dto);
+        System.out.println(dto);
         return new ResponseUtil("OK", "Successfully Updated. :" + dto.getCar_Id(), null);
     }
 

@@ -34,6 +34,7 @@ public class DriverController {
     @PutMapping
     public ResponseUtil updateDriver(@RequestBody DriverDTO dto) {
         service.updateDriver(dto);
+        System.out.println(dto);
         return new ResponseUtil("OK", "Successfully Updated. :" + dto.getUser_Id(), null);
     }
 
