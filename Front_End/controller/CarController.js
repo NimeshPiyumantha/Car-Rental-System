@@ -4,7 +4,7 @@
  **/
 
 let baseUrl = "http://localhost:8080/Back_End_war/";
-loadAllCars();
+/*loadAllCars();*/
 // $("#btnSaveCar").attr('disabled', true);
 // $("#btnUpdateCar").attr('disabled', true);
 // $("#btnDeleteCar").attr('disabled', true);
@@ -31,6 +31,7 @@ $("#btnSaveCar").click(function () {
     });
 });
 
+generateCarID();
 /**
  * User Id Generator
  * */
