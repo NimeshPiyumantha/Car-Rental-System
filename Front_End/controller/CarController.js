@@ -64,8 +64,7 @@ function generateCarID() {
 /**
  * clear input fields Values Method
  * */
-function setTextFieldValues(car_Id, name, brand, type, front_View, back_View, side_View, interior, number_Of_Passengers, transmission_Type, fuel_Type, daily_Rate, monthly_Rate, price_Extra_KM, registration_Number, free_Mileage, color, vehicleAvailabilityType) {
-    $("#car_Id").val(car_Id);
+function setTextFieldValuesC(name, brand, type, front_View, back_View, side_View, interior, number_Of_Passengers, transmission_Type, fuel_Type, daily_Rate, monthly_Rate, price_Extra_KM, registration_Number, free_Mileage, color, vehicleAvailabilityType) {
     $("#name").val(name);
     $("#brand").val(brand);
     $("#type").val(type);
@@ -88,3 +87,48 @@ function setTextFieldValues(car_Id, name, brand, type, front_View, back_View, si
     // checkValidity(carValidations);
     $("#btnSaveCar").attr('disabled', true);
 }
+
+/**
+ * load all customers Method
+ * */
+function loadAllCars() {
+    $("#carTable").empty();
+    $.ajax({
+        url: baseUrl + "car/loadAllCars", method: "GET", dataType: "json", success: function (res) {
+            console.log(res);
+
+            for (let i of res.data) {
+                let name = i.name;
+                let brand = i.brand;
+                let type = i.type;
+                let front_View = i.image.front_View;
+                let back_View = i.image.back_View;
+                let side_View = i.image.side_View;
+                let interior = i.image.interior;
+                let number_Of_Passengers = i.number_Of_Passengers;
+                let transmission_Type = i.transmission_Type;
+                let fuel_Type = i.fuel_Type;
+                let daily_Rate = i.rent_Duration_Price.daily_Rate;
+                let monthly_Rate = i.rent_Duration_Price.monthly_Rate;
+                let price_Extra_KM = i.price_Extra_KM;
+                let registration_Number = i.registration_Number;
+                let free_Mileage = i.free_Mileage;
+                let color = i.color;
+                let vehicleAvailabilityType = i.vehicleAvailabilityType;
+
+
+                let row = "<tr><td>" + name + "</td><td>" + brand + "</td><td>" + type + "</td><td>" + number_Of_Passengers + "</td><td>" + transmission_Type + "</td><td>" + fuel_Type + "</td><td>" + daily_Rate + "</td><td>" + monthly_Rate + "</td><td>" + price_Extra_KM + "</td><td>" + registration_Number + "</td><td>" + free_Mileage + "</td><td>" + color + "</td><td>" + vehicleAvailabilityType + "</td></tr>";
+                $("#carTable").append(row);
+                console.log(row);
+            }
+            // blindClickEventsC();
+            generateCarID();
+            setTextFieldValuesC("", "", "", "", "", "", "", "", "", "", "", "");
+            console.log(res.message);
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            console.log(message);
+        }
+    });
+}
+
