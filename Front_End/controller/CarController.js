@@ -124,7 +124,7 @@ function loadAllCars() {
             }
             blindClickEventsC();
             generateCarID();
-            setTextFieldValuesC("", "", "", "", "", "", "", "", "", "", "", "","","","","","");
+            setTextFieldValuesC("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
             console.log(res.message);
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -154,7 +154,7 @@ function blindClickEventsC() {
         let vehicleAvailabilityType = $(this).children().eq(13).text();
 
 
-        console.log(car_Id,name,brand, type, number_Of_Passengers, transmission_Type, fuel_Type, daily_Rate, monthly_Rate, price_Extra_KM, registration_Number, free_Mileage, color,vehicleAvailabilityType);
+        console.log(car_Id, name, brand, type, number_Of_Passengers, transmission_Type, fuel_Type, daily_Rate, monthly_Rate, price_Extra_KM, registration_Number, free_Mileage, color, vehicleAvailabilityType);
 
         $("#car_Id").val(car_Id);
         $("#name").val(name);
@@ -173,3 +173,57 @@ function blindClickEventsC() {
     });
     $("#btnSaveCar").attr('disabled', true);
 }
+
+$("#btnUpdateCar").click(function () {
+    let car_Id = $("#car_Id").val();
+    let name = $("#name").val();
+    let brand = $("#brand").val();
+    let type = $("#type").val();
+    let number_Of_Passengers = $("#number_Of_Passengers").val();
+    let transmission_Type = $("#transmission_Type").val();
+    let fuel_Type = $("#fuel_Type").val();
+    let daily_Rate = $("#daily_Rate").val();
+    let monthly_Rate = $("#monthly_Rate").val();
+    let price_Extra_KM = $("#price_Extra_KM").val();
+    let registration_Number = $("#registration_Number").val();
+    let free_Mileage = $("#free_Mileage").val();
+    let color = $("#color").val();
+    let vehicleAvailabilityType = $("#vehicleAvailabilityType").val();
+
+    const carOb = {
+        car_Id: car_Id,
+        name: name,
+        brand: brand,
+        type: type,
+        image: {
+            front_View: front_View, back_View: back_View, side_View: side_View, interior: interior
+        },
+        number_Of_Passengers: number_Of_Passengers,
+        transmission_Type: transmission_Type,
+        fuel_Type: fuel_Type,
+        rent_Duration_Price: {
+            daily_Rate : daily_Rate,
+            monthly_Rate: monthly_Rate,
+        },
+        price_Extra_KM: price_Extra_KM,
+        registration_Number: registration_Number,
+        free_Mileage: free_Mileage,
+        color: color,
+        vehicleAvailabilityType: vehicleAvailabilityType
+    };
+
+    $.ajax({
+        url: baseUrl + "reg_User",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(carOb),
+        success: function (res) {
+            saveUpdateAlert("User", res.message);
+            loadAllRegUsers();
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            unSuccessUpdateAlert("User", message);
+        }
+    });
+});
