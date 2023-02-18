@@ -35,9 +35,8 @@ public class Reg_UserController {
     @ResponseStatus(HttpStatus.CREATED)
     @PutMapping
     public ResponseUtil updateUser(@RequestBody Reg_UserDTO regUserDTO) {
-
         System.out.println(regUserDTO);
-//        service.saveUser(regUserDTO);
+//        service.updateUser(regUserDTO);
         return new ResponseUtil("OK", "Successfully Updated. :" + regUserDTO.getUser_Id(), null);
     }
 
