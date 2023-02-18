@@ -38,10 +38,10 @@ public class DriverController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @DeleteMapping(params = {"driver_Id"})
-    public ResponseUtil deleteDriver(@RequestParam String driver_Id) {
-        service.deleteDriver(driver_Id);
-        return new ResponseUtil("OK", "Successfully Deleted. :" + driver_Id, null);
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteDriver(@RequestParam String id) {
+        service.deleteDriver(id);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
