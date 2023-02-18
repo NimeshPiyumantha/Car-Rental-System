@@ -4,8 +4,14 @@
  **/
 /*Save Users*/
 let baseUrl = "http://localhost:8080/Back_End_war/";
-
+loadAllRegUsers();
 // $("#btnSaveCustomer").attr('disabled', true);
+// $("#btnUpdateCustomer").attr('disabled', true);
+// $("#btnDeleteCustomer").attr('disabled', true);
+
+/**
+ * Customer Save
+ * */
 
 $("#btnSaveCustomer").click(function () {
     let formData = new FormData($("#customerForm")[0]);
@@ -17,16 +23,13 @@ $("#btnSaveCustomer").click(function () {
         processData: false,
         success: function (res) {
             saveUpdateAlert("User", res.message);
-            generateCustomerID();
+            loadAllRegUsers();
         }, error: function (error) {
             unSuccessUpdateAlert("User", JSON.parse(error.responseText).message);
         }
     });
 });
 
-generateCustomerID();
-checkValidity(customerValidations);
-setTextFieldValues("", "", "", "","", "", "", "","","", "", "");
 
 
 /* User Id Gentrator */
@@ -56,6 +59,9 @@ function generateCustomerID() {
     });
 }
 
+/**
+ * clear input fields Values Method
+ * */
 function setTextFieldValues(firstName, lastName, contact_No, address, email, nic, license_No, nic_Img, license_Img, user_Name, password) {
     $("#firstName").val(firstName);
     $("#lastName").val(lastName);
@@ -73,6 +79,49 @@ function setTextFieldValues(firstName, lastName, contact_No, address, email, nic
     checkValidity(customerValidations);
     $("#btnSaveCustomer").attr('disabled', true);
 }
+
+/**
+ * load all customers Method
+ * */
+function loadAllRegUsers() {
+    $("#customerTable").empty();
+    $.ajax({
+        url: baseUrl + "reg_User/loadAllUsers",
+        method: "GET", dataType: "json", success: function (res) {
+            console.log(res);
+
+            for (let i of res.data) {
+                let user_Id =i.user_Id;
+                let firstName = i.firstName;
+                let lastName = i.lastName;
+                let contact_No = i.contact_No;
+                let address = i.address;
+                let email = i.email;
+                let nic = i.nic;
+                let license_No = i.license_No;
+                let nic_Img = i.nic_Img;
+                let license_Img = i.license_Img;
+                let role_Type = i.role_Type;
+                let user_Name = i.user_Name;
+                let password = i.password;
+
+                let row = "<tr><td>" + user_Id + "</td><td>" + firstName +" "+lastName+ "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic + "</td><td>" + license_Img + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
+                $("#customerTable").append(row);
+            }
+           /* blindClickEvents();*/
+            generateCustomerID();
+            setTextFieldValues("", "", "", "","", "", "", "","","", "", "");
+            console.log(res.message);
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            console.log(message);
+        }
+
+    });
+}
+
+
+
 
 /**
  * Auto Forces Input Fields Save
