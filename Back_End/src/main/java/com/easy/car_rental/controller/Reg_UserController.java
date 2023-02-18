@@ -47,7 +47,7 @@ public class Reg_UserController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @GetMapping
+    @GetMapping(path = "/loadAllUsers")
     public ResponseUtil getAllUser() {
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllUser());
     }

@@ -92,8 +92,7 @@ function loadAllRegUsers() {
 
             for (let i of res.data) {
                 let user_Id =i.user_Id;
-                let firstName = i.firstName;
-                let lastName = i.lastName;
+                let name = i.name;
                 let contact_No = i.contact_No;
                 let address = i.address;
                 let email = i.email;
@@ -105,7 +104,7 @@ function loadAllRegUsers() {
                 let user_Name = i.user_Name;
                 let password = i.password;
 
-                let row = "<tr><td>" + user_Id + "</td><td>" + firstName +" "+lastName+ "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic + "</td><td>" + license_Img + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
+                let row = "<tr><td>" + user_Id + "</td><td>" + name+ "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic + "</td><td>" + license_No + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
                 $("#customerTable").append(row);
             }
            /* blindClickEvents();*/
