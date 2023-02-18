@@ -119,6 +119,9 @@ function loadAllDrivers() {
     });
 }
 
+/**
+ * Table Listener Click and Load textFields
+ * */
 function blindClickEventsD() {
     $("#driverTable>tr").on("click", function () {
         let user_Id = $(this).children().eq(0).text();
@@ -152,3 +155,55 @@ function blindClickEventsD() {
     });
     $("#btnSaveDriver").attr('disabled', true);
 }
+
+/**
+ * Update Action
+ * */
+$("#btnUpdateCustomer").click(function () {
+    let user_Id = $("#user_Id").val();
+    let firstName = $("#firstName").val();
+    let lastName = $("#lastName").val();
+    let contact_No = $("#contact_No").val();
+    let address = $("#address").val();
+    let email = $("#email").val();
+    let nic_No = $("#nic_No").val();
+    let license_No = $("#license_No").val();
+    let license_Img = $("#license_Img").val();
+    let driverAvailability = $("#driverAvailability").val();
+    let role_Type = $("#role_Type").val();
+    let user_Name = $("#user_Name").val();
+    let password = $("#password").val();
+
+    const driverOb = {
+        user_Id: user_Id,
+        name: {
+            firstName: firstName, lastName: lastName
+        },
+        address: address,
+        contact_No: contact_No,
+        email: email,
+        nic: nic_No,
+        license_No: license_No,
+        license_Img: license_Img,
+        driverAvailability: driverAvailability,
+        user: {
+            role_Type: role_Type, user_Name: user_Name, password: password
+        }
+    };
+
+    $.ajax({
+        url: baseUrl + "driver",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(driverOb),
+        success: function (res) {
+            saveUpdateAlert("Driver", res.message);
+            loadAllRegUsers();
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            unSuccessUpdateAlert("Driver", message);
+        }
+    });
+
+});
