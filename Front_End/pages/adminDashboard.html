@@ -25,6 +25,7 @@
 
     <!-- Template Dashboard CSS File -->
     <link href="../assets/css/dashboardStyle.css" rel="stylesheet">
+
 </head>
 <body>
 <!-- ======= Header ======= -->
@@ -139,7 +140,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="assets/img/massage/messages-1.jpg" alt="" class="rounded-circle">
+                            <img src="../assets/img/massage/messages-1.jpg" alt="" class="rounded-circle">
                             <div>
                                 <h4>Maria Hudson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -153,7 +154,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="assets/img/massage/messages-2.jpg" alt="" class="rounded-circle">
+                            <img src="../assets/img/massage/messages-2.jpg" alt="" class="rounded-circle">
                             <div>
                                 <h4>Anna Nelson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -167,7 +168,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="assets/img/massage/messages-3.jpg" alt="" class="rounded-circle">
+                            <img src="../assets/img/massage/messages-3.jpg" alt="" class="rounded-circle">
                             <div>
                                 <h4>David Muldon</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -190,7 +191,7 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="assets/img/massage/profile-img.jpg" alt="Profile" class="rounded-circle">
+                    <img src="../assets/img/massage/profile-img.jpg" alt="Profile" class="rounded-circle">
                     <span class="d-none d-md-block dropdown-toggle ps-2">K.L Samson</span>
                 </a><!-- End Profile Iamge Icon -->
 
@@ -347,7 +348,7 @@
 <!-- ======= Main ======= -->
 <main id="main" class="main">
 
-    <div class="pagetitle">
+    <div class="pagetitle" id="pageOne">
         <h1>Dashboard</h1>
         <nav>
             <ol class="breadcrumb">
@@ -355,8 +356,8 @@
                 <li class="breadcrumb-item active">Dashboard</li>
             </ol>
         </nav>
-    </div><!-- End Page Title -->
-
+    </div>
+    <!-- End Page Title -->
     <section class="section dashboard">
         <div class="row">
 
@@ -367,20 +368,6 @@
                     <!-- Sales Card -->
                     <div class="col-xxl-4 col-md-6">
                         <div class="card info-card sales-card">
-
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
                             <div class="card-body">
                                 <h5 class="card-title">Sales <span>| Today</span></h5>
 
@@ -404,20 +391,6 @@
                     <!-- Revenue Card -->
                     <div class="col-xxl-4 col-md-6">
                         <div class="card info-card revenue-card">
-
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
                             <div class="card-body">
                                 <h5 class="card-title">Revenue <span>| This Month</span></h5>
 
@@ -442,20 +415,6 @@
                     <div class="col-xxl-4 col-xl-12">
 
                         <div class="card info-card customers-card">
-
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
                             <div class="card-body">
                                 <h5 class="card-title">Customers <span>| This Year</span></h5>
 
@@ -643,6 +602,471 @@
         </div>
     </section>
 
+    <!-- ======= Customer Manage ======= -->
+    <div class="pagetitle" id="pagetwo">
+        <h1>Manage</h1>
+
+        <section class="container-fluid mt-3" id="manageCustomer">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Manage / Customer</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="col-12 m-2 p-3">
+                        <form class="row" id="customerForm">
+                            <section id="sec1Customer" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="user_Id">Driver Id</label>
+                                    <input type="text" name="user_Id" class="form-control" readonly id="user_Id"
+                                           placeholder="C00-001">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="firstName">First Name</label>
+                                    <input type="text" name="firstName" class="form-control" id="firstName"
+                                           placeholder="First Name">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="lastName">Last Name</label>
+                                    <input type="text" name="lastName" class="form-control" id="lastName"
+                                           placeholder="Last Name">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="contact_No">Contact Number</label>
+                                    <input type="text" name="contact_No" class="form-control" id="contact_No"
+                                           placeholder="Contact Number">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="address">Address</label>
+                                    <input type="text" name="address" class="form-control" id="address"
+                                           placeholder="Address">
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec2Customer" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="text" name="email" class="form-control" id="email"
+                                           placeholder="Email Address">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="nic">NIC NUmber</label>
+                                    <input type="text" name="nic" class="form-control" id="nic"
+                                           placeholder="National ID">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="license_No">Driving License ID</label>
+                                    <input type="text" name="license_No" class="form-control" id="license_No"
+                                           placeholder="Driving License">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="license_Img">Upload NIC image</label>
+                                    <input type="file" name="nic_Img" class="form-control" id="nic_Img">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="license_Img">Upload Driving License image</label>
+                                    <input type="file" name="license_Img" class="form-control" id="license_Img">
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec3" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label for="role_Type" class="form-label">Role type</label>
+                                    <select class="form-control" id="role_Type" name="role_Type">
+                                        <option value="REGISTERED_USER">REGISTERED_USER</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label for="user_Name" class="form-label">User Name</label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                        <input type="text" name="user_Name" class="form-control" id="user_Name"
+                                               placeholder="User Name">
+                                        <span class="control-error"></span>
+                                    </div>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" name="password" class="form-control" id="password"
+                                           placeholder="Enter Password">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                    <button class="btn btn-warning me-md-1" id="btnUpdateCustomer" type="button">
+                                        Update
+                                    </button>
+                                    <button type="button" class="btn btn-danger me-md-1" id="btnDeleteCustomer">Delete
+                                    </button>
+                                </div>
+                            </section>
+
+                        </form>
+                    </div>
+                    <!-- View Customer Details Table Start -->
+                    <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
+                        <div class="col-11 justify-content-around sectionBorder"
+                             style="height: 290px; background: white">
+                            <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                <table class="table table-success table-striped table-bordered table-hover">
+                                    <thead class="text-light table-dark text-center  table-bordered sticky-top">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Contact No</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">NIC Number</th>
+                                        <th scope="col">DL ID</th>
+                                        <th scope="col">Role Type</th>
+                                        <th scope="col">User Name</th>
+                                        <th scope="col">Password</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="customerTable"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- View Customer Details Table End -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End Customer Manage -->
+
+    <!-- ======= Driver Manage ======= -->
+    <div class="pagetitle" id="pagethree">
+        <h1>Manage</h1>
+
+        <section class="container-fluid mt-3" id="manageDrivers">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Manage / Drivers</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="col-12 m-2 p-3">
+                        <form class="row" id="driverForm">
+                            <section id="sec1Driver" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="user_IdD">Driver Id</label>
+                                    <input class="form-control" id="user_IdD" readonly type="text" name="user_Id">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="firstNameD">First Name</label>
+                                    <input class="form-control" id="firstNameD" type="text" name="firstName">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="lastNameD">Last Name</label>
+                                    <input class="form-control" id="lastNameD" type="text" name="lastName">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="contact_NoD">Contact Number</label>
+                                    <input class="form-control" id="contact_NoD" type="text" name="contact_No">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="addressD">Address</label>
+                                    <input class="form-control" id="addressD" type="text" name="address">
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec2Driver" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="emailD">Email</label>
+                                    <input class="form-control" id="emailD" type="text" name="email">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="nic_No">NIC NUmber</label>
+                                    <input class="form-control" id="nic_No" type="text" name="nic_No">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="license_NoD">Driving License ID</label>
+                                    <input class="form-control" id="license_NoD" type="text" name="license_No">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="license_ImgD">Driving License image</label>
+                                    <input class="form-control" id="license_ImgD" type="file" name="license_Img">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="driverAvailability">Availability</label>
+                                    <select class="form-control" id="driverAvailability" name="driverAvailability">
+                                        <option value="AVAILABLE">AVAILABLE</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec3Driver" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label for="role_TypeD" class="form-label">Role type</label>
+                                    <select class="form-control" id="role_TypeD" name="role_Type">
+                                        <option value="DRIVER">DRIVER</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label for="user_Name" class="form-label">User Name</label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text" id="inputGroupPrependD">@</span>
+                                        <input class="form-control" id="user_NameD" type="text" name="user_Name">
+                                        <span class="control-error"></span>
+                                    </div>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="passwordD">Password</label>
+                                    <input class="form-control" id="passwordD" type="password" name="password">
+                                    <span class="control-error"></span>
+                                </div>
+
+                                <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                    <button class="btn btn-success me-md-1" id="btnSaveDriver" type="button"
+                                            formaction="driverForm">Save
+                                    </button>
+                                    <button type="button" class="btn btn-warning me-md-1" id="btnUpdateDriver">Update
+                                    </button>
+                                    <button type="button" class="btn btn-danger" id="btnDeleteDriver">Delete</button>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                    <!-- View Driver Details Table Start -->
+                    <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
+                        <div class="col-11 justify-content-around sectionBorder"
+                             style="height: 290px; background: white">
+                            <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                <table class="table table-success table-striped table-bordered table-hover">
+                                    <thead class="text-light table-dark text-center  table-bordered sticky-top">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Contact No</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">NIC Number</th>
+                                        <th scope="col">Driving License ID</th>
+                                        <th scope="col">Availability Type</th>
+                                        <th scope="col">Role Type</th>
+                                        <th scope="col">User Name</th>
+                                        <th scope="col">Password</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="driverTable"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- View Driver Details Table End -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End Driver Manage -->
+
+    <!-- ======= Car Manage ======= -->
+    <div class="pagetitle" id="pageFour">
+        <h1>Manage</h1>
+
+        <section class="container-fluid mt-3" id="manageCar">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Manage / Cars</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="col-12 m-2 p-3">
+                        <form class="row" action="car" id="carForm" method="post">
+                            <section id="sec1Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="car_Id">Car Id</label>
+                                    <input class="form-control" id="car_Id" type="text" readonly name="car_Id">
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="name">Brand</label>
+                                    <input class="form-control" id="name" type="text" name="name">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="brand">Model</label>
+                                    <input class="form-control" id="brand" type="text" name="brand">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="type">Type</label>
+                                    <select class="form-control" id="type" name="type">
+                                        <option value="GENERAL">GENERAL</option>
+                                        <option value="LUXURY">LUXURY</option>
+                                        <option value="PREMIUM">PREMIUM</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="front_View">Front View</label>
+                                    <input class="form-control" id="front_View" type="file" name="front_View">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="back_View">Back View</label>
+                                    <input class="form-control" id="back_View" type="file" name="back_View">
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec2Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="side_View">Side View</label>
+                                    <input class="form-control" id="side_View" type="file" name="side_View">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="interior">Interior</label>
+                                    <input class="form-control" id="interior" type="file" name="interior">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="number_Of_Passengers">Number Of Passengers</label>
+                                    <input class="form-control" id="number_Of_Passengers" type="text"
+                                           name="number_Of_Passengers">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="transmission_Type">Transmission Type</label>
+                                    <select class="form-control" id="transmission_Type" name="transmission_Type">
+                                        <option value="AUTO">AUTO</option>
+                                        <option value="MANUAL">MANUAL</option>
+                                    </select>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="fuel_Type">Fuel Type</label>
+                                    <select class="form-control" id="fuel_Type" name="fuel_Type">
+                                        <option value="DIESEL">DIESEL</option>
+                                        <option value="PETROL">PETROL</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="daily_Rate">Daily Rate</label>
+                                    <input class="form-control" id="daily_Rate" type="text" name="daily_Rate">
+                                </div>
+                                <span class="control-error"></span>
+                            </section>
+
+                            <section id="sec3Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="monthly_Rate">Monthly Rate</label>
+                                    <input class="form-control" id="monthly_Rate" type="text" name="monthly_Rate">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="price_Extra_KM">Price Extra KM</label>
+                                    <input class="form-control" id="price_Extra_KM" type="text" name="price_Extra_KM">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="registration_Number">Registration Number</label>
+                                    <input class="form-control" id="registration_Number" type="text"
+                                           name="registration_Number">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="free_Mileage">Free Mileage</label>
+                                    <input class="form-control" id="free_Mileage" type="text" name="free_Mileage">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="color">Color</label>
+                                    <input class="form-control" id="color" type="text" name="color">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="vehicleAvailabilityType">Vehicle Availability
+                                        Type</label>
+                                    <select class="form-control" id="vehicleAvailabilityType"
+                                            name="vehicleAvailabilityType">
+                                        <option value="AVAILABLE">AVAILABLE</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+
+                                <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                    <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
+                                            formaction="driverForm">Save
+                                    </button>
+                                    <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
+                                    </button>
+                                    <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                    <!-- View Car Details Table Start -->
+                    <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
+                        <div class="col-11 justify-content-around sectionBorder"
+                             style="height: 290px; background: white">
+                            <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                <table class="table table-success table-striped table-bordered table-hover">
+                                    <thead class="text-light table-dark text-center  table-bordered sticky-top">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Brand</th>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Passengers</th>
+                                        <th scope="col">Transition</th>
+                                        <th scope="col">Fuel</th>
+                                        <th scope="col">Daily Rent</th>
+                                        <th scope="col">Monthly Rent</th>
+                                        <th scope="col">Price KM</th>
+                                        <th scope="col">Reg Number</th>
+                                        <th scope="col">Free Mileage</th>
+                                        <th scope="col">Color</th>
+                                        <th scope="col">Availability</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="carTable"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- View Car Details Table End -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End Car Manage -->
+
+
 </main>
 <!-- End #main -->
 
@@ -662,8 +1086,19 @@
 <!-- Vendor JS Files -->
 <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
 <script src="../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+<script rel="script" src="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
 
 <!-- Template Dashboard Main JS File -->
 <script src="../assets/js/dashboardMain.js"></script>
+
+<!-- Controller JS File -->
+<script src="../controller/Reg_UserController.js"></script>
+<script src="../controller/DriverController.js"></script>
+<script src="../controller/CarController.js"></script>
+
+<!-- Util JS File -->
+<script src="../util/alert.js" rel="script"></script>
+<script src="../util/validation.js" rel="script"></script>
 </body>
 </html>
