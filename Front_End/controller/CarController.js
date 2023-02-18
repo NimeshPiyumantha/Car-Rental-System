@@ -307,11 +307,11 @@ $("#name,#brand,#type,#number_Of_Passengers,#transmission_Type,#fuel_Type,#daily
 });
 
 $("#name,#brand,#type,#number_Of_Passengers,#transmission_Type,#fuel_Type,#daily_Rate,#monthly_Rate,#price_Extra_KM,#registration_Number,#free_Mileage,#color").on('keyup', function (event) {
-    checkValidity(driverValidations);
+    checkValidity(carValidations);
 });
 
 $("#name,#brand,#type,#number_Of_Passengers,#transmission_Type,#fuel_Type,#daily_Rate,#monthly_Rate,#price_Extra_KM,#registration_Number,#free_Mileage,#color").on('blur', function (event) {
-    checkValidity(driverValidations);
+    checkValidity(carValidations);
 });
 
 $("#name").on('keydown', function (event) {
