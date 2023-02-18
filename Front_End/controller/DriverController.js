@@ -243,31 +243,31 @@ const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
 let driverValidations = [];
 driverValidations.push({
-    reg: regExFirstName, field: $('#firstName'), error: 'User First Name Pattern is Wrong'
+    reg: regExFirstName, field: $('#firstName'), error: 'Driver First Name Pattern is Wrong'
 });
 driverValidations.push({
-    reg: regExLastName, field: $('#lastName'), error: 'User Last Name Pattern is Wrong'
+    reg: regExLastName, field: $('#lastName'), error: 'Driver Last Name Pattern is Wrong'
 });
 driverValidations.push({
-    reg: regExContactNum, field: $('#contact_No'), error: 'User Contact Number Pattern is Wrong'
+    reg: regExContactNum, field: $('#contact_No'), error: 'Driver Contact Number Pattern is Wrong'
 });
 driverValidations.push({
-    reg: regExCusAddress, field: $('#address'), error: 'User Address Pattern is Wrong'
+    reg: regExCusAddress, field: $('#address'), error: 'Driver Address Pattern is Wrong'
 });
 driverValidations.push({
-    reg: regExEmailCusAddress, field: $('#email'), error: 'User Email Address Pattern is Wrong'
+    reg: regExEmailCusAddress, field: $('#email'), error: 'Driver Email Address Pattern is Wrong'
 });
 driverValidations.push({
-    reg: regExNIC, field: $('#nic_No'), error: 'User NIC Pattern is Wrong'
+    reg: regExNIC, field: $('#nic_No'), error: 'Driver NIC Pattern is Wrong'
 });
 driverValidations.push({
-    reg: regExDrivingNIC, field: $('#license_No'), error: 'User Driving License Pattern is Wrong'
+    reg: regExDrivingNIC, field: $('#license_No'), error: 'Driver Driving License Pattern is Wrong'
 });
 driverValidations.push({
-    reg: regExUserName, field: $('#user_Name'), error: 'User User Name Pattern is Wrong'
+    reg: regExUserName, field: $('#user_Name'), error: 'Driver User Name Pattern is Wrong'
 });
 driverValidations.push({
-    reg: regExPassword, field: $('#password'), error: 'User Password Pattern is Wrong'
+    reg: regExPassword, field: $('#password'), error: 'Driver Password Pattern is Wrong'
 });
 //disable tab key of all four text fields using grouping selector in CSS
 $("#firstName,#lastName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#password").on('keydown', function (event) {
