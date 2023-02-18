@@ -92,7 +92,8 @@ function loadAllRegUsers() {
 
             for (let i of res.data) {
                 let user_Id =i.user_Id;
-                let name = i.name;
+                let firstName = i.name.firstName;
+                let lastName = i.name.lastName;
                 let contact_No = i.contact_No;
                 let address = i.address;
                 let email = i.email;
@@ -100,14 +101,14 @@ function loadAllRegUsers() {
                 let license_No = i.license_No;
                 let nic_Img = i.nic_Img;
                 let license_Img = i.license_Img;
-                let role_Type = i.role_Type;
-                let user_Name = i.user_Name;
-                let password = i.password;
+                let role_Type = i.user.role_Type;
+                let user_Name = i.user.user_Name;
+                let password = i.user.password;
 
-                let row = "<tr><td>" + user_Id + "</td><td>" + name+ "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic + "</td><td>" + license_No + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
+                let row = "<tr><td>" + user_Id + "</td><td>" + firstName+ "</td><td>" + lastName+ "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic + "</td><td>" + license_No + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
                 $("#customerTable").append(row);
             }
-           /* blindClickEvents();*/
+            blindClickEvents();
             generateCustomerID();
             setTextFieldValues("", "", "", "","", "", "", "","","", "", "");
             console.log(res.message);
@@ -117,6 +118,38 @@ function loadAllRegUsers() {
         }
 
     });
+}
+/**
+ * Table Listener Click and Load textFields
+ * */
+function blindClickEvents() {
+    $("#customerTable>tr").on("click", function () {
+        let user_Id = $(this).children().eq(0).text();
+        let fName = $(this).children().eq(1).text();
+        let lName = $(this).children().eq(2).text();
+        let address = $(this).children().eq(3).text();
+        let contact_No = $(this).children().eq(4).text();
+        let email = $(this).children().eq(5).text();
+        let nic = $(this).children().eq(6).text();
+        let license_No = $(this).children().eq(7).text();
+        let role_Type = $(this).children().eq(8).text();
+        let user_Name = $(this).children().eq(9).text();
+        let password = $(this).children().eq(10).text();
+        console.log(user_Id, fName,lName, address, contact_No,email, nic,license_No, role_Type, user_Name,password);
+
+        $("#user_Id").val(user_Id);
+        $("#firstName").val(fName);
+        $("#lastName").val(lName);
+        $("#contact_No").val(address);
+        $("#address").val(contact_No);
+        $("#email").val(email);
+        $("#National").val(nic);
+        $("#license_No").val(license_No);
+        $("#role_Type").val(role_Type);
+        $("#user_Name").val(user_Name);
+        $("#password").val(password);
+    });
+    $("#btnSaveCustomer").attr('disabled', true);
 }
 
 
