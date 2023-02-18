@@ -54,8 +54,7 @@
             <div class="row mt-3">
                 <div class="col-12">
                     <form class="row" id="customerForm">
-
-                        <section id="sec1Driver" class="col-4">
+                        <section id="sec1Customer" class="col-md-4">
                             <div class="mb-sm-0">
                                 <label class="form-label" for="user_Id">Driver Id</label>
                                 <input type="text" name="user_Id" class="form-control" readonly id="user_Id"
@@ -67,14 +66,12 @@
                                 <input type="text" name="firstName" class="form-control" id="firstName"
                                        placeholder="First Name">
                                 <span class="control-error"></span>
-
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label" for="lastName">Last Name</label>
                                 <input type="text" name="lastName" class="form-control" id="lastName"
                                        placeholder="Last Name">
                                 <span class="control-error"></span>
-
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label" for="contact_No">Contact Number</label>
@@ -90,26 +87,23 @@
                             </div>
                         </section>
 
-                        <section id="sec2Driver" class="col-4">
+                        <section id="sec2Customer" class="col-md-4">
                             <div class="mb-sm-0">
                                 <label class="form-label" for="email">Email</label>
                                 <input type="text" name="email" class="form-control" id="email"
                                        placeholder="Email Address">
                                 <span class="control-error"></span>
-
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label" for="nic">NIC NUmber</label>
                                 <input type="text" name="nic" class="form-control" id="nic" placeholder="National ID">
                                 <span class="control-error"></span>
-
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label" for="license_No">Driving License ID</label>
                                 <input type="text" name="license_No" class="form-control" id="license_No"
                                        placeholder="Driving License">
                                 <span class="control-error"></span>
-
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label" for="license_Img">Upload NIC image</label>
@@ -123,7 +117,7 @@
                             </div>
                         </section>
 
-                        <section id="sec3" class="col">
+                        <section id="sec3" class="col-md-4">
                             <div class="mb-sm-0">
                                 <label for="role_Type" class="form-label">Role type</label>
                                 <select class="form-control" id="role_Type" name="role_Type">
@@ -140,16 +134,15 @@
                                     <span class="control-error"></span>
                                 </div>
                             </div>
-                            <div class="mb-sm-4">
+                            <div class="mb-sm-0">
                                 <label class="form-label" for="password">Password</label>
                                 <input type="password" name="password" class="form-control" id="password"
                                        placeholder="Enter Password">
                                 <span class="control-error"></span>
                             </div>
-
-                            <div class="row-cols-4">
-                                <button class="btn btn-warning m-2 p-2" id="btnUpdateCustomer" type="button">Update</button>
-                                <button type="button" class="btn btn-danger m-2 p-2" id="btnDeleteCustomer">Delete</button>
+                            <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                <button class="btn btn-warning me-md-1" id="btnUpdateCustomer" type="button">Update</button>
+                                <button type="button" class="btn btn-danger me-md-1" id="btnDeleteCustomer">Delete</button>
                             </div>
                         </section>
                     </form>

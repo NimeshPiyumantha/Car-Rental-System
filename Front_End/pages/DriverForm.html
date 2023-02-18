@@ -55,7 +55,7 @@
             <div class="row mt-3">
                 <div class="col-12">
                     <form class="row" id="driverForm">
-                        <section id="sec1Driver" class="col-4">
+                        <section id="sec1Driver" class="col-md-4">
                             <div class="mb-sm-0">
                                 <label class="form-label" for="user_Id">Driver Id</label>
                                 <input class="form-control" id="user_Id" readonly type="text" name="user_Id">
@@ -83,7 +83,7 @@
                             </div>
                         </section>
 
-                        <section id="sec2Driver" class="col-4">
+                        <section id="sec2Driver" class="col-md-4">
                             <div class="mb-sm-0">
                                 <label class="form-label" for="email">Email</label>
                                 <input class="form-control" id="email" type="text" name="email">
@@ -113,7 +113,7 @@
                             </div>
                         </section>
 
-                        <section id="sec3" class="col">
+                        <section id="sec3Driver" class="col-md-4">
                             <div class="mb-sm-0">
                                 <label for="role_Type" class="form-label">Role type</label>
                                 <select class="form-control" id="role_Type" name="role_Type">
@@ -121,7 +121,7 @@
                                 </select>
                                 <span class="control-error"></span>
                             </div>
-                            <div class="mb-sm-4">
+                            <div class="mb-sm-0">
                                 <label for="user_Name" class="form-label">User Name</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text" id="inputGroupPrepend">@</span>
@@ -129,17 +129,17 @@
                                     <span class="control-error"></span>
                                 </div>
                             </div>
-                            <div class="mb-sm-4">
+                            <div class="mb-sm-0">
                                 <label class="form-label" for="password">Password</label>
                                 <input class="form-control" id="password" type="password" name="password">
                                 <span class="control-error"></span>
                             </div>
 
-                            <div class="row-cols-4">
-                                <button class="btn btn-success mt-2 m-2" id="btnSaveDriver" type="button"
+                            <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                <button class="btn btn-success me-md-1" id="btnSaveDriver" type="button"
                                         formaction="driverForm">Save
                                 </button>
-                                <button type="button" class="btn btn-warning" id="btnUpdateDriver">Update</button>
+                                <button type="button" class="btn btn-warning me-md-1" id="btnUpdateDriver">Update</button>
                                 <button type="button" class="btn btn-danger" id="btnDeleteDriver">Delete</button>
                             </div>
                         </section>
