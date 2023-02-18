@@ -249,7 +249,7 @@ $("#btnDeleteCar").click(function () {
  * */
 $("#name").focus();
 const regExBrand = /^[A-z ]{3,20}$/;
-const regExModel = /^[A-z ]{3,20}$/;
+const regExModel = /^[A-z 0-9]{3,20}$/;
 const regExType = /^[A-z ]{3,20}$/;
 const regExNoPassengers = /^[0-9 ]{1,2}$/;
 const regExTransmissionType = /^[A-z ]{3,20}$/;
@@ -260,7 +260,7 @@ const regExKM = /^[0-9 ]{1,4}$/;
 const regExRegNumber = /^[A-Z]{3}-?\d{3}|^\d{3}-?[A-Z]{3}$/;
 const regExMileage = /^[0-9 ]{1,4}$/;
 const regExColor = /^[A-z ]{3,20}$/;
-regExBrand
+
 let carValidations = [];
 carValidations.push({
     reg: regExBrand, field: $('#name'), error: 'Car Brand Name Pattern is Wrong'
@@ -315,7 +315,7 @@ $("#name,#brand,#type,#number_Of_Passengers,#transmission_Type,#fuel_Type,#daily
 });
 
 $("#name").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExModel, $("#name"))) {
+    if (event.key === "Enter" && check(regExBrand, $("#name"))) {
         $("#brand").focus();
     } else {
         focusText($("#name"));
@@ -323,19 +323,19 @@ $("#name").on('keydown', function (event) {
 });
 
 $("#brand").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExType, $("#brand"))) {
+    if (event.key === "Enter" && check(regExModel, $("#brand"))) {
         focusText($("#type"));
     }
 });
 
 $("#type").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExNoPassengers, $("#type"))) {
+    if (event.key === "Enter" && check(regExType, $("#type"))) {
         focusText($("#number_Of_Passengers"));
     }
 });
 
 $("#number_Of_Passengers").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExTransmissionType, $("#number_Of_Passengers"))) {
+    if (event.key === "Enter" && check(regExNoPassengers, $("#number_Of_Passengers"))) {
         if (event.which === 13) {
             focusText($("#transmission_Type"));
         }
@@ -343,19 +343,19 @@ $("#number_Of_Passengers").on('keydown', function (event) {
 });
 
 $("#transmission_Type").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExFuelType, $("#transmission_Type"))) {
+    if (event.key === "Enter" && check(regExTransmissionType, $("#transmission_Type"))) {
         focusText($("#fuel_Type"));
     }
 });
 
 $("#fuel_Type").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExDailyRate, $("#fuel_Type"))) {
+    if (event.key === "Enter" && check(regExFuelType, $("#fuel_Type"))) {
         focusText($("#daily_Rate"));
     }
 });
 
 $("#daily_Rate").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExMonthlyRate, $("#daily_Rate"))) {
+    if (event.key === "Enter" && check(regExDailyRate, $("#daily_Rate"))) {
         if (event.which === 13) {
             focusText($("#monthly_Rate"));
         }
@@ -363,7 +363,7 @@ $("#daily_Rate").on('keydown', function (event) {
 });
 
 $("#monthly_Rate").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExKM, $("#monthly_Rate"))) {
+    if (event.key === "Enter" && check(regExMonthlyRate, $("#monthly_Rate"))) {
         if (event.which === 13) {
             focusText($("#price_Extra_KM"));
         }
@@ -371,7 +371,15 @@ $("#monthly_Rate").on('keydown', function (event) {
 });
 
 $("#price_Extra_KM").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExRegNumber, $("#price_Extra_KM"))) {
+    if (event.key === "Enter" && check(regExKM, $("#price_Extra_KM"))) {
+        if (event.which === 13) {
+            focusText($("#registration_Number"));
+        }
+    }
+});
+
+$("#registration_Number").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExRegNumber, $("#registration_Number"))) {
         if (event.which === 13) {
             focusText($("#free_Mileage"));
         }
@@ -389,7 +397,7 @@ $("#free_Mileage").on('keydown', function (event) {
 $("#color").on('keydown', function (event) {
     if (event.key === "Enter" && check(regExColor, $("#color"))) {
         if (event.which === 13) {
-            $('#btnSaveDriver').focus();
+            $('#btnSaveCar').focus();
         }
     }
 });
@@ -397,12 +405,12 @@ $("#color").on('keydown', function (event) {
 
 function setButtonState(value) {
     if (value > 0) {
-        $("#btnSaveDriver").attr('disabled', true);
-        $("#btnUpdateDriver").attr('disabled', true);
-        $("#btnDeleteDriver").attr('disabled', true);
+        $("#btnSaveCar").attr('disabled', true);
+        $("#btnUpdateCar").attr('disabled', true);
+        $("#btnDeleteCar").attr('disabled', true);
     } else {
-        $("#btnSaveDriver").attr('disabled', false);
-        $("#btnUpdateDriver").attr('disabled', false);
-        $("#btnDeleteDriver").attr('disabled', false);
+        $("#btnSaveCar").attr('disabled', false);
+        $("#btnUpdateCar").attr('disabled', false);
+        $("#btnDeleteCar").attr('disabled', false);
     }
 }
