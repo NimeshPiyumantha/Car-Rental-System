@@ -8,7 +8,6 @@ import com.easy.car_rental.service.Reg_UserService;
 import com.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -33,10 +32,13 @@ public class Reg_UserController {
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
 
-    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateUser(@RequestBody Reg_UserDTO dto) {
-        service.updateUser(dto);
-        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getUser_Id(), null);
+    @ResponseStatus(HttpStatus.CREATED)
+    @PutMapping
+    public ResponseUtil updateUser(@RequestBody Reg_UserDTO regUserDTO) {
+
+        System.out.println(regUserDTO);
+//        service.saveUser(regUserDTO);
+        return new ResponseUtil("OK", "Successfully Updated. :" + regUserDTO.getUser_Id(), null);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

@@ -18,18 +18,20 @@ $("#btnSaveCustomer").click(function () {
     // let formData = $("#customerForm").serialize();
     console.log(formData);
     $.ajax({
-        url: baseUrl + "reg_User", method: "post", data: formData,
+        url: baseUrl + "reg_User",
+        method: "post",
+        data: formData,
         contentType: false,
         processData: false,
         success: function (res) {
             saveUpdateAlert("User", res.message);
             loadAllRegUsers();
-        }, error: function (error) {
+        },
+        error: function (error) {
             unSuccessUpdateAlert("User", JSON.parse(error.responseText).message);
         }
     });
 });
-
 
 
 /* User Id Gentrator */
@@ -86,12 +88,11 @@ function setTextFieldValues(firstName, lastName, contact_No, address, email, nic
 function loadAllRegUsers() {
     $("#customerTable").empty();
     $.ajax({
-        url: baseUrl + "reg_User/loadAllUsers",
-        method: "GET", dataType: "json", success: function (res) {
+        url: baseUrl + "reg_User/loadAllUsers", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
 
             for (let i of res.data) {
-                let user_Id =i.user_Id;
+                let user_Id = i.user_Id;
                 let firstName = i.name.firstName;
                 let lastName = i.name.lastName;
                 let contact_No = i.contact_No;
@@ -105,12 +106,12 @@ function loadAllRegUsers() {
                 let user_Name = i.user.user_Name;
                 let password = i.user.password;
 
-                let row = "<tr><td>" + user_Id + "</td><td>" + firstName+ "</td><td>" + lastName+ "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic + "</td><td>" + license_No + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
+                let row = "<tr><td>" + user_Id + "</td><td>" + firstName + "</td><td>" + lastName + "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic + "</td><td>" + license_No + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
                 $("#customerTable").append(row);
             }
             blindClickEvents();
             generateCustomerID();
-            setTextFieldValues("", "", "", "","", "", "", "","","", "", "");
+            setTextFieldValues("", "", "", "", "", "", "", "", "", "", "", "");
             console.log(res.message);
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
@@ -119,14 +120,15 @@ function loadAllRegUsers() {
 
     });
 }
+
 /**
  * Table Listener Click and Load textFields
  * */
 function blindClickEvents() {
     $("#customerTable>tr").on("click", function () {
         let user_Id = $(this).children().eq(0).text();
-        let fName = $(this).children().eq(1).text();
-        let lName = $(this).children().eq(2).text();
+        let firstName = $(this).children().eq(1).text();
+        let lastName = $(this).children().eq(2).text();
         let address = $(this).children().eq(3).text();
         let contact_No = $(this).children().eq(4).text();
         let email = $(this).children().eq(5).text();
@@ -135,15 +137,17 @@ function blindClickEvents() {
         let role_Type = $(this).children().eq(8).text();
         let user_Name = $(this).children().eq(9).text();
         let password = $(this).children().eq(10).text();
-        console.log(user_Id, fName,lName, address, contact_No,email, nic,license_No, role_Type, user_Name,password);
+
+
+        console.log(user_Id, firstName, lastName, address, contact_No, email, nic, license_No, role_Type, user_Name, password);
 
         $("#user_Id").val(user_Id);
-        $("#firstName").val(fName);
-        $("#lastName").val(lName);
+        $("#firstName").val(firstName);
+        $("#lastName").val(lastName);
         $("#contact_No").val(address);
         $("#address").val(contact_No);
         $("#email").val(email);
-        $("#National").val(nic);
+        $("#nic").val(nic);
         $("#license_No").val(license_No);
         $("#role_Type").val(role_Type);
         $("#user_Name").val(user_Name);
@@ -152,7 +156,60 @@ function blindClickEvents() {
     $("#btnSaveCustomer").attr('disabled', true);
 }
 
+/**
+ * Update Action
+ * */
+$("#btnUpdateCustomer").click(function () {
+    let user_Id = $("#user_Id").val();
+    let firstName = $("#firstName").val();
+    let lastName = $("#lastName").val();
+    let address = $("#address").val();
+    let contact_No = $("#contact_No").val();
+    let email = $("#email").val();
+    let nic = $("#nic").val();
+    let license_No = $("#license_No").val();
+    let nic_Img = $("#nic_Img").val();
+    let license_Img = $("#license_Img").val();
+    let role_Type = $("#role_Type").val();
+    let user_Name = $("#user_Name").val();
+    let password = $("#password").val();
 
+    const customerOb = {
+        user_Id: user_Id,
+        name: {
+            firstName:firstName,
+            lastName:lastName
+        },
+        address: address,
+        contact_No: contact_No,
+        email: email,
+        nic: nic,
+        license_No: license_No,
+        nic_Img: nic_Img,
+        license_Img: license_Img,
+        user:{
+            role_Type:role_Type,
+            user_Name:user_Name,
+            password:password
+        }
+    };
+
+    $.ajax({
+        url: baseUrl + "reg_User",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(customerOb),
+        success: function (res) {
+            saveUpdateAlert("Customer", res.message);
+            loadAllRegUsers();
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            unSuccessUpdateAlert("Customer", message);
+        }
+    });
+
+});
 
 
 /**

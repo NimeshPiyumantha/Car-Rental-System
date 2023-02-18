@@ -76,10 +76,42 @@ public class Reg_UserServiceImpl implements Reg_UserService {
 
     @Override
     public void updateUser(Reg_UserDTO dto) {
+
+        Reg_User regUser = new Reg_User(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicense_No(), "", "", new User(dto.getUserDTO().getUser_Id(), dto.getUserDTO().getRole_Type(), dto.getUserDTO().getUser_Name(), dto.getUserDTO().getPassword()));
         if (!repo.existsById(dto.getUser_Id())) {
             throw new RuntimeException("User Not Exist. Please enter Valid id..!");
         }
-        repo.save(mapper.map(dto, Reg_User.class));
+
+        try {
+            byte[] bytes1 = dto.getLicense_Img().getBytes();
+            byte[] bytes2 = dto.getNic_Img().getBytes();
+
+            /*String projectPath = "D:\\IJSE\\IJSE_Project\\Car-Rental-System\\Front_End\\assets\\img";*/
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            Path location2 = Paths.get(uploadsDir + "/nic" + regUser.getNic()+".png");
+            Path location1 = Paths.get(uploadsDir + "/license" + regUser.getLicense_No()+".png");
+
+            Files.write(location1, bytes1);
+            Files.write(location2, bytes2);
+
+            dto.getLicense_Img().transferTo(location1);
+            dto.getNic_Img().transferTo(location2);
+
+            regUser.setLicense_Img(location1.toString());
+            regUser.setNic_Img(location2.toString());
+
+            System.out.println(regUser);
+            repo.save(regUser);
+
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @Override
