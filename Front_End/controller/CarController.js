@@ -2,11 +2,16 @@
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
  **/
-/*Save Driver*/
+
 let baseUrl = "http://localhost:8080/Back_End_war/";
 
-// $("#btnSaveDriver").attr('disabled', true);
+// $("#btnSaveCar").attr('disabled', true);
+// $("#btnUpdateCar").attr('disabled', true);
+// $("#btnDeleteCar").attr('disabled', true);
 
+/**
+ * Car Save
+ * */
 $("#btnSaveCar").click(function () {
     let formData = new FormData($("#carForm")[0]);
     console.log(formData);
