@@ -107,6 +107,6 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public CustomDTO carIdGenerate() {
-        return new CustomDTO(repo.getLastIndex()
+        return new CustomDTO(repo.getLastIndex());
     }
 }
