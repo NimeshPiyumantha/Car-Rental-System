@@ -55,7 +55,7 @@
             <div class="row mt-3">
                 <div class="col-12">
                     <form class="row" action="car" id="carForm" method="post">
-                        <section id="sec1Driver" class="col-4">
+                        <section id="sec1Driver" class="col-md-4">
                             <div class="mb-sm-0">
                                 <label class="form-label" for="car_Id">Car Id</label>
                                 <input class="form-control" id="car_Id" type="text" readonly name="car_Id">
@@ -91,7 +91,7 @@
                             </div>
                         </section>
 
-                        <section id="sec2Driver" class="col-4">
+                        <section id="sec2Driver" class="col-md-4">
                             <div class="mb-sm-0">
                                 <label class="form-label" for="side_View">Side View</label>
                                 <input class="form-control" id="side_View" type="file" name="side_View">
@@ -130,7 +130,7 @@
                             <span class="control-error"></span>
                         </section>
 
-                        <section id="sec3" class="col">
+                        <section id="sec3" class="col-md-4">
                             <div class="mb-sm-0">
                                 <label class="form-label" for="monthly_Rate">Monthly Rate</label>
                                 <input class="form-control" id="monthly_Rate" type="text" name="monthly_Rate">
@@ -167,11 +167,12 @@
                                 <span class="control-error"></span>
                             </div>
 
-                            <div class="row-cols-4 m-2 p-2">
-                                <button class="btn btn-success mt-2 m-2" id="btnSaveCar" type="button"
+<!--                            <div class="row-cols-4 m-2 p-2">-->
+                            <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
                                         formaction="driverForm">Save
                                 </button>
-                                <button type="button" class="btn btn-warning" id="btnUpdateCar">Update</button>
+                                <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update</button>
                                 <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
                             </div>
                         </section>
