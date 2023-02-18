@@ -30,6 +30,6 @@ public class Rent {
     private String location;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "regID",referencedColumnName = "user_Id",nullable = false)
+    @JoinColumn(name = "userId",referencedColumnName = "user_Id",nullable = false)
     private Reg_User user;
 }
