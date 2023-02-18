@@ -2,7 +2,7 @@
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
  **/
-/*Save Users*/
+
 let baseUrl = "http://localhost:8080/Back_End_war/";
 loadAllRegUsers();
 $("#btnSaveCustomer").attr('disabled', true);
@@ -12,7 +12,6 @@ $("#btnDeleteCustomer").attr('disabled', true);
 /**
  * Customer Save
  * */
-
 $("#btnSaveCustomer").click(function () {
     let formData = new FormData($("#customerForm")[0]);
     // let formData = $("#customerForm").serialize();
@@ -34,7 +33,9 @@ $("#btnSaveCustomer").click(function () {
 });
 
 
-/* User Id Gentrator */
+/**
+ * User Id Generator
+ * */
 function generateCustomerID() {
     $("#user_Id").val("C00-001");
     $.ajax({
@@ -56,7 +57,6 @@ function generateCustomerID() {
             }
         },
         error: function (ob, statusText, error) {
-
         }
     });
 }
@@ -117,7 +117,6 @@ function loadAllRegUsers() {
             let message = JSON.parse(error.responseText).message;
             console.log(message);
         }
-
     });
 }
 

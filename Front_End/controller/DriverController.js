@@ -4,9 +4,13 @@
  **/
 /*Save Driver*/
 let baseUrl = "http://localhost:8080/Back_End_war/";
+loadAllDrivers();
 
 // $("#btnSaveDriver").attr('disabled', true);
 
+/**
+ * Customer Save
+ * */
 $("#btnSaveDriver").click(function () {
     let formData = new FormData($("#driverForm")[0]);
     console.log(formData);
@@ -26,8 +30,10 @@ $("#btnSaveDriver").click(function () {
         }
     });
 });
-generateDriverID();
 
+/**
+ * User Driver Generator
+ * */
 function generateDriverID() {
     $("#user_Id").val("DRI-001");
     $.ajax({
@@ -49,7 +55,27 @@ function generateDriverID() {
             }
         },
         error: function (ob, statusText, error) {
-
         }
     });
+}
+
+/**
+ * clear input fields Values Method
+ * */
+function setTextFieldValues(firstName, lastName, contact_No, address, email, nic_No, license_No, license_Img, driverAvailability, user_Name, password) {
+    $("#firstName").val(firstName);
+    $("#lastName").val(lastName);
+    $("#contact_No").val(contact_No);
+    $("#address").val(address);
+    $("#email").val(email);
+    $("#nic_No").val(nic_No);
+    $("#license_No").val(license_No);
+    $("#license_Img").val(license_Img);
+    $("#driverAvailability").val(driverAvailability);
+    $("#user_Name").val(user_Name);
+    $("#password").val(password);
+
+    $("#firstName").focus();
+    checkValidity(driverValidations);
+    $("#btnSaveDriver").attr('disabled', true);
 }
