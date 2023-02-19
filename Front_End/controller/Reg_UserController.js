@@ -121,6 +121,47 @@ function loadAllRegUsers() {
 }
 
 /**
+ * Search id and Load Table
+ * */
+$("#search_Id").on("keypress", function (event) {
+    if (event.which === 13) {
+        var search = $("#search_Id").val();
+        $("#customerTable").empty();
+        $.ajax({
+            url: baseUrl + "reg_User/searchCustomer/?cus_Id="+ search,
+            method: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+                $("#user_Id").val(res.user_Id);
+                $("#firstName").val(res.name.firstName);
+                $("#lastName").val(res.name.lastName);
+                $("#contact_No").val(res.contact_No);
+                $("#address").val(res.address);
+                $("#email").val(res.email);
+                $("#nic").val(res.nic);
+                $("#license_No").val(res.license_No);
+                $("#nic_Img").prop(res.nic_Img);
+                $("#license_Img").prop(res.license_Img);
+                $("#driverAvailability").val(res.driverAvailability);
+                $("#role_Type").val(res.user.role_Type);
+                $("#user_Name").val(res.user.user_Name);
+                $("#password").val(res.user.password);
+                let row = "<tr><td>" + res.user_Id + "</td><td>" + res.name.firstName + "</td><td>" + res.name.lastName + "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic + "</td><td>" + res.license_No + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
+                $("#customerTable").append(row);
+            },
+            error: function (error) {
+                loadAllRegUsers();
+                let message = JSON.parse(error.responseText).message;
+                emptyMassage(message);
+            }
+        })
+    }
+
+});
+
+/**
  * Table Listener Click and Load textFields
  * */
 function blindClickEvents() {
