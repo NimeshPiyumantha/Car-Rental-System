@@ -29,11 +29,11 @@
     <div class="container">
 
         <!-- Outer Row -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5">
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5 sectionBorder">
+                <div class="card o-hidden border-0 shadow-lg my-6 sectionBorder">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -43,15 +43,16 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user m-2 p-3">
                                         <div class="form-group">
-                                            <select class="form-control " id="role_Type" name="role_Type" style="border-radius: 30px">
+                                            <select class="form-control" id="role_Type" name="role_Type" style="border-radius: 30px;height: 3.5em">
+                                                <option value="RoleType">Choose Role</option>
                                                 <option value="ADMIN">ADMIN</option>
                                                 <option value="REGISTERED_USER">REGISTERED_USER</option>
                                                 <option value="DRIVER">DRIVER</option>
                                             </select>
                                         </div>
-                                            <div class="form-group">
+                                            <div class="form-group mt-4">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter User Name...">
@@ -70,13 +71,7 @@
                                         <a href="../index.html" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
-                                        <hr>
-                                        <a href="../index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="../index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
+
                                     </form>
                                     <hr>
                                     <div class="text-center">
