@@ -69,7 +69,7 @@ public class Reg_UserController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @GetMapping(path = "/userCount")
+    @GetMapping(path = "/customerCount")
     public @ResponseBody CustomDTO getSumCustomer() {
         return service.getSumUser();
     }

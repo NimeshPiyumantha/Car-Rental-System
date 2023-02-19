@@ -5,6 +5,9 @@
 
 let baseUrl = "http://localhost:8080/Back_End_war/";
 
+/**
+ * Car Count
+ * */
 $("#carCount").val("00");
 $.ajax({
     url: baseUrl + "car/carCount",
@@ -21,6 +24,9 @@ $.ajax({
     }
 });
 
+/**
+ * Driver Count
+ * */
 $("#driverCount").val("00");
 $.ajax({
     url: baseUrl + "driver/driverCount",
@@ -30,6 +36,25 @@ $.ajax({
     success: function (resp) {
         let num = resp.count;
         $("#driverCount").text(num);
+
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});
+
+/**
+ * User Count
+ * */
+$("#customerCount").val("00");
+$.ajax({
+    url: baseUrl + "reg_User/customerCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
+        $("#customerCount").text(num);
 
     },
     error: function (ob, statusText, error) {
