@@ -2,6 +2,7 @@ package com.easy.car_rental.service.impl;
 
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.DriverDTO;
+import com.easy.car_rental.entity.Car;
 import com.easy.car_rental.entity.Driver;
 import com.easy.car_rental.entity.User;
 import com.easy.car_rental.repo.DriverRepo;
@@ -111,5 +112,14 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public CustomDTO userIdGenerate() {
         return new CustomDTO(repo.getLastIndex());
+    }
+
+    @Override
+    public Driver searchDriverId(String id) {
+        if (!repo.existsById(id)) {
+            throw new RuntimeException("Wrong ID. Please enter Valid id..!");
+        }
+        System.out.println(id);
+        return mapper.map(repo.findById(id).get(), Driver.class);
     }
 }
