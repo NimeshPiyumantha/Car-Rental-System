@@ -1714,3 +1714,16 @@ section {
 .footer .credits a {
     color: #fff;
 }
+
+form .form-label,.input-group-text{
+    font-size: 0.9em;
+    font-weight: bolder;
+    color: #2c3e50;
+}
+
+form .form-control {
+    font-size: 0.9em;
+    font-weight: bolder;
+    color: #2f3640;
+    border-radius: 10px!important;
+}
