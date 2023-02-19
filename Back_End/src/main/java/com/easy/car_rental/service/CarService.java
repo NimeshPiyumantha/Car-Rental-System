@@ -18,6 +18,5 @@ public interface CarService {
     ArrayList<CarDTO> getAllCar();
     CustomDTO carIdGenerate();
     Car searchCarId(String id);
-    @ResponseBody
     CustomDTO getSumCar();
 }
