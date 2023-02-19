@@ -38,7 +38,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void saveCar(CarDTO dto) {
-        Car car = new Car(dto.getCar_Id(),dto.getName(),dto.getBrand(), CarType.valueOf(dto.getType()),new Image(),dto.getNumber_Of_Passengers(), TransmissionType.valueOf(dto.getTransmission_Type()), FuelType.valueOf(dto.getFuel_Type()),dto.getRent_Duration_Price(),dto.getPrice_Extra_KM(),dto.getRegistration_Number(),dto.getFree_Mileage(),dto.getColor(),dto.getVehicleAvailabilityType());
+        Car car = new Car(dto.getCar_Id(), dto.getName(), dto.getBrand(), CarType.valueOf(dto.getType()), new Image(), dto.getNumber_Of_Passengers(), TransmissionType.valueOf(dto.getTransmission_Type()), FuelType.valueOf(dto.getFuel_Type()), dto.getRent_Duration_Price(), dto.getPrice_Extra_KM(), dto.getRegistration_Number(), dto.getFree_Mileage(), dto.getColor(), dto.getVehicleAvailabilityType());
         if (repo.existsById(dto.getCar_Id())) {
             throw new RuntimeException("Car Already Exist. Please enter another id..!");
         }
@@ -109,4 +109,14 @@ public class CarServiceImpl implements CarService {
     public CustomDTO carIdGenerate() {
         return new CustomDTO(repo.getLastIndex());
     }
+
+    @Override
+    public Car searchCarId(String id) {
+        if (!repo.existsById(id)) {
+            throw new RuntimeException("Wrong ID. Please enter Valid id..!");
+        }
+        System.out.println(id);
+        return mapper.map(repo.findById(id).get(), Car.class);
+    }
+
 }

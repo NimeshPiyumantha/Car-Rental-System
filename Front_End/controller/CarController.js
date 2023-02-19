@@ -136,12 +136,12 @@ function loadAllCars() {
 /**
  * Search id and Load Table
  * */
-$("#searchCusId").on("keypress", function (event) {
+$("#search_Id").on("keypress", function (event) {
     if (event.which === 13) {
         var search = $("#search_Id").val();
         $("#carTable").empty();
         $.ajax({
-            url: baseUrl + "car/searchCar/?id=" + search,
+            url: baseUrl + "car/searchCar/?car_Id=" + search,
             method: "GET",
             contentType: "application/json",
             dataType: "json",
@@ -151,21 +151,21 @@ $("#searchCusId").on("keypress", function (event) {
                 $("#name").val(res.name);
                 $("#brand").val(res.brand);
                 $("#type").val(res.type);
-                $("#front_View").val(res.front_View);
-                $("#back_View").val(res.back_View);
-                $("#side_View").val(res.side_View);
-                $("#interior").val(res.interior);
+                $("#front_View").prop(res.image.front_View);
+                $("#back_View").prop(res.image.back_View);
+                $("#side_View").prop(res.image.side_View);
+                $("#interior").prop(res.image.interior);
                 $("#number_Of_Passengers").val(res.number_Of_Passengers);
                 $("#transmission_Type").val(res.transmission_Type);
                 $("#fuel_Type").val(res.fuel_Type);
-                $("#daily_Rate").val(res.daily_Rate);
-                $("#monthly_Rate").val(res.monthly_Rate);
+                $("#daily_Rate").val(res.rent_Duration_Price.daily_Rate);
+                $("#monthly_Rate").val(res.rent_Duration_Price.monthly_Rate);
                 $("#price_Extra_KM").val(res.price_Extra_KM);
                 $("#registration_Number").val(res.registration_Number);
                 $("#free_Mileage").val(res.free_Mileage);
                 $("#color").val(res.color);
                 $("#vehicleAvailabilityType").val(res.vehicleAvailabilityType);
-                let row = "<tr><td>" + res.car_Id + "</td><td>" + res.name + "</td><td>" + res.brand + "</td><td>" + res.type + "</td><td>" + res.number_Of_Passengers + "</td><td>" + res.transmission_Type + "</td><td>" + res.fuel_Type + "</td><td>" + res.daily_Rate + "</td><td>" + res.monthly_Rate + "</td><td>" + res.price_Extra_KM + "</td><td>" + res.registration_Number + "</td><td>" + res.free_Mileage + "</td><td>" + res.color + "</td><td>" + res.vehicleAvailabilityType + "</td></tr>";
+                let row = "<tr><td>" + res.car_Id + "</td><td>" + res.name + "</td><td>" + res.brand + "</td><td>" + res.type + "</td><td>" + res.number_Of_Passengers + "</td><td>" + res.transmission_Type + "</td><td>" + res.fuel_Type + "</td><td>" + res.rent_Duration_Price.daily_Rate + "</td><td>" + res.rent_Duration_Price.monthly_Rate + "</td><td>" + res.price_Extra_KM + "</td><td>" + res.registration_Number + "</td><td>" + res.free_Mileage + "</td><td>" + res.color + "</td><td>" + res.vehicleAvailabilityType + "</td></tr>";
                 $("#carTable").append(row);
                 blindClickEvents();
             },
