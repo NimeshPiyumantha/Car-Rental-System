@@ -67,4 +67,11 @@ public class Reg_UserController {
     public Reg_User searchDriverId(String cus_Id) {
         return service.searchUserId(cus_Id);
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/userCount")
+    public @ResponseBody CustomDTO getSumCustomer() {
+        return service.getSumUser();
+    }
+
 }

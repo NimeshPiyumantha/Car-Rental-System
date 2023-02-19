@@ -143,4 +143,11 @@ public class Reg_UserServiceImpl implements Reg_UserService {
         return mapper.map(repo.findById(id).get(), Reg_User.class);
     }
 
+    @Override
+    public CustomDTO getSumUser() {
+        CustomDTO customDTO = new CustomDTO(repo.getSumUsers());
+        System.out.println(customDTO);
+        return customDTO;
+    }
+
 }
