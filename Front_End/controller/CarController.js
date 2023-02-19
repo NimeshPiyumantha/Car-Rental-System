@@ -134,6 +134,53 @@ function loadAllCars() {
 }
 
 /**
+ * Search id and Load Table
+ * */
+$("#searchCusId").on("keypress", function (event) {
+    if (event.which === 13) {
+        var search = $("#search_Id").val();
+        $("#carTable").empty();
+        $.ajax({
+            url: baseUrl + "car/searchCar/?id=" + search,
+            method: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+                $("#car_Id").val(res.car_Id);
+                $("#name").val(res.name);
+                $("#brand").val(res.brand);
+                $("#type").val(res.type);
+                $("#front_View").val(res.front_View);
+                $("#back_View").val(res.back_View);
+                $("#side_View").val(res.side_View);
+                $("#interior").val(res.interior);
+                $("#number_Of_Passengers").val(res.number_Of_Passengers);
+                $("#transmission_Type").val(res.transmission_Type);
+                $("#fuel_Type").val(res.fuel_Type);
+                $("#daily_Rate").val(res.daily_Rate);
+                $("#monthly_Rate").val(res.monthly_Rate);
+                $("#price_Extra_KM").val(res.price_Extra_KM);
+                $("#registration_Number").val(res.registration_Number);
+                $("#free_Mileage").val(res.free_Mileage);
+                $("#color").val(res.color);
+                $("#vehicleAvailabilityType").val(res.vehicleAvailabilityType);
+                let row = "<tr><td>" + res.car_Id + "</td><td>" + res.name + "</td><td>" + res.brand + "</td><td>" + res.type + "</td><td>" + res.number_Of_Passengers + "</td><td>" + res.transmission_Type + "</td><td>" + res.fuel_Type + "</td><td>" + res.daily_Rate + "</td><td>" + res.monthly_Rate + "</td><td>" + res.price_Extra_KM + "</td><td>" + res.registration_Number + "</td><td>" + res.free_Mileage + "</td><td>" + res.color + "</td><td>" + res.vehicleAvailabilityType + "</td></tr>";
+                $("#carTable").append(row);
+                blindClickEvents();
+            },
+            error: function (error) {
+                loadAllCars();
+                let message = JSON.parse(error.responseText).message;
+                emptyMassage(message);
+            }
+        })
+    }
+
+});
+
+
+/**
  * Table Listener Click and Load textFields
  * */
 function blindClickEventsC() {
@@ -179,6 +226,10 @@ $("#btnUpdateCar").click(function () {
     let name = $("#name").val();
     let brand = $("#brand").val();
     let type = $("#type").val();
+    let front_View = $("#front_View").val();
+    let back_View = $("#back_View").val();
+    let side_View = $("#side_View").val();
+    let interior = $("#interior").val();
     let number_Of_Passengers = $("#number_Of_Passengers").val();
     let transmission_Type = $("#transmission_Type").val();
     let fuel_Type = $("#fuel_Type").val();
@@ -202,8 +253,7 @@ $("#btnUpdateCar").click(function () {
         transmission_Type: transmission_Type,
         fuel_Type: fuel_Type,
         rent_Duration_Price: {
-            daily_Rate : daily_Rate,
-            monthly_Rate: monthly_Rate,
+            daily_Rate: daily_Rate, monthly_Rate: monthly_Rate,
         },
         price_Extra_KM: price_Extra_KM,
         registration_Number: registration_Number,
@@ -290,7 +340,9 @@ carValidations.push({
     reg: regExKM, field: $('#price_Extra_KM'), error: 'Car Price Extra KM Pattern is Wrong'
 });
 carValidations.push({
-    reg: regExRegNumber, field: $('#registration_Number'), error: 'Car Register Number Pattern is Wrong (CDF-001/123-DFG)'
+    reg: regExRegNumber,
+    field: $('#registration_Number'),
+    error: 'Car Register Number Pattern is Wrong (CDF-001/123-DFG)'
 });
 carValidations.push({
     reg: regExMileage, field: $('#free_Mileage'), error: 'Car Free Mileage Pattern is Wrong'
