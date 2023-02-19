@@ -388,10 +388,10 @@ h6 {
     font-weight: bolder;
     color: #000000;
     font-family: "Inter", sans-serif;
-    margin-left:10px ;
+    margin-left: 10px;
 }
 
-.logo span span{
+.logo span span {
     color: #ce1212;
 }
 
@@ -413,13 +413,13 @@ h6 {
     color: #012970;
 }
 
-.header .search-bar {
+.search-bar {
     min-width: 360px;
     padding: 0 20px;
 }
 
 @media (max-width: 1199px) {
-    .header .search-bar {
+    .search-bar {
         position: fixed;
         top: 50px;
         left: 0;
@@ -433,45 +433,86 @@ h6 {
         opacity: 0;
     }
 
-    .header .search-bar-show {
+    .search-bar-show {
         top: 60px;
         visibility: visible;
         opacity: 1;
     }
 }
 
-.header .search-form {
+.search-form {
     width: 100%;
 }
 
-.header .search-form input {
-    font-size: 14px;
+.search-form input {
+    font-size: 1em;
     color: #012970;
     border: 1px solid rgba(1, 41, 112, 0.2);
     padding: 7px 38px 7px 8px;
-    border-radius: 3px;
+    border-radius: 10px;
     transition: 0.3s;
-    width: 100%;
+    width: 25%;
+    font-weight: bolder;
 }
 
-.header .search-form input:focus,
-.header .search-form input:hover {
+.search-form input:focus,
+.search-form input:hover {
     outline: none;
     box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.15);
     border: 1px solid rgba(1, 41, 112, 0.3);
 }
 
-.header .search-form button {
+.search-form button {
     border: 0;
     padding: 0;
     margin-left: -30px;
     background: none;
 }
 
-.header .search-form button i {
+.search-form button i {
     color: #012970;
 }
 
+/*--------------------------------------------------------------
+# Form
+--------------------------------------------------------------*/
+
+form .form-label, .input-group-text {
+    font-size: 1em;
+    margin-bottom: 2px;
+    font-weight: bolder;
+    color: #012970;
+}
+
+form .form-control {
+    font-size: 1em;
+    margin-bottom: 2px;
+    font-weight: 600;
+    color: #2f3640;
+    border-radius: 10px;
+}
+
+form .btn {
+    font-size: 1em;
+    padding: 10px 25px;
+    border: none;
+    font-weight: 600;
+    color: #2f3640;
+    border-radius: 10px;
+}
+
+.btn-warning {
+    background: #e1b12c !important;
+    color: white !important;
+}
+
+.btn-danger {
+    background: #ce1212 !important;
+}
+
+.btn-success {
+    background: #20bf6b !important;
+}
 /*--------------------------------------------------------------
 # Header Nav
 --------------------------------------------------------------*/
@@ -479,7 +520,7 @@ h6 {
     list-style: none;
 }
 
-.header-nav>ul {
+.header-nav > ul {
     margin: 0;
     padding: 0;
 }
@@ -919,46 +960,4 @@ h6 {
     text-align: center;
     font-size: 13px;
     color: #2f3640;
-}
-
-
-/*--------------------------------------------------------------
-# Form
---------------------------------------------------------------*/
-
-form .form-label,.input-group-text{
-    font-size: 1em;
-    margin-bottom: 2px;
-    font-weight: bolder;
-    color: #012970;
-}
-
-form .form-control {
-    font-size: 1em;
-    margin-bottom: 2px;
-    font-weight: 600;
-    color: #2f3640;
-    border-radius: 10px;
-}
-
-form .btn {
-    font-size: 1em;
-    padding: 10px 25px;
-    border: none;
-    font-weight: 600;
-    color: #2f3640;
-    border-radius: 10px;
-}
-
-.btn-warning{
-    background: #e1b12c!important;
-    color: white!important;
-}
-
-.btn-danger{
-    background: #ce1212!important;
-}
-
-.btn-success{
-    background: #20bf6b!important;
 }

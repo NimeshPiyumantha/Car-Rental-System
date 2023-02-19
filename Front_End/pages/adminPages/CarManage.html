@@ -352,7 +352,6 @@
     <!-- ======= Car Manage ======= -->
     <div class="pagetitle" id="pageFour">
         <h1>Manage</h1>
-
         <section class="container-fluid mt-3" id="manageCar">
             <nav>
                 <ol class="breadcrumb">
@@ -363,7 +362,14 @@
 
             <div class="row mt-3">
                 <div class="card info-card">
-                    <div class="col-12 m-2 p-3">
+                    <div class="search-bar mt-4">
+                        <form class="search-form d-flex align-items-center" method="POST" action="#">
+                            <input type="text" name="car_Id" id="search_Id" placeholder="Search" title="Enter search keyword">
+                            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                        </form>
+                    </div>
+                    <!-- End Search Bar -->
+                    <div class="col-12 m-3 p-1">
                         <form class="row" action="car" id="carForm" method="post">
                             <section id="sec1Car" class="col-md-4 mt-3">
                                 <div class="mb-sm-0">
