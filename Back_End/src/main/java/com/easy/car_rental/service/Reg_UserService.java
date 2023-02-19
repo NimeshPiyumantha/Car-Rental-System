@@ -2,6 +2,8 @@ package com.easy.car_rental.service;
 
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
+import com.easy.car_rental.entity.Driver;
+import com.easy.car_rental.entity.Reg_User;
 
 import java.util.ArrayList;
 
@@ -19,4 +21,6 @@ public interface Reg_UserService {
     ArrayList<Reg_UserDTO> getAllUser();
 
     CustomDTO userIdGenerate();
+
+    Reg_User searchUserId(String id);
 }

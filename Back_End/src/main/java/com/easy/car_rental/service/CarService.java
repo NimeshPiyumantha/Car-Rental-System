@@ -16,6 +16,5 @@ public interface CarService {
     void deleteCar(String car_Id);
     ArrayList<CarDTO> getAllCar();
     CustomDTO carIdGenerate();
-
     Car searchCarId(String id);
 }

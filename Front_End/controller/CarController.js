@@ -165,9 +165,9 @@ $("#search_Id").on("keypress", function (event) {
                 $("#free_Mileage").val(res.free_Mileage);
                 $("#color").val(res.color);
                 $("#vehicleAvailabilityType").val(res.vehicleAvailabilityType);
+
                 let row = "<tr><td>" + res.car_Id + "</td><td>" + res.name + "</td><td>" + res.brand + "</td><td>" + res.type + "</td><td>" + res.number_Of_Passengers + "</td><td>" + res.transmission_Type + "</td><td>" + res.fuel_Type + "</td><td>" + res.rent_Duration_Price.daily_Rate + "</td><td>" + res.rent_Duration_Price.monthly_Rate + "</td><td>" + res.price_Extra_KM + "</td><td>" + res.registration_Number + "</td><td>" + res.free_Mileage + "</td><td>" + res.color + "</td><td>" + res.vehicleAvailabilityType + "</td></tr>";
                 $("#carTable").append(row);
-                blindClickEvents();
             },
             error: function (error) {
                 loadAllCars();
