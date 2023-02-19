@@ -4,6 +4,9 @@ import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
 import com.easy.car_rental.dto.UserDTO;
 import com.easy.car_rental.embeded.Name;
+import com.easy.car_rental.entity.Driver;
+import com.easy.car_rental.entity.Reg_User;
+import com.easy.car_rental.entity.User;
 import com.easy.car_rental.service.Reg_UserService;
 import com.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,4 +62,9 @@ public class Reg_UserController {
         return service.userIdGenerate();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/searchCustomer", params = {"cus_Id"})
+    public Reg_User searchDriverId(String cus_Id) {
+        return service.searchUserId(cus_Id);
+    }
 }

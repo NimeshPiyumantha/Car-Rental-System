@@ -4,6 +4,8 @@ import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.DriverDTO;
 import com.easy.car_rental.dto.UserDTO;
 import com.easy.car_rental.embeded.Name;
+import com.easy.car_rental.entity.Car;
+import com.easy.car_rental.entity.Driver;
 import com.easy.car_rental.service.DriverService;
 import com.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +57,11 @@ public class DriverController {
     @GetMapping(path = "/driverIdGenerate")
     public @ResponseBody CustomDTO customerIdGenerate() {
         return service.userIdGenerate();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/searchDriver", params = {"driver_Id"})
+    public Driver searchDriverId(String driver_Id) {
+        return service.searchDriverId(driver_Id);
     }
 }
