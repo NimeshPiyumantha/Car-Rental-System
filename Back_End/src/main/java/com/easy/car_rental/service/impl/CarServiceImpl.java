@@ -119,4 +119,11 @@ public class CarServiceImpl implements CarService {
         return mapper.map(repo.findById(id).get(), Car.class);
     }
 
+    @Override
+    public CustomDTO getSumCar() {
+        CustomDTO customDTO = new CustomDTO(repo.getSumCar());
+        System.out.println(customDTO);
+        return customDTO;
+    }
+
 }

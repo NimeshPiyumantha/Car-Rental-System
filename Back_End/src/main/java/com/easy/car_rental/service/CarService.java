@@ -3,6 +3,7 @@ package com.easy.car_rental.service;
 import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.entity.Car;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 
@@ -17,4 +18,6 @@ public interface CarService {
     ArrayList<CarDTO> getAllCar();
     CustomDTO carIdGenerate();
     Car searchCarId(String id);
+    @ResponseBody
+    CustomDTO getSumCar();
 }
