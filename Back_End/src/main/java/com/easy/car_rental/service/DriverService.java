@@ -19,4 +19,5 @@ public interface DriverService {
     ArrayList<DriverDTO> getAllDriver();
     CustomDTO userIdGenerate();
     Driver searchDriverId(String id);
+    CustomDTO getSumDriver();
 }

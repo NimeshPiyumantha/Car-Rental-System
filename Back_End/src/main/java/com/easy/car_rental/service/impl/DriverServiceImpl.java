@@ -122,4 +122,11 @@ public class DriverServiceImpl implements DriverService {
         System.out.println(id);
         return mapper.map(repo.findById(id).get(), Driver.class);
     }
+
+    @Override
+    public CustomDTO getSumDriver() {
+        CustomDTO customDTO = new CustomDTO(repo.getSumDriver());
+        System.out.println(customDTO);
+        return customDTO;
+    }
 }

@@ -64,4 +64,10 @@ public class DriverController {
     public Driver searchDriverId(String driver_Id) {
         return service.searchDriverId(driver_Id);
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/driverCount")
+    public @ResponseBody CustomDTO getSumCustomer() {
+        return service.getSumDriver();
+    }
 }
