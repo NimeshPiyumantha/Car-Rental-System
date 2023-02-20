@@ -25,6 +25,7 @@ public class Rent {
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private LocalDate returnDate;
+    private LocalTime returnTime;
     @Enumerated(EnumType.STRING)
     private RequestType requestType;
     private String location;

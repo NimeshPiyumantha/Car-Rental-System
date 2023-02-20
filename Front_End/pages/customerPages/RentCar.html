@@ -348,6 +348,69 @@
                         </di>
                     </div>
                 </div>
+                <div class="card info-card">
+                    <div class="row col-lg-12 justify-content-center">
+                        <div class="row col-lg-5">
+                            <div class="bg-info"></div>
+                        </div>
+                        <div class="row col-lg-7 p-1 m-2">
+                            <div class="row mt-1 m-2 p-1">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="car_Id">Car ID :</label>
+                                    <select aria-label="Default select example" class="form-select border-dark"
+                                            id="car_Id"></select>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="name">Brand :</label>
+                                    <input class="form-control " id="name" readonly type="text">
+                                </div>
+                            </div>
+                            <div class="row mt-1 m-2 p-1">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="brand">Model :</label>
+                                    <input class="form-control " id="brand" readonly type="text">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="number_Of_Passengers">No of Passengers :</label>
+                                    <input class="form-control " id="number_Of_Passengers" readonly type="text">
+                                </div>
+                            </div>
+                            <div class="row mt-1 m-2 p-1">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="pickUpDate">PickUp Date :</label>
+                                    <input class="form-control " id="pickUpDate" type="date">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="pickUpTime">PickUp Time :</label>
+                                    <input class="form-control " id="pickUpTime" type="time">
+                                </div>
+                            </div>
+                            <div class="row mt-1 m-2 p-1">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="returnDate">Return Date :</label>
+                                    <input class="form-control " id="returnDate" type="date">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="returnTime">Return Time :</label>
+                                    <input class="form-control " id="returnTime" type="date">
+                                </div>
+                            </div>
+                            <div class="row mt-1 m-2 p-1">
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="requestType">Driver or not :</label>
+                                    <select class="form-control " id="requestType">
+                                        <option value="YES">YES</option>
+                                        <option value="NO">NO</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6">
+                                    <label class="fw-bold" for="location">Location :</label>
+                                    <input class="form-control " id="location" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -360,8 +423,13 @@
                     <table class="table table-light table-striped table-bordered table-hover">
                         <thead class="text-dark table-danger text-center  table-bordered sticky-top">
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">Car Id</th>
+                            <th scope="col">PickUp Date</th>
+                            <th scope="col">PickUp Time</th>
+                            <th scope="col">Return Date</th>
+                            <th scope="col">Return Time</th>
+                            <th scope="col">Request Type</th>
+                            <th scope="col">Location</th>
                         </tr>
                         </thead>
                         <tbody id="customerTable"></tbody>
