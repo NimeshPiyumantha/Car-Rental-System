@@ -40,7 +40,6 @@ public class Reg_UserController {
     public ResponseUtil updateUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO user, @ModelAttribute Name name) {
         regUserDTO.setName(name);
         regUserDTO.setUser(user);
-
         System.out.println(user);
         System.out.println(name);
         System.out.println(regUserDTO);

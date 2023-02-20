@@ -33,7 +33,7 @@ public class DriverController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PutMapping
+    @PostMapping(path = "/update")
     public ResponseUtil updateDriver(@ModelAttribute DriverDTO driverDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
         driverDTO.setUser(userDTO);
         driverDTO.setName(name);

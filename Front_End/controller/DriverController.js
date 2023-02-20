@@ -207,8 +207,8 @@ $("#btnUpdateDriver").click(function () {
     let formData = new FormData($("#driverForm")[0]);
     console.log(formData);
     $.ajax({
-        url: baseUrl + "driver",
-        method: "put",
+        url: baseUrl + "driver/update",
+        method: "post",
         data: formData,
         contentType: false,
         processData: false,
