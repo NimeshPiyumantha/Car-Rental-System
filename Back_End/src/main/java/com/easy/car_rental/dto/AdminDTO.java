@@ -22,6 +22,6 @@ public class AdminDTO {
     private String email;
     private String nic;
 
-    private AdminDTO adminDTO;
+    private UserDTO user;
 
 }

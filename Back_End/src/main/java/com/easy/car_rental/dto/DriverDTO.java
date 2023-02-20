@@ -27,6 +27,6 @@ public class DriverDTO {
     private MultipartFile license_Img;
     private AvailabilityType driverAvailability;
 
-    private UserDTO userDTO;
+    private UserDTO user;
 
 }

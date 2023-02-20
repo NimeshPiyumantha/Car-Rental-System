@@ -27,9 +27,9 @@ public class Reg_UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
+    public ResponseUtil saveUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO user, @ModelAttribute Name name) {
         regUserDTO.setName(name);
-        regUserDTO.setUserDTO(userDTO);
+        regUserDTO.setUser(user);
         System.out.println(regUserDTO);
         service.saveUser(regUserDTO);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
@@ -37,9 +37,11 @@ public class Reg_UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PutMapping
-    public ResponseUtil updateUser(@RequestBody Reg_UserDTO regUserDTO) {
+    public ResponseUtil updateUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO user, @ModelAttribute Name name) {
+        regUserDTO.setName(name);
+        regUserDTO.setUser(user);
         System.out.println(regUserDTO);
-//        service.updateUser(regUserDTO);
+        service.updateUser(regUserDTO);
         return new ResponseUtil("OK", "Successfully Updated. :" + regUserDTO.getUser_Id(), null);
     }
 

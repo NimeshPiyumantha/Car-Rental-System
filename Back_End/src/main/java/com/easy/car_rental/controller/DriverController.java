@@ -26,7 +26,7 @@ public class DriverController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ResponseUtil saveDriver(@ModelAttribute DriverDTO driverDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
-        driverDTO.setUserDTO(userDTO);
+        driverDTO.setUser(userDTO);
         driverDTO.setName(name);
         service.saveDriver(driverDTO);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
@@ -34,10 +34,11 @@ public class DriverController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PutMapping
-    public ResponseUtil updateDriver(@RequestBody DriverDTO dto) {
-        service.updateDriver(dto);
-        System.out.println(dto);
-        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getUser_Id(), null);
+    public ResponseUtil updateDriver(@ModelAttribute DriverDTO driverDTO, @ModelAttribute UserDTO userDTO, @ModelAttribute Name name) {
+        driverDTO.setUser(userDTO);
+        driverDTO.setName(name);
+        service.updateDriver(driverDTO);
+        return new ResponseUtil("OK", "Successfully Updated. :" + driverDTO.getUser_Id(), null);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

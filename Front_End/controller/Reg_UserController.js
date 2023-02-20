@@ -14,7 +14,6 @@ $("#btnDeleteCustomer").attr('disabled', true);
  * */
 $("#btnSaveCustomer").click(function () {
     let formData = new FormData($("#customerForm")[0]);
-    // let formData = $("#customerForm").serialize();
     console.log(formData);
     $.ajax({
         url: baseUrl + "reg_User",
@@ -200,52 +199,22 @@ function blindClickEvents() {
  * Update Action
  * */
 $("#btnUpdateCustomer").click(function () {
-    let user_Id = $("#user_Id").val();
-    let firstName = $("#firstName").val();
-    let lastName = $("#lastName").val();
-    let address = $("#address").val();
-    let contact_No = $("#contact_No").val();
-    let email = $("#email").val();
-    let nic = $("#nic").val();
-    let license_No = $("#license_No").val();
-    let nic_Img = $("#nic_Img").val();
-    let license_Img = $("#license_Img").val();
-    let role_Type = $("#role_Type").val();
-    let user_Name = $("#user_Name").val();
-    let password = $("#password").val();
-
-    const customerOb = {
-        user_Id: user_Id,
-        name: {
-            firstName: firstName, lastName: lastName
-        },
-        address: address,
-        contact_No: contact_No,
-        email: email,
-        nic: nic,
-        license_No: license_No,
-        nic_Img: nic_Img,
-        license_Img: license_Img,
-        user: {
-            role_Type: role_Type, user_Name: user_Name, password: password
-        }
-    };
-
+    let formData = new FormData($("#customerForm")[0]);
+    console.log(formData);
     $.ajax({
         url: baseUrl + "reg_User",
         method: "put",
-        contentType: "application/json",
-        data: JSON.stringify(customerOb),
+        data: formData,
+        contentType: false,
+        processData: false,
         success: function (res) {
             saveUpdateAlert("User", res.message);
             loadAllRegUsers();
         },
         error: function (error) {
-            let message = JSON.parse(error.responseText).message;
-            unSuccessUpdateAlert("User", message);
+            unSuccessUpdateAlert("User", JSON.parse(error.responseText).message);
         }
     });
-
 });
 
 /**
