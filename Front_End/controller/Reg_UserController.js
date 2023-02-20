@@ -202,8 +202,8 @@ $("#btnUpdateCustomer").click(function () {
     let formData = new FormData($("#customerForm")[0]);
     console.log(formData);
     $.ajax({
-        url: baseUrl + "reg_User",
-        method: "put",
+        url: baseUrl + "reg_User/update",
+        method: "post",
         data: formData,
         contentType: false,
         processData: false,
