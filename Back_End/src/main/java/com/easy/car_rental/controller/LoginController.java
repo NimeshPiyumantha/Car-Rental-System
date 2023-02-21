@@ -20,10 +20,8 @@ public class LoginController {
     @Autowired
     private UserService service;
 
-    @GetMapping(params = {"role_Type","userName","userPassword"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil logging(@RequestParam RoleType role_Type, @RequestParam String userName , @RequestParam  String userPassword){
-        System.out.println(role_Type+" "+userName+" "+userPassword);
-        UserDTO userDto = service.loginUser(role_Type,userName,userPassword);
-        return new ResponseUtil("OK", "Successfully Registered.!", userDto);
+    @GetMapping
+    public ResponseUtil getAllUsers() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllUser());
     }
 }
