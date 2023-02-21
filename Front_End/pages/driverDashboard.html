@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
+    <title>Driver Dashboard</title>
     <link href="../assets/icon/logo.png" rel="icon">
 
     <meta content="Easy Car Rental, Car rental,Vehicle Rental" name="keywords">
@@ -33,7 +33,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="adminDashboard.html" class="logo d-flex align-items-center">
+        <a href="reg_UserDashboard.html" class="logo d-flex align-items-center">
             <span class="d-none d-lg-block">Easy <span>Rent.</span></span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -257,82 +257,28 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="adminDashboard.html">
+            <a class="nav-link " href="driverDashboard.html">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
-        </li><!-- End Dashboard Nav -->
+        </li>
+        <!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-kanban"></i><span>Manage</span><i class="bi bi-chevron-down ms-auto"></i>
+            <a class="nav-link collapsed" href="">
+                <i class="bi bi-kanban"></i>
+                <span>My Details</span>
             </a>
-            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="adminPages/Reg_UserManage.html">
-                        <i class="bi bi-circle"></i><span>Customer</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="adminPages/DriverManage.html">
-                        <i class="bi bi-circle"></i><span>Driver</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="adminPages/CarManage.html">
-                        <i class="bi bi-circle"></i><span>Car</span>
-                    </a>
-                </li>
-            </ul>
         </li>
         <!-- End Forms Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-layout-text-window-reverse"></i><span>Details</span><i
-                    class="bi bi-chevron-down ms-auto"></i>
+            <a class="nav-link collapsed" href="">
+                <i class="bi bi-people-fill"></i>
+                <span>Driver Schedule</span>
             </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Reg User Details</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Driver Details</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Car Details</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Rent Details</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Driver Schedule Details</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End View Nav -->
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Chart.js</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Charts Nav -->
+        </li>
+        <!-- End Rent Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="login.html">
@@ -348,7 +294,257 @@
 <!-- End Sidebar-->
 
 <!-- ======= Main ======= -->
+<main id="main" class="main">
 
+    <div class="pagetitle" id="pageOne">
+        <h1>Driver Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="driverDashboard.html">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <section class="section dashboard">
+        <div class="row">
+
+            <!-- Left side columns -->
+            <div class="col-lg-8">
+                <div class="row">
+
+                    <!-- Car Card -->
+                    <div class="col-xxl-4 col-md-6">
+                        <div class="card info-card sales-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Cars <span>| All Type</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-car-front-fill"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6 id="carCount">145</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Car Card -->
+
+                    <!-- Drivers Card -->
+                    <div class="col-xxl-4 col-md-6">
+                        <div class="card info-card revenue-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Driver <span>| All Type</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6 id="driverCount">30</h6>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Drivers Card -->
+
+                    <!-- Customers Card -->
+                    <div class="col-xxl-4 col-xl-12">
+
+                        <div class="card info-card customers-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Customers <span>| All Type</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6 id="customerCount">1244</h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Customers Card -->
+
+                    <!-- Reports -->
+                    <div class="col-12">
+                        <div class="card">
+
+                            <div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Filter</h6>
+                                    </li>
+
+                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title">Reports <span>/Today</span></h5>
+
+                                <!-- Line Chart -->
+                                <div id="reportsChart"></div>
+
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                        new ApexCharts(document.querySelector("#reportsChart"), {
+                                            series: [{
+                                                name: 'Sales',
+                                                data: [31, 40, 28, 51, 42, 82, 56],
+                                            }, {
+                                                name: 'Revenue',
+                                                data: [11, 32, 45, 32, 34, 52, 41]
+                                            }, {
+                                                name: 'Customers',
+                                                data: [15, 11, 32, 18, 9, 24, 11]
+                                            }],
+                                            chart: {
+                                                height: 350,
+                                                type: 'area',
+                                                toolbar: {
+                                                    show: false
+                                                },
+                                            },
+                                            markers: {
+                                                size: 4
+                                            },
+                                            colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                                            fill: {
+                                                type: "gradient",
+                                                gradient: {
+                                                    shadeIntensity: 1,
+                                                    opacityFrom: 0.3,
+                                                    opacityTo: 0.4,
+                                                    stops: [0, 90, 100]
+                                                }
+                                            },
+                                            dataLabels: {
+                                                enabled: false
+                                            },
+                                            stroke: {
+                                                curve: 'smooth',
+                                                width: 2
+                                            },
+                                            xaxis: {
+                                                type: 'datetime',
+                                                categories: ["2022-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                                            },
+                                            tooltip: {
+                                                x: {
+                                                    format: 'dd/MM/yy HH:mm'
+                                                },
+                                            }
+                                        }).render();
+                                    });
+                                </script>
+                                <!-- End Line Chart -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Reports -->
+
+                </div>
+            </div>
+            <!-- End Left side columns -->
+
+            <!-- Right side columns -->
+            <div class="col-lg-4">
+
+                <!-- Recent Activity -->
+                <div class="card">
+                    <div class="filter">
+                        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <li class="dropdown-header text-start">
+                                <h6>Filter</h6>
+                            </li>
+
+                            <li><a class="dropdown-item" href="#">Today</a></li>
+                            <li><a class="dropdown-item" href="#">This Month</a></li>
+                            <li><a class="dropdown-item" href="#">This Year</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+
+                        <div class="activity">
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">40 min</div>
+                                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                                <div class="activity-content">
+                                    Add New Car <a href="#" class="fw-bold text-dark">Brand BMW</a>
+                                </div>
+                            </div>
+                            <!-- End activity item-->
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">56 min</div>
+                                <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                                <div class="activity-content">
+                                    C00-002 Customer Rent CAR-003
+                                </div>
+                            </div>
+                            <!-- End activity item-->
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">2 hrs</div>
+                                <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+                                <div class="activity-content">
+                                    C00-010 Customer Rent CAR-007
+                                </div>
+                            </div>
+                            <!-- End activity item-->
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">40 min</div>
+                                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                                <div class="activity-content">
+                                    Add New Car <a href="#" class="fw-bold text-dark">Brand Banz</a>
+                                </div>
+                            </div>
+                            <!-- End activity item-->
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">2 days</div>
+                                <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+                                <div class="activity-content">
+                                    C00-012 Customer Request a Rent CRI-007 Car.
+                                </div>
+                            </div>
+                            <!-- End activity item-->
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- End Recent Activity -->
+
+            </div>
+            <!-- End Right side columns -->
+        </div>
+    </section>
+
+    //Add Content
+
+</main>
 <!-- End #main -->
 
 <!-- ======= Footer ======= -->
@@ -376,5 +572,8 @@
 <!-- Controller JS File -->
 <script src="../controller/DashBoardController.js"></script>
 
+<!-- Util JS File -->
+<script src="../util/alert.js" rel="script"></script>
+<script src="../util/validation.js" rel="script"></script>
 </body>
 </html>
