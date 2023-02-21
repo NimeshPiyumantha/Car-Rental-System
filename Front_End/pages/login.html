@@ -21,7 +21,7 @@
 
     <!-- Custom styles for this template-->
     <link href="../assets/vendor/styleslog/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body style="background: #ecf0f1;">
@@ -54,12 +54,12 @@
                                         </div>
                                             <div class="form-group mt-4">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                id="userName" aria-describedby="emailHelp"
                                                 placeholder="Enter User Name...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="userPassword" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -68,9 +68,9 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="../index.html" class="btn btn-primary btn-user btn-block">
+                                        <button id="btnLogin" type="button" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </button>
 
                                     </form>
                                     <hr>
@@ -93,11 +93,15 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../assets/vendor/jQuery/jquery-3.6.1.min.js"></script>
     <script src="../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+    <script rel="script" src="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Controller JS File -->
+    <script src="../controller/loginForm.js"></script>
 
 </body>
 

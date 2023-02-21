@@ -67,9 +67,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
             System.out.println(regUser);
             repo.save(regUser);
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (URISyntaxException e) {
+        } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
 
