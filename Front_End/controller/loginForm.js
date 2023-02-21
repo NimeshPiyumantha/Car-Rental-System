@@ -36,4 +36,32 @@ $("#btnLogin").click(function () {
     });
 });
 
+$("#btnLogin").on('click', function () {
+    login();
+});
 
+function login() {
+    let role_Type = $('#role_Type').val();
+    let user_Name = $('#user_Name').val();
+    let password = $('#password').val();
+
+    $.ajax({
+        url: baseUrl + "loginForm",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            for (var login of res.data) {
+                if (role_Type === login.role_Type && user_Name === login.user_Name && password === login.password) {
+                    if (role_Type === "DRIVER" && user_Name === login.user_Name && password === login.password) {
+                        window.location.href = 'driverDashboard.html';
+                    } else if (role_Type === "REGISTERED_USER" && user_Name === login.user_Name && password === login.password) {
+                        window.location.href = 'reg_UserDashboard.html';
+                    } else if (role_Type === "ADMIN" && user_Name === login.user_Name && password === login.password) {
+                        window.location.href = 'adminDashboard.html';
+                    }
+                    return;
+                }
+            }
+        }
+    });
+}
