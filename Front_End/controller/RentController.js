@@ -132,5 +132,30 @@ $("#btnAddCart").on("click", function () {
         $(tableRow).children(':nth-child(7)').text($("#location").val());
 
     }
+    /**
+     * Logics
+     * Place order
+     * Table Add logic
+     * */
+    $("#cartTable>tr").click('click', function () {
+        tableRow = $(this);
+        let car_Id = $(this).children(":eq(0)").text();
+        let pickUpDate = $(this).children(":eq(1)").text();
+        let pickUpTime = $(this).children(":eq(2)").text();
+        let returnDate = $(this).children(":eq(3)").text();
+        let returnTime = $(this).children(":eq(4)").text();
+        let requestType = $(this).children(":eq(5)").text();
+        let location = $(this).children(":eq(6)").text();
+
+        $("#car_Id").val(car_Id);
+        $("#pickUpDate").val(pickUpDate);
+        $("#pickUpTime").val(pickUpTime);
+        $("#returnDate").val(returnDate);
+        $("#returnTime").val(returnTime);
+        $("#requestType").val(requestType);
+        $("#location").val(location);
+
+    });
+});
 
 
