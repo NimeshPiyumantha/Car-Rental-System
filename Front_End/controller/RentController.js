@@ -86,8 +86,8 @@ $("#car_Id").click(function () {
             console.log(res.image.front_View);
             $("#imageLoad").css({
                 "background": `url(${baseUrl + url})`,
-                "background-size": "cover",
-                "height": '100%'
+                "background-size": "cover"
+
             });
         },
         error: function (error) {

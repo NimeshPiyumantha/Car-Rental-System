@@ -348,70 +348,77 @@
                 </div>
 
                 <div class="card info-card">
-                    <div class="row col-lg-12">
-                        <div class="row col-lg-5">
-                            <div class="w-100 p-2 m-3">
-                                <div id="imageLoad"></div>
-                            </div>
-                        </div>
-                        <div class="row col-lg-7 p-1 m-2">
-                            <div class="row mt-1 m-2 p-1">
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="car_Id">Car ID :</label>
-                                    <select aria-label="Default select example" class="form-select border-dark"
-                                            id="car_Id" name="car_Id"></select>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="mt-4 "style="padding: 3rem">
+                                        <div id="imageLoad" style="height: 257px"></div>
+                                    </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="name">Brand :</label>
-                                    <input class="form-control " id="name" readonly type="text">
+                                <div class="col-lg-6 p-2">
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="car_Id">Car ID :</label>
+                                            <select aria-label="Default select example" class="form-select border-dark"
+                                                    id="car_Id" name="car_Id"></select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="name">Brand :</label>
+                                            <input class="form-control " id="name" readonly type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="brand">Model :</label>
+                                            <input class="form-control " id="brand" readonly type="text">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="number_Of_Passengers">No of Passengers :</label>
+                                            <input class="form-control " id="number_Of_Passengers" readonly type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="pickUpDate">PickUp Date :</label>
+                                            <input class="form-control " id="pickUpDate" type="date">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="pickUpTime">PickUp Time :</label>
+                                            <input class="form-control " id="pickUpTime" type="time">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="returnDate">Return Date :</label>
+                                            <input class="form-control " id="returnDate" type="date">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="returnTime">Return Time :</label>
+                                            <input class="form-control " id="returnTime" type="time">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="requestType">Driver or not :</label>
+                                            <select class="form-control " id="requestType">
+                                                <option value="YES">YES</option>
+                                                <option value="NO">NO</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="location">Location :</label>
+                                            <input class="form-control " id="location" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                        <button class="btn btn-warning me-md-1" id="btnAddCart" type="button">Add Cart
+                                        </button>
+                                        <button type="button" class="btn btn-success me-md-1" id="btnReservation">
+                                            Reservation
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mt-1 m-2 p-1">
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="brand">Model :</label>
-                                    <input class="form-control " id="brand" readonly type="text">
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="number_Of_Passengers">No of Passengers :</label>
-                                    <input class="form-control " id="number_Of_Passengers" readonly type="text">
-                                </div>
-                            </div>
-                            <div class="row mt-1 m-2 p-1">
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="pickUpDate">PickUp Date :</label>
-                                    <input class="form-control " id="pickUpDate" type="date">
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="pickUpTime">PickUp Time :</label>
-                                    <input class="form-control " id="pickUpTime" type="time">
-                                </div>
-                            </div>
-                            <div class="row mt-1 m-2 p-1">
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="returnDate">Return Date :</label>
-                                    <input class="form-control " id="returnDate" type="date">
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="returnTime">Return Time :</label>
-                                    <input class="form-control " id="returnTime" type="time">
-                                </div>
-                            </div>
-                            <div class="row mt-1 m-2 p-1">
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="requestType">Driver or not :</label>
-                                    <select class="form-control " id="requestType">
-                                        <option value="YES">YES</option>
-                                        <option value="NO">NO</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <label class="fw-bold" for="location">Location :</label>
-                                    <input class="form-control " id="location" type="text">
-                                </div>
-                            </div>
-                            <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
-                                <button class="btn btn-warning me-md-1" id="btnAddCart" type="button">Add Cart</button>
-                                <button type="button" class="btn btn-success me-md-1" id="btnReservation">Reservation</button>
                             </div>
                         </div>
                     </div>
