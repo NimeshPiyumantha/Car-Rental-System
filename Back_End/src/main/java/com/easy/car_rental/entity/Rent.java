@@ -1,5 +1,6 @@
 package com.easy.car_rental.entity;
 
+import com.easy.car_rental.enums.RentRequest;
 import com.easy.car_rental.enums.RequestType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,6 +29,8 @@ public class Rent {
     private LocalTime returnTime;
     @Enumerated(EnumType.STRING)
     private RequestType requestType;
+    @Enumerated(EnumType.STRING)
+    private RentRequest rentType;
     private String location;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
