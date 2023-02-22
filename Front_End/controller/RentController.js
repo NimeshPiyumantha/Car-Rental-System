@@ -107,4 +107,30 @@ let returnTime;
 let requestType;
 let goLocation;
 
+/**
+ * Logics
+ * Place order
+ * */
+$("#btnAddCart").on("click", function () {
+    let duplicate = false;
+    for (let i = 0; i < $("#cartTable tr").length; i++) {
+        if ($("#car_Id option:selected").text() === $("#cartTable tr").children(':nth-child(1)')[i].innerText) {
+            duplicate = true;
+        }
+    }
+    if (duplicate !== true) {
+        loadCartTableDetail();
+        $('#car_Id,#pickUpDate,#name,#brand,#number_Of_Passengers,#pickUpTime,#returnDate,#returnTime,#requestType,#location').val("");
+        $("#cartTable").attr('disabled', true);
+
+    } else if (duplicate === true) {
+        $(tableRow).children(':nth-child(2)').text($("#pickUpDate").val());
+        $(tableRow).children(':nth-child(3)').text($("#pickUpTime").val())
+        $(tableRow).children(':nth-child(4)').text($("#returnDate").val());
+        $(tableRow).children(':nth-child(5)').text($("#returnTime").val());
+        $(tableRow).children(':nth-child(6)').text($("#requestType").val());
+        $(tableRow).children(':nth-child(7)').text($("#location").val());
+
+    }
+
 
