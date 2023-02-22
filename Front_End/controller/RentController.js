@@ -38,7 +38,7 @@ function generateRentID() {
 /**
  * Filter a data in Car Details
  * */
-$("#searchBtn").click(function () {
+$("#fuel_Type").click(function () {
     let category_type = $("#category_type").val();
     let fuel_Type = $("#fuel_Type").val();
     console.log(category_type);
@@ -63,6 +63,33 @@ $("#searchBtn").click(function () {
             emptyMassage(message);
         }
     })
+});
 
 
+$("#car_Id").click(function () {
+    var search = $("#car_Id").val();
+    $.ajax({
+        url: baseUrl + "car/searchCar/?car_Id=" + search,
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            console.log(res);
+            $("#name").val(res.name);
+            $("#brand").val(res.brand);
+            $("#number_Of_Passengers").val(res.number_Of_Passengers);
+            let url = res.image.front_View;
+            console.log(url);
+            console.log(res.image.front_View);
+            $("#imageLoad").css({
+                "background": `url(${baseUrl + url})`,
+                "background-size": "cover",
+                "height": '70%'
+            });
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            console.log(message);
+        }
+    })
 });
