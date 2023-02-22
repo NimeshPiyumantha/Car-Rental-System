@@ -17,7 +17,7 @@ public interface CarRepo extends JpaRepository<Car, String> {
     @Query(value = "SELECT COUNT(car_Id) FROM Car", nativeQuery = true)
     int getSumCar();
 
-    @Query(value = " SELECT * FROM Car WHERE type =?1 and fuel_Type=?2", nativeQuery = true)
+    @Query(value = "SELECT * FROM Car WHERE type =?1 and fuel_Type=?2 and vehicleAvailabilityType='AVAILABLE' ", nativeQuery = true)
     ArrayList<Car> filterCar(String type, String fuel_Type);
 
 }
