@@ -7,6 +7,7 @@ import com.easy.car_rental.enums.RequestType;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 /**
  * @author : Nimesh Piyumantha
@@ -23,5 +24,6 @@ public class RentDTO {
     private String location;
 
     private Reg_User user;
+    private List<Rent_DetailsDTO> rent_detailsDTOS;
 
 }

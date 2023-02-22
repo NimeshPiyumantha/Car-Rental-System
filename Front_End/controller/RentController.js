@@ -45,7 +45,7 @@ $("#fuel_Type").click(function () {
     console.log(fuel_Type);
     $("#car_Id").empty();
     $.ajax({
-        url: baseUrl + "car/filterCarDetails/?category_type="+category_type+"&fuel_Type="+fuel_Type,
+        url: baseUrl + "car/filterCarDetails/?category_type=" + category_type + "&fuel_Type=" + fuel_Type,
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -167,6 +167,7 @@ $("#btnAddCart").on("click", function () {
  * Table Load
  * */
 $("#cartTable").empty();
+
 function loadCartTableDetail() {
     car_Id = $("#car_Id").val();
     pickUpDate = $("#pickUpDate").val();
@@ -218,38 +219,47 @@ $("#cartTable").dblclick(function () {
 
 $("#btnReservation").click(function () {
 
-    var orderDetails = [];
+    let rent_Details = [];
     for (let i = 0; i < $("#cartTable tr").length; i++) {
-        var rent = {
-            rent_Id: $("#rent_Id").val(),
-            pickUpDate: $("#cartTable tr").children(':nth-child(1)')[i].innerText,
-            pickUpTime: $("#cartTable tr").children(':nth-child(2)')[i].innerText,
-            returnDate: $("#cartTable tr").children(':nth-child(3)')[i].innerText,
-            returnTime: $("#cartTable tr").children(':nth-child(4)')[i].innerText,
-            requestType: $("#cartTable tr").children(':nth-child(5)')[i].innerText,
-            rentType: "PENDING",
-            location: $("#cartTable tr").children(':nth-child(6)')[i].innerText,
-            user: $("#user_Id").val(),
+        let rentDetail = {
+            car_Id: $("#cartTable tr").children(':nth-child(0)')[i].innerText,
+            rent_Id: $("#rent_Id").val()
         }
-        orderDetails.push(rent);
+        rent_Details.push(rentDetail);
     }
-    var car_Id = $("#cartTable tr").children(':nth-child(0)')[i].innerText;
-    var rent_Id = $("#rent_Id").val();
 
-    var rentDetails = {
-        "car_Id": car_Id,
+
+    let rent_Id = $("#rent_Id").val();
+    let pickUpDate = $("#cartTable tr").children(':nth-child(1)')[i].innerText;
+    let pickUpTime = $("#cartTable tr").children(':nth-child(2)')[i].innerText;
+    let returnDate = $("#cartTable tr").children(':nth-child(3)')[i].innerText;
+    let returnTime = $("#cartTable tr").children(':nth-child(4)')[i].innerText;
+    let requestType = $("#cartTable tr").children(':nth-child(5)')[i].innerText;
+    let rentType = "PENDING";
+    let location = $("#cartTable tr").children(':nth-child(6)')[i].innerText;
+    let user = $("#user_Id").val();
+
+    let rentOB = {
         "rent_Id": rent_Id,
-        "rent": rent
+        "pickUpDate": pickUpDate,
+        "pickUpTime": pickUpTime,
+        "returnDate": returnDate,
+        "returnTime": returnTime,
+        "requestType": requestType,
+        "rentType": rentType,
+        "location": location,
+        "user": user,
+        "rent_Details":rent_Details
     }
-    console.log(rentDetails)
-    console.log(rent)
+    console.log(rent_Details)
+    console.log(rentOB)
 
     $.ajax({
         url: baseUrl + "rent",
         method: "POST",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(rentDetails),
+        data: JSON.stringify(rentOB),
         success: function (res) {
             saveUpdateAlert("Rent", res.message);
             generateRentID();

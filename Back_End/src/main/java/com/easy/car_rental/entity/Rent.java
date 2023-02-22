@@ -10,6 +10,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 /**
  * @author : Nimesh Piyumantha
@@ -36,4 +37,7 @@ public class Rent {
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "userId",referencedColumnName = "user_Id",nullable = false)
     private Reg_User user;
+
+    @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
+    private List<Rent_Details> rent_Details;
 }
