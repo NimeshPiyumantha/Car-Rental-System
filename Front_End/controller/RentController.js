@@ -43,7 +43,7 @@ $("#fuel_Type").click(function () {
     let fuel_Type = $("#fuel_Type").val();
     console.log(category_type);
     console.log(fuel_Type);
-    $("#driverTable").empty();
+    $("#car_Id").empty();
     $.ajax({
         url: baseUrl + "car/filterCarDetails/?category_type="+category_type+"&fuel_Type="+fuel_Type,
         method: "GET",
@@ -84,7 +84,7 @@ $("#car_Id").click(function () {
             $("#imageLoad").css({
                 "background": `url(${baseUrl + url})`,
                 "background-size": "cover",
-                "height": '70%'
+                "height": '100%'
             });
         },
         error: function (error) {
