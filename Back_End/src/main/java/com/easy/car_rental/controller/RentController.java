@@ -1,6 +1,7 @@
 package com.easy.car_rental.controller;
 
 import com.easy.car_rental.dto.CustomDTO;
+import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.service.Reg_UserService;
 import com.easy.car_rental.service.RentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,4 +24,7 @@ public class RentController {
     public @ResponseBody CustomDTO customerIdGenerate() {
         return service.rentIdGenerate();
     }
+
+
+
 }
