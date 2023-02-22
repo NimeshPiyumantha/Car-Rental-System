@@ -43,7 +43,7 @@ $("#searchBtn").click(function () {
     var fuel_Type = $("#fuel_Type").val();
     $("#driverTable").empty();
     $.ajax({
-        url: baseUrl + "rent/searchCar/?category_type="+category_type+"&fuel_Type=" + fuel_Type,
+        url: baseUrl + "car/filterCarDetails/?category_type="+category_type+"&fuel_Type=" + fuel_Type,
         method: "GET",
         contentType: "application/json",
         dataType: "json",

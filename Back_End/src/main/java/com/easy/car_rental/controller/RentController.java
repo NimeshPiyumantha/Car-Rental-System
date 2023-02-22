@@ -25,6 +25,4 @@ public class RentController {
         return service.rentIdGenerate();
     }
 
-
-
 }

@@ -6,6 +6,7 @@ import com.easy.car_rental.embeded.Image;
 import com.easy.car_rental.embeded.ImageDTO;
 import com.easy.car_rental.embeded.Rate;
 import com.easy.car_rental.entity.Car;
+import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.service.CarService;
 import com.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,4 +79,11 @@ public class CarController {
         return service.getSumCar();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/filterCarDetails",params = {"category_type","fuel_Type"})
+    public Reg_User searchDriverId(String category_type, String fuel_Type) {
+        System.out.println(category_type);
+        System.out.println(fuel_Type);
+//        return service.searchUserId(cus_Id);
+    }
 }
