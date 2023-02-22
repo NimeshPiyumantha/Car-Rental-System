@@ -346,13 +346,14 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card info-card">
                     <div class="row col-lg-12">
-                        <section class="row col-lg-5">
+                        <div class="row col-lg-5">
                             <div class="w-100 p-2 m-3">
                                 <div id="imageLoad"></div>
                             </div>
-                        </section>
+                        </div>
                         <div class="row col-lg-7 p-1 m-2">
                             <div class="row mt-1 m-2 p-1">
                                 <div class="col-12 col-md-6 col-lg-6">
@@ -392,7 +393,7 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-6">
                                     <label class="fw-bold" for="returnTime">Return Time :</label>
-                                    <input class="form-control " id="returnTime" type="date">
+                                    <input class="form-control " id="returnTime" type="time">
                                 </div>
                             </div>
                             <div class="row mt-1 m-2 p-1">
@@ -407,6 +408,10 @@
                                     <label class="fw-bold" for="location">Location :</label>
                                     <input class="form-control " id="location" type="text">
                                 </div>
+                            </div>
+                            <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                <button class="btn btn-warning me-md-1" id="btnAddCart" type="button">Add Cart</button>
+                                <button type="button" class="btn btn-success me-md-1" id="btnReservation">Reservation</button>
                             </div>
                         </div>
                     </div>
@@ -432,7 +437,7 @@
                             <th scope="col">Location</th>
                         </tr>
                         </thead>
-                        <tbody id="customerTable"></tbody>
+                        <tbody id="cartTable"></tbody>
                     </table>
                 </div>
             </div>
