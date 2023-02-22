@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>User Dashboard</title>
+    <title>Admin Dashboard</title>
     <link href="../../assets/icon/logo.png" rel="icon">
 
     <meta content="Easy Car Rental, Car rental,Vehicle Rental" name="keywords">
@@ -33,7 +33,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="../reg_UserDashboard.html" class="logo d-flex align-items-center">
+        <a href="../adminDashboard.html" class="logo d-flex align-items-center">
             <span class="d-none d-lg-block">Easy <span>Rent.</span></span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -298,7 +298,7 @@
 
     <!-- ======= Driver Manage ======= -->
     <div class="pagetitle" id="pagethree">
-        <h1>Manage</h1>
+        <h1>Driver Dashboard</h1>
 
         <section class="container-fluid mt-3" id="manageDrivers">
             <nav>
@@ -402,9 +402,6 @@
                                 </div>
 
                                 <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
-                                    <button class="btn btn-success me-md-1" id="btnSaveDriver" type="button"
-                                            formaction="driverForm">Save
-                                    </button>
                                     <button type="button" class="btn btn-warning me-md-1" id="btnUpdateDriver">Update
                                     </button>
                                     <button type="button" class="btn btn-danger" id="btnDeleteDriver">Delete</button>
@@ -475,7 +472,8 @@
 <script src="../../assets/js/dashboardMain.js"></script>
 
 <!-- Controller JS File -->
-<script src="../../controller/Reg_UserController.js"></script>
+<script src="../../controller/DriverController.js"></script>
+<script src="../../controller/DashBoardController.js"></script>
 
 <!-- Util JS File -->
 <script src="../../util/alert.js" rel="script"></script>
