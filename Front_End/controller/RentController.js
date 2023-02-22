@@ -52,10 +52,10 @@ $("#searchBtn").click(function () {
         success: function (res) {
             console.log(res);
 
-            for (let i of res.data) {
-                let code = i.code;
+            for (let i of res) {
+                let car_Id = i.car_Id;
 
-                $("#cmbItemCode").append(`<option>${code}</option>`);
+                $("#car_Id").append(`<option>${car_Id}</option>`);
             }
         },
         error: function (error) {
