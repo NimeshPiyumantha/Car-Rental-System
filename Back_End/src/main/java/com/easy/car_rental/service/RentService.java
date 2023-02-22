@@ -7,5 +7,5 @@ import com.easy.car_rental.dto.CustomDTO;
  * @since : 0.1.0
  **/
 public interface RentService {
-    CustomDTO rentIdGenerate();
+    Rent rentIdGenerate();
 }

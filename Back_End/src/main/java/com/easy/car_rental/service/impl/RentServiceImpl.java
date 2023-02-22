@@ -22,6 +22,6 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public CustomDTO rentIdGenerate() {
-        return null;
+        return new CustomDTO(repo.getLastIndex());
     }
 }
