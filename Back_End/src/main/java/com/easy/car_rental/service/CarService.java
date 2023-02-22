@@ -19,4 +19,5 @@ public interface CarService {
     CustomDTO carIdGenerate();
     Car searchCarId(String id);
     CustomDTO getSumCar();
+    ArrayList<CarDTO> getFilerData(String type,String fuelType);
 }

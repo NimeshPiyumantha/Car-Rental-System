@@ -39,17 +39,24 @@ function generateRentID() {
  * Filter a data in Car Details
  * */
 $("#searchBtn").click(function () {
-    var category_type = $("#category_type").val();
-    var fuel_Type = $("#fuel_Type").val();
+    let category_type = $("#category_type").val();
+    let fuel_Type = $("#fuel_Type").val();
+    console.log(category_type);
+    console.log(fuel_Type);
     $("#driverTable").empty();
     $.ajax({
-        url: baseUrl + "car/filterCarDetails/?category_type="+category_type+"&fuel_Type=" + fuel_Type,
+        url: baseUrl + "car/filterCarDetails/?category_type="+category_type+"&fuel_Type="+fuel_Type,
         method: "GET",
         contentType: "application/json",
         dataType: "json",
         success: function (res) {
             console.log(res);
 
+            for (let i of res.data) {
+                let code = i.code;
+
+                $("#cmbItemCode").append(`<option>${code}</option>`);
+            }
         },
         error: function (error) {
             let message = JSON.parse(error.responseText).message;
