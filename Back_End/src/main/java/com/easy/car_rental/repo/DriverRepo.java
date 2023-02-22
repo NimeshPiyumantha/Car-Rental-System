@@ -1,8 +1,11 @@
 package com.easy.car_rental.repo;
 
+import com.easy.car_rental.entity.Car;
 import com.easy.car_rental.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import java.util.ArrayList;
 
 /**
  * @author : Nimesh Piyumantha
@@ -14,4 +17,7 @@ public interface DriverRepo extends JpaRepository<Driver, String> {
 
     @Query(value = "SELECT COUNT(user_Id) FROM Driver", nativeQuery = true)
     int getSumDriver();
+
+    @Query(value = "SELECT user_Id FROM Driver WHERE driverAvailability='AVAILABLE'", nativeQuery = true)
+    String availableDrivers();
 }
