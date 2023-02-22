@@ -2,7 +2,6 @@ package com.easy.car_rental.service.impl;
 
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
-import com.easy.car_rental.entity.Car;
 import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.entity.User;
 import com.easy.car_rental.repo.Reg_UserRepo;
@@ -16,9 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
@@ -42,34 +38,24 @@ public class Reg_UserServiceImpl implements Reg_UserService {
             throw new RuntimeException("User Already Exist. Please enter another id..!");
 
         try {
-            byte[] bytes1 = dto.getLicense_Img().getBytes();
-            byte[] bytes2 = dto.getNic_Img().getBytes();
-
-            /*String projectPath = "D:\\IJSE\\IJSE_Project\\Car-Rental-System\\Front_End\\assets\\img";*/
 
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
 
-            Path location2 = Paths.get(uploadsDir + "/nic" + regUser.getNic()+".png");
-            Path location1 = Paths.get(uploadsDir + "/license" + regUser.getLicense_No()+".png");
+            dto.getNic_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNic_Img().getOriginalFilename()));
+            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
-            Files.write(location1, bytes1);
-            Files.write(location2, bytes2);
+            regUser.setNic_Img("uploads/" + dto.getNic_Img().getOriginalFilename());
+            regUser.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
-            dto.getLicense_Img().transferTo(location1);
-            dto.getNic_Img().transferTo(location2);
-
-            regUser.setLicense_Img(location1.toString());
-            regUser.setNic_Img(location2.toString());
-
-            System.out.println(regUser);
-            repo.save(regUser);
 
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
+        System.out.println(regUser);
+        repo.save(regUser);
 
     }
 
@@ -82,34 +68,24 @@ public class Reg_UserServiceImpl implements Reg_UserService {
         }
 
         try {
-            byte[] bytes1 = dto.getLicense_Img().getBytes();
-            byte[] bytes2 = dto.getNic_Img().getBytes();
-
-            /*String projectPath = "D:\\IJSE\\IJSE_Project\\Car-Rental-System\\Front_End\\assets\\img";*/
 
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
 
-            Path location2 = Paths.get(uploadsDir + "/nic" + regUser.getNic()+".png");
-            Path location1 = Paths.get(uploadsDir + "/license" + regUser.getLicense_No()+".png");
+            dto.getNic_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNic_Img().getOriginalFilename()));
+            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
-            Files.write(location1, bytes1);
-            Files.write(location2, bytes2);
+            regUser.setNic_Img("uploads/" + dto.getNic_Img().getOriginalFilename());
+            regUser.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
-            dto.getLicense_Img().transferTo(location1);
-            dto.getNic_Img().transferTo(location2);
-
-            regUser.setLicense_Img(location1.toString());
-            regUser.setNic_Img(location2.toString());
-
-            System.out.println(regUser);
-            repo.save(regUser);
 
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
+        System.out.println(regUser);
+        repo.save(regUser);
 
     }
 
