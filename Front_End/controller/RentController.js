@@ -208,5 +208,56 @@ $("#cartTable").dblclick(function () {
             Swal.fire('Select row are not Delete', '', 'info')
         }
     })
+});
 
+/**
+ * Logics
+ * Place order
+ * Purchase Order button
+ * */
+
+$("#btnReservation").click(function () {
+
+    var orderDetails = [];
+    for (let i = 0; i < $("#cartTable tr").length; i++) {
+        var rent = {
+            rent_Id: $("#rent_Id").val(),
+            pickUpDate: $("#cartTable tr").children(':nth-child(1)')[i].innerText,
+            pickUpTime: $("#cartTable tr").children(':nth-child(2)')[i].innerText,
+            returnDate: $("#cartTable tr").children(':nth-child(3)')[i].innerText,
+            returnTime: $("#cartTable tr").children(':nth-child(4)')[i].innerText,
+            requestType: $("#cartTable tr").children(':nth-child(5)')[i].innerText,
+            rentType: "PENDING",
+            location: $("#cartTable tr").children(':nth-child(6)')[i].innerText,
+            user: $("#user_Id").val(),
+        }
+        orderDetails.push(rent);
+    }
+    var car_Id = $("#cartTable tr").children(':nth-child(0)')[i].innerText;
+    var rent_Id = $("#rent_Id").val();
+
+    var rentDetails = {
+        "car_Id": car_Id,
+        "rent_Id": rent_Id,
+        "rent": rent
+    }
+    console.log(rentDetails)
+    console.log(rent)
+
+    $.ajax({
+        url: baseUrl + "rent",
+        method: "POST",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(rentDetails),
+        success: function (res) {
+            saveUpdateAlert("Rent", res.message);
+            generateRentID();
+
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            unSuccessUpdateAlert("Order", message);
+        }
+    });
 });
