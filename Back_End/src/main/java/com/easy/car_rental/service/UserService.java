@@ -1,5 +1,6 @@
 package com.easy.car_rental.service;
 
+import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.dto.DriverDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
 import com.easy.car_rental.dto.UserDTO;
@@ -18,6 +19,6 @@ import java.util.ArrayList;
  * @since : 0.1.0
  **/
 public interface UserService {
-    ArrayList<UserDTO> getAllUser();
+    ArrayList<UserDTO> getLoginDetails(String role, String name,String password);
 
 }

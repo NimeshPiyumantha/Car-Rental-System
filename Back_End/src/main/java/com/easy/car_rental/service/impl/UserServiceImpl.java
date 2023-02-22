@@ -1,7 +1,9 @@
 package com.easy.car_rental.service.impl;
 
+import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
 import com.easy.car_rental.dto.UserDTO;
+import com.easy.car_rental.entity.Car;
 import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.entity.User;
 import com.easy.car_rental.enums.RoleType;
@@ -30,8 +32,8 @@ public class UserServiceImpl implements UserService {
     private ModelMapper mapper;
 
     @Override
-    public ArrayList<UserDTO> getAllUser() {
-        return mapper.map(repo.findAll(), new TypeToken<ArrayList<User>>() {
+    public ArrayList<UserDTO> getLoginDetails(String role, String name, String password) {
+        return mapper.map(repo.getLoginUser(role,name,password), new TypeToken<ArrayList<User>>() {
         }.getType());
     }
 }
