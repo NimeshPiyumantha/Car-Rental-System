@@ -65,7 +65,10 @@ $("#fuel_Type").click(function () {
     })
 });
 
-
+/**
+ * Logics
+ * Search
+ * */
 $("#car_Id").click(function () {
     var search = $("#car_Id").val();
     $.ajax({
@@ -109,7 +112,7 @@ let goLocation;
 
 /**
  * Logics
- * Place order
+ * Add cart
  * */
 $("#btnAddCart").on("click", function () {
     let duplicate = false;
