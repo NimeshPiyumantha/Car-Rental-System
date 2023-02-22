@@ -124,4 +124,8 @@ public class Reg_UserServiceImpl implements Reg_UserService {
         return customDTO;
     }
 
+    @Override
+    public Reg_UserDTO availableUser(String userName) {
+        return repo.availableUser(userName);
+    }
 }

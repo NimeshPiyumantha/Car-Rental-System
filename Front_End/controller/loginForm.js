@@ -20,20 +20,27 @@ function login() {
     let password = $('#password').val();
 
     $.ajax({
-        url: baseUrlLogin + "loginForm/?role_Type="+role_Type+"&user_Name="+user_Name+"&password="+password,
-        contentType: "application/json",
-        dataType: "json",
+        url: baseUrlLogin + "loginForm/?role_Type=" + role_Type + "&user_Name=" + user_Name + "&password=" + password,
+        async:false,
         success: function (res) {
             for (var login of res) {
-                  if (role_Type === "DRIVER" && user_Name === login.user_Name && password === login.password) {
-                        window.location.href = 'driverDashboard.html';
-                    } else if (role_Type === "REGISTERED_USER" && user_Name === login.user_Name && password === login.password) {
-                        window.location.href = 'reg_UserDashboard.html';
-                    } else if (role_Type === "ADMIN" && user_Name === login.user_Name && password === login.password) {
-                        window.location.href = 'adminDashboard.html';
-                    }
-                    return;
+                if (role_Type === "DRIVER" && user_Name === login.user_Name && password === login.password) {
+                    window.location.href = 'driverDashboard.html';
+                } else if (role_Type === "REGISTERED_USER" && user_Name === login.user_Name && password === login.password) {
+                    window.location.href = 'reg_UserDashboard.html';
+                } else if (role_Type === "ADMIN" && user_Name === login.user_Name && password === login.password) {
+                    window.location.href = 'adminDashboard.html';
                 }
+                return;
             }
+
+            $.ajax({
+                url: baseUrlLogin + "reg_User/loginUser/?user_Name=" + user_Name,async:false,
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+
+        }
     });
 }
