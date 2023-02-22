@@ -2,7 +2,6 @@ package com.easy.car_rental.service.impl;
 
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.DriverDTO;
-import com.easy.car_rental.entity.Car;
 import com.easy.car_rental.entity.Driver;
 import com.easy.car_rental.entity.User;
 import com.easy.car_rental.repo.DriverRepo;
@@ -38,61 +37,55 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public void saveDriver(DriverDTO dto) {
 
-        Driver driver = new Driver(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic_No(), dto.getLicense_No(), "",dto.getDriverAvailability(), new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
+        Driver driver = new Driver(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic_No(), dto.getLicense_No(), "", dto.getDriverAvailability(), new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
         System.out.println(driver);
         if (repo.existsById(dto.getUser_Id()))
             throw new RuntimeException("Driver Already Exist. Please enter another id..!");
 
         try {
-            byte[] bytes1 = dto.getLicense_Img().getBytes();
 
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
 
-            Path location1 = Paths.get(uploadsDir + "/license" + driver.getLicense_No() + ".png");
-            Files.write(location1, bytes1);
-            dto.getLicense_Img().transferTo(location1);
-            driver.setLicense_Img(location1.toString());
+            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
-            System.out.println(driver);
-            repo.save(driver);
+            driver.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
+        System.out.println(driver);
+        repo.save(driver);
 
     }
 
     @Override
     public void updateDriver(DriverDTO dto) {
 
-        Driver driver = new Driver(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic_No(), dto.getLicense_No(), "",dto.getDriverAvailability(), new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
+        Driver driver = new Driver(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic_No(), dto.getLicense_No(), "", dto.getDriverAvailability(), new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
         System.out.println(driver);
         if (!repo.existsById(dto.getUser_Id())) {
             throw new RuntimeException("Driver Not Exist. Please enter Valid id..!");
         }
 
         try {
-            byte[] bytes1 = dto.getLicense_Img().getBytes();
-
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
 
-            Path location1 = Paths.get(uploadsDir + "/license" + driver.getLicense_No() + ".png");
-            Files.write(location1, bytes1);
-            dto.getLicense_Img().transferTo(location1);
-            driver.setLicense_Img(location1.toString());
+            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
-            System.out.println(driver);
-            repo.save(driver);
+            driver.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
+            System.out.println(driver);
+            repo.save(driver);
+
     }
 
     @Override
