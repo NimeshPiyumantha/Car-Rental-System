@@ -85,7 +85,7 @@ $("#car_Id").click(function () {
             console.log(url);
             console.log(res.image.front_View);
             $("#imageLoad").css({
-                "background": `url(${baseUrl + url})`,
+                "background": `url(${RentbaseUrl + url})`,
                 "background-size": "cover"
 
             });
