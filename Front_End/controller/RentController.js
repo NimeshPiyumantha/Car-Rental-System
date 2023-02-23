@@ -3,7 +3,7 @@
  * @since : 0.1.0
  **/
 
-let baseUrl = "http://localhost:8080/Back_End_war/";
+let RentbaseUrl = "http://localhost:8080/Back_End_war/";
 
 /**
  * User Id Generator
@@ -13,7 +13,7 @@ generateRentID();
 function generateRentID() {
     $("#rent_Id").val("REN-001");
     $.ajax({
-        url: baseUrl + "rent/rentIdGenerate",
+        url: RentbaseUrl + "rent/rentIdGenerate",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -45,7 +45,7 @@ $("#fuel_Type").click(function () {
     console.log(fuel_Type);
     $("#car_Id").empty();
     $.ajax({
-        url: baseUrl + "car/filterCarDetails/?category_type=" + category_type + "&fuel_Type=" + fuel_Type,
+        url: RentbaseUrl + "car/filterCarDetails/?category_type=" + category_type + "&fuel_Type=" + fuel_Type,
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -72,7 +72,7 @@ $("#fuel_Type").click(function () {
 $("#car_Id").click(function () {
     var search = $("#car_Id").val();
     $.ajax({
-        url: baseUrl + "car/searchCar/?car_Id=" + search,
+        url: RentbaseUrl + "car/searchCar/?car_Id=" + search,
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -256,7 +256,7 @@ $("#btnReservation").click(function () {
         console.log(rentOB)
 
         $.ajax({
-            url: baseUrl + "rent",
+            url: RentbaseUrl + "rent",
             method: "POST",
             contentType: "application/json",
             dataType: "json",
