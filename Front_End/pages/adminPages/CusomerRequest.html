@@ -363,42 +363,42 @@
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="requestRentId">Rent ID<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control" id="requestRentId" readonly
+                                                    <input class="form-control mt-1" id="requestRentId" readonly
                                                            name="rent_Id"
                                                            placeholder="Rent ID" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="requestPickUpDate">Pick-Up Date<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control" id="requestPickUpDate" readonly
+                                                    <input class="form-control mt-1" id="requestPickUpDate" readonly
                                                            name="pick_Up_Date"
                                                            placeholder="Pick-Up Date" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="requestReturnDate">Return Date<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control" id="requestReturnDate" readonly
+                                                    <input class="form-control mt-1" id="requestReturnDate" readonly
                                                            name="return_Date"
                                                            placeholder="Return Date" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="requestLocation">Location<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control" id="requestLocation" readonly
+                                                    <input class="form-control mt-1" id="requestLocation" readonly
                                                            name="location"
                                                            placeholder="Location" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
-                                                    <label class="form-label" for="requestCarId">Car ID<span
+                                                    <label class="form-label mt-1" for="requestCarId">Car ID<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control" id="requestCarId" readonly
+                                                    <input class="form-control mt-1" id="requestCarId" readonly
                                                            name="car_Id"
                                                            placeholder="Car ID" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="requestUserId">Customer ID<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control" id="requestUserId" readonly
+                                                    <input class="form-control mt-1" id="requestUserId" readonly
                                                            name="user_Id"
                                                            placeholder="Customer ID" type="text">
                                                 </div>
@@ -406,14 +406,14 @@
                                                     <label class="form-label" for="requestNicOrLicenceNo">Nic or Licence
                                                         No<span
                                                                 class="text-danger"></span></label>
-                                                    <input class="form-control" id="requestNicOrLicenceNo" readonly
+                                                    <input class="form-control mt-1" id="requestNicOrLicenceNo" readonly
                                                            name="nic"
                                                            placeholder="Nic or Licence No" type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="requestDriverState">Driver State<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control" id="requestDriverState" readonly
+                                                    <input class="form-control mt-1" id="requestDriverState" readonly
                                                            name="driver_Request_Type"
                                                            placeholder="Driver State" type="text">
                                                 </div>
@@ -445,7 +445,7 @@
                         </div>
                         <div class="card info-card">
                             <!-- start searchBar -->
-                            <div class="search-bar mt-4 ">
+                            <div class="search-bar mt-4 ms-4">
                                 <div class="search-form d-flex align-items-center">
                                     <input type="search" name="car_Id" id="search_Id" placeholder="Search" title="Enter search keyword">
                                     <button type="button" title="Search"><i class="bi bi-search"></i></button>
@@ -456,9 +456,9 @@
                             <!-- start request table content-->
                             <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
                                 <div class="col-11 justify-content-around sectionBorder"
-                                     style="height: 290px; background: white">
+                                     style="height: 280px; background: white">
                                     <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
-                                        <table class="table table-light table-striped table-bordered table-hover">
+                                        <table class="text-nowrap table table-light table-striped table-bordered table-hover">
                                             <thead class="text-dark table-danger text-center  table-bordered sticky-top">
                                             <tr>
                                                 <th scope="col">Rent ID</th>
@@ -513,7 +513,6 @@
 <script src="../../assets/js/dashboardMain.js"></script>
 
 <!-- Controller JS File -->
-<script src="../../controller/CarController.js"></script>
 <script src="../../controller/DashBoardController.js"></script>
 
 <!-- Util JS File -->
