@@ -3,7 +3,7 @@
  * @since : 0.1.0
  **/
 
-let baseUrl = "http://localhost:8080/Back_End_war/";
+let carBaseUrl = "http://localhost:8080/Back_End_war/";
 loadAllCars();
 
 $("#btnSaveCar").attr('disabled', true);
@@ -17,7 +17,7 @@ $("#btnSaveCar").click(function () {
     let formData = new FormData($("#carForm")[0]);
     console.log(formData);
     $.ajax({
-        url: baseUrl + "car",
+        url: carBaseUrl + "car",
         method: "post",
         data: formData,
         contentType: false,
@@ -39,7 +39,7 @@ $("#btnSaveCar").click(function () {
 function generateCarID() {
     $("#car_Id").val("CAR-001");
     $.ajax({
-        url: baseUrl + "car/carIDGenerate",
+        url: carBaseUrl + "car/carIDGenerate",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -94,7 +94,7 @@ function setTextFieldValuesC(name, brand, type, front_View, back_View, side_View
 function loadAllCars() {
     $("#carTable").empty();
     $.ajax({
-        url: baseUrl + "car/loadAllCars", method: "GET", dataType: "json", success: function (res) {
+        url: carBaseUrl + "car/loadAllCars", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
 
             for (let i of res.data) {
@@ -141,7 +141,7 @@ $("#search_Id").on("keypress", function (event) {
         var search = $("#search_Id").val();
         $("#carTable").empty();
         $.ajax({
-            url: baseUrl + "car/searchCar/?car_Id=" + search,
+            url: carBaseUrl + "car/searchCar/?car_Id=" + search,
             method: "GET",
             contentType: "application/json",
             dataType: "json",
@@ -225,7 +225,7 @@ $("#btnUpdateCar").click(function () {
     let formData = new FormData($("#carForm")[0]);
     console.log(formData);
     $.ajax({
-        url: baseUrl + "car/update",
+        url: carBaseUrl + "car/update",
         method: "post",
         data: formData,
         contentType: false,
@@ -247,7 +247,7 @@ $("#btnUpdateCar").click(function () {
 $("#btnDeleteCar").click(function () {
     let id = $("#car_Id").val();
     $.ajax({
-        url: baseUrl + "car?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
+        url: carBaseUrl + "car?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
             saveUpdateAlert("Car", resp.message);
             loadAllCars();
         }, error: function (error) {

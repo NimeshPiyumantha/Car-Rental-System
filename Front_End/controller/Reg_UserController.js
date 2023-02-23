@@ -3,7 +3,7 @@
  * @since : 0.1.0
  **/
 
-let baseUrl = "http://localhost:8080/Back_End_war/";
+let userBaseUrl = "http://localhost:8080/Back_End_war/";
 loadAllRegUsers();
 $("#btnSaveCustomer").attr('disabled', true);
 $("#btnUpdateCustomer").attr('disabled', true);
@@ -16,7 +16,7 @@ $("#btnSaveCustomer").click(function () {
     let formData = new FormData($("#customerForm")[0]);
     console.log(formData);
     $.ajax({
-        url: baseUrl + "reg_User",
+        url: userBaseUrl + "reg_User",
         method: "post",
         data: formData,
         contentType: false,
@@ -38,7 +38,7 @@ $("#btnSaveCustomer").click(function () {
 function generateCustomerID() {
     $("#user_Id").val("C00-001");
     $.ajax({
-        url: baseUrl + "reg_User/reg_UserIdGenerate",
+        url: userBaseUrl + "reg_User/reg_UserIdGenerate",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -87,7 +87,7 @@ function setTextFieldValues(firstName, lastName, contact_No, address, email, nic
 function loadAllRegUsers() {
     $("#customerTable").empty();
     $.ajax({
-        url: baseUrl + "reg_User/loadAllUsers", method: "GET", dataType: "json", success: function (res) {
+        url: userBaseUrl + "reg_User/loadAllUsers", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
 
             for (let i of res.data) {
@@ -127,7 +127,7 @@ $("#search_Id").on("keypress", function (event) {
         var search = $("#search_Id").val();
         $("#customerTable").empty();
         $.ajax({
-            url: baseUrl + "reg_User/searchCustomer/?cus_Id="+ search,
+            url: userBaseUrl + "reg_User/searchCustomer/?cus_Id="+ search,
             method: "GET",
             contentType: "application/json",
             dataType: "json",
@@ -202,7 +202,7 @@ $("#btnUpdateCustomer").click(function () {
     let formData = new FormData($("#customerForm")[0]);
     console.log(formData);
     $.ajax({
-        url: baseUrl + "reg_User/update",
+        url: userBaseUrl + "reg_User/update",
         method: "post",
         data: formData,
         contentType: false,
@@ -223,7 +223,7 @@ $("#btnUpdateCustomer").click(function () {
 $("#btnDeleteCustomer").click(function () {
     let id = $("#user_Id").val();
     $.ajax({
-        url: baseUrl + "reg_User?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
+        url: userBaseUrl + "reg_User?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
             saveUpdateAlert("User", resp.message);
             loadAllRegUsers();
         }, error: function (error) {

@@ -3,7 +3,7 @@
  * @since : 0.1.0
  **/
 
-let baseUrl = "http://localhost:8080/Back_End_war/";
+let driverBaseUrl = "http://localhost:8080/Back_End_war/";
 loadAllDrivers();
 
 $("#btnSaveDriver").attr('disabled', true);
@@ -18,7 +18,7 @@ $("#btnSaveDriver").click(function () {
     let formData = new FormData($("#driverForm")[0]);
     console.log(formData);
     $.ajax({
-        url: baseUrl + "driver",
+        url: driverBaseUrl + "driver",
         method: "post",
         data: formData,
         contentType: false,
@@ -40,7 +40,7 @@ $("#btnSaveDriver").click(function () {
 function generateDriverID() {
     $("#user_Id").val("DRI-001");
     $.ajax({
-        url: baseUrl + "driver/driverIdGenerate",
+        url: driverBaseUrl + "driver/driverIdGenerate",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -89,7 +89,7 @@ function setTextFieldValuesD(firstName, lastName, contact_No, address, email, ni
 function loadAllDrivers() {
     $("#driverTable").empty();
     $.ajax({
-        url: baseUrl + "driver/loadAllDrivers", method: "GET", dataType: "json", success: function (res) {
+        url: driverBaseUrl + "driver/loadAllDrivers", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
 
             for (let i of res.data) {
@@ -130,7 +130,7 @@ $("#search_Id").on("keypress", function (event) {
         var search = $("#search_Id").val();
         $("#driverTable").empty();
         $.ajax({
-            url: baseUrl + "driver/searchDriver/?driver_Id="+ search,
+            url: driverBaseUrl + "driver/searchDriver/?driver_Id="+ search,
             method: "GET",
             contentType: "application/json",
             dataType: "json",
@@ -207,7 +207,7 @@ $("#btnUpdateDriver").click(function () {
     let formData = new FormData($("#driverForm")[0]);
     console.log(formData);
     $.ajax({
-        url: baseUrl + "driver/update",
+        url: driverBaseUrl + "driver/update",
         method: "post",
         data: formData,
         contentType: false,
@@ -230,7 +230,7 @@ $("#btnUpdateDriver").click(function () {
 $("#btnDeleteDriver").click(function () {
     let id = $("#user_Id").val();
     $.ajax({
-        url: baseUrl + "driver?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
+        url: driverBaseUrl + "driver?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
             saveUpdateAlert("Driver", resp.message);
             loadAllDrivers();
         }, error: function (error) {
