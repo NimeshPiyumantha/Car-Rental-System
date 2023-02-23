@@ -296,253 +296,474 @@
 <!-- ======= Main ======= -->
 <main id="main" class="main">
 
-    <div class="pagetitle" id="pageOne">
+    <div class="pageTitle">
         <h1>User Dashboard</h1>
-        <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="adminDashboard.html">Home</a></li>
-                <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
-        </nav>
+        <section class="container-fluid mt-3" id="manageCustomer">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">My Profile / Manage</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="search-bar mt-4">
+                        <div class="search-form d-flex align-items-center">
+                            <input type="search" name="user_Id" id="search_Id" placeholder="Search" title="Enter search keyword">
+                            <button type="button" title="Search"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                    <!-- End Search Bar -->
+                    <div class="col-12 m-3 p-1">
+                        <form class="row" id="customerForm">
+                            <section id="sec1Customer" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="user_Id">User Id</label>
+                                    <input type="text" name="user_Id" class="form-control" readonly id="user_Id"
+                                           placeholder="C00-001">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="firstName">First Name</label>
+                                    <input type="text" name="firstName" class="form-control" id="firstName"
+                                           placeholder="First Name">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="lastName">Last Name</label>
+                                    <input type="text" name="lastName" class="form-control" id="lastName"
+                                           placeholder="Last Name">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="contact_No">Contact Number</label>
+                                    <input type="text" name="contact_No" class="form-control" id="contact_No"
+                                           placeholder="Contact Number">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="address">Address</label>
+                                    <input type="text" name="address" class="form-control" id="address"
+                                           placeholder="Address">
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec2Customer" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="text" name="email" class="form-control" id="email"
+                                           placeholder="Email Address">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="nic">NIC NUmber</label>
+                                    <input type="text" name="nic" class="form-control" id="nic"
+                                           placeholder="National ID">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="license_No">Driving License ID</label>
+                                    <input type="text" name="license_No" class="form-control" id="license_No"
+                                           placeholder="Driving License">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="license_Img">NIC Image</label>
+                                    <input type="file" name="nic_Img" class="form-control" id="nic_Img">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="license_Img">Driving License Image</label>
+                                    <input type="file" name="license_Img" class="form-control" id="license_Img">
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec3" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label for="role_Type" class="form-label">Role type</label>
+                                    <select class="form-control" id="role_Type" name="role_Type">
+                                        <option value="REGISTERED_USER">REGISTERED_USER</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label for="user_Name" class="form-label">User Name</label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                        <input type="text" name="user_Name" class="form-control" id="user_Name"
+                                               placeholder="User Name">
+                                        <span class="control-error"></span>
+                                    </div>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" name="password" class="form-control" id="password"
+                                           placeholder="Enter Password">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                    <button class="btn btn-warning me-md-1" id="btnUpdateCustomer" type="button">
+                                        Update
+                                    </button>
+                                    <button type="button" class="btn btn-danger me-md-1" id="btnDeleteCustomer">Delete
+                                    </button>
+                                </div>
+                            </section>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="card info-card">
+                    <!-- View Customer Details Table Start -->
+                    <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
+                        <div class="col-11 justify-content-around sectionBorder"
+                             style="height: 290px; background: white">
+                            <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                <table class="table table-light table-striped table-bordered table-hover">
+                                    <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Contact No</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">NIC Number</th>
+                                        <th scope="col">DL ID</th>
+                                        <th scope="col">Role Type</th>
+                                        <th scope="col">User Name</th>
+                                        <th scope="col">Password</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="customerTable"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- View Customer Details Table End -->
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid mt-3" id="bookingResponse">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Booking Details</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <!-- start content-->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+
+                                            <!-- start booking response details -->
+                                            <form id="responseForm" class="row mb-3">
+                                                <section id="secResponseDetails" class="row mx-0">
+                                                    <div class="mb-2 col-xl-4 col-sm-6">
+                                                        <label class="form-label" for="responseRentId">Rent ID<span
+                                                                class="text-danger">*</span></label>
+                                                        <input class="form-control" id="responseRentId" readonly
+                                                               name="rent_Id"
+                                                               placeholder="Rent ID" type="text">
+                                                    </div>
+                                                    <div class="mb-2 col-xl-4 col-sm-6">
+                                                        <label class="form-label" for="responseUserId">User ID<span
+                                                                class="text-danger">*</span></label>
+                                                        <input class="form-control" id="responseUserId" readonly
+                                                               name="user_Id"
+                                                               placeholder="User ID" type="text">
+                                                    </div>
+                                                    <div class="mb-2 col-xl-4 col-sm-6">
+                                                        <label class="form-label" for="responseCarId">Car ID<span
+                                                                class="text-danger">*</span></label>
+                                                        <input class="form-control" id="responseCarId" readonly
+                                                               name="car_Id"
+                                                               placeholder="Car ID" type="text">
+                                                    </div>
+                                                    <div class="mb-2 col-xl-4 col-sm-6">
+                                                        <label class="form-label" for="responsePickUpDate">Pick-Up Date<span
+                                                                class="text-danger">*</span></label>
+                                                        <input class="form-control" id="responsePickUpDate" readonly
+                                                               name="pick_Up_Date"
+                                                               placeholder="Pick-Up Date" type="text">
+                                                    </div>
+                                                    <div class="mb-2 col-xl-4 col-sm-6">
+                                                        <label class="form-label" for="responseReturnDate">Return Date<span
+                                                                class="text-danger">*</span></label>
+                                                        <input class="form-control" id="responseReturnDate" readonly
+                                                               name="return_Date"
+                                                               placeholder="Return Date" type="text">
+                                                    </div>
+                                                    <div class="mb-2 col-xl-4 col-sm-6">
+                                                        <label class="form-label" for="responseLocation">Location<span
+                                                                class="text-danger">*</span></label>
+                                                        <input class="form-control" id="responseLocation" readonly
+                                                               name="location"
+                                                               placeholder="Location" type="text">
+                                                    </div>
+                                                </section>
+                                            </form>
+                                            <!-- end booking response details -->
+
+                                            <!-- start response table content-->
+                                            <div class="table-responsive-xxl table-nowrap">
+                                                <table class="table table-centered mb-0">
+                                                    <thead class="btn-primary">
+                                                    <tr>
+                                                        <th>Rent ID</th>
+                                                        <th>User ID</th>
+                                                        <th>Car ID</th>
+                                                        <th>Pick-Up Date</th>
+                                                        <th>Return Date</th>
+                                                        <th>Location</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="tblResponse">
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!-- end response table content-->
+
+                                            <!-- start button content-->
+                                            <div class="mb-3 mt-3 d-grid gap-1 d-md-flex justify-content-md-center">
+                                                <button type="button" class="btn btn-danger btn" id="btnDeleteRental">
+                                                    Delete Rental
+                                                </button>
+                                                <button type="button" class="btn btn-warning btn me-md-1"
+                                                        id="btnClear">
+                                                    Clear
+                                                </button>
+                                            </div>
+                                            <!-- end button content-->
+
+                                        </div>
+                                        <!-- end col-->
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                                <!-- end card-body -->
+                            </div>
+                            <!-- end card-->
+                        </div>
+                        <!-- end col-->
+                    </div>
+                    <!-- end content-->
+                </div>
+
+            </div>
+        </section>
+        <section class="container-fluid mt-3" id="customerPayment">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Payment Details</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <!-- start content-->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+
+                                            <div class="table-responsive-xxl table-nowrap">
+                                                <table class="table table-centered mb-0">
+                                                    <thead class="btn-primary">
+                                                    <tr>
+                                                        <th>Payment ID</th>
+                                                        <th>Date</th>
+                                                        <th>Amount (Rs.)</th>
+                                                        <th>Rent ID</th>
+                                                        <th>Customer ID</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="tblPayments">
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                        <!-- end col-->
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                                <!-- end card-body -->
+                            </div>
+                            <!-- end card-->
+                        </div>
+                        <!-- end col-->
+                    </div>
+                    <!-- end content-->
+                </div>
+
+            </div>
+        </section>
+        <section class="container-fluid mt-3" id="rentDetails">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Rent</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="col col-lg-12">
+                        <div class="row col-12 m-2 p-2  justify-content-lg-center">
+                            <di class="row col-lg-6 gap-3 gap-lg-0 col-md-5 col-sm-6 col-xs-3 justify-content-md-around">
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="rent_Id">Rent Id</label>
+                                    <input type="text" name="rent_Id" class="form-control" readonly id="rent_Id"
+                                           placeholder="REN-001">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="user_Id">User Id</label>
+                                    <input type="text" name="user_Id" class="form-control" id="userID"
+                                           placeholder="C00-001">
+                                </div>
+                            </di>
+                            <div class="row col-lg-6 gap-3 gap-lg-0 d-flex col-md-5 col-sm-6 col-xs-3 justify-content-md-around">
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="category_type">Category</label>
+                                    <select class="form-control" id="category_type" name="category_type">
+                                        <option>Choose Type..</option>
+                                        <option value="GENERAL">GENERAL</option>
+                                        <option value="LUXURY">LUXURY</option>
+                                        <option value="PREMIUM">PREMIUM</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="fuel_Type">Fuel Type</label>
+                                    <select class="form-control" id="fuel_Type" name="fuel_Type">
+                                        <option>Choose Type..</option>
+                                        <option value="DIESEL">DIESEL</option>
+                                        <option value="PETROL">PETROL</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card info-card">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="mt-4 "style="padding: 3rem;border: 2px solid black">
+                                        <div id="imageLoad" style="height: 345px"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 p-2">
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="car_Id">Car ID :</label>
+                                            <select aria-label="Default select example" class="form-select border-dark"
+                                                    id="car_Id" name="car_Id"></select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="name">Brand :</label>
+                                            <input class="form-control " id="name" readonly type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="brand">Model :</label>
+                                            <input class="form-control " id="brand" readonly type="text">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="number_Of_Passengers">No of Passengers :</label>
+                                            <input class="form-control " id="number_Of_Passengers" readonly type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="pickUpDate">PickUp Date :</label>
+                                            <input class="form-control " id="pickUpDate" type="date">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="pickUpTime">PickUp Time :</label>
+                                            <input class="form-control " id="pickUpTime" type="time">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="returnDate">Return Date :</label>
+                                            <input class="form-control " id="returnDate" type="date">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="returnTime">Return Time :</label>
+                                            <input class="form-control " id="returnTime" type="time">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="requestType">Driver or not :</label>
+                                            <select class="form-control " id="requestType">
+                                                <option value="YES">YES</option>
+                                                <option value="NO">NO</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="location">Location :</label>
+                                            <input class="form-control " id="location" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                        <button class="btn btn-warning me-md-1" id="btnAddCart" type="button">Add Cart
+                                        </button>
+                                        <button type="button" class="btn btn-success me-md-1" id="btnReservation">
+                                            Reservation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card info-card">
+                <!-- View Customer Details Table Start -->
+                <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
+                    <div class="col-11 justify-content-around sectionBorder"
+                         style="height: 290px; background: white">
+                        <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                            <table class="table table-light table-striped table-bordered table-hover">
+                                <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                <tr>
+                                    <th scope="col">Car Id</th>
+                                    <th scope="col">PickUp Date</th>
+                                    <th scope="col">PickUp Time</th>
+                                    <th scope="col">Return Date</th>
+                                    <th scope="col">Return Time</th>
+                                    <th scope="col">Request Type</th>
+                                    <th scope="col">Location</th>
+                                </tr>
+                                </thead>
+                                <tbody id="cartTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- View Customer Details Table End -->
+            </div>
+        </section>
     </div>
-    <!-- End Page Title -->
-    <section class="section dashboard">
-        <div class="row">
-
-            <!-- Left side columns -->
-            <div class="col-lg-8">
-                <div class="row">
-
-                    <!-- Car Card -->
-                    <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card sales-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Cars <span>| All Type</span></h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-car-front-fill"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6 id="carCount">145</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- End Car Card -->
-
-                    <!-- Drivers Card -->
-                    <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card revenue-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Driver <span>| All Type</span></h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6 id="driverCount">30</h6>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- End Drivers Card -->
-
-                    <!-- Customers Card -->
-                    <div class="col-xxl-4 col-xl-12">
-
-                        <div class="card info-card customers-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Customers <span>| All Type</span></h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6 id="customerCount">1244</h6>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- End Customers Card -->
-
-                    <!-- Reports -->
-                    <div class="col-12">
-                        <div class="card">
-
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">Reports <span>/Today</span></h5>
-
-                                <!-- Line Chart -->
-                                <div id="reportsChart"></div>
-
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", () => {
-                                        new ApexCharts(document.querySelector("#reportsChart"), {
-                                            series: [{
-                                                name: 'Sales',
-                                                data: [31, 40, 28, 51, 42, 82, 56],
-                                            }, {
-                                                name: 'Revenue',
-                                                data: [11, 32, 45, 32, 34, 52, 41]
-                                            }, {
-                                                name: 'Customers',
-                                                data: [15, 11, 32, 18, 9, 24, 11]
-                                            }],
-                                            chart: {
-                                                height: 350,
-                                                type: 'area',
-                                                toolbar: {
-                                                    show: false
-                                                },
-                                            },
-                                            markers: {
-                                                size: 4
-                                            },
-                                            colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                                            fill: {
-                                                type: "gradient",
-                                                gradient: {
-                                                    shadeIntensity: 1,
-                                                    opacityFrom: 0.3,
-                                                    opacityTo: 0.4,
-                                                    stops: [0, 90, 100]
-                                                }
-                                            },
-                                            dataLabels: {
-                                                enabled: false
-                                            },
-                                            stroke: {
-                                                curve: 'smooth',
-                                                width: 2
-                                            },
-                                            xaxis: {
-                                                type: 'datetime',
-                                                categories: ["2022-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-                                            },
-                                            tooltip: {
-                                                x: {
-                                                    format: 'dd/MM/yy HH:mm'
-                                                },
-                                            }
-                                        }).render();
-                                    });
-                                </script>
-                                <!-- End Line Chart -->
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- End Reports -->
-
-                </div>
-            </div>
-            <!-- End Left side columns -->
-
-            <!-- Right side columns -->
-            <div class="col-lg-4">
-
-                <!-- Recent Activity -->
-                <div class="card">
-                    <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                            <li class="dropdown-header text-start">
-                                <h6>Filter</h6>
-                            </li>
-
-                            <li><a class="dropdown-item" href="#">Today</a></li>
-                            <li><a class="dropdown-item" href="#">This Month</a></li>
-                            <li><a class="dropdown-item" href="#">This Year</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="card-body">
-                        <h5 class="card-title">Recent Activity <span>| Today</span></h5>
-
-                        <div class="activity">
-
-                            <div class="activity-item d-flex">
-                                <div class="activite-label">40 min</div>
-                                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                                <div class="activity-content">
-                                    Add New Car <a href="#" class="fw-bold text-dark">Brand BMW</a>
-                                </div>
-                            </div>
-                            <!-- End activity item-->
-
-                            <div class="activity-item d-flex">
-                                <div class="activite-label">56 min</div>
-                                <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                                <div class="activity-content">
-                                    C00-002 Customer Rent CAR-003
-                                </div>
-                            </div>
-                            <!-- End activity item-->
-
-                            <div class="activity-item d-flex">
-                                <div class="activite-label">2 hrs</div>
-                                <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                                <div class="activity-content">
-                                    C00-010 Customer Rent CAR-007
-                                </div>
-                            </div>
-                            <!-- End activity item-->
-
-                            <div class="activity-item d-flex">
-                                <div class="activite-label">40 min</div>
-                                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                                <div class="activity-content">
-                                    Add New Car <a href="#" class="fw-bold text-dark">Brand Banz</a>
-                                </div>
-                            </div>
-                            <!-- End activity item-->
-
-                            <div class="activity-item d-flex">
-                                <div class="activite-label">2 days</div>
-                                <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                                <div class="activity-content">
-                                    C00-012 Customer Request a Rent CRI-007 Car.
-                                </div>
-                            </div>
-                            <!-- End activity item-->
-
-                        </div>
-
-                    </div>
-                </div>
-                <!-- End Recent Activity -->
-
-            </div>
-            <!-- End Right side columns -->
-        </div>
-    </section>
-
-    //Add Content
 
 </main>
 <!-- End #main -->

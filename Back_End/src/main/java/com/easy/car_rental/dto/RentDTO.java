@@ -31,7 +31,7 @@ public class RentDTO {
     private RentRequest rentType;
     private String location;
 
-    private String user;
+    private Reg_User user;
     private List<Rent_DetailsDTO> rent_Details;
 
 }
