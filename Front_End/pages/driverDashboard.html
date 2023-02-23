@@ -457,31 +457,30 @@
                     <!-- start content-->
                     <div class="row">
                         <div class="col-12">
-                            <div class="card">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-xl-12">
                                             <div class="row">
-                                                <div class="table-responsive-xxl table-nowrap flex-grow-0 col-xl-8">
-                                                    <table class="table table-centered mb-0 col-xxl-6">
-                                                        <thead class="btn-primary">
-                                                        <tr>
-                                                            <th scope="col">Driver ID</th>
-                                                            <th scope="col">Driver Name</th>
-                                                            <th scope="col">Rent ID</th>
-                                                            <th scope="col">Car ID</th>
-                                                            <th scope="col">Pick-Up Date</th>
-                                                            <th scope="col">Pick-Up Time</th>
-                                                            <th scope="col">Location</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody id="tblDriverSchedule">
-
-                                                        </tbody>
-                                                    </table>
+                                                <div class="table-responsive-xxl flex-grow-0 gap-3 col-xl-8 mt-4 sectionBorder"
+                                                     style="height: 400px; background: white;">
+                                                    <div class="table-responsive customerTableDiv overflow-auto " style="height: 420px;">
+                                                        <table class="text-nowrap table table-light table-striped table-bordered table-hover">
+                                                            <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                                            <tr>
+                                                                <th scope="col">Driver ID</th>
+                                                                <th scope="col">Driver Name</th>
+                                                                <th scope="col">Rent ID</th>
+                                                                <th scope="col">Car ID</th>
+                                                                <th scope="col">Pick-Up Date</th>
+                                                                <th scope="col">Pick-Up Time</th>
+                                                                <th scope="col">Location</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody id="cartTable"></tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
-
-                                                <div class="col-xl-4 shadow">
+                                                <div class="col-xl-4 mt-4 mt-xl-3 p-0 p-xl-2">
                                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63397.34482830807!2d79.89441649307884!3d6.729034954627545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676916771183!5m2!1sen!2slk"
                                                             height="400" style="border:0;" allowfullscreen=""
                                                             loading="lazy" class="col-12 col-xl-12 rounded-3"
@@ -493,8 +492,6 @@
                                     </div>
                                     <!-- end row -->
                                 </div>
-                                <!-- end card-body -->
-                            </div>
                             <!-- end card-->
                         </div>
                         <!-- end col-->
