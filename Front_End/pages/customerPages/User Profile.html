@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Driver Dashboard</title>
-    <link href="../assets/icon/logo.png" rel="icon">
+    <title>User Dashboard</title>
+    <link href="../../assets/icon/logo.png" rel="icon">
 
     <meta content="Easy Car Rental, Car rental,Vehicle Rental" name="keywords">
     <meta content="This is Car Rental Web Project." name="description">
@@ -19,13 +19,13 @@
           rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="../assets/vendor/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">
 
     <!-- Template Dashboard CSS File -->
-    <link href="../assets/css/dashboardStyle.css" rel="stylesheet">
+    <link href="../../assets/css/dashboardStyle.css" rel="stylesheet">
 
 </head>
 <body>
@@ -33,7 +33,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a id="driverDashboard1" class="logo d-flex align-items-center">
+        <a href="../reg_UserDashboard.html" class="logo d-flex align-items-center">
             <span class="d-none d-lg-block">Easy <span>Rent.</span></span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -141,7 +141,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="../assets/img/massage/messages-1.jpg" alt="" class="rounded-circle">
+                            <img src="../../assets/img/massage/messages-1.jpg" alt="" class="rounded-circle">
                             <div>
                                 <h4>Maria Hudson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -155,7 +155,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="../assets/img/massage/messages-2.jpg" alt="" class="rounded-circle">
+                            <img src="../../assets/img/massage/messages-2.jpg" alt="" class="rounded-circle">
                             <div>
                                 <h4>Anna Nelson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -169,7 +169,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="../assets/img/massage/messages-3.jpg" alt="" class="rounded-circle">
+                            <img src="../../assets/img/massage/messages-3.jpg" alt="" class="rounded-circle">
                             <div>
                                 <h4>David Muldon</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -192,7 +192,7 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="../assets/img/massage/profile-img.jpg" alt="Profile" class="rounded-circle">
+                    <img src="../../assets/img/massage/profile-img.jpg" alt="Profile" class="rounded-circle">
                     <span class="d-none d-md-block dropdown-toggle ps-2">K.L Samson</span>
                 </a><!-- End Profile Iamge Icon -->
 
@@ -257,7 +257,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " id="driverDashboardSection">
+            <a class="nav-link " href="../reg_UserDashboard.html">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -265,7 +265,7 @@
         <!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" id="myDetailsSection">
+            <a class="nav-link collapsed" href="User%20Profile.html">
                 <i class="bi bi-kanban"></i>
                 <span>My Details</span>
             </a>
@@ -273,7 +273,15 @@
         <!-- End Forms Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="login.html">
+            <a class="nav-link collapsed" href="RentCar.html">
+                <i class="bi bi-car-front"></i>
+                <span>Rent Car</span>
+            </a>
+        </li>
+        <!-- End Rent Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../login.html">
                 <i class="bi bi-box-arrow-in-right"></i>
                 <span>LogOut</span>
             </a>
@@ -288,101 +296,98 @@
 <!-- ======= Main ======= -->
 <main id="main" class="main">
 
-    <div class="pageTitle">
-        <h1>Driver Dashboard</h1>
-        <section class="container-fluid mt-3" id="manageDrivers">
+    <!-- ======= Customer Manage ======= -->
+    <div class="pagetitle" id="pagetwo">
+        <h1>My Profile</h1>
+
+        <section class="container-fluid mt-3" id="manageCustomer">
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="adminDashboard.html">Home</a></li>
-                    <li class="breadcrumb-item active">Manage / Drivers</li>
+                    <li class="breadcrumb-item"><a href="../adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">My Profile / Manage</li>
                 </ol>
             </nav>
 
             <div class="row mt-3">
                 <div class="card info-card">
                     <div class="search-bar mt-4">
-                        <div class="search-bar mt-4">
-                            <div class="search-form d-flex align-items-center">
-                                <input type="search" name="driver_Id" id="search_Id" placeholder="Search"
-                                       title="Enter search keyword">
-                                <button type="button" title="Search"><i class="bi bi-search"></i></button>
-                            </div>
+                        <div class="search-form d-flex align-items-center">
+                            <input type="search" name="user_Id" id="search_Id" placeholder="Search" title="Enter search keyword">
+                            <button type="button" title="Search"><i class="bi bi-search"></i></button>
                         </div>
                     </div>
                     <!-- End Search Bar -->
                     <div class="col-12 m-3 p-1">
-                        <form class="row" id="driverForm">
-                            <section id="sec1Driver" class="col-md-4 mt-3">
+                        <form class="row" id="customerForm">
+                            <section id="sec1Customer" class="col-md-4 mt-3">
                                 <div class="mb-sm-0">
-                                    <label class="form-label" for="user_Id">Driver Id</label>
-                                    <input class="form-control" id="user_Id" readonly type="text" name="user_Id"
-                                           placeholder="DRI-001">
+                                    <label class="form-label" for="user_Id">User Id</label>
+                                    <input type="text" name="user_Id" class="form-control" readonly id="user_Id"
+                                           placeholder="C00-001">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
                                     <label class="form-label" for="firstName">First Name</label>
-                                    <input class="form-control" id="firstName" type="text" name="firstName"
+                                    <input type="text" name="firstName" class="form-control" id="firstName"
                                            placeholder="First Name">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
                                     <label class="form-label" for="lastName">Last Name</label>
-                                    <input class="form-control" id="lastName" type="text" name="lastName"
+                                    <input type="text" name="lastName" class="form-control" id="lastName"
                                            placeholder="Last Name">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
                                     <label class="form-label" for="contact_No">Contact Number</label>
-                                    <input class="form-control" id="contact_No" type="text" name="contact_No"
+                                    <input type="text" name="contact_No" class="form-control" id="contact_No"
                                            placeholder="Contact Number">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
                                     <label class="form-label" for="address">Address</label>
-                                    <input class="form-control" id="address" type="text" name="address"
+                                    <input type="text" name="address" class="form-control" id="address"
                                            placeholder="Address">
                                     <span class="control-error"></span>
                                 </div>
                             </section>
 
-                            <section id="sec2Driver" class="col-md-4 mt-3">
+                            <section id="sec2Customer" class="col-md-4 mt-3">
                                 <div class="mb-sm-0">
                                     <label class="form-label" for="email">Email</label>
-                                    <input class="form-control" id="email" type="text" name="email"
+                                    <input type="text" name="email" class="form-control" id="email"
                                            placeholder="Email Address">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="nic_No">NIC Number</label>
-                                    <input class="form-control" id="nic_No" type="text" name="nic_No"
+                                    <label class="form-label" for="nic">NIC NUmber</label>
+                                    <input type="text" name="nic" class="form-control" id="nic"
                                            placeholder="National ID">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
                                     <label class="form-label" for="license_No">Driving License ID</label>
-                                    <input class="form-control" id="license_No" type="text" name="license_No"
+                                    <input type="text" name="license_No" class="form-control" id="license_No"
                                            placeholder="Driving License">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="license_Img">Driving License image</label>
-                                    <input class="form-control" id="license_Img" type="file" name="license_Img">
+                                    <label class="form-label" for="license_Img">NIC Image</label>
+                                    <input type="file" name="nic_Img" class="form-control" id="nic_Img">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="driverAvailability">Availability</label>
-                                    <select class="form-control" id="driverAvailability" name="driverAvailability">
-                                        <option value="AVAILABLE">AVAILABLE</option>
-                                    </select>
+                                    <label class="form-label" for="license_Img">Driving License Image</label>
+                                    <input type="file" name="license_Img" class="form-control" id="license_Img">
                                     <span class="control-error"></span>
                                 </div>
                             </section>
 
-                            <section id="sec3Driver" class="col-md-4 mt-3">
+                            <section id="sec3" class="col-md-4 mt-3">
                                 <div class="mb-sm-0">
                                     <label for="role_Type" class="form-label">Role type</label>
                                     <select class="form-control" id="role_Type" name="role_Type">
-                                        <option value="DRIVER">DRIVER</option>
+                                        <option value="REGISTERED_USER">REGISTERED_USER</option>
                                     </select>
                                     <span class="control-error"></span>
                                 </div>
@@ -390,30 +395,32 @@
                                     <label for="user_Name" class="form-label">User Name</label>
                                     <div class="input-group has-validation">
                                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                        <input class="form-control" id="user_Name" type="text" name="user_Name"
+                                        <input type="text" name="user_Name" class="form-control" id="user_Name"
                                                placeholder="User Name">
                                         <span class="control-error"></span>
                                     </div>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
                                     <label class="form-label" for="password">Password</label>
-                                    <input class="form-control" id="password" type="password" name="password"
+                                    <input type="password" name="password" class="form-control" id="password"
                                            placeholder="Enter Password">
                                     <span class="control-error"></span>
                                 </div>
-
                                 <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
-                                    <button type="button" class="btn btn-warning me-md-1" id="btnUpdateDriver">Update
+                                    <button class="btn btn-warning me-md-1" id="btnUpdateCustomer" type="button">
+                                        Update
                                     </button>
-                                    <button type="button" class="btn btn-danger" id="btnDeleteDriver">Delete</button>
+                                    <button type="button" class="btn btn-danger me-md-1" id="btnDeleteCustomer">Delete
+                                    </button>
                                 </div>
                             </section>
+
                         </form>
                     </div>
                 </div>
                 <div class="card info-card">
-                    <!-- View Driver Details Table Start -->
-                    <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
+                    <!-- View Customer Details Table Start -->
+                    <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
                         <div class="col-11 justify-content-around sectionBorder"
                              style="height: 290px; background: white">
                             <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
@@ -427,83 +434,23 @@
                                         <th scope="col">Address</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">NIC Number</th>
-                                        <th scope="col">Driving License ID</th>
-                                        <th scope="col">Availability Type</th>
+                                        <th scope="col">DL ID</th>
                                         <th scope="col">Role Type</th>
                                         <th scope="col">User Name</th>
                                         <th scope="col">Password</th>
-
                                     </tr>
                                     </thead>
-                                    <tbody id="driverTable"></tbody>
+                                    <tbody id="customerTable"></tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <!-- View Driver Details Table End -->
-                </div>
-            </div>
-        </section>
-        <section class="container-fluid mt-3" id="driverShedule">
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item" href="driverDashboard.html">Home</li>
-                    <li class="breadcrumb-item active">Manage / Drivers</li>
-                </ol>
-            </nav>
-
-            <div class="row mt-3">
-                <div class="card info-card">
-                    <!-- start content-->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <div class="row">
-                                                <div class="table-responsive-xxl table-nowrap flex-grow-0 col-xl-8">
-                                                    <table class="table table-centered mb-0 col-xxl-6">
-                                                        <thead class="btn-primary">
-                                                        <tr>
-                                                            <th scope="col">Driver ID</th>
-                                                            <th scope="col">Driver Name</th>
-                                                            <th scope="col">Rent ID</th>
-                                                            <th scope="col">Car ID</th>
-                                                            <th scope="col">Pick-Up Date</th>
-                                                            <th scope="col">Pick-Up Time</th>
-                                                            <th scope="col">Location</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody id="tblDriverSchedule">
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-
-                                                <div class="col-xl-4 shadow">
-                                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63397.34482830807!2d79.89441649307884!3d6.729034954627545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676916771183!5m2!1sen!2slk"
-                                                            height="400" style="border:0;" allowfullscreen=""
-                                                            loading="lazy" class="col-12 col-xl-12 rounded-3"
-                                                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- end col-->
-                                    </div>
-                                    <!-- end row -->
-                                </div>
-                                <!-- end card-body -->
-                            </div>
-                            <!-- end card-->
-                        </div>
-                        <!-- end col-->
-                    </div>
-                    <!-- end content-->
+                    <!-- View Customer Details Table End -->
                 </div>
             </div>
         </section>
     </div>
+    <!-- End Customer Manage -->
 
 </main>
 <!-- End #main -->
@@ -522,38 +469,19 @@
         class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
-<script src="../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
-<script rel="script" src="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+<script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="../../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+<script rel="script" src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
 
 <!-- Template Dashboard Main JS File -->
-<script src="../assets/js/dashboardMain.js"></script>
+<script src="../../assets/js/dashboardMain.js"></script>
 
 <!-- Controller JS File -->
-<script src="../controller/DashBoardController.js"></script>
-<script src="../controller/DriverController.js"></script>
+<script src="../../controller/Reg_UserController.js"></script>
 
 <!-- Util JS File -->
-<script src="../util/alert.js" rel="script"></script>
-<script src="../util/validation.js" rel="script"></script>
-
-<script>
-    $(document).ready(function () {
-        $("#manageDrivers").css('display', 'none');
-        $("#driverShedule").css('display', 'block');
-    });
-
-    $("#driverDashboardSection").click(function () {
-        $("#manageDrivers").css('display', 'none');
-        $("#driverShedule").css('display', 'block');
-    });
-
-    $("#myDetailsSection").click(function () {
-        $("#manageDrivers").css('display', 'block');
-        $("#driverShedule").css('display', 'none');
-    });
-
-</script>
+<script src="../../util/alert.js" rel="script"></script>
+<script src="../../util/validation.js" rel="script"></script>
 </body>
 </html>
