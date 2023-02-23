@@ -265,12 +265,12 @@
         <!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" id="myDetailsSection">
-                <i class="bi bi-kanban"></i>
-                <span>My Details</span>
+            <a class="nav-link collapsed" id="paymentSection">
+                <i class="bi bi-paypal"></i>
+                <span>Payment</span>
             </a>
         </li>
-        <!-- End Forms Nav -->
+        <!-- End Payment Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" id="rentSection">
@@ -282,7 +282,7 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" id="bookingResponseSection">
-                <i class="bi bi-car-front"></i>
+                <i class="bi bi-journal-bookmark-fill"></i>
                 <span>Booking Response</span>
             </a>
         </li>
@@ -306,156 +306,6 @@
 
     <div class="pageTitle">
         <h1>User Dashboard</h1>
-        <section class="container-fluid mt-3" id="manageCustomer">
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="">Home</a></li>
-                    <li class="breadcrumb-item active">My Profile</li>
-                </ol>
-            </nav>
-
-            <div class="row mt-3">
-                <div class="card info-card">
-                    <div class="search-bar mt-4">
-                        <div class="search-form d-flex align-items-center">
-                            <input type="search" name="user_Id" id="search_Id" placeholder="Search"
-                                   title="Enter search keyword">
-                            <button type="button" title="Search"><i class="bi bi-search"></i></button>
-                        </div>
-                    </div>
-                    <!-- End Search Bar -->
-                    <div class="col-12 m-3 p-1">
-                        <form class="row" id="customerForm">
-                            <section id="sec1Customer" class="col-md-4 mt-3">
-                                <div class="mb-sm-0">
-                                    <label class="form-label" for="user_Id">User Id</label>
-                                    <input type="text" name="user_Id" class="form-control" readonly id="user_Id"
-                                           placeholder="C00-001">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="firstName">First Name</label>
-                                    <input type="text" name="firstName" class="form-control" id="firstName"
-                                           placeholder="First Name">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="lastName">Last Name</label>
-                                    <input type="text" name="lastName" class="form-control" id="lastName"
-                                           placeholder="Last Name">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="contact_No">Contact Number</label>
-                                    <input type="text" name="contact_No" class="form-control" id="contact_No"
-                                           placeholder="Contact Number">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="address">Address</label>
-                                    <input type="text" name="address" class="form-control" id="address"
-                                           placeholder="Address">
-                                    <span class="control-error"></span>
-                                </div>
-                            </section>
-
-                            <section id="sec2Customer" class="col-md-4 mt-3">
-                                <div class="mb-sm-0">
-                                    <label class="form-label" for="email">Email</label>
-                                    <input type="text" name="email" class="form-control" id="email"
-                                           placeholder="Email Address">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="nic">NIC NUmber</label>
-                                    <input type="text" name="nic" class="form-control" id="nic"
-                                           placeholder="National ID">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="license_No">Driving License ID</label>
-                                    <input type="text" name="license_No" class="form-control" id="license_No"
-                                           placeholder="Driving License">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="license_Img">NIC Image</label>
-                                    <input type="file" name="nic_Img" class="form-control" id="nic_Img">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="license_Img">Driving License Image</label>
-                                    <input type="file" name="license_Img" class="form-control" id="license_Img">
-                                    <span class="control-error"></span>
-                                </div>
-                            </section>
-
-                            <section id="sec3" class="col-md-4 mt-3">
-                                <div class="mb-sm-0">
-                                    <label for="role_Type" class="form-label">Role type</label>
-                                    <select class="form-control" id="role_Type" name="role_Type">
-                                        <option value="REGISTERED_USER">REGISTERED_USER</option>
-                                    </select>
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label for="user_Name" class="form-label">User Name</label>
-                                    <div class="input-group has-validation">
-                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                        <input type="text" name="user_Name" class="form-control" id="user_Name"
-                                               placeholder="User Name">
-                                        <span class="control-error"></span>
-                                    </div>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="password">Password</label>
-                                    <input type="password" name="password" class="form-control" id="password"
-                                           placeholder="Enter Password">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
-                                    <button class="btn btn-warning me-md-1" id="btnUpdateCustomer" type="button">
-                                        Update
-                                    </button>
-                                    <button type="button" class="btn btn-danger me-md-1" id="btnDeleteCustomer">Delete
-                                    </button>
-                                </div>
-                            </section>
-
-                        </form>
-                    </div>
-                </div>
-                <div class="card info-card">
-                    <!-- View Customer Details Table Start -->
-                    <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
-                        <div class="col-11 justify-content-around sectionBorder"
-                             style="height: 290px; background: white">
-                            <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
-                                <table class="table table-light table-striped table-bordered table-hover">
-                                    <thead class="text-dark table-danger text-center  table-bordered sticky-top">
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">First Name</th>
-                                        <th scope="col">Last Name</th>
-                                        <th scope="col">Contact No</th>
-                                        <th scope="col">Address</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">NIC Number</th>
-                                        <th scope="col">DL ID</th>
-                                        <th scope="col">Role Type</th>
-                                        <th scope="col">User Name</th>
-                                        <th scope="col">Password</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody id="customerTable"></tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- View Customer Details Table End -->
-                </div>
-            </div>
-        </section>
         <section class="container-fluid mt-3" id="bookingResponse">
             <nav>
                 <ol class="breadcrumb">
@@ -638,7 +488,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label class="form-label" for="user_Id">User Id</label>
-                                    <input type="text" name="user_Id" class="form-control" id="userID"
+                                    <input type="text" name="user_Id" class="form-control" id="user_Id"
                                            placeholder="C00-001">
                                 </div>
                             </di>
@@ -796,7 +646,6 @@
 <script src="../assets/js/dashboardMain.js"></script>
 
 <!-- Controller JS File -->
-<script src="../controller/Reg_UserController.js"></script>
 <script src="../controller/RentController.js"></script>
 
 <!-- Util JS File -->
@@ -805,37 +654,31 @@
 
 <script>
     $(document).ready(function () {
-        $("#manageCustomer").css('display', 'none');
         $("#bookingResponse").css('display', 'block');
         $("#customerPayment").css('display', 'none');
         $("#rentDetails").css('display', 'none');
     });
 
     $("#userDashboardSection").click(function () {
-        $("#manageCustomer").css('display', 'none');
         $("#bookingResponse").css('display', 'block');
         $("#customerPayment").css('display', 'none');
         $("#rentDetails").css('display', 'none');
     });
 
-    $("#myDetailsSection").click(function () {
-        $("#manageCustomer").css('display', 'block');
-        $("#bookingResponse").css('display', 'none');
-        $("#customerPayment").css('display', 'none');
-        $("#rentDetails").css('display', 'none');
-    });
-
     $("#rentSection").click(function () {
-        $("#manageCustomer").css('display', 'none');
         $("#bookingResponse").css('display', 'none');
         $("#customerPayment").css('display', 'none');
         $("#rentDetails").css('display', 'block');
     });
 
     $("#bookingResponseSection").click(function () {
-        $("#manageCustomer").css('display', 'none');
         $("#bookingResponse").css('display', 'block');
         $("#customerPayment").css('display', 'none');
+        $("#rentDetails").css('display', 'none');
+    });
+    $("#paymentSection").click(function () {
+        $("#bookingResponse").css('display', 'none');
+        $("#customerPayment").css('display', 'block');
         $("#rentDetails").css('display', 'none');
     });
 
