@@ -264,13 +264,6 @@
         </li>
         <!-- End Dashboard Nav -->
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" id="paymentSection">
-                <i class="bi bi-paypal"></i>
-                <span>Payment</span>
-            </a>
-        </li>
-        <!-- End Payment Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" id="rentSection">
@@ -415,57 +408,6 @@
                     </div>
                     <!-- end response table content-->
                 </div>
-            </div>
-        </section>
-        <section class="container-fluid mt-3" id="customerPayment">
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="">Home</a></li>
-                    <li class="breadcrumb-item active">Payment Details</li>
-                </ol>
-            </nav>
-
-            <div class="row mt-3">
-                <div class="card info-card">
-                    <!-- start content-->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-xl-12">
-
-                                            <div class="table-responsive-xxl table-nowrap">
-                                                <table class="table table-centered mb-0">
-                                                    <thead class="btn-primary">
-                                                    <tr>
-                                                        <th>Payment ID</th>
-                                                        <th>Date</th>
-                                                        <th>Amount (Rs.)</th>
-                                                        <th>Rent ID</th>
-                                                        <th>Customer ID</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody id="tblPayments">
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                        </div>
-                                        <!-- end col-->
-                                    </div>
-                                    <!-- end row -->
-                                </div>
-                                <!-- end card-body -->
-                            </div>
-                            <!-- end card-->
-                        </div>
-                        <!-- end col-->
-                    </div>
-                    <!-- end content-->
-                </div>
-
             </div>
         </section>
         <section class="container-fluid mt-3" id="rentDetails">
@@ -656,30 +598,21 @@
     $(document).ready(function () {
         $("#bookingResponse").css('display', 'block');
         $("#customerPayment").css('display', 'none');
-        $("#rentDetails").css('display', 'none');
     });
 
     $("#userDashboardSection").click(function () {
         $("#bookingResponse").css('display', 'block');
         $("#customerPayment").css('display', 'none');
-        $("#rentDetails").css('display', 'none');
     });
 
     $("#rentSection").click(function () {
         $("#bookingResponse").css('display', 'none');
         $("#customerPayment").css('display', 'none');
-        $("#rentDetails").css('display', 'block');
     });
 
     $("#bookingResponseSection").click(function () {
         $("#bookingResponse").css('display', 'block');
         $("#customerPayment").css('display', 'none');
-        $("#rentDetails").css('display', 'none');
-    });
-    $("#paymentSection").click(function () {
-        $("#bookingResponse").css('display', 'none');
-        $("#customerPayment").css('display', 'block');
-        $("#rentDetails").css('display', 'none');
     });
 
 
