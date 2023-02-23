@@ -293,9 +293,9 @@
                     class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Payment Details</span>
-                    </a>
+                <a href="#">
+                    <i class="bi bi-circle"></i><span>Payment Details</span>
+                </a>
                 </li>
                 <li>
                     <a href="#">
@@ -340,7 +340,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../adminDashboard.html">Home</a></li>
-                    <li class="breadcrumb-item active">Manage / Cars</li>
+                    <li class="breadcrumb-item active">Details / Payment Details</li>
                 </ol>
             </nav>
 
@@ -350,55 +350,57 @@
                     <div class="row">
                         <!-- start col-->
                         <div class="col-12">
-                            <!-- start card-->
-                            <div class="card">
-                                <!-- start card-body -->
-                                <div class="card-body">
-                                    <!-- start row -->
-                                    <div class="row">
-                                        <!-- start col -->
-                                        <div class="col-xl-12">
-                                            <div class="row m-3">
-                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                    <div>
-                                                        <label for="paymentDetailsPickFromDate"
-                                                               class="form-label">From</label>
-                                                        <input type="date" id="paymentDetailsPickFromDate"
-                                                               class="form-control" name="fromDate"
-                                                               placeholder="Start Date">
-                                                    </div>
-                                                    <div>
-                                                        <label for="paymentDetailsPickFromDate"
-                                                               class="form-label">To</label>
-                                                        <input type="date" id="paymentDetailsPickToDate"
-                                                               class="form-control" name="toDate"
-                                                               placeholder="End Date">
-                                                    </div>
-                                                    <button type="button" class="btn btn-danger mt-3" id="btnSearchPayment">
-                                                        Search
-                                                    </button>
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start row -->
+                                <div class="row">
+                                    <!-- start col -->
+                                    <div class="col-xl-12">
+                                        <div class="row m-3">
+                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                <div>
+                                                    <label for="paymentDetailsPickFromDate"
+                                                           class="form-label">From</label>
+                                                    <input type="date" id="paymentDetailsPickFromDate"
+                                                           class="form-control" name="fromDate"
+                                                           placeholder="Start Date">
+                                                </div>
+                                                <div>
+                                                    <label for="paymentDetailsPickFromDate"
+                                                           class="form-label">To</label>
+                                                    <input type="date" id="paymentDetailsPickToDate"
+                                                           class="form-control" name="toDate"
+                                                           placeholder="End Date">
+                                                </div>
+                                                <button type="button" class="btn btn-danger mt-3" id="btnSearchPayment">Search</button>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around"
+                                             style="height: 490px;">
+                                            <div class="col-11 justify-content-around sectionBorder"
+                                                 style="height: 460px; background: white">
+                                                <div class="table-responsive customerTableDiv overflow-auto "
+                                                     style="height: 470px;">
+                                                    <table class="table table-light table-striped table-bordered table-hover">
+                                                        <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                                        <tr>
+                                                            <th scope="col">Payment ID</th>
+                                                            <th scope="col">Date</th>
+                                                            <th scope="col">Amount (Rs.)</th>
+                                                            <th scope="col">Rent ID</th>
+                                                            <th scope="col"> Customer ID</th>
+
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody id="driverTable"></tbody>
+                                                    </table>
                                                 </div>
                                             </div>
-                                            <table class="table table-centered mb-0">
-                                                <thead class="btn-primary">
-                                                <tr>
-                                                    <th>Payment ID</th>
-                                                    <th>Date</th>
-                                                    <th>Amount (Rs.)</th>
-                                                    <th>Rent ID</th>
-                                                    <th>Customer ID</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody id="tblPayments">
-
-                                                </tbody>
-                                            </table>
                                         </div>
-                                        <!-- end col-->
                                     </div>
-                                    <!-- end row -->
+                                    <!-- end col-->
                                 </div>
-                                <!-- end card-body -->
+                                <!-- end row -->
                             </div>
                             <!-- end card-->
                         </div>
