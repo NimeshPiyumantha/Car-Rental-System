@@ -7,6 +7,7 @@ import com.easy.car_rental.embeded.Name;
 import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.service.Reg_UserService;
 import com.easy.car_rental.util.ResponseUtil;
+import com.easy.car_rental.util.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -76,10 +77,11 @@ public class Reg_UserController {
         return service.getSumUser();
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @GetMapping(path = "/loginUser",params = "user_Name")
-    public Reg_UserDTO availableUser(@RequestParam  String user_Name) {
-        System.out.println(user_Name);
-        return service.availableUser(user_Name);
-    }
+//    @ResponseStatus(HttpStatus.CREATED)
+//    @GetMapping(path = "/loginUser",params = "user_Name")
+//    public Reg_UserDTO availableUser(@RequestParam  String user_Name) {
+//        System.out.println(user_Name);
+//        Reg_UserDTO dto = service.availableUser(user_Name);
+//        return dto;
+//    }
 }

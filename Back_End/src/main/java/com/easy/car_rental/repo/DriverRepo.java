@@ -5,6 +5,8 @@ import com.easy.car_rental.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 /**
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
@@ -17,5 +19,5 @@ public interface DriverRepo extends JpaRepository<Driver, String> {
     int getSumDriver();
 
     @Query(value = "SELECT * FROM Driver WHERE driverAvailability='AVAILABLE'", nativeQuery = true)
-    DriverDTO availableDrivers();
+    List <Driver> availableDrivers();
 }

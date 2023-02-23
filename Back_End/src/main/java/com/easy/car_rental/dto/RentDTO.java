@@ -3,6 +3,10 @@ package com.easy.car_rental.dto;
 import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.enums.RentRequest;
 import com.easy.car_rental.enums.RequestType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -13,6 +17,10 @@ import java.util.List;
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
  **/
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Data
 public class RentDTO {
     private String rent_Id;
     private LocalDate pickUpDate;
@@ -23,7 +31,7 @@ public class RentDTO {
     private RentRequest rentType;
     private String location;
 
-    private Reg_User user;
-    private List<Rent_DetailsDTO> rent_detailsDTOS;
+    private String user;
+    private List<Rent_DetailsDTO> rent_Details;
 
 }
