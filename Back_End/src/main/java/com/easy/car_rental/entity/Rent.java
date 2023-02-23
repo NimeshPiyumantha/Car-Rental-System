@@ -23,7 +23,7 @@ import java.util.List;
 @Entity
 public class Rent {
     @Id
-    private String rent_Id;
+    private String rentID;
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private LocalDate returnDate;
@@ -35,9 +35,12 @@ public class Rent {
     private String location;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "userId",referencedColumnName = "user_Id",nullable = false)
-    private Reg_User user;
+    @JoinColumn(name = "userID",referencedColumnName = "user_Id",nullable = false)
+    private Reg_User regUser;
 
-    @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
-    private List<Rent_Details> rent_Details;
+    @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
+    private List<DriverSchedule> driverSchedules;
+
+    @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
+    private List<RentDetails> rentDetails;
 }

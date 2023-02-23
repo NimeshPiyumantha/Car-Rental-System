@@ -7,6 +7,6 @@ import java.io.Serializable;
  * @since : 0.1.0
  **/
 public class DriverSchedule_PK implements Serializable {
-    private String driver_Id;
-    private String rent_Id;
+    private String driverID;
+    private String rentID;
 }

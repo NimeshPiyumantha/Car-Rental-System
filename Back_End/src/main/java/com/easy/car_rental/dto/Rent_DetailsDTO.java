@@ -1,14 +1,9 @@
 package com.easy.car_rental.dto;
 
-import com.easy.car_rental.entity.Car;
-import com.easy.car_rental.entity.Rent;
-import com.easy.car_rental.entity.Rent_Detail_PK;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
-import javax.persistence.*;
 
 /**
  * @author : Nimesh Piyumantha

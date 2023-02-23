@@ -5,7 +5,7 @@ import com.easy.car_rental.dto.RentDTO;
 import com.easy.car_rental.entity.Car;
 import com.easy.car_rental.entity.Driver;
 import com.easy.car_rental.entity.Rent;
-import com.easy.car_rental.entity.Rent_Details;
+import com.easy.car_rental.entity.RentDetails;
 import com.easy.car_rental.repo.CarRepo;
 import com.easy.car_rental.repo.DriverRepo;
 import com.easy.car_rental.repo.RentRepo;
@@ -53,10 +53,10 @@ public class RentServiceImpl implements RentService {
             List<Driver> drivers = driverRepo.availableDrivers();
             int x;
 
-            for (Rent_Details rentDetails : rent.getRent_Details()){
+            for (RentDetails rentDetails : rent.getRentDetails()){
                 x=new Random().nextInt(drivers.size());
-                rentDetails.setRent_Id(drivers.get(x).getUser_Id());
-                Car car = carRepo.findById(rentDetails.getRent_Id()).get();
+                rentDetails.setRentID(drivers.get(x).getUser_Id());
+                Car car = carRepo.findById(rentDetails.getRentID()).get();
                 car.setVehicleAvailabilityType(UNAVAILABLE);
                 driverRepo.save(drivers.get(x));
             }
