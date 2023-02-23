@@ -293,9 +293,9 @@
                     class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Payment Details</span>
-                    </a>
+                <a href="#">
+                    <i class="bi bi-circle"></i><span>Payment Details</span>
+                </a>
                 </li>
                 <li>
                     <a href="#">
@@ -311,7 +311,7 @@
         </li><!-- End View Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed"  href="cusomerRequest.html" id="myDetailsSection">
+            <a class="nav-link collapsed" href="cusomerRequest.html" id="myDetailsSection">
                 <i class="bi bi-kanban"></i>
                 <span>Rent Request</span>
             </a>
@@ -345,149 +345,141 @@
             </nav>
 
             <div class="row mt-3">
-                <div class="card info-card">
-                    <!-- start content-->
-                    <div class="row">
-                        <!-- start col-->
-                        <div class="col-12">
-                            <!-- start card-->
-                            <div class="card">
-                                <!-- start card-body -->
-                                <div class="card-body">
-                                    <!-- start row -->
-                                    <div class="row">
-                                        <!-- start col-->
-                                        <div class="col-xl-12">
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card info-card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start row -->
+                                <div class="row mt-3">
+                                    <!-- start col-->
+                                    <div class="col-xl-12">
+                                        <!-- start booking request details -->
+                                        <form id="customerRequestForm" class="row mb-3">
+                                            <section id="secResponseDetails" class="row mx-0">
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestRentId">Rent ID<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control" id="requestRentId" readonly
+                                                           name="rent_Id"
+                                                           placeholder="Rent ID" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestPickUpDate">Pick-Up Date<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control" id="requestPickUpDate" readonly
+                                                           name="pick_Up_Date"
+                                                           placeholder="Pick-Up Date" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestReturnDate">Return Date<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control" id="requestReturnDate" readonly
+                                                           name="return_Date"
+                                                           placeholder="Return Date" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestLocation">Location<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control" id="requestLocation" readonly
+                                                           name="location"
+                                                           placeholder="Location" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestCarId">Car ID<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control" id="requestCarId" readonly
+                                                           name="car_Id"
+                                                           placeholder="Car ID" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestUserId">Customer ID<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control" id="requestUserId" readonly
+                                                           name="user_Id"
+                                                           placeholder="Customer ID" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestNicOrLicenceNo">Nic or Licence
+                                                        No<span
+                                                                class="text-danger"></span></label>
+                                                    <input class="form-control" id="requestNicOrLicenceNo" readonly
+                                                           name="nic"
+                                                           placeholder="Nic or Licence No" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestDriverState">Driver State<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control" id="requestDriverState" readonly
+                                                           name="driver_Request_Type"
+                                                           placeholder="Driver State" type="text">
+                                                </div>
 
-                                            <!-- start booking request details -->
-                                            <form id="customerRequestForm" class="row mb-3">
-                                                <section id="secResponseDetails" class="row mx-0">
-                                                    <div class="mb-2 col-xl-3 col-sm-6">
-                                                        <label class="form-label" for="requestRentId">Rent ID<span
-                                                                class="text-danger">*</span></label>
-                                                        <input class="form-control" id="requestRentId" readonly
-                                                               name="rent_Id"
-                                                               placeholder="Rent ID" type="text">
-                                                    </div>
-                                                    <div class="mb-2 col-xl-3 col-sm-6">
-                                                        <label class="form-label" for="requestPickUpDate">Pick-Up Date<span
-                                                                class="text-danger">*</span></label>
-                                                        <input class="form-control" id="requestPickUpDate" readonly
-                                                               name="pick_Up_Date"
-                                                               placeholder="Pick-Up Date" type="text">
-                                                    </div>
-                                                    <div class="mb-2 col-xl-3 col-sm-6">
-                                                        <label class="form-label" for="requestReturnDate">Return Date<span
-                                                                class="text-danger">*</span></label>
-                                                        <input class="form-control" id="requestReturnDate" readonly
-                                                               name="return_Date"
-                                                               placeholder="Return Date" type="text">
-                                                    </div>
-                                                    <div class="mb-2 col-xl-3 col-sm-6">
-                                                        <label class="form-label" for="requestLocation">Location<span
-                                                                class="text-danger">*</span></label>
-                                                        <input class="form-control" id="requestLocation" readonly
-                                                               name="location"
-                                                               placeholder="Location" type="text">
-                                                    </div>
-                                                    <div class="mb-2 col-xl-3 col-sm-6">
-                                                        <label class="form-label" for="requestCarId">Car ID<span
-                                                                class="text-danger">*</span></label>
-                                                        <input class="form-control" id="requestCarId" readonly
-                                                               name="car_Id"
-                                                               placeholder="Car ID" type="text">
-                                                    </div>
-                                                    <div class="mb-2 col-xl-3 col-sm-6">
-                                                        <label class="form-label" for="requestUserId">Customer ID<span
-                                                                class="text-danger">*</span></label>
-                                                        <input class="form-control" id="requestUserId" readonly
-                                                               name="user_Id"
-                                                               placeholder="Customer ID" type="text">
-                                                    </div>
-                                                    <div class="mb-2 col-xl-3 col-sm-6">
-                                                        <label class="form-label" for="requestNicOrLicenceNo">Nic or Licence
-                                                            No<span
-                                                                    class="text-danger">*</span></label>
-                                                        <input class="form-control" id="requestNicOrLicenceNo" readonly
-                                                               name="nic"
-                                                               placeholder="Nic or Licence No" type="text">
-                                                    </div>
-                                                    <div class="mb-2 col-xl-3 col-sm-6">
-                                                        <label class="form-label" for="requestDriverState">Driver State<span
-                                                                class="text-danger">*</span></label>
-                                                        <input class="form-control" id="requestDriverState" readonly
-                                                               name="driver_Request_Type"
-                                                               placeholder="Driver State" type="text">
-                                                    </div>
+                                            </section>
+                                        </form>
+                                        <!-- end booking request details -->
 
-                                                </section>
-                                            </form>
-                                            <!-- end booking request details -->
-
-                                            <!-- start button content-->
-                                            <div class="mb-3 mt-2 d-grid gap-1 d-md-flex justify-content-md-end">
-                                                <button type="button" class="btn btn-success btn" id="btnAccept">
-                                                    Accept
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn" id="btnReject">
-                                                    Reject
-                                                </button>
-                                                <button type="button" class="btn btn-warning btn me-md-1"
-                                                        id="btnClear">
-                                                    Clear
-                                                </button>
-                                            </div>
-                                            <!-- end button content-->
-
-                                            <!-- start searchBar -->
-                                            <div class="app-search d-lg-block mb-3">
-                                                <form id="customerRequestSearchForm" class="col-sm-5 col-lg-3">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="Search..."
-                                                               id="txtCustomerRequestSearch">
-                                                        <span class="uil uil-search search-icon"></span>
-                                                        <button class="input-group-text btn-danger"
-                                                                id="CustomerRequestSearch"
-                                                                type="button">Search
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <!-- end searchBar -->
-
-                                            <!-- start request table content-->
-                                            <div class="table-responsive-xxl table-nowrap">
-                                                <table class="table table-centered mb-0">
-                                                    <thead class="btn-primary">
-                                                    <tr>
-                                                        <th>Rent ID</th>
-                                                        <th>Customer ID</th>
-                                                        <th>Nic Or Licence</th>
-                                                        <th>Car ID</th>
-                                                        <th>Pick-Up Date</th>
-                                                        <th>Return Date</th>
-                                                        <th>Location</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody id="tblRequest">
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <!-- end request table content-->
-
+                                        <!-- start button content-->
+                                        <div class="mb-3 mt-2 d-grid gap-1 d-md-flex justify-content-md-end">
+                                            <button type="button" class="btn btn-success btn m-1 p-2" id="btnAccept">
+                                                Accept
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn m-1 p-2" id="btnReject">
+                                                Reject
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn m-1 p-2"
+                                                    id="btnClear">
+                                                Clear
+                                            </button>
                                         </div>
-                                        <!-- end col-->
+                                        <!-- end button content-->
                                     </div>
-                                    <!-- end row -->
+                                    <!-- end col-->
                                 </div>
-                                <!-- end card-body -->
+                                <!-- end row -->
                             </div>
-                            <!-- end card-->
+                            <!-- end card-body -->
                         </div>
-                        <!-- end col-->
+                        <div class="card info-card">
+                            <!-- start searchBar -->
+                            <div class="search-bar mt-4 ">
+                                <div class="search-form d-flex align-items-center">
+                                    <input type="search" name="car_Id" id="search_Id" placeholder="Search" title="Enter search keyword">
+                                    <button type="button" title="Search"><i class="bi bi-search"></i></button>
+                                </div>
+                            </div>
+                            <!-- end searchBar -->
+
+                            <!-- start request table content-->
+                            <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
+                                <div class="col-11 justify-content-around sectionBorder"
+                                     style="height: 290px; background: white">
+                                    <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                        <table class="table table-light table-striped table-bordered table-hover">
+                                            <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                            <tr>
+                                                <th scope="col">Rent ID</th>
+                                                <th scope="col">Customer ID</th>
+                                                <th scope="col">Nic Or Licence</th>
+                                                <th scope="col">Car ID</th>
+                                                <th scope="col">Pick-Up Date</th>
+                                                <th scope="col">Return Date</th>
+                                                <th scope="col">Location</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="carTable"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end request table content-->
+                        </div>
+                        <!-- end card-->
                     </div>
-                    <!-- end content-->
+                    <!-- end col-->
                 </div>
 
             </div>
