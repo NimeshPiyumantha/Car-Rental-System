@@ -281,6 +281,7 @@ $.ajax({
     method:"get",
     success:function (res) {
         user=res.data;
+        console.log(res.data)
         $("#user_Id").val(res.data.user_Id);
     }
 })
