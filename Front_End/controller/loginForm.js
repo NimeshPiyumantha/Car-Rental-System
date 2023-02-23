@@ -34,13 +34,12 @@ function login() {
                 return;
             }
 
-            $.ajax({
+           /* $.ajax({
                 url: baseUrlLogin + "reg_User/loginUser/?user_Name=" + user_Name,async:false,
                 success: function (res) {
                     console.log(res);
                 }
-            });
-
+            });*/
         }
     });
 }

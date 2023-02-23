@@ -264,7 +264,6 @@ $("#btnReservation").click(function () {
             success: function (res) {
                 saveUpdateAlert("Rent", res.message);
                 generateRentID();
-
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;
