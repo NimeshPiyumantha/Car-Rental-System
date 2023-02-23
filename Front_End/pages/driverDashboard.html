@@ -303,7 +303,7 @@
                     <div class="search-bar mt-4">
                         <div class="search-bar mt-4">
                             <div class="search-form d-flex align-items-center">
-                                <input type="search" name="driver_Id" id="search_Id" placeholder="Search"
+                                <input type="text" name="driver_Id" id="search_Id" placeholder="Search"
                                        title="Enter search keyword">
                                 <button type="button" title="Search"><i class="bi bi-search"></i></button>
                             </div>
@@ -554,6 +554,19 @@
         $("#driverShedule").css('display', 'none');
     });
 
+
+    let userbasurl = "http://localhost:8080/Back_End_war/";
+    let user;
+
+    $.ajax({
+        url: userbasurl+ "loginForm/current",
+        method:"get",
+        success:function (res) {
+            user=res.data;
+            console.log(res.data)
+            $("#search_Id").val(res.data.user_Id);
+        }
+    })
 </script>
 </body>
 </html>
