@@ -878,12 +878,12 @@ form .btn {
     flex-grow: 0;
 }
 
-.dashboard .sales-card .card-icon {
+.dashboard .car-card .card-icon {
     color: #4154f1;
     background: #f6f6fe;
 }
 
-.dashboard .revenue-card .card-icon {
+.dashboard .driver-card .card-icon {
     color: #2eca6a;
     background: #e0f8e9;
 }
@@ -893,6 +893,15 @@ form .btn {
     background: #ffecdf;
 }
 
+.dashboard .maintain-card .card-icon {
+    color: #ff7979;
+    background: #ffecdf;
+}
+
+.dashboard .booking-card .card-icon {
+    color: #7bed9f;
+    background: #ffecdf;
+}
 /* Activity */
 .dashboard .activity {
     font-size: 14px;
