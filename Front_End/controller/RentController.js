@@ -249,7 +249,7 @@ $("#btnReservation").click(function () {
             requestType: requestType,
             rentType: rentType,
             location: location,
-            regUser: userID,
+            regUser: {user_Id:userID},
             rentDetails: rentDetails
         }
         console.log(rentDetails)

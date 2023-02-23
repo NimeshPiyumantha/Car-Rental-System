@@ -34,8 +34,6 @@ public class RentController {
     public ResponseUtil placeOrder(@RequestBody RentDTO dto) {
         System.out.println(dto);
         service.bookingCars(dto);
-//        return new ResponseUtil("Ok", "Successfully Purchased.!", null);
-        return null;
-
+        return new ResponseUtil("Ok", "Successfully Purchased.!", null);
     }
 }
