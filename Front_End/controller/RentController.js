@@ -222,7 +222,7 @@ $("#btnReservation").click(function () {
     let rentDetails = [];
     for (let i = 0; i < $("#cartTable tr").length; i++) {
         var rentDetail = {
-            car_Id:  $("#cartTable").children(`:eq(${i})`).children(":eq(0)").text(),
+            carID:  $("#cartTable").children(`:eq(${i})`).children(":eq(0)").text(),
             rentID: $("#rent_Id").val()
         }
         rentDetails.push(rentDetail);
@@ -238,7 +238,7 @@ $("#btnReservation").click(function () {
         let requestType = $("#cartTable").children(`:eq(${i})`).children(":eq(5)").text();
         let rentType = "PENDING";
         let location =  $("#cartTable").children(`:eq(${i})`).children(":eq(6)").text();
-        let user_Id = $("#user_Id").val();
+        let userID = $("#user_Id").val();
 
         let rentOB = {
             rentID: rentID,
@@ -249,7 +249,7 @@ $("#btnReservation").click(function () {
             requestType: requestType,
             rentType: rentType,
             location: location,
-            regUser: user_Id,
+            regUser: userID,
             rentDetails: rentDetails
         }
         console.log(rentDetails)

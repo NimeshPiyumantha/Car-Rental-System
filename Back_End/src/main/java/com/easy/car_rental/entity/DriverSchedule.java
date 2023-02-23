@@ -15,7 +15,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Data
-@Entity
+//@Entity
 @IdClass(DriverSchedule_PK.class)
 public class DriverSchedule {
     @Id

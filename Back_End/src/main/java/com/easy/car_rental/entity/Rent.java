@@ -38,8 +38,8 @@ public class Rent {
     @JoinColumn(name = "userID",referencedColumnName = "user_Id",nullable = false)
     private Reg_User regUser;
 
-    @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
-    private List<DriverSchedule> driverSchedules;
+//    @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
+//    private List<DriverSchedule> driverSchedules;
 
     @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
     private List<RentDetails> rentDetails;
