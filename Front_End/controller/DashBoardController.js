@@ -3,14 +3,14 @@
  * @since : 0.1.0
  **/
 
-let baseUrl = "http://localhost:8080/Back_End_war/";
+let dashboard = "http://localhost:8080/Back_End_war/";
 
 /**
  * Car Count
  * */
 $("#carCount").val("00");
 $.ajax({
-    url: baseUrl + "car/carCount",
+    url: dashboard + "car/carCount",
     method: "GET",
     contentType: "application/json",
     dataType: "json",
@@ -29,7 +29,7 @@ $.ajax({
  * */
 $("#driverCount").val("00");
 $.ajax({
-    url: baseUrl + "driver/driverCount",
+    url: dashboard + "driver/driverCount",
     method: "GET",
     contentType: "application/json",
     dataType: "json",
@@ -48,7 +48,7 @@ $.ajax({
  * */
 $("#customerCount").val("00");
 $.ajax({
-    url: baseUrl + "reg_User/customerCount",
+    url: dashboard + "reg_User/customerCount",
     method: "GET",
     contentType: "application/json",
     dataType: "json",
