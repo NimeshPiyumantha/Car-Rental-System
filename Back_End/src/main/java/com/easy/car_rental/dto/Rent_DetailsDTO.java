@@ -15,6 +15,6 @@ import lombok.ToString;
 @Data
 
 public class Rent_DetailsDTO {
-    private String car_Id;
-    private String rent_Id;
+    private String carID;
+    private String rentID;
 }

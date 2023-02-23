@@ -219,17 +219,17 @@ $("#cartTable").dblclick(function () {
 
 $("#btnReservation").click(function () {
 
-    let rent_Details = [];
+    let rentDetails = [];
     for (let i = 0; i < $("#cartTable tr").length; i++) {
         var rentDetail = {
             car_Id:  $("#cartTable").children(`:eq(${i})`).children(":eq(0)").text(),
-            rent_Id: $("#rent_Id").val()
+            rentID: $("#rent_Id").val()
         }
-        rent_Details.push(rentDetail);
+        rentDetails.push(rentDetail);
     }
 
     for (let i = 0; i < $("#cartTable tr").length; i++) {
-        let rent_Id = $("#rent_Id").val();
+        let rentID = $("#rent_Id").val();
         // $("#cartTable").parent().parent().children(`:eq(${i})`).children(":eq(0)").text(),
         let pickUpDate =  $("#cartTable").children(`:eq(${i})`).children(":eq(1)").text();
         let pickUpTime =  $("#cartTable").children(`:eq(${i})`).children(":eq(2)").text();
@@ -241,7 +241,7 @@ $("#btnReservation").click(function () {
         let user_Id = $("#user_Id").val();
 
         let rentOB = {
-            rent_Id: rent_Id,
+            rentID: rentID,
             pickUpDate: pickUpDate,
             pickUpTime: pickUpTime,
             returnDate: returnDate,
@@ -249,10 +249,10 @@ $("#btnReservation").click(function () {
             requestType: requestType,
             rentType: rentType,
             location: location,
-            user: user_Id,
-            rent_Details: rent_Details
+            regUser: user_Id,
+            rentDetails: rentDetails
         }
-        console.log(rent_Details)
+        console.log(rentDetails)
         console.log(rentOB)
 
         $.ajax({

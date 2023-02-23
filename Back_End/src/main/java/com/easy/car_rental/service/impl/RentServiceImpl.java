@@ -45,8 +45,8 @@ public class RentServiceImpl implements RentService {
     public void bookingCars(RentDTO dto) {
         Rent rent = mapper.map(dto, Rent.class);
 
-        if (repo.existsById(dto.getRent_Id())) {
-            throw new RuntimeException("Booking" + dto.getRent_Id() + " Already added.!");
+        if (repo.existsById(dto.getRentID())) {
+            throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");
         }
 
         if(dto.getRequestType().equals("YES")){

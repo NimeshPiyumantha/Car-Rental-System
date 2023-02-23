@@ -1,6 +1,8 @@
 package com.easy.car_rental.dto;
 
+import com.easy.car_rental.entity.DriverSchedule;
 import com.easy.car_rental.entity.Reg_User;
+import com.easy.car_rental.entity.RentDetails;
 import com.easy.car_rental.enums.RentRequest;
 import com.easy.car_rental.enums.RequestType;
 import lombok.AllArgsConstructor;
@@ -22,7 +24,8 @@ import java.util.List;
 @ToString
 @Data
 public class RentDTO {
-    private String rent_Id;
+
+    private String rentID;
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private LocalDate returnDate;
@@ -30,8 +33,8 @@ public class RentDTO {
     private RequestType requestType;
     private RentRequest rentType;
     private String location;
-
-    private Reg_User user;
-    private List<Rent_DetailsDTO> rent_Details;
+    private Reg_User regUser;
+    private List<DriverSchedule> driverSchedules;
+    private List<RentDetails> rentDetails;
 
 }
