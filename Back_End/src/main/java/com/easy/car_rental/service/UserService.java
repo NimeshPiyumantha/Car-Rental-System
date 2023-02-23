@@ -19,6 +19,8 @@ import java.util.ArrayList;
  * @since : 0.1.0
  **/
 public interface UserService {
-    ArrayList<UserDTO> getLoginDetails(String role, String name,String password);
+    ArrayList<UserDTO> getAllRegUsers();
+
+    UserDTO getRegUsers(String username,String password);
 
 }

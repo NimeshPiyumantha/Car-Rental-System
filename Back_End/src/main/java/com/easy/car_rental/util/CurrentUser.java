@@ -7,5 +7,5 @@ import com.easy.car_rental.dto.UserDTO;
  * @since : 0.1.0
  **/
 public class CurrentUser {
-    public static UserDTO availableUser;
+    public static UserDTO currentUser;
 }

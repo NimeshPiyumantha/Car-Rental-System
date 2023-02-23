@@ -273,3 +273,14 @@ $("#btnReservation").click(function () {
         });
     }
 });
+
+let user;
+
+$.ajax({
+    url: RentbaseUrl+ "loginForm/current",
+    method:"get",
+    success:function (res) {
+        user=res.data;
+        $("#user_Id").val(res.data.user_Id);
+    }
+})

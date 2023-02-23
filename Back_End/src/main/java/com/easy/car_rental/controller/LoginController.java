@@ -4,8 +4,10 @@ import com.easy.car_rental.dto.Reg_UserDTO;
 import com.easy.car_rental.dto.UserDTO;
 import com.easy.car_rental.service.UserService;
 import com.easy.car_rental.util.CurrentUser;
+import com.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -20,16 +22,24 @@ import java.util.ArrayList;
 public class LoginController {
     @Autowired
     private UserService service;
-
-    @ResponseStatus(HttpStatus.CREATED)
-    @GetMapping(params = {"role_Type", "user_Name", "password"})
-    public ArrayList<UserDTO> loginUser(@RequestParam String role_Type, @RequestParam String user_Name, @RequestParam String password) {
-        return service.getLoginDetails(role_Type, user_Name, password);
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllRegUser(){
+        System.out.println(service.getAllRegUsers());
+        return new ResponseUtil("OK","Successfully Loaded..!",service.getAllRegUsers());
     }
 
-//    @GetMapping (path = "/available")
-//    public UserDTO availableUser(){
-//        return CurrentUser.availableUser;
-//    }
+    @GetMapping(params = {"username"})
+    public ResponseUtil setUser(String username,String password){
+        CurrentUser.currentUser=service.getRegUsers(username,password);
+        return new ResponseUtil("OK","Successfully Loaded..!","");
+    }
+
+    @GetMapping(path = "current")
+    public ResponseUtil getCurrentUser(){
+        return new ResponseUtil("OK","Successfully Loaded..!",CurrentUser.currentUser);
+    }
+
+
 
 }

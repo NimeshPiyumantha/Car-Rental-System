@@ -77,11 +77,4 @@ public class Reg_UserController {
         return service.getSumUser();
     }
 
-//    @ResponseStatus(HttpStatus.CREATED)
-//    @GetMapping(path = "/loginUser",params = "user_Name")
-//    public Reg_UserDTO availableUser(@RequestParam  String user_Name) {
-//        System.out.println(user_Name);
-//        Reg_UserDTO dto = service.availableUser(user_Name);
-//        return dto;
-//    }
 }
