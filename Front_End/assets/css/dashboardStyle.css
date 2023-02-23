@@ -894,13 +894,13 @@ form .btn {
 }
 
 .dashboard .maintain-card .card-icon {
-    color: #ff7979;
-    background: #ffecdf;
+    color: #ff4757;
+    background: #ff7f79;
 }
 
 .dashboard .booking-card .card-icon {
-    color: #7bed9f;
-    background: #ffecdf;
+    color: #2f3542;
+    background: #dfe4ea;
 }
 /* Activity */
 .dashboard .activity {
