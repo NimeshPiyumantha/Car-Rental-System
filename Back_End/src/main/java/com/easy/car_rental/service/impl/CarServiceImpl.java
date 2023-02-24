@@ -123,28 +123,24 @@ public class CarServiceImpl implements CarService {
         if (!repo.existsById(id)) {
             throw new RuntimeException("Wrong ID. Please enter Valid id..!");
         }
-        System.out.println(id);
         return mapper.map(repo.findById(id).get(), Car.class);
     }
 
     @Override
     public CustomDTO getSumCar() {
         CustomDTO customDTO = new CustomDTO(repo.getSumCar());
-        System.out.println(customDTO);
         return customDTO;
     }
 
     @Override
     public CustomDTO getSumAvailableCar() {
         CustomDTO customDTO = new CustomDTO(repo.getSumAvailableCar());
-        System.out.println(customDTO);
         return customDTO;
     }
 
     @Override
     public CustomDTO getSumReservedCar() {
         CustomDTO customDTO = new CustomDTO(repo.getSumReservedCar());
-        System.out.println(customDTO);
         return customDTO;
     }
 
