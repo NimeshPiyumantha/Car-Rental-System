@@ -134,3 +134,22 @@ $.ajax({
 
     }
 });
+
+/**
+ * Booking Count
+ * */
+$("#BookingCount").val("00");
+$.ajax({
+    url: dashboard + "rent/booking",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
+        $("#BookingCount").text(num);
+
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});
