@@ -81,13 +81,25 @@ $("#car_Id").click(function () {
             $("#name").val(res.name);
             $("#brand").val(res.brand);
             $("#number_Of_Passengers").val(res.number_Of_Passengers);
-            let url = res.image.front_View;
-            console.log(url);
-            console.log(res.image.front_View);
-            $("#imageLoad").css({
-                "background": `url(${RentbaseUrl + url})`,
+            let url1 = res.image.front_View;
+            let url2 = res.image.back_View;
+            let url3 = res.image.side_View;
+            let url4 = res.image.interior;
+            $("#imageLoad1").css({
+                "background": `url(${RentbaseUrl + url1})`,
                 "background-size": "cover"
-
+            });
+            $("#imageLoad2").css({
+                "background": `url(${RentbaseUrl + url2})`,
+                "background-size": "cover"
+            });
+            $("#imageLoad3").css({
+                "background": `url(${RentbaseUrl + url3})`,
+                "background-size": "cover"
+            });
+            $("#imageLoad4").css({
+                "background": `url(${RentbaseUrl + url4})`,
+                "background-size": "cover"
             });
         },
         error: function (error) {
