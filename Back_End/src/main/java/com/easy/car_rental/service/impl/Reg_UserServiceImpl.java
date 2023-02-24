@@ -119,8 +119,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
 
     @Override
     public CustomDTO getSumUser() {
-        CustomDTO customDTO = new CustomDTO(repo.getSumUsers());
-        return customDTO;
+        return new CustomDTO(repo.getSumUsers());
     }
 
     @Override
