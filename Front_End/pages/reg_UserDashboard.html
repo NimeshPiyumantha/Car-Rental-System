@@ -67,7 +67,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="">
+                        <a class="dropdown-item d-flex align-items-center" id="userDetailss">
                             <i class="bi bi-person"></i>
                             <span>My Profile</span>
                         </a>
@@ -633,13 +633,7 @@
         $("#profileDetails").css('display', 'none');
     });
 
-    $("#userDetails").click(function () {
-        $("#bookingResponse").css('display', 'none');
-        $("#rentDetails").css('display', 'none');
-        $("#profileDetails").css('display', 'block');
-    });
-
-    $("#myDetailsSection").click(function () {
+    $("#myDetailsSection,#userDetails,#userDetailss").click(function () {
         $("#bookingResponse").css('display', 'none');
         $("#rentDetails").css('display', 'none');
         $("#profileDetails").css('display', 'block');
