@@ -85,6 +85,12 @@ public class CarController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/reservedCarCount")
+    public @ResponseBody CustomDTO getSumReservedCar() {
+        return service.getSumReservedCar();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/filterCarDetails",params = {"category_type","fuel_Type"})
     public ArrayList<CarDTO> searchDriverId(@RequestParam String category_type, @RequestParam String fuel_Type) {
         System.out.println(category_type);
