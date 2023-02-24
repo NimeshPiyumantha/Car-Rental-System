@@ -234,7 +234,7 @@ $("#btnReservation").click(function () {
     let rentDetails = [];
     for (let i = 0; i < $("#cartTable tr").length; i++) {
         var rentDetail = {
-            carID:  $("#cartTable").children(`:eq(${i})`).children(":eq(0)").text(),
+            carID: $("#cartTable").children(`:eq(${i})`).children(":eq(0)").text(),
             rentID: $("#rent_Id").val(),
             driverID: null
         }
@@ -244,13 +244,13 @@ $("#btnReservation").click(function () {
     for (let i = 0; i < $("#cartTable tr").length; i++) {
         let rentID = $("#rent_Id").val();
         // $("#cartTable").parent().parent().children(`:eq(${i})`).children(":eq(0)").text(),
-        let pickUpDate =  $("#cartTable").children(`:eq(${i})`).children(":eq(1)").text();
-        let pickUpTime =  $("#cartTable").children(`:eq(${i})`).children(":eq(2)").text();
-        let returnDate =  $("#cartTable").children(`:eq(${i})`).children(":eq(3)").text();
-        let returnTime =  $("#cartTable").children(`:eq(${i})`).children(":eq(4)").text();
+        let pickUpDate = $("#cartTable").children(`:eq(${i})`).children(":eq(1)").text();
+        let pickUpTime = $("#cartTable").children(`:eq(${i})`).children(":eq(2)").text();
+        let returnDate = $("#cartTable").children(`:eq(${i})`).children(":eq(3)").text();
+        let returnTime = $("#cartTable").children(`:eq(${i})`).children(":eq(4)").text();
         let requestType = $("#cartTable").children(`:eq(${i})`).children(":eq(5)").text();
         let rentType = "PENDING";
-        let location =  $("#cartTable").children(`:eq(${i})`).children(":eq(6)").text();
+        let location = $("#cartTable").children(`:eq(${i})`).children(":eq(6)").text();
         let userID = $("#user_Id").val();
 
         let rentOB = {
@@ -262,7 +262,7 @@ $("#btnReservation").click(function () {
             requestType: requestType,
             rentType: rentType,
             location: location,
-            regUser: {user_Id:userID},
+            regUser: {user_Id: userID},
             rentDetails: rentDetails
         }
         console.log(rentDetails)
@@ -293,12 +293,13 @@ $("#btnReservation").click(function () {
  * current user
  * */
 let user;
+let type;
 
 $.ajax({
-    url: RentbaseUrl+ "loginForm/current",
-    method:"get",
-    success:function (res) {
-        user=res.data.user_Id;
+    url: RentbaseUrl + "loginForm/current",
+    method: "get",
+    success: function (res) {
+        user = res.data.user_Id;
         console.log(res.data)
         $("#user_Id").val(res.data.user_Id);
     }
@@ -309,7 +310,7 @@ $.ajax({
  * current user profile
  * */
 $.ajax({
-    url: RentbaseUrl + "reg_User",
+    url: RentbaseUrl + "reg_User/loadAllUsers",
     method: "get",
     contentType: "application/json",
     dataType: "json",
@@ -331,3 +332,25 @@ $.ajax({
     }
 })
 
+/**
+ * Logics
+ * current user update
+ * */
+$("#updateCustomer").click(function () {
+    let formData = new FormData($("#customerDetailsForm")[0]);
+    console.log(formData);
+    $.ajax({
+        url: RentbaseUrl + "reg_User/update",
+        method: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            saveUpdateAlert("User", res.message);
+            loadAllRegUsers();
+        },
+        error: function (error) {
+            unSuccessUpdateAlert("User", JSON.parse(error.responseText).message);
+        }
+    });
+});
