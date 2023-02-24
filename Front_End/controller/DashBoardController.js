@@ -42,6 +42,23 @@ $.ajax({
 });
 
 /**
+ * Reserved Car Count
+ * */
+$("#reservedCarCount").val("00");
+$.ajax({
+    url: dashboard + "car/reservedCarCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
+        $("#reservedCarCount").text(num);
+    },
+    error: function (ob, statusText, error) {
+    }
+});
+
+/**
  * Driver Count
  * */
 $("#driverCount").val("00");
