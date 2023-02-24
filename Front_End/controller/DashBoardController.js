@@ -98,6 +98,25 @@ $.ajax({
 });
 
 /**
+ * Driver Unavailable Count
+ * */
+$("#unAvailableDriverCount").val("00");
+$.ajax({
+    url: dashboard + "driver/driverUnavailableCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
+        $("#unAvailableDriverCount").text(num);
+
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});
+
+/**
  * User Count
  * */
 $("#customerCount").val("00");
