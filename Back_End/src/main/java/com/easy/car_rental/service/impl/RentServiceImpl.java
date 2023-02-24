@@ -75,4 +75,10 @@ public class RentServiceImpl implements RentService {
         CustomDTO customDTO = new CustomDTO(repo.getSumOfBookingPending());
         return customDTO;
     }
+
+    @Override
+    public CustomDTO getSumOfBookingActive() {
+        CustomDTO customDTO = new CustomDTO(repo.getSumOfBookingActive());
+        return customDTO;
+    }
 }
