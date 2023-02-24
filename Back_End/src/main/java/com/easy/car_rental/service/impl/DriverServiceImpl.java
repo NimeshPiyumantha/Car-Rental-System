@@ -114,6 +114,12 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
+    public CustomDTO getSumUnavailableDriver() {
+        CustomDTO customDTO = new CustomDTO(repo.getSumUnavailableDriver());
+        return customDTO;
+    }
+
+    @Override
     public Driver searchDriverId(String id) {
         if (!repo.existsById(id)) {
             throw new RuntimeException("Wrong ID. Please enter Valid id..!");
