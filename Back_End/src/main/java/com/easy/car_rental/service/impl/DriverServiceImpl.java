@@ -124,7 +124,6 @@ public class DriverServiceImpl implements DriverService {
         if (!repo.existsById(id)) {
             throw new RuntimeException("Wrong ID. Please enter Valid id..!");
         }
-        System.out.println(id);
         return mapper.map(repo.findById(id).get(), Driver.class);
     }
 
