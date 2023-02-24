@@ -109,14 +109,12 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public CustomDTO getSumAvailableDriver() {
-        CustomDTO customDTO = new CustomDTO(repo.getSumAvailableDriver());
-        return customDTO;
+        return new CustomDTO(repo.getSumAvailableDriver());
     }
 
     @Override
     public CustomDTO getSumUnavailableDriver() {
-        CustomDTO customDTO = new CustomDTO(repo.getSumUnavailableDriver());
-        return customDTO;
+        return new CustomDTO(repo.getSumUnavailableDriver());
     }
 
     @Override
@@ -129,7 +127,6 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public CustomDTO getSumDriver() {
-        CustomDTO customDTO = new CustomDTO(repo.getSumDriver());
-        return customDTO;
+        return new CustomDTO(repo.getSumDriver());
     }
 }
