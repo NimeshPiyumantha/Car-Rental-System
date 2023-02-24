@@ -77,7 +77,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="">
+                        <a class="dropdown-item d-flex align-items-center" id="userDetails">
                             <i class="bi bi-gear"></i>
                             <span>Account Settings</span>
                         </a>
@@ -465,26 +465,26 @@
                                     <section id="sec1CustomerDetails" class="col-xl-4">
                                         <div class="mb-3">
                                             <label class="form-label" for="cusUserID">User ID<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <input class="form-control" readonly id="cusUserID" name="user_Id"
                                                    placeholder="User ID" type="text">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="userFirstName">First Name<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <input class="form-control" id="userFirstName" name="firstName"
                                                    placeholder="First Name" type="text">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="userLastName">Last Name<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <input class="form-control" id="userLastName" name="lastName"
                                                    placeholder="Last Name" type="text">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="customerContactNo">Contact
                                                 Number<span
-                                                        class="text-danger">*</span></label>
+                                                        class="text-danger"></span></label>
                                             <input class="form-control" id="customerContactNo" name="contact_No"
                                                    placeholder="Contact No" type="text">
                                         </div>
@@ -492,25 +492,25 @@
                                     <section id="sec2CustomerDetails" class="col-xl-4">
                                         <div class="mb-3">
                                             <label class="form-label" for="customerAddress">Address<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <input class="form-control" id="customerAddress" name="address"
                                                    placeholder="Address" type="text">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="customerDriverEmail">Email<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <input class="form-control" id="customerDriverEmail" name="email"
                                                    placeholder="Email" type="text">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="customerNic">Nic No<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <input class="form-control" id="customerNic" name="nic"
                                                    placeholder="Nic No" type="text">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="imgNiC">NIC Image<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <input class="form-control" id="imgNiC" name="nic_Img"
                                                    placeholder="NIC NO" type="file">
                                         </div>
@@ -518,19 +518,19 @@
                                     <section id="sec3CustomerDetails" class="col-xl-4">
                                         <div class="mb-3">
                                             <label class="form-label" for="customerLicence">Licence No<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <input class="form-control" id="customerLicence" name="license_No"
                                                    placeholder="Licence No" type="text">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="imgLicence">Licence Image<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <input class="form-control" id="imgLicence" name="license_Img"
                                                    placeholder="NIC NO" type="file">
                                         </div>
                                         <div class="mb-3">
                                             <label for="customerUserName" class="form-label">User Name<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <div class="input-group has-validation">
                                                         <span class="input-group-text"
                                                               id="customerInputGroupPrepend">@</span>
@@ -544,7 +544,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="customerPassword" class="form-label">Password<span
-                                                    class="text-danger">*</span></label>
+                                                    class="text-danger"></span></label>
                                             <div class="input-group input-group-merge">
                                                 <input type="password" id="customerPassword" name="password"
                                                        class="form-control" placeholder="Password">
@@ -554,7 +554,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 d-grid gap-1 d-md-flex justify-content-md-end">
-                                            <button type="button" class="btn btn-primary btn me-md-1"
+                                            <button type="button" class="btn btn-warning btn me-md-1"
                                                     id="updateCustomer">
                                                 Update
                                             </button>
@@ -611,23 +611,38 @@
     $(document).ready(function () {
         $("#bookingResponse").css('display', 'block');
         $("#rentDetails").css('display', 'none');
+        $("#profileDetails").css('display', 'none');
     });
 
     $("#userDashboardSection").click(function () {
         $("#bookingResponse").css('display', 'block');
         $("#rentDetails").css('display', 'none');
+        $("#profileDetails").css('display', 'none');
     });
 
     $("#rentSection").click(function () {
         $("#bookingResponse").css('display', 'none');
         $("#rentDetails").css('display', 'block');
+        $("#profileDetails").css('display', 'none');
     });
 
     $("#bookingResponseSection").click(function () {
         $("#bookingResponse").css('display', 'block');
         $("#rentDetails").css('display', 'none');
+        $("#profileDetails").css('display', 'none');
     });
 
+    $("#userDetails").click(function () {
+        $("#bookingResponse").css('display', 'none');
+        $("#rentDetails").css('display', 'none');
+        $("#profileDetails").css('display', 'block');
+    });
+
+    $("#myDetailsSection").click(function () {
+        $("#bookingResponse").css('display', 'none');
+        $("#rentDetails").css('display', 'none');
+        $("#profileDetails").css('display', 'block');
+    });
     <!-- Initialize Swiper -->
         const progressCircle = document.querySelector(".autoplay-progress svg");
         const progressContent = document.querySelector(".autoplay-progress span");
