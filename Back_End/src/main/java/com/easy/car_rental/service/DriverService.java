@@ -19,7 +19,7 @@ public interface DriverService {
     ArrayList<DriverDTO> getAllDriver();
     CustomDTO userIdGenerate();
     CustomDTO getSumAvailableDriver();
-
+    CustomDTO getSumUnavailableDriver();
     Driver searchDriverId(String id);
     CustomDTO getSumDriver();
 }
