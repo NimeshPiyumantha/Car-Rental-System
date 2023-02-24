@@ -18,6 +18,8 @@ public interface DriverService {
     void deleteDriver(String reg_ID);
     ArrayList<DriverDTO> getAllDriver();
     CustomDTO userIdGenerate();
+    CustomDTO getSumAvailableDriver();
+
     Driver searchDriverId(String id);
     CustomDTO getSumDriver();
 }
