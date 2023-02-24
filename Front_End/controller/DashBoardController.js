@@ -172,3 +172,22 @@ $.ajax({
 
     }
 });
+
+/**
+ * Booking Active Count
+ * */
+$("#BookingActiveCount").val("00");
+$.ajax({
+    url: dashboard + "rent/bookingActive",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
+        $("#BookingActiveCount").text(num);
+
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});
