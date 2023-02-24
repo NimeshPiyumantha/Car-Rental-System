@@ -24,9 +24,6 @@ public class UserServiceImpl implements UserService {
     private UserRepo repo;
 
     @Autowired
-    private Reg_UserRepo userRepo;
-
-    @Autowired
     private ModelMapper mapper;
 
 
