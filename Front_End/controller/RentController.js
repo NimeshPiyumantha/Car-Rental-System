@@ -293,8 +293,32 @@ $.ajax({
     url: RentbaseUrl+ "loginForm/current",
     method:"get",
     success:function (res) {
-        user=res.data;
+        user=res.data.user_Id;
         console.log(res.data)
         $("#user_Id").val(res.data.user_Id);
     }
+});
+
+$.ajax({
+    url: RentbaseUrl + "reg_User",
+    method: "get",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (res) {
+        for (var cus of res.data) {
+            if (user === cus.user_Id) {
+                $("#cusUserID").val(cus.user_Id);
+                $("#userFirstName").val(cus.name.firstName);
+                $("#userLastName").val(cus.name.lastName);
+                $("#customerContactNo").val(cus.contact_No);
+                $("#customerAddress").val(cus.address);
+                $("#customerDriverEmail").val(cus.email);
+                $("#customerNic").val(cus.nic);
+                $("#customerLicence").val(cus.license_No);
+                $("#customerUserName").val(cus.user.user_Name);
+                $("#customerPassword").val(cus.user.password);
+            }
+        }
+    }
 })
+
