@@ -268,6 +268,7 @@ $("#btnReservation").click(function () {
         console.log(rentDetails)
         console.log(rentOB)
 
+
         $.ajax({
             url: RentbaseUrl + "rent",
             method: "POST",
@@ -287,6 +288,10 @@ $("#btnReservation").click(function () {
     }
 });
 
+/**
+ * Logics
+ * current user
+ * */
 let user;
 
 $.ajax({
@@ -299,6 +304,10 @@ $.ajax({
     }
 });
 
+/**
+ * Logics
+ * current user profile
+ * */
 $.ajax({
     url: RentbaseUrl + "reg_User",
     method: "get",
