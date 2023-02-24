@@ -77,6 +77,26 @@ $.ajax({
     }
 });
 
+
+/**
+ * Driver Available Count
+ * */
+$("#availableDriverCount").val("00");
+$.ajax({
+    url: dashboard + "driver/driverAvailableCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
+        $("#availableDriverCount").text(num);
+
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});
+
 /**
  * User Count
  * */
