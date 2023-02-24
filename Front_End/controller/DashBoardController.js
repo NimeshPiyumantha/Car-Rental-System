@@ -153,3 +153,22 @@ $.ajax({
 
     }
 });
+
+/**
+ * Booking Pending Count
+ * */
+$("#BookingPendingCount").val("00");
+$.ajax({
+    url: dashboard + "rent/bookingPending",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
+        $("#BookingPendingCount").text(num);
+
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});
