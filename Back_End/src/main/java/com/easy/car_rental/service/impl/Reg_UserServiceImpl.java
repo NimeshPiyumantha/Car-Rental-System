@@ -4,6 +4,7 @@ import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.Reg_UserDTO;
 import com.easy.car_rental.entity.Reg_User;
 import com.easy.car_rental.entity.User;
+import com.easy.car_rental.enums.RoleType;
 import com.easy.car_rental.repo.Reg_UserRepo;
 import com.easy.car_rental.service.Reg_UserService;
 import org.modelmapper.ModelMapper;
@@ -16,6 +17,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+
+import static com.easy.car_rental.enums.AvailabilityType.UNAVAILABLE;
 
 /**
  * @author : Nimesh Piyumantha
@@ -85,6 +88,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
             throw new RuntimeException(e);
         }
         System.out.println(regUser);
+        regUser.getUser().setRole_Type(RoleType.REGISTERED_USER);
         repo.save(regUser);
 
     }
