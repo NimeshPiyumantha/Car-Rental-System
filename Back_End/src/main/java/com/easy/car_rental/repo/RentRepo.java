@@ -11,4 +11,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface RentRepo extends JpaRepository<Rent, String> {
     @Query(value = "SELECT rentID FROM Rent ORDER BY rentID DESC LIMIT 1", nativeQuery = true)
     String getLastIndex();
+
+    @Query(value = "SELECT COUNT(rentID) FROM Rent", nativeQuery = true)
+    int getSumOfBooking();
 }
