@@ -235,7 +235,8 @@ $("#btnReservation").click(function () {
     for (let i = 0; i < $("#cartTable tr").length; i++) {
         var rentDetail = {
             carID:  $("#cartTable").children(`:eq(${i})`).children(":eq(0)").text(),
-            rentID: $("#rent_Id").val()
+            rentID: $("#rent_Id").val(),
+            driverID: null
         }
         rentDetails.push(rentDetail);
     }

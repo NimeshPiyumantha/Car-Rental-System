@@ -1,6 +1,7 @@
 package com.easy.car_rental.dto;
 
 import com.easy.car_rental.entity.Reg_User;
+import com.easy.car_rental.entity.RentDetails;
 import com.easy.car_rental.enums.RentRequest;
 import com.easy.car_rental.enums.RequestType;
 import lombok.AllArgsConstructor;
@@ -31,7 +32,7 @@ public class RentDTO {
     private RentRequest rentType;
     private String location;
     private Reg_User regUser;
-//    private List<DriverScheduleDTO> driverSchedules;
-    private List<RentDetailsDTO> rentDetails;
+
+    private List<RentDetails> rentDetails;
 
 }

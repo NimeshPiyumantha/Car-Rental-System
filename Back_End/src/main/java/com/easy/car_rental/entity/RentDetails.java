@@ -23,6 +23,8 @@ public class RentDetails {
     @Id
     private String rentID;
 
+    private String driverID;
+
     @ManyToOne
     @JoinColumn(name = "rentID",referencedColumnName = "rentID",insertable = false,updatable = false)
     private Rent rent;
@@ -30,4 +32,8 @@ public class RentDetails {
     @ManyToOne
     @JoinColumn(name = "carID",referencedColumnName = "car_Id",insertable = false,updatable = false)
     private Car car;
+
+    @ManyToOne
+    @JoinColumn(name = "driverID",referencedColumnName = "user_Id",insertable = false,updatable = false)
+    private Driver driver;
 }

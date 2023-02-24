@@ -17,4 +17,5 @@ import lombok.ToString;
 public class RentDetailsDTO {
     private String carID;
     private String rentID;
+    private String driverID;
 }
