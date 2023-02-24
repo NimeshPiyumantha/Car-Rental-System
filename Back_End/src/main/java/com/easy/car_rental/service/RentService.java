@@ -12,4 +12,5 @@ public interface RentService {
     CustomDTO rentIdGenerate();
     void bookingCars(@RequestBody RentDTO dto);
     CustomDTO getSumOfBooking();
+    CustomDTO getSumOfBookingPending();
 }
