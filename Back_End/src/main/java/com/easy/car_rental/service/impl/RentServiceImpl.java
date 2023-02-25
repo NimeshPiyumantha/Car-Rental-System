@@ -46,8 +46,8 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public void bookingCars(RentDTO dto) {
-//        Rent rent = mapper.map(dto, Rent.class);
-        Rent rent = new Rent(dto.getRentID(), dto.getPickUpDate(), dto.getPickUpTime(), dto.getReturnDate(), dto.getReturnTime(), dto.getRequestType(), dto.getRentType(), dto.getLocation(), dto.getRegUser(), dto.getRentDetails());
+        Rent rent = mapper.map(dto, Rent.class);
+//        Rent rent = new Rent(dto.getRentID(), dto.getPickUpDate(), dto.getPickUpTime(), dto.getReturnDate(), dto.getReturnTime(), dto.getRequestType(), dto.getRentType(), dto.getLocation(), dto.getRegUser(), dto.getRentDetails());
         System.out.println(rent);
 
         if (rentRepo.existsById(dto.getRentID())) {
@@ -96,7 +96,7 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public ArrayList<RentDTO> getAllRent() {
-        return mapper.map(rentRepo.findAll(), new TypeToken<ArrayList<Rent>>() {
+        return mapper.map(rentRepo.findAll(), new TypeToken<ArrayList<RentDTO>>() {
         }.getType());
     }
 

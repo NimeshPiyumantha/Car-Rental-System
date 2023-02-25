@@ -58,6 +58,7 @@ public class RentController {
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/loadAllRents")
     public ResponseUtil getAllRents() {
+        System.out.println(service.getAllRent());
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllRent());
     }
 }

@@ -367,9 +367,9 @@ $.ajax({
     success: function (res) {
         console.log(res.data)
         for (var cus of res.data) {
-            if (user === cus.user_Id) {
+            if (user === cus.regUser.user_Id) {
                 $("#responseRentId").val(cus.rentID);
-                $("#responseUserId").val(cus.user_Id);
+                $("#responseUserId").val(cus.regUser.user_Id);
                 $("#responseCarId").val(cus.carID);
                 $("#responsePickUpDate").val(cus.pickUpDate);
                 $("#responseReturnDate").val(cus.returnDate);
