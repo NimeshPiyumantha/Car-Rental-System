@@ -80,3 +80,23 @@ $("#btnAccept").on("click", function () {
     });
 
 });
+
+$("#btnReject").on("click", function () {
+    let rentID = $("#requestRentId").val();
+    let driverID = $("#driverId").val();
+    $.ajax({
+        url: RentAllManageBaseUrl + "rent/rentReject/?rentID="+rentID+"&driverId="+driverID,
+        method: "post",
+        dataType: "json",
+        success: function (res) {
+            saveUpdateAlert("Booking Reject", res.message);
+            $("#retManage").empty();
+            loadAllRentDetails();
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            emptyMassage(message);
+        }
+    });
+
+});
