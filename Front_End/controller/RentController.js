@@ -363,16 +363,13 @@ $.ajax({
     method: "get",
     contentType: "application/json",
     dataType: "json",
+    async:true,
     success: function (res) {
         console.log(res.data)
-        for (var cus of res.data) {
-            if (user === cus.regUser.user_Id) {
-                $("#responseRentId").val(cus.rentID);
-                $("#responseUserId").val(cus.regUser.user_Id);
-                $("#responseCarId").val(cus.carID);
-                $("#responsePickUpDate").val(cus.pickUpDate);
-                $("#responseReturnDate").val(cus.returnDate);
-                $("#responseLocation").val(cus.location);
+        for (var i of res.data) {
+            if (user === i.regUser.user_Id) {
+                let row = "<tr><td>" + i.rentID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at(car_Id).carID + "</td><td>" + i.pickUpDate + "</td><td>" + i.returnDate + "</td><td>" + i.returnTime + "</td><td>" + i.location + "</td><td>" + i.rentType + "</td></tr>";
+                $("#tblResponse").append(row);
             }
         }
     }

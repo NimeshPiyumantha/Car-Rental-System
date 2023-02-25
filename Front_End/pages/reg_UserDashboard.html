@@ -203,7 +203,7 @@
                                             <div class="mb-2 col-xl-4 col-sm-6">
                                                 <label class="form-label" for="responseCarId">Car ID<span
                                                         class="text-danger"></span></label>
-                                                <input class="form-control" id="responseCarId" readonly
+                                                <input class="form-control responseCarId" id="responseCarId" readonly
                                                        name="car_Id"
                                                        placeholder="Car ID" type="text">
                                             </div>
@@ -259,14 +259,16 @@
                              style="height: 290px; background: white">
                             <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
                                 <table class="table table-light table-striped table-bordered table-hover">
-                                    <thead class="text-dark table-danger text-center  table-bordered">
+                                    <thead class="text-dark table-danger text-nowrap text-center  table-bordered">
                                     <tr>
                                         <th scope="col">Rent ID</th>
                                         <th scope="col">User ID</th>
                                         <th scope="col">Car ID</th>
                                         <th scope="col">Pick-Up Date</th>
                                         <th scope="col">Return Date</th>
+                                        <th scope="col">Return Time</th>
                                         <th scope="col">Location</th>
+                                        <th scope="col">Rent Type</th>
                                     </tr>
                                     </thead>
                                     <tbody id="tblResponse"></tbody>
