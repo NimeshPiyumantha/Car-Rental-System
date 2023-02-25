@@ -50,3 +50,27 @@ $.ajax({
     }
 });
 
+
+/**
+ * Logics
+ * Rent Details
+ * */
+loadAllRent();
+function loadAllRent() {
+    $.ajax({
+        url: userbasurl + "rent/loadAllRents",
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        async: true,
+        success: function (res) {
+            console.log(res.data)
+            for (var i of res.data) {
+                if (user === i.rentDetails.at().driverID) {
+                    let row = "<tr><td>" + i.rentID + "</td><td>" + i.rentDetails.at().carID  + "</td><td>" + i.pickUpDate + "</td><td>" + i.pickUpTime + "</td><td>" + i.returnDate + "</td><td>" + i.returnTime + "</td><td>" + i.location + "</td></tr>";
+                    $("#driverSheduleTable").append(row);
+                }
+            }
+        }
+    });
+}
