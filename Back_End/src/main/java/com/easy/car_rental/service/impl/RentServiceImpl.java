@@ -68,8 +68,7 @@ public class RentServiceImpl implements RentService {
                 drivers.get(x).setDriverAvailability(UNAVAILABLE);
                 driverRepo.save(drivers.get(x));
             }
-        }
-        if (dto.getRequestType().equals(RequestType.NO)) {
+        } else if (dto.getRequestType().equals(RequestType.NO)) {
             for (RentDetails rentDetails : rent.getRentDetails()) {
                 Car car = carRepo.findById(rentDetails.getCarID()).get();
                 car.setVehicleAvailabilityType(UNAVAILABLE);
@@ -108,20 +107,17 @@ public class RentServiceImpl implements RentService {
         }
 
         Rent rent = rentRepo.findById(rentID).get();
+
         Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
         car.setVehicleAvailabilityType(AVAILABLE);
         carRepo.save(car);
-        if(rent.getRentDetails().get(0).getDriverID()!=null) {
-            Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
-            drivers.setDriverAvailability(AVAILABLE);
-            driverRepo.save(drivers);
-            rentRepo.deleteById(rentID);
-        }if(rent.getRentDetails().get(0).getDriverID()==null) {
+
+        if (rent.getRentDetails().get(0).getDriverID() != null) {
             Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
             drivers.setDriverAvailability(AVAILABLE);
             driverRepo.save(drivers);
             rentRepo.deleteById(rentID);
         }
+        rentRepo.deleteById(rentID);
     }
-
 }
