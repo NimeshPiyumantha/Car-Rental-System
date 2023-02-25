@@ -26,7 +26,7 @@ public class CarController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseUtil saveCar(@ModelAttribute CarDTO dto,@ModelAttribute Rate rate,@ModelAttribute ImageDTO image) {
+    public ResponseUtil saveCar(@ModelAttribute CarDTO dto, @ModelAttribute Rate rate, @ModelAttribute ImageDTO image) {
         dto.setImage(image);
         dto.setRent_Duration_Price(rate);
 
@@ -34,9 +34,10 @@ public class CarController {
         service.saveCar(dto);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/update")
-    public ResponseUtil updateCar(@ModelAttribute CarDTO dto,@ModelAttribute Rate rate,@ModelAttribute ImageDTO image) {
+    public ResponseUtil updateCar(@ModelAttribute CarDTO dto, @ModelAttribute Rate rate, @ModelAttribute ImageDTO image) {
         dto.setImage(image);
         dto.setRent_Duration_Price(rate);
         System.out.println(dto.getName());
@@ -97,10 +98,16 @@ public class CarController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @GetMapping(path = "/filterCarDetails",params = {"category_type","fuel_Type"})
+    @GetMapping(path = "/underMaintainCar")
+    public @ResponseBody CustomDTO getSumUnderMaintainCar() {
+        return service.getSumUnderMaintainCar();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/filterCarDetails", params = {"category_type", "fuel_Type"})
     public ArrayList<CarDTO> searchDriverId(@RequestParam String category_type, @RequestParam String fuel_Type) {
         System.out.println(category_type);
         System.out.println(fuel_Type);
-        return service.getFilerData(category_type,fuel_Type);
+        return service.getFilerData(category_type, fuel_Type);
     }
 }
