@@ -236,7 +236,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" href="../login.html">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Sign Out</span>
                         </a>
@@ -298,13 +298,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="rentDetails.html">
                         <i class="bi bi-circle"></i><span>Rent Details</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Driver Schedule Details</span>
                     </a>
                 </li>
             </ul>
@@ -341,144 +336,11 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../adminDashboard.html">Home</a></li>
-                    <li class="breadcrumb-item active">Manage / Cars</li>
+                    <li class="breadcrumb-item active">Details / Rent Details</li>
                 </ol>
             </nav>
 
             <div class="row mt-3">
-                <div class="card info-card">
-                    <div class="search-bar mt-4">
-                        <div class="search-form d-flex align-items-center">
-                            <input type="search" name="car_Id" id="search_Id" placeholder="Search" title="Enter search keyword">
-                            <button type="button" title="Search"><i class="bi bi-search"></i></button>
-                        </div>
-                    </div>
-                    <!-- End Search Bar -->
-                    <div class="col-12 m-3 p-1">
-                        <form class="row" action="car" id="carForm" method="post">
-                            <section id="sec1Car" class="col-md-4 mt-3">
-                                <div class="mb-sm-0">
-                                    <label class="form-label" for="car_Id">Car Id</label>
-                                    <input class="form-control" id="car_Id" type="text" readonly name="car_Id" placeholder="CRI-001">
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="name">Brand</label>
-                                    <input class="form-control" id="name" type="text" name="name" placeholder="Brand">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="brand">Model</label>
-                                    <input class="form-control" id="brand" type="text" name="brand" placeholder="Model">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="type">Type</label>
-                                    <select class="form-control" id="type" name="type">
-                                        <option value="GENERAL">GENERAL</option>
-                                        <option value="LUXURY">LUXURY</option>
-                                        <option value="PREMIUM">PREMIUM</option>
-                                    </select>
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="front_View">Front View</label>
-                                    <input class="form-control" id="front_View" type="file" name="front_View">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="back_View">Back View</label>
-                                    <input class="form-control" id="back_View" type="file" name="back_View">
-                                    <span class="control-error"></span>
-                                </div>
-                            </section>
-
-                            <section id="sec2Car" class="col-md-4 mt-3">
-                                <div class="mb-sm-0">
-                                    <label class="form-label" for="side_View">Side View</label>
-                                    <input class="form-control" id="side_View" type="file" name="side_View">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="interior">Interior</label>
-                                    <input class="form-control" id="interior" type="file" name="interior">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="number_Of_Passengers">Number Of Passengers</label>
-                                    <input class="form-control" id="number_Of_Passengers" type="text"
-                                           name="number_Of_Passengers" placeholder="No Of Passengers">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="transmission_Type">Transmission Type</label>
-                                    <select class="form-control" id="transmission_Type" name="transmission_Type">
-                                        <option value="AUTO">AUTO</option>
-                                        <option value="MANUAL">MANUAL</option>
-                                    </select>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="fuel_Type">Fuel Type</label>
-                                    <select class="form-control" id="fuel_Type" name="fuel_Type">
-                                        <option value="DIESEL">DIESEL</option>
-                                        <option value="PETROL">PETROL</option>
-                                    </select>
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="daily_Rate">Daily Rate</label>
-                                    <input class="form-control" id="daily_Rate" type="text" name="daily_Rate" placeholder="Daily Rate">
-                                </div>
-                                <span class="control-error"></span>
-                            </section>
-
-                            <section id="sec3Car" class="col-md-4 mt-3">
-                                <div class="mb-sm-0">
-                                    <label class="form-label" for="monthly_Rate">Monthly Rate</label>
-                                    <input class="form-control" id="monthly_Rate" type="text" name="monthly_Rate" placeholder="Monthly Rate">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="price_Extra_KM">Price Extra KM</label>
-                                    <input class="form-control" id="price_Extra_KM" type="text" name="price_Extra_KM" placeholder="Price Extra KM">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="registration_Number">Registration Number</label>
-                                    <input class="form-control" id="registration_Number" type="text" name="registration_Number" placeholder="Register Number">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="free_Mileage">Free Mileage</label>
-                                    <input class="form-control" id="free_Mileage" type="text" name="free_Mileage" placeholder="Free Mileage">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="color">Color</label>
-                                    <input class="form-control" id="color" type="text" name="color" placeholder="Color">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="vehicleAvailabilityType">Vehicle Availability
-                                        Type</label>
-                                    <select class="form-control" id="vehicleAvailabilityType"
-                                            name="vehicleAvailabilityType">
-                                        <option value="AVAILABLE">AVAILABLE</option>
-                                    </select>
-                                    <span class="control-error"></span>
-                                </div>
-
-                                <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
-                                    <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
-                                            formaction="driverForm">Save
-                                    </button>
-                                    <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
-                                    </button>
-                                    <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
-                                </div>
-                            </section>
-                        </form>
-                    </div>
-                </div>
                 <div class="card info-card">
                     <!-- View Car Details Table Start -->
                     <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
@@ -486,22 +348,17 @@
                              style="height: 290px; background: white">
                             <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
                                 <table class="table text-nowrap table-light table-striped table-bordered table-hover">
-                                    <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                    <thead class="text-dark table-danger text-center  table-bordered">
                                     <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Brand</th>
-                                        <th scope="col">Model</th>
-                                        <th scope="col">Type</th>
-                                        <th scope="col">Passengers</th>
-                                        <th scope="col">Transition</th>
-                                        <th scope="col">Fuel</th>
-                                        <th scope="col">Daily Rent</th>
-                                        <th scope="col">Monthly Rent</th>
-                                        <th scope="col">Price KM</th>
-                                        <th scope="col">Reg Number</th>
-                                        <th scope="col">Free Mileage</th>
-                                        <th scope="col">Color</th>
-                                        <th scope="col">Availability</th>
+                                        <th scope="col">Rent ID</th>
+                                        <th scope="col">Car ID</th>
+                                        <th scope="col">User ID</th>
+                                        <th scope="col">Driver ID</th>
+                                        <th scope="col">Rent Type</th>
+                                        <th scope="col">Pick Date</th>
+                                        <th scope="col">Pick Time</th>
+                                        <th scope="col">Return Time</th>
+                                        <th scope="col">Return Date</th>
                                     </tr>
                                     </thead>
                                     <tbody id="carTable"></tbody>
@@ -542,7 +399,7 @@
 <script src="../../assets/js/dashboardMain.js"></script>
 
 <!-- Controller JS File -->
-<script src="../../controller/CarController.js"></script>
+<script src="../../controller/RentController.js"></script>
 <script src="../../controller/DashBoardController.js"></script>
 
 <!-- Util JS File -->
