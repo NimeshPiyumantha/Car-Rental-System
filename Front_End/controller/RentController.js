@@ -3,10 +3,12 @@
  * @since : 0.1.0
  **/
 let RentAllManageBaseUrl = "http://localhost:8080/Back_End_war/";
-
+loadAllRentDetails();
 /**
  * All Rent Details load
  **/
+
+function loadAllRentDetails() {
 $.ajax({
     url: RentAllManageBaseUrl + "rent/loadAllRents",
     method: "get",
@@ -23,7 +25,7 @@ $.ajax({
         }
     }
 });
-
+}
 
 function blindClickEventsRent() {
     $("#retManage>tr").on("click", function () {
@@ -57,4 +59,23 @@ $.ajax({
         let message = JSON.parse(error.responseText).message;
         emptyMassage(message);
     }
+});
+
+$("#btnAccept").on("click", function () {
+    let rentID = $("#requestRentId").val();
+    let driverID = $("#driverId").val();
+    $.ajax({
+        url: RentAllManageBaseUrl + "rent/rentConfrom/?rentID="+rentID+"&driverId="+driverID,
+        method: "post",
+        dataType: "json",
+        success: function (res) {
+            saveUpdateAlert("Booking Conform", res.message);
+            loadAllRentDetails();
+        },
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            emptyMassage(message);
+        }
+    });
+
 });

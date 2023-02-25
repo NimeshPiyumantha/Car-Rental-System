@@ -1,5 +1,6 @@
 package com.easy.car_rental.controller;
 
+import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.RentDTO;
 import com.easy.car_rental.entity.Reg_User;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 /**
  * @author : Nimesh Piyumantha
@@ -66,5 +69,11 @@ public class RentController {
     public ResponseUtil deleteRent(@RequestParam String id) {
         service.deleteRent(id);
         return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(path = "/rentConfrom", params = {"rentID", "driverId"})
+    public ArrayList<CarDTO> searchDriverId(@RequestParam String rentID, @RequestParam String driverId) {
+        return service.bookingConform(rentID, driverId);
     }
 }
