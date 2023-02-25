@@ -24,7 +24,7 @@
     <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
     <!-- Template Dashboard CSS File -->
     <link href="../assets/css/dashboardStyle.css" rel="stylesheet">
@@ -238,7 +238,7 @@
                                 <div class="col-lg-6">
                                     <label class="form-label" for="rent_Id">Rent Id</label>
                                     <input type="text" name="rent_Id" class="form-control" id="rent_Id"
-                                         readonly placeholder="REN-001">
+                                           readonly placeholder="REN-001">
                                 </div>
                                 <div class="col-lg-6">
                                     <label class="form-label" for="user_Id">User Id</label>
@@ -512,6 +512,14 @@
                     </div>
                     <!-- end card-body -->
                 </div>
+                <div class="card info-card">
+                    <div class=" row col-12 mb-3 m-2 p-2 d-flex">
+                        <div class=" col-md-5 col-lg-5 col-sm-5 xs-5 img-fluid m-3 p-3"
+                             style="border: 2px solid black; height: 400px; " id="photoImg1"></div>
+                        <div class=" col-md-5 col-lg-5 col-sm-5 xs-5 img-fluid m-3 p-3"
+                             style="border: 2px solid black; height: 400px; " id="photoImg2"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -583,29 +591,29 @@
         $("#profileDetails").css('display', 'block');
     });
     <!-- Initialize Swiper -->
-        const progressCircle = document.querySelector(".autoplay-progress svg");
-        const progressContent = document.querySelector(".autoplay-progress span");
-        var swiper = new Swiper(".mySwiper", {
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-    },
+            delay: 2500,
+            disableOnInteraction: false
+        },
         pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-    },
+            el: ".swiper-pagination",
+            clickable: true
+        },
         navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-    },
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
         on: {
-        autoplayTimeLeft(s, time, progress) {
-        progressCircle.style.setProperty("--progress", 1 - progress);
-        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-    }
-    }
+            autoplayTimeLeft(s, time, progress) {
+                progressCircle.style.setProperty("--progress", 1 - progress);
+                progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+            }
+        }
     });
 </script>
 </body>
