@@ -1,6 +1,7 @@
 package com.easy.car_rental.service;
 
 import antlr.collections.List;
+import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.RentDTO;
 import com.easy.car_rental.entity.Rent;
@@ -26,4 +27,6 @@ public interface RentService {
     ArrayList <RentDTO> getAllRent();
 
     void deleteRent(String rentID);
+
+    void bookingConform(String rentID, String driverId);
 }

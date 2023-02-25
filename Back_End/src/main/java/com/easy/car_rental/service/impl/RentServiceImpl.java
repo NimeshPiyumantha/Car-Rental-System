@@ -23,6 +23,7 @@ import java.util.Random;
 
 import static com.easy.car_rental.enums.AvailabilityType.AVAILABLE;
 import static com.easy.car_rental.enums.AvailabilityType.UNAVAILABLE;
+import static com.easy.car_rental.enums.RentRequest.CONFORM;
 
 /**
  * @author : Nimesh Piyumantha
@@ -121,6 +122,27 @@ public class RentServiceImpl implements RentService {
             carRepo.save(car);
 
             rentRepo.deleteById(rentID);
+        }
+    }
+
+    @Override
+    public void bookingConform(String rentID, String driverId) {
+        Rent rent = rentRepo.findById(rentID).get();
+        if (rent.getRentDetails().get(0).getDriverID() != null) {
+
+            Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
+            drivers.setDriverAvailability(AVAILABLE);
+            driverRepo.save(drivers);
+
+            rent.getRentDetails().get(0).setDriverID(driverId);
+            Driver driver = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
+            driver.setDriverAvailability(UNAVAILABLE);
+            rent.setRentType(CONFORM);
+            rentRepo.save(rent);
+        }
+        if (rent.getRentDetails().get(0).getDriverID() == null) {
+            rent.setRentType(CONFORM);
+            rentRepo.save(rent);
         }
     }
 }

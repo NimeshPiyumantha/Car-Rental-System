@@ -73,7 +73,8 @@ public class RentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/rentConfrom", params = {"rentID", "driverId"})
-    public ArrayList<CarDTO> searchDriverId(@RequestParam String rentID, @RequestParam String driverId) {
-        return service.bookingConform(rentID, driverId);
+    public ResponseUtil bookingConform(@RequestParam String rentID, @RequestParam String driverId) {
+        service.bookingConform(rentID,driverId);
+        return new ResponseUtil("OK", "Successfully Conformed.!", null);
     }
 }
