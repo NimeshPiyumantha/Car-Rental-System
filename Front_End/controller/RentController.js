@@ -70,6 +70,7 @@ $("#btnAccept").on("click", function () {
         dataType: "json",
         success: function (res) {
             saveUpdateAlert("Booking Conform", res.message);
+            $("#retManage").empty();
             loadAllRentDetails();
         },
         error: function (error) {
