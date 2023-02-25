@@ -60,4 +60,11 @@ public class RentController {
         System.out.println(service.getAllRent());
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllRent());
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteRent(@RequestParam String id) {
+        service.deleteRent(id);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
+    }
 }

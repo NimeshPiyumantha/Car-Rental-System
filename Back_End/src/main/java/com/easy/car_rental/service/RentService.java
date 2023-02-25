@@ -24,4 +24,6 @@ public interface RentService {
     CustomDTO getSumOfBookingActive();
 
     ArrayList <RentDTO> getAllRent();
+
+    void deleteRent(String rentID);
 }
