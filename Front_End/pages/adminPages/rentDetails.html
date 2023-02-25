@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link href="../../assets/icon/logo.png" rel="icon">
+
+    <meta content="Easy Car Rental, Car rental,Vehicle Rental" name="keywords">
+    <meta content="This is Car Rental Web Project." name="description">
+    <meta content="Nimesh Piyumantha" name="author">
+    <meta content="Nimesh Piyumantha" name="owner">
+    <meta content="width=device-width initial-scale=1 maximum-scale=1 minimum-scale=1 user-scalable=no" name="viewport">
+    <meta content="green" name="theme-color">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../assets/vendor/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">
+
+    <!-- Template Dashboard CSS File -->
+    <link href="../../assets/css/dashboardStyle.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+        <a href="../adminDashboard.html" class="logo d-flex align-items-center">
+            <span class="d-none d-lg-block">Easy <span>Rent.</span></span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+
+            <li class="nav-item d-block d-lg-none">
+                <a class="nav-link nav-icon search-bar-toggle " href="#">
+                    <i class="bi bi-search"></i>
+                </a>
+            </li><!-- End Search Icon-->
+
+            <li class="nav-item dropdown">
+
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell"></i>
+                    <span class="badge bg-primary badge-number">4</span>
+                </a><!-- End Notification Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                    <li class="dropdown-header">
+                        You have 4 new notifications
+                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-exclamation-circle text-warning"></i>
+                        <div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>30 min. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-x-circle text-danger"></i>
+                        <div>
+                            <h4>Atque rerum nesciunt</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>1 hr. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-check-circle text-success"></i>
+                        <div>
+                            <h4>Sit rerum fuga</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>2 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-info-circle text-primary"></i>
+                        <div>
+                            <h4>Dicta reprehenderit</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>4 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li class="dropdown-footer">
+                        <a href="#">Show all notifications</a>
+                    </li>
+
+                </ul><!-- End Notification Dropdown Items -->
+
+            </li><!-- End Notification Nav -->
+
+            <li class="nav-item dropdown">
+
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-chat-left-text"></i>
+                    <span class="badge bg-success badge-number">3</span>
+                </a><!-- End Messages Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                    <li class="dropdown-header">
+                        You have 3 new messages
+                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="message-item">
+                        <a href="#">
+                            <img src="../../assets/img/massage/messages-1.jpg" alt="" class="rounded-circle">
+                            <div>
+                                <h4>Maria Hudson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="message-item">
+                        <a href="#">
+                            <img src="../../assets/img/massage/messages-2.jpg" alt="" class="rounded-circle">
+                            <div>
+                                <h4>Anna Nelson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>6 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="message-item">
+                        <a href="#">
+                            <img src="../../assets/img/massage/messages-3.jpg" alt="" class="rounded-circle">
+                            <div>
+                                <h4>David Muldon</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>8 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="dropdown-footer">
+                        <a href="#">Show all messages</a>
+                    </li>
+
+                </ul><!-- End Messages Dropdown Items -->
+
+            </li><!-- End Messages Nav -->
+
+            <li class="nav-item dropdown pe-3">
+
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img src="../../assets/img/massage/profile-img.jpg" alt="Profile" class="rounded-circle">
+                    <span class="d-none d-md-block dropdown-toggle ps-2">K.L Samson</span>
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                        <h6>K.L Samson</h6>
+                        <span>Manager</span>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="">
+                            <i class="bi bi-person"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="">
+                            <i class="bi bi-gear"></i>
+                            <span>Account Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="">
+                            <i class="bi bi-question-circle"></i>
+                            <span>Need Help?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+
+        </ul>
+    </nav><!-- End Icons Navigation -->
+
+</header>
+<!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link " href="../adminDashboard.html">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-kanban"></i><span>Manage</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="../adminPages/Reg_UserManage.html">
+                        <i class="bi bi-circle"></i><span>Customer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../adminPages/DriverManage.html">
+                        <i class="bi bi-circle"></i><span>Driver</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../adminPages/CarManage.html">
+                        <i class="bi bi-circle"></i><span>Car</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- End Forms Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-layout-text-window-reverse"></i><span>Details</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <a href="PaymentDetails.html">
+                        <i class="bi bi-circle"></i><span>Payment Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>Rent Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>Driver Schedule Details</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End View Nav -->
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="CusomerRequest.html" id="myDetailsSection">
+                <i class="bi bi-kanban"></i>
+                <span>Rent Request</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../login.html">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>LogOut</span>
+            </a>
+        </li>
+        <!-- End Login Page Nav -->
+
+    </ul>
+
+</aside>
+<!-- End Sidebar-->
+
+<!-- ======= Main ======= -->
+<main id="main" class="main">
+
+    <!-- ======= Car Manage ======= -->
+    <div class="pageTitle" id="pageFour">
+        <h1>Manage</h1>
+        <section class="container-fluid mt-3" id="manageCar">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Manage / Cars</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="search-bar mt-4">
+                        <div class="search-form d-flex align-items-center">
+                            <input type="search" name="car_Id" id="search_Id" placeholder="Search" title="Enter search keyword">
+                            <button type="button" title="Search"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                    <!-- End Search Bar -->
+                    <div class="col-12 m-3 p-1">
+                        <form class="row" action="car" id="carForm" method="post">
+                            <section id="sec1Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="car_Id">Car Id</label>
+                                    <input class="form-control" id="car_Id" type="text" readonly name="car_Id" placeholder="CRI-001">
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="name">Brand</label>
+                                    <input class="form-control" id="name" type="text" name="name" placeholder="Brand">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="brand">Model</label>
+                                    <input class="form-control" id="brand" type="text" name="brand" placeholder="Model">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="type">Type</label>
+                                    <select class="form-control" id="type" name="type">
+                                        <option value="GENERAL">GENERAL</option>
+                                        <option value="LUXURY">LUXURY</option>
+                                        <option value="PREMIUM">PREMIUM</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="front_View">Front View</label>
+                                    <input class="form-control" id="front_View" type="file" name="front_View">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="back_View">Back View</label>
+                                    <input class="form-control" id="back_View" type="file" name="back_View">
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec2Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="side_View">Side View</label>
+                                    <input class="form-control" id="side_View" type="file" name="side_View">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="interior">Interior</label>
+                                    <input class="form-control" id="interior" type="file" name="interior">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="number_Of_Passengers">Number Of Passengers</label>
+                                    <input class="form-control" id="number_Of_Passengers" type="text"
+                                           name="number_Of_Passengers" placeholder="No Of Passengers">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="transmission_Type">Transmission Type</label>
+                                    <select class="form-control" id="transmission_Type" name="transmission_Type">
+                                        <option value="AUTO">AUTO</option>
+                                        <option value="MANUAL">MANUAL</option>
+                                    </select>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="fuel_Type">Fuel Type</label>
+                                    <select class="form-control" id="fuel_Type" name="fuel_Type">
+                                        <option value="DIESEL">DIESEL</option>
+                                        <option value="PETROL">PETROL</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="daily_Rate">Daily Rate</label>
+                                    <input class="form-control" id="daily_Rate" type="text" name="daily_Rate" placeholder="Daily Rate">
+                                </div>
+                                <span class="control-error"></span>
+                            </section>
+
+                            <section id="sec3Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="monthly_Rate">Monthly Rate</label>
+                                    <input class="form-control" id="monthly_Rate" type="text" name="monthly_Rate" placeholder="Monthly Rate">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="price_Extra_KM">Price Extra KM</label>
+                                    <input class="form-control" id="price_Extra_KM" type="text" name="price_Extra_KM" placeholder="Price Extra KM">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="registration_Number">Registration Number</label>
+                                    <input class="form-control" id="registration_Number" type="text" name="registration_Number" placeholder="Register Number">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="free_Mileage">Free Mileage</label>
+                                    <input class="form-control" id="free_Mileage" type="text" name="free_Mileage" placeholder="Free Mileage">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="color">Color</label>
+                                    <input class="form-control" id="color" type="text" name="color" placeholder="Color">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="vehicleAvailabilityType">Vehicle Availability
+                                        Type</label>
+                                    <select class="form-control" id="vehicleAvailabilityType"
+                                            name="vehicleAvailabilityType">
+                                        <option value="AVAILABLE">AVAILABLE</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+
+                                <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                    <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
+                                            formaction="driverForm">Save
+                                    </button>
+                                    <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
+                                    </button>
+                                    <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                </div>
+                <div class="card info-card">
+                    <!-- View Car Details Table Start -->
+                    <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
+                        <div class="col-11 justify-content-around sectionBorder"
+                             style="height: 290px; background: white">
+                            <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                <table class="table text-nowrap table-light table-striped table-bordered table-hover">
+                                    <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Brand</th>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Passengers</th>
+                                        <th scope="col">Transition</th>
+                                        <th scope="col">Fuel</th>
+                                        <th scope="col">Daily Rent</th>
+                                        <th scope="col">Monthly Rent</th>
+                                        <th scope="col">Price KM</th>
+                                        <th scope="col">Reg Number</th>
+                                        <th scope="col">Free Mileage</th>
+                                        <th scope="col">Color</th>
+                                        <th scope="col">Availability</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="carTable"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- View Car Details Table End -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End Car Manage -->
+
+</main>
+<!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+    <div class="copyright">
+        &copy; Copyright <strong><span>Easy Car Rent</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+        Designed by <a href="">Nimesh Piyumantha</a>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="../../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+<script rel="script" src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+
+<!-- Template Dashboard Main JS File -->
+<script src="../../assets/js/dashboardMain.js"></script>
+
+<!-- Controller JS File -->
+<script src="../../controller/CarController.js"></script>
+<script src="../../controller/DashBoardController.js"></script>
+
+<!-- Util JS File -->
+<script src="../../util/alert.js" rel="script"></script>
+<script src="../../util/validation.js" rel="script"></script>
+</body>
+</html>
