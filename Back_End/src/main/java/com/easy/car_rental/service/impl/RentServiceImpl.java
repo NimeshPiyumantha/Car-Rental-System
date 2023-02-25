@@ -48,7 +48,6 @@ public class RentServiceImpl implements RentService {
     @Override
     public void bookingCars(RentDTO dto) {
         Rent rent = mapper.map(dto, Rent.class);
-//        Rent rent = new Rent(dto.getRentID(), dto.getPickUpDate(), dto.getPickUpTime(), dto.getReturnDate(), dto.getReturnTime(), dto.getRequestType(), dto.getRentType(), dto.getLocation(), dto.getRegUser(), dto.getRentDetails());
         System.out.println(rent);
 
         if (rentRepo.existsById(dto.getRentID())) {
@@ -102,22 +101,30 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public void deleteRent(String rentID) {
-        if (!rentRepo.existsById(rentID)) {
-            throw new RuntimeException("Wrong ID..Please enter valid id..!");
-        }
 
         Rent rent = rentRepo.findById(rentID).get();
-
-        Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
-        car.setVehicleAvailabilityType(AVAILABLE);
-        carRepo.save(car);
 
         if (rent.getRentDetails().get(0).getDriverID() != null) {
             Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
             drivers.setDriverAvailability(AVAILABLE);
             driverRepo.save(drivers);
+
+            Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
+            car.setVehicleAvailabilityType(AVAILABLE);
+            carRepo.save(car);
+
             rentRepo.deleteById(rentID);
         }
-        rentRepo.deleteById(rentID);
+        if (rent.getRentDetails().get(0).getDriverID() == null) {
+            Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
+            drivers.setDriverAvailability(AVAILABLE);
+            driverRepo.save(drivers);
+
+            Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
+            car.setVehicleAvailabilityType(AVAILABLE);
+            carRepo.save(car);
+
+            rentRepo.deleteById(rentID);
+        }
     }
 }

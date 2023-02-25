@@ -286,7 +286,6 @@ $("#btnReservation").click(function () {
  * current user
  * */
 let user;
-let type;
 
 $.ajax({
     url: RentbaseUrl + "loginForm/current", method: "get", success: function (res) {
@@ -361,7 +360,6 @@ function loadAllRent() {
             console.log(res.data)
             for (var i of res.data) {
                 if (user === i.regUser.user_Id) {
-                    $("#tblResponse").empty();
                     let row = "<tr><td>" + i.rentID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at(car_Id).carID + "</td><td>" + i.pickUpDate + "</td><td>" + i.returnDate + "</td><td>" + i.returnTime + "</td><td>" + i.location + "</td><td>" + i.rentType + "</td></tr>";
                     $("#tblResponse").append(row);
                 }
@@ -371,7 +369,7 @@ function loadAllRent() {
         }
     });
 }
-loadAllRent();
+
 function blindClickEvents() {
     $("#tblResponse>tr").on("click", function () {
         let user_Id = $(this).children().eq(0).text();
