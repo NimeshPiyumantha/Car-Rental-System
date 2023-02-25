@@ -86,20 +86,16 @@ $("#car_Id").click(function () {
             let url3 = res.image.side_View;
             let url4 = res.image.interior;
             $("#imageLoad1").css({
-                "background": `url(${RentbaseUrl + url1})`,
-                "background-size": "cover"
+                "background": `url(${RentbaseUrl + url1})`, "background-size": "cover"
             });
             $("#imageLoad2").css({
-                "background": `url(${RentbaseUrl + url2})`,
-                "background-size": "cover"
+                "background": `url(${RentbaseUrl + url2})`, "background-size": "cover"
             });
             $("#imageLoad3").css({
-                "background": `url(${RentbaseUrl + url3})`,
-                "background-size": "cover"
+                "background": `url(${RentbaseUrl + url3})`, "background-size": "cover"
             });
             $("#imageLoad4").css({
-                "background": `url(${RentbaseUrl + url4})`,
-                "background-size": "cover"
+                "background": `url(${RentbaseUrl + url4})`, "background-size": "cover"
             });
         },
         error: function (error) {
@@ -208,10 +204,7 @@ $("#cartTable").dblclick(function () {
         confirmButtonText: 'Yes',
         denyButtonText: 'No',
         customClass: {
-            actions: 'my-actions',
-            cancelButton: 'order-1 right-gap',
-            confirmButton: 'order-2',
-            denyButton: 'order-3',
+            actions: 'my-actions', cancelButton: 'order-1 right-gap', confirmButton: 'order-2', denyButton: 'order-3',
         }
     }).then((result) => {
         if (result.isConfirmed) {
@@ -295,9 +288,7 @@ let user;
 let type;
 
 $.ajax({
-    url: RentbaseUrl + "loginForm/current",
-    method: "get",
-    success: function (res) {
+    url: RentbaseUrl + "loginForm/current", method: "get", success: function (res) {
         user = res.data.user_Id;
         console.log(res.data)
         $("#user_Id").val(res.data.user_Id);
@@ -358,23 +349,28 @@ $("#updateCustomer").click(function () {
  * Get Rent
  * current user Rents
  * */
-$.ajax({
-    url: RentbaseUrl + "rent/loadAllRents",
-    method: "get",
-    contentType: "application/json",
-    dataType: "json",
-    async:true,
-    success: function (res) {
-        console.log(res.data)
-        for (var i of res.data) {
-            if (user === i.regUser.user_Id) {
-                let row = "<tr><td>" + i.rentID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at(car_Id).carID + "</td><td>" + i.pickUpDate + "</td><td>" + i.returnDate + "</td><td>" + i.returnTime + "</td><td>" + i.location + "</td><td>" + i.rentType + "</td></tr>";
-                $("#tblResponse").append(row);
+function loadAllRent() {
+    $.ajax({
+        url: RentbaseUrl + "rent/loadAllRents",
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        async: true,
+        success: function (res) {
+            console.log(res.data)
+            for (var i of res.data) {
+                if (user === i.regUser.user_Id) {
+                    let row = "<tr><td>" + i.rentID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at(car_Id).carID + "</td><td>" + i.pickUpDate + "</td><td>" + i.returnDate + "</td><td>" + i.returnTime + "</td><td>" + i.location + "</td><td>" + i.rentType + "</td></tr>";
+                    $("#tblResponse").append(row);
+                }
             }
+            blindClickEvents();
+            generateRentID();
         }
-        blindClickEvents();
-    }
-});
+    });
+}
+
+loadAllRent();
 
 function blindClickEvents() {
     $("#tblResponse>tr").on("click", function () {
@@ -382,3 +378,16 @@ function blindClickEvents() {
         $("#responseRentId").val(user_Id);
     });
 }
+
+$("#btnDeleteRental").click(function () {
+    let id = $("#responseRentId").val();
+    $.ajax({
+        url: driverBaseUrl + "rent?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
+            saveUpdateAlert("Rent", resp.message);
+            loadAllRent();
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            unSuccessUpdateAlert("Rent", message);
+        }
+    });
+});
