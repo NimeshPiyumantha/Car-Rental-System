@@ -100,4 +100,12 @@ public class RentServiceImpl implements RentService {
         }.getType());
     }
 
+    @Override
+    public void deleteRent(String rentID) {
+        if (!rentRepo.existsById(rentID)) {
+            throw new RuntimeException("Wrong ID..Please enter valid id..!");
+        }
+        rentRepo.deleteById(rentID);
+    }
+
 }
