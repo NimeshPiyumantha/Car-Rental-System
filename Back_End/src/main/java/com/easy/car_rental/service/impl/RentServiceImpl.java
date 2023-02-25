@@ -31,7 +31,7 @@ import static com.easy.car_rental.enums.AvailabilityType.UNAVAILABLE;
 @Transactional
 public class RentServiceImpl implements RentService {
     @Autowired
-    private RentRepo repo;
+    private RentRepo rentRepo;
     @Autowired
     private CarRepo carRepo;
     @Autowired
@@ -41,7 +41,7 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public CustomDTO rentIdGenerate() {
-        return new CustomDTO(repo.getLastIndex());
+        return new CustomDTO(rentRepo.getLastIndex());
     }
 
     @Override
@@ -50,7 +50,7 @@ public class RentServiceImpl implements RentService {
         Rent rent = new Rent(dto.getRentID(), dto.getPickUpDate(), dto.getPickUpTime(), dto.getReturnDate(), dto.getReturnTime(), dto.getRequestType(), dto.getRentType(), dto.getLocation(), dto.getRegUser(), dto.getRentDetails());
         System.out.println(rent);
 
-        if (repo.existsById(dto.getRentID())) {
+        if (rentRepo.existsById(dto.getRentID())) {
             throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");
         }
 
@@ -76,27 +76,27 @@ public class RentServiceImpl implements RentService {
             }
         }
 
-        repo.save(rent);
+        rentRepo.save(rent);
     }
 
     @Override
     public CustomDTO getSumOfBooking() {
-        return new CustomDTO(repo.getSumOfBooking());
+        return new CustomDTO(rentRepo.getSumOfBooking());
     }
 
     @Override
     public CustomDTO getSumOfBookingPending() {
-        return new CustomDTO(repo.getSumOfBookingPending());
+        return new CustomDTO(rentRepo.getSumOfBookingPending());
     }
 
     @Override
     public CustomDTO getSumOfBookingActive() {
-        return new CustomDTO(repo.getSumOfBookingActive());
+        return new CustomDTO(rentRepo.getSumOfBookingActive());
     }
 
     @Override
     public ArrayList<RentDTO> getAllRent() {
-        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Rent>>() {
+        return mapper.map(rentRepo.findAll(), new TypeToken<ArrayList<Rent>>() {
         }.getType());
     }
 
