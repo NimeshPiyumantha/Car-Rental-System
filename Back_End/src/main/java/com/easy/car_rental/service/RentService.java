@@ -29,4 +29,6 @@ public interface RentService {
     void deleteRent(String rentID);
 
     void bookingConform(String rentID, String driverId);
+
+    void bookingReject(String rentID, String driverId);
 }
