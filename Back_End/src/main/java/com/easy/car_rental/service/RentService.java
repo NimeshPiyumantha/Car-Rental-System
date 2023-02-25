@@ -4,6 +4,8 @@ import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.RentDTO;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 /**
  * @author : Nimesh Piyumantha
  * @since : 0.1.0
@@ -14,4 +16,5 @@ public interface RentService {
     CustomDTO getSumOfBooking();
     CustomDTO getSumOfBookingPending();
     CustomDTO getSumOfBookingActive();
+    List<RentDTO> getAllRents();
 }
