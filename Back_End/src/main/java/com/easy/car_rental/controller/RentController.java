@@ -54,4 +54,10 @@ public class RentController {
     public @ResponseBody CustomDTO getSumOfBookingActive() {
         return service.getSumOfBookingActive();
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/loadAllRents")
+    public ResponseUtil getAllRents() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllRents());
+    }
 }
