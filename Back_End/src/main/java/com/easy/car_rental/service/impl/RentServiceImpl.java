@@ -45,19 +45,19 @@ public class RentServiceImpl implements RentService {
     @Override
     public void bookingCars(RentDTO dto) {
 //        Rent rent = mapper.map(dto, Rent.class);
-        Rent rent = new Rent(dto.getRentID(),dto.getPickUpDate(),dto.getPickUpTime(),dto.getReturnDate(),dto.getReturnTime(),dto.getRequestType(),dto.getRentType(),dto.getLocation(),dto.getRegUser(),dto.getRentDetails());
+        Rent rent = new Rent(dto.getRentID(), dto.getPickUpDate(), dto.getPickUpTime(), dto.getReturnDate(), dto.getReturnTime(), dto.getRequestType(), dto.getRentType(), dto.getLocation(), dto.getRegUser(), dto.getRentDetails());
         System.out.println(rent);
 
         if (repo.existsById(dto.getRentID())) {
             throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");
         }
 
-        if(dto.getRequestType().equals(RequestType.YES)){
+        if (dto.getRequestType().equals(RequestType.YES)) {
             List<Driver> drivers = driverRepo.availableDrivers();
             int x;
 
-            for (RentDetails rentDetails : rent.getRentDetails()){
-                x=new Random().nextInt(drivers.size());
+            for (RentDetails rentDetails : rent.getRentDetails()) {
+                x = new Random().nextInt(drivers.size());
                 rentDetails.setDriverID(drivers.get(x).getUser_Id());
                 Car car = carRepo.findById(rentDetails.getCarID()).get();
                 car.setVehicleAvailabilityType(UNAVAILABLE);
@@ -66,6 +66,14 @@ public class RentServiceImpl implements RentService {
                 driverRepo.save(drivers.get(x));
             }
         }
+        if (dto.getRequestType().equals(RequestType.NO)) {
+            for (RentDetails rentDetails : rent.getRentDetails()) {
+                Car car = carRepo.findById(rentDetails.getCarID()).get();
+                car.setVehicleAvailabilityType(UNAVAILABLE);
+                carRepo.save(car);
+            }
+        }
+
         repo.save(rent);
     }
 
