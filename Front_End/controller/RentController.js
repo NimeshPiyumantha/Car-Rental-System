@@ -362,6 +362,8 @@ $("#updateCustomer").click(function () {
 $.ajax({
     url: RentbaseUrl + "rent/loadAllRents",
     method: "get",
+    contentType: "application/json",
+    dataType: "json",
     success: function (res) {
         console.log(res.data)
         for (var cus of res.data) {

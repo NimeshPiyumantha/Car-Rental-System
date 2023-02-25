@@ -210,3 +210,22 @@ $.ajax({
 
     }
 });
+
+/**
+ * Under Maintain Car Count
+ * */
+$("#underMaintainCarCount").val("00");
+$.ajax({
+    url: dashboard + "car/underMaintainCar",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (resp) {
+        let num = resp.count;
+        $("#underMaintainCarCount").text(num);
+
+    },
+    error: function (ob, statusText, error) {
+
+    }
+});
