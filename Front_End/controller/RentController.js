@@ -330,7 +330,7 @@ $.ajax({
             }
         }
     }
-})
+});
 
 /**
  * Logics
@@ -354,3 +354,25 @@ $("#updateCustomer").click(function () {
         }
     });
 });
+
+/**
+ * Get Rent
+ * current user Rents
+ * */
+$.ajax({
+    url: RentbaseUrl + "rent/loadAllRents",
+    method: "get",
+    success: function (res) {
+        console.log(res.data)
+        for (var cus of res.data) {
+            if (user === cus.user_Id) {
+                $("#responseRentId").val(cus.rentID);
+                $("#responseUserId").val(cus.user_Id);
+                $("#responseCarId").val(cus.carID);
+                $("#responsePickUpDate").val(cus.pickUpDate);
+                $("#responseReturnDate").val(cus.returnDate);
+                $("#responseLocation").val(cus.location);
+            }
+        }
+    }
+})

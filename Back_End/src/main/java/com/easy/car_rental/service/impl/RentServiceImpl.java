@@ -95,8 +95,9 @@ public class RentServiceImpl implements RentService {
     }
 
     @Override
-    public ArrayList<RentDTO> getAllRents() {
+    public ArrayList<RentDTO> getAllRent() {
         return mapper.map(repo.findAll(), new TypeToken<ArrayList<Rent>>() {
         }.getType());
     }
+
 }
