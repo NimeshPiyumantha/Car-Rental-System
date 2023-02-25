@@ -377,12 +377,13 @@ function blindClickEvents() {
     });
 }
 
+
 $("#btnDeleteRental").click(function () {
     let id = $("#responseRentId").val();
     $.ajax({
         url: RentbaseUrl + "rent?id=" + id , method: "delete", dataType: "json", success: function (resp) {
             saveUpdateAlert("Rent", resp.message);
-            loadAllRent();
+            $("#tblResponse").refresh();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             unSuccessUpdateAlert("Rent", message);

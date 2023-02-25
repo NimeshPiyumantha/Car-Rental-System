@@ -105,21 +105,17 @@ public class RentServiceImpl implements RentService {
         Rent rent = rentRepo.findById(rentID).get();
 
         if (rent.getRentDetails().get(0).getDriverID() != null) {
-            Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
-            drivers.setDriverAvailability(AVAILABLE);
-            driverRepo.save(drivers);
-
             Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
             car.setVehicleAvailabilityType(AVAILABLE);
             carRepo.save(car);
 
-            rentRepo.deleteById(rentID);
-        }
-        if (rent.getRentDetails().get(0).getDriverID() == null) {
             Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
             drivers.setDriverAvailability(AVAILABLE);
             driverRepo.save(drivers);
 
+            rentRepo.deleteById(rentID);
+        }
+        if (rent.getRentDetails().get(0).getDriverID() == null) {
             Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
             car.setVehicleAvailabilityType(AVAILABLE);
             carRepo.save(car);
