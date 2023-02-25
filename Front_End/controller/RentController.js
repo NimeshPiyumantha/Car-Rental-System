@@ -372,5 +372,13 @@ $.ajax({
                 $("#tblResponse").append(row);
             }
         }
+        blindClickEvents();
     }
-})
+});
+
+function blindClickEvents() {
+    $("#tblResponse>tr").on("click", function () {
+        let user_Id = $(this).children().eq(0).text();
+        $("#responseRentId").val(user_Id);
+    });
+}

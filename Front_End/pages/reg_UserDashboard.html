@@ -177,78 +177,20 @@
 
             <div class="row mt-3">
                 <div class="card info-card">
-                    <!-- start content-->
-                    <div class="row mt-5">
-                        <div class="col-12">
 
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <!-- start booking response details -->
-                                    <form id="responseForm" class="row mb-3">
-                                        <section id="secResponseDetails" class="row mx-0">
-                                            <div class="mb-2 col-xl-4 col-sm-6">
-                                                <label class="form-label" for="responseRentId">Rent ID<span
-                                                        class="text-danger"></span></label>
-                                                <input class="form-control" id="responseRentId" readonly
-                                                       name="rent_Id"
-                                                       placeholder="Rent ID" type="text">
-                                            </div>
-                                            <div class="mb-2 col-xl-4 col-sm-6">
-                                                <label class="form-label" for="responseUserId">User ID<span
-                                                        class="text-danger"></span></label>
-                                                <input class="form-control" id="responseUserId" readonly
-                                                       name="user_Id"
-                                                       placeholder="User ID" type="text">
-                                            </div>
-                                            <div class="mb-2 col-xl-4 col-sm-6">
-                                                <label class="form-label" for="responseCarId">Car ID<span
-                                                        class="text-danger"></span></label>
-                                                <input class="form-control responseCarId" id="responseCarId" readonly
-                                                       name="car_Id"
-                                                       placeholder="Car ID" type="text">
-                                            </div>
-                                            <div class="mb-2 col-xl-4 col-sm-6">
-                                                <label class="form-label" for="responsePickUpDate">Pick-Up Date<span
-                                                        class="text-danger"></span></label>
-                                                <input class="form-control" id="responsePickUpDate" readonly
-                                                       name="pick_Up_Date"
-                                                       placeholder="Pick-Up Date" type="text">
-                                            </div>
-                                            <div class="mb-2 col-xl-4 col-sm-6">
-                                                <label class="form-label" for="responseReturnDate">Return Date<span
-                                                        class="text-danger"></span></label>
-                                                <input class="form-control" id="responseReturnDate" readonly
-                                                       name="return_Date"
-                                                       placeholder="Return Date" type="text">
-                                            </div>
-                                            <div class="mb-2 col-xl-4 col-sm-6">
-                                                <label class="form-label" for="responseLocation">Location<span
-                                                        class="text-danger"></span></label>
-                                                <input class="form-control" id="responseLocation" readonly
-                                                       name="location"
-                                                       placeholder="Location" type="text">
-                                            </div>
-                                        </section>
-                                    </form>
-                                    <!-- end booking response details -->
-                                </div>
-                                <!-- end col-->
-                            </div>
-                            <!-- end row -->
-                        </div>
-                        <!-- end col-->
-                    </div>
-                    <!-- end content-->
-                </div>
-                <div class="card info-card">
                     <!-- start button content-->
                     <div class="mb-3 mt-5 d-grid gap-1 d-md-flex justify-content-md-center">
-                        <button type="button" class="btn btn-danger btn m-2 p-2" id="btnDeleteRental">
+                        <form>
+                            <div class="col col-lg-12 col-sm-8">
+                                <label class="form-label" for="responseRentId">Rent ID<span
+                                        class="text-danger"></span></label>
+                                <input class="form-control" id="responseRentId" readonly
+                                       name="rent_Id"
+                                       placeholder="Rent ID" type="text">
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-danger btn mt-4 m-4  h-50" id="btnDeleteRental">
                             Delete Rental
-                        </button>
-                        <button type="button" class="btn btn-warning btn  m-2 p-2"
-                                id="btnClear">
-                            Clear
                         </button>
                     </div>
                     <!-- end button content-->
