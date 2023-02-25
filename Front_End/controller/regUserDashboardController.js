@@ -317,6 +317,14 @@ $.ajax({
                 $("#customerLicence").val(cus.license_No);
                 $("#customerUserName").val(cus.user.user_Name);
                 $("#customerPassword").val(cus.user.password);
+                let urlone = cus.nic_Img;
+                let urltwo = cus.license_Img;
+                $("#photoImg1").css({
+                    "background": `url(${RentbaseUrl + urlone})`, "background-size": "cover"
+                });
+                $("#photoImg2").css({
+                    "background": `url(${RentbaseUrl + urltwo})`, "background-size": "cover"
+                });
             }
         }
     }
