@@ -230,7 +230,6 @@ $("#cartTable").dblclick(function () {
  * */
 
 $("#btnReservation").click(function () {
-
     let rentDetails = [];
     for (let i = 0; i < $("#cartTable tr").length; i++) {
         var rentDetail = {
@@ -243,7 +242,6 @@ $("#btnReservation").click(function () {
 
     for (let i = 0; i < $("#cartTable tr").length; i++) {
         let rentID = $("#rent_Id").val();
-        // $("#cartTable").parent().parent().children(`:eq(${i})`).children(":eq(0)").text(),
         let pickUpDate = $("#cartTable").children(`:eq(${i})`).children(":eq(1)").text();
         let pickUpTime = $("#cartTable").children(`:eq(${i})`).children(":eq(2)").text();
         let returnDate = $("#cartTable").children(`:eq(${i})`).children(":eq(3)").text();
@@ -286,6 +284,7 @@ $("#btnReservation").click(function () {
 
         });
     }
+    $("#cartTable").empty();
 });
 
 /**
