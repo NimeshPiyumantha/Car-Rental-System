@@ -383,6 +383,7 @@ $("#btnDeleteRental").click(function () {
     let id = $("#responseRentId").val();
     $.ajax({
         url: RentbaseUrl + "rent?id=" + id , method: "delete", dataType: "json", success: function (resp) {
+            loadAllRent();
             saveUpdateAlert("Rent", resp.message);
             loadAllRent();
         }, error: function (error) {

@@ -109,7 +109,6 @@ public class RentServiceImpl implements RentService {
 
         Rent rent = rentRepo.findById(rentID).get();
         Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
-        System.out.println("Car" +car);
         car.setVehicleAvailabilityType(AVAILABLE);
         carRepo.save(car);
         if(rent.getRentDetails().get(0).getDriverID()!=null) {
@@ -117,8 +116,12 @@ public class RentServiceImpl implements RentService {
             drivers.setDriverAvailability(AVAILABLE);
             driverRepo.save(drivers);
             rentRepo.deleteById(rentID);
+        }if(rent.getRentDetails().get(0).getDriverID()==null) {
+            Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
+            drivers.setDriverAvailability(AVAILABLE);
+            driverRepo.save(drivers);
+            rentRepo.deleteById(rentID);
         }
-        rentRepo.deleteById(rentID);
     }
 
 }
