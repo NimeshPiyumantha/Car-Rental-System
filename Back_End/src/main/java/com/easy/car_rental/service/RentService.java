@@ -4,7 +4,7 @@ import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.RentDTO;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author : Nimesh Piyumantha
@@ -12,9 +12,14 @@ import java.util.List;
  **/
 public interface RentService {
     CustomDTO rentIdGenerate();
+
     void bookingCars(@RequestBody RentDTO dto);
+
     CustomDTO getSumOfBooking();
+
     CustomDTO getSumOfBookingPending();
+
     CustomDTO getSumOfBookingActive();
-    List<RentDTO> getAllRents();
+
+    ArrayList<RentDTO> getAllRents();
 }
