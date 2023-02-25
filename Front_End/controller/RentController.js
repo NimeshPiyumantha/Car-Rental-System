@@ -382,7 +382,7 @@ function blindClickEvents() {
 $("#btnDeleteRental").click(function () {
     let id = $("#responseRentId").val();
     $.ajax({
-        url: driverBaseUrl + "rent?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
+        url: driverBaseUrl + "rent?id=" + id , method: "delete", dataType: "json", success: function (resp) {
             saveUpdateAlert("Rent", resp.message);
             loadAllRent();
         }, error: function (error) {
