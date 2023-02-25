@@ -4,7 +4,6 @@
  **/
 
 let RentbaseUrl = "http://localhost:8080/Back_End_war/";
-$("#tblResponse").empty();
 loadAllRent();
 /**
  * User Id Generator
@@ -270,6 +269,7 @@ $("#btnReservation").click(function () {
             success: function (res) {
                 saveUpdateAlert("Rent", res.message);
                 generateRentID();
+                loadAllRent();
             },
             error: function (error) {
                 let message = JSON.parse(error.responseText).message;
@@ -383,7 +383,7 @@ $("#btnDeleteRental").click(function () {
     $.ajax({
         url: RentbaseUrl + "rent?id=" + id , method: "delete", dataType: "json", success: function (resp) {
             saveUpdateAlert("Rent", resp.message);
-            $("#tblResponse").refresh();
+           loadAllRent();
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             unSuccessUpdateAlert("Rent", message);
