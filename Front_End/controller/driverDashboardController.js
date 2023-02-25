@@ -40,6 +40,11 @@ $.ajax({
                 $("#customerLicence").val(driver.license_No);
                 $("#customerUserName").val(driver.user.user_Name);
                 $("#customerPassword").val(driver.user.password);
+                let url1 = driver.license_Img;
+                console.log(url1);
+                $("#photoImg").css({
+                    "background": `url(${userbasurl + url1})`, "background-size": "cover"
+                });
             }
         }
     }
