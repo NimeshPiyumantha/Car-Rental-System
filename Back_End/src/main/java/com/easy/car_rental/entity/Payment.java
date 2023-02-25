@@ -20,10 +20,13 @@ import java.time.LocalDate;
 public class Payment {
     @Id
     private String paymentID;
-    private LocalDate paymentDate;
-    private double amount;
 
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "rentID", referencedColumnName = "rentID", nullable = false)
-    private Rent rent;
+    private Rent rentID;
+
+
+    private LocalDate paymentDate;
+    private double amount;
+
 }
