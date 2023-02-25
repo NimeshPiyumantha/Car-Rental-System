@@ -361,6 +361,7 @@ function loadAllRent() {
             console.log(res.data)
             for (var i of res.data) {
                 if (user === i.regUser.user_Id) {
+                    $("#tblResponse").empty();
                     let row = "<tr><td>" + i.rentID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at(car_Id).carID + "</td><td>" + i.pickUpDate + "</td><td>" + i.returnDate + "</td><td>" + i.returnTime + "</td><td>" + i.location + "</td><td>" + i.rentType + "</td></tr>";
                     $("#tblResponse").append(row);
                 }
