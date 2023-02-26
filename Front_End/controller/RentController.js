@@ -4,27 +4,28 @@
  **/
 let RentAllManageBaseUrl = "http://localhost:8080/Back_End_war/";
 loadAllRentDetails();
+
 /**
  * All Rent Details load
  **/
 
 function loadAllRentDetails() {
-$.ajax({
-    url: RentAllManageBaseUrl + "rent/loadAllRents",
-    method: "get",
-    contentType: "application/json",
-    dataType: "json",
-    async: true,
-    success: function (res) {
-        console.log(res.data)
-        for (var i of res.data) {
-            let row = "<tr><td>" + i.rentID + "</td><td>" + i.rentDetails.at().carID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at().driverID + "</td><td>" + i.requestType + "</td><td>" + i.rentType + "</td><td>" + i.pickUpDate + "</td><td>" + i.pickUpTime + "</td><td>" + i.returnTime + "</td><td>" + i.returnDate + "</td><td>" + i.location + "</td></tr>";
-            $("#rentAllDetails").append(row);
-            $("#retManage").append(row);
-            blindClickEventsRent();
+    $.ajax({
+        url: RentAllManageBaseUrl + "rent/loadAllRents",
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        async: true,
+        success: function (res) {
+            console.log(res.data)
+            for (var i of res.data) {
+                let row = "<tr><td>" + i.rentID + "</td><td>" + i.rentDetails.at().carID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at().driverID + "</td><td>" + i.requestType + "</td><td>" + i.rentType + "</td><td>" + i.pickUpDate + "</td><td>" + i.pickUpTime + "</td><td>" + i.returnTime + "</td><td>" + i.returnDate + "</td><td>" + i.location + "</td></tr>";
+                $("#rentAllDetails").append(row);
+                $("#retManage").append(row);
+                blindClickEventsRent();
+            }
         }
-    }
-});
+    });
 }
 
 function blindClickEventsRent() {
@@ -67,7 +68,7 @@ $("#btnAccept").on("click", function () {
     let rentID = $("#requestRentId").val();
     let driverID = $("#driverId").val();
     $.ajax({
-        url: RentAllManageBaseUrl + "rent/rentConfrom/?rentID="+rentID+"&driverId="+driverID,
+        url: RentAllManageBaseUrl + "rent/rentConfrom/?rentID=" + rentID + "&driverId=" + driverID,
         method: "post",
         dataType: "json",
         success: function (res) {
@@ -87,7 +88,7 @@ $("#btnReject").on("click", function () {
     let rentID = $("#requestRentId").val();
     let driverID = $("#driverId").val();
     $.ajax({
-        url: RentAllManageBaseUrl + "rent/rentReject/?rentID="+rentID+"&driverId="+driverID,
+        url: RentAllManageBaseUrl + "rent/rentReject/?rentID=" + rentID + "&driverId=" + driverID,
         method: "post",
         dataType: "json",
         success: function (res) {
@@ -132,8 +133,12 @@ function generatePaymentID() {
 }
 
 generatePaymentID();
-
-$(document).ready(function() {
+/**
+ * Logics
+ * Local Date And Time set
+ * Enter Cash and Balance display
+ * */
+$(document).ready(function () {
     var date = new Date(); // get current date and time
     var localDate = date.toLocaleDateString(); // get local date in string format
     var localTime = date.toLocaleTimeString(); // get local time in string format
@@ -141,11 +146,31 @@ $(document).ready(function() {
     $('#time').val(localTime); // set time text in element with ID "time"
 });
 
+
+/**
+ * Logics
+ * Rent
+ * Enter Cash and Balance display
+ * */
+
+$(document).on("change keyup blur", "#lostDamage,#rentFee,#driverFee", function () {
+    /**
+     * Payment Details
+     * */
+    let lostDamage = $('#lostDamage').val();
+    let carFee = $('#rentFee').val();
+    let driverFee = $('#driverFee').val();
+
+    $("#total").val(parseFloat(lostDamage) + parseFloat(carFee) + parseFloat(driverFee));
+
+});
+
 $("#btnPay").on("click", function () {
+    let rentID = $("#rentID").val();
     let formData = new FormData($("#PayementToRent")[0]);
     console.log(formData);
     $.ajax({
-        url: RentAllManageBaseUrl + "payment",
+        url: RentAllManageBaseUrl + "payment/?rentID=" + rentID,
         method: "post",
         data: formData,
         contentType: false,
