@@ -219,7 +219,8 @@ $.ajax({
     dataType: "json",
     contentType:"application/json",
     success: function (res) {
-        console.log(res)
+        console.log(res);
+
     },
     error: function (error) {
     }
