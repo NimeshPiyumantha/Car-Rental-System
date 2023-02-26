@@ -38,6 +38,8 @@ function blindClickEventsRent() {
         $("#driverId").val(driverId);
         $("#userID").val(userID);
         $("#requestState").val(requestState);
+
+        $("#rentID").val(requestRentId);
     });
 }
 
@@ -131,3 +133,6 @@ function generatePaymentID() {
 
 generatePaymentID();
 
+$("#btnPay").on("click", function () {
+
+});
