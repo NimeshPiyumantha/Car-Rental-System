@@ -50,7 +50,6 @@ public class RentServiceImpl implements RentService {
     @Override
     public void bookingCars(RentDTO dto) {
         Rent rent = mapper.map(dto, Rent.class);
-        System.out.println(rent);
 
         if (rentRepo.existsById(dto.getRentID())) {
             throw new RuntimeException("Booking" + dto.getRentID() + " Already added.!");

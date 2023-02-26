@@ -138,13 +138,13 @@ generatePaymentID();
  * Local Date And Time set
  * Enter Cash and Balance display
  * */
-$(document).ready(function () {
+/*$(document).ready(function () {
     var date = new Date(); // get current date and time
-    var localDate = date.toLocaleDateString(); // get local date in string format
-    var localTime = date.toLocaleTimeString(); // get local time in string format
+    var localDate = Date.now(); // get local date in string format
+    var localTime = Date.now(); // get local time in string format ethana bn date picker ekak
     $('#date').val(localDate); // set date text in element with ID "date"
     $('#time').val(localTime); // set time text in element with ID "time"
-});
+});*/
 
 
 /**
@@ -166,22 +166,49 @@ $(document).on("change keyup blur", "#lostDamage,#rentFee,#driverFee", function 
 });
 
 $("#btnPay").on("click", function () {
+    /*let rentID = $("#rentID").val();
+    // let formData = new FormData($("#PayementToRent")[0]);
+    let formData = $("#PayementToRent").serialize();
+    console.log(formData);*/
+
+    let paymentId = $("#paymentID").val();
     let rentID = $("#rentID").val();
-    let formData = new FormData($("#PayementToRent")[0]);
-    console.log(formData);
+    let paymentType = $("#paymentType").val();
+    let paymentDate = $("#date").val();
+    let paymentTime = $("#time").val();
+    let lostDamage = $("#lostDamage").val();
+    let carFee = $("#rentFee").val();
+    let driverFee = $("#driverFee").val();
+    let total = $("#total").val();
+
+    var paymentOb = {
+        paymentID: paymentId,
+        rentID:{
+            rentID: rentID
+        },
+        paymentType: paymentType,
+        date: paymentDate,
+        time: paymentTime,
+        lostDamage: lostDamage,
+        rentFee: carFee,
+        driverFee: driverFee,
+        total: total,
+    }
+
+
     $.ajax({
-        url: RentAllManageBaseUrl + "payment/?rentID=" + rentID,
-        method: "post",
-        data: formData,
-        contentType: false,
-        processData: false,
+        url: RentAllManageBaseUrl + "payment/?rentID="+rentID,
+        method: "POST",
+        data: JSON.stringify(paymentOb),
+        dataType: "json",
+        contentType:"application/json",
         success: function (res) {
             console.log(res)
             saveUpdateAlert("Payment", res.message);
             generatePaymentID();
         },
         error: function (error) {
-            unSuccessUpdateAlert("Payment", JSON.parse(error.responseText).message);
+            // unSuccessUpdateAlert("Payment", JSON.parse(error.responseText).message);
         }
     });
 });

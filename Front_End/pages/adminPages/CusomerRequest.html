@@ -469,7 +469,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="PayementToRent" class="row mb-3">
+                    <form id="PayementToRent" action="payment" class="row mb-3">
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="paymentID">Payement ID<span
                                     class="text-danger"></span></label>
@@ -497,16 +497,16 @@
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="userID">Payment Date<span
                                     class="text-danger"></span></label>
-                            <input class="form-control mt-1" id="date" readonly
+                            <input class="form-control mt-1" id="date"
                                    name="date"
-                                   placeholder="Payment Date" type="text">
+                                   placeholder="Payment Date" type="date">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="time">Payment Time<span
                                     class="text-danger"></span></label>
-                            <input class="form-control mt-1" id="time" readonly
+                            <input class="form-control mt-1" id="time"
                                    name="time"
-                                   placeholder="Payment Time" type="text">
+                                   placeholder="Payment Time" type="time">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="lostDamage">Lost Damage<span
@@ -540,7 +540,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" id="btnPay">Pay</button>
+                    <button type="button" class="btn btn-success" form="PayementToRent" id="btnPay">Pay</button>
                 </div>
             </div>
         </div>

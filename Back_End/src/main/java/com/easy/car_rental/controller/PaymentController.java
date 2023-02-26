@@ -1,10 +1,7 @@
 package com.easy.car_rental.controller;
 
-import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.PaymentDTO;
-import com.easy.car_rental.embeded.ImageDTO;
-import com.easy.car_rental.embeded.Rate;
 import com.easy.car_rental.service.PaymentService;
 import com.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +27,10 @@ public class PaymentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseUtil savePayment(@ModelAttribute PaymentDTO dto) {
-        service.savePayment(dto);
+    public ResponseUtil savePayment(@RequestBody PaymentDTO dto,@RequestParam String rentID) {
+        System.out.println(dto);
+        System.out.println(rentID);
+        service.savePayment(dto,rentID);
         return new ResponseUtil("OK", "Successfully Payment.!", null);
     }
 }

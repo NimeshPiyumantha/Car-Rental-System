@@ -10,5 +10,5 @@ import com.easy.car_rental.dto.PaymentDTO;
  **/
 public interface PaymentService {
     CustomDTO paymentIdGenerate();
-    void savePayment(PaymentDTO dto);
+    void savePayment(PaymentDTO dto,String rentID);
 }

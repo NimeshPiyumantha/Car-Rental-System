@@ -22,7 +22,7 @@ import java.time.LocalTime;
 public class PaymentDTO {
 
     private String paymentID;
-    private Rent rentID;
+    private RentDTO rentID;
     private PaymentType paymentType;
     private LocalDate date;
     private LocalTime time;
