@@ -14,5 +14,5 @@ import java.util.ArrayList;
 public interface PaymentService {
     CustomDTO paymentIdGenerate();
     void savePayment(PaymentDTO dto,String rentID);
-    ArrayList<Reg_UserDTO> getAllPayment();
+    ArrayList<PaymentDTO> getAllPayment();
 }
