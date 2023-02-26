@@ -488,14 +488,18 @@
                             <label class="form-label" for="paymentType">Payment Type<span
                                     class="text-danger"></span></label>
                             <select aria-label="Default select example" class="form-select m-1"
-                                    id="paymentType" name="paymentType" placeholder="Payment Type"></select>
+                                    id="paymentType" name="paymentType" placeholder="Payment Type">
+                                <option>--Select Type--</option>
+                                <option value="NOMARL">NOMARL</option>
+                                <option value="LOST_DAMAGE">LOST_DAMAGE</option>
+                            </select>
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="userID">Payment Date<span
                                     class="text-danger"></span></label>
                             <input class="form-control mt-1" id="date" readonly
                                    name="date"
-                                   placeholder="User ID" type="text">
+                                   placeholder="Payment Date" type="text">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="time">Payment Time<span
