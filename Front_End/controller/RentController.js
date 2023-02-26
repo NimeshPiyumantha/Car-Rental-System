@@ -213,3 +213,16 @@ $("#btnPay").on("click", function () {
     });
 });
 
+$.ajax({
+    url: RentAllManageBaseUrl + "payment",
+    method: "GET",
+    dataType: "json",
+    contentType:"application/json",
+    success: function (res) {
+        console.log(res)
+    },
+    error: function (error) {
+    }
+});
+
+
