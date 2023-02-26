@@ -1,6 +1,7 @@
 package com.easy.car_rental.dto;
 
 import com.easy.car_rental.entity.Rent;
+import com.easy.car_rental.enums.PaymentType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * @author : Nimesh Piyumantha
@@ -20,7 +22,12 @@ import java.time.LocalDate;
 public class PaymentDTO {
 
     private String paymentID;
-    private LocalDate paymentDate;
-    private double amount;
-    private Rent rent;
+    private Rent rentID;
+    private PaymentType paymentType;
+    private LocalDate date;
+    private LocalTime time;
+    private Double lostDamage;
+    private Double rentFee;
+    private Double driverFee;
+    private Double total;
 }

@@ -366,11 +366,12 @@
                                                     <label class="form-label" for="driverId">Driver ID<span
                                                             class="text-danger"></span></label>
                                                     <select aria-label="Default select example" class="form-select m-1"
-                                                            id="driverId" name="driverId" placeholder="Driver Id"></select>
+                                                            id="driverId" name="driverId"
+                                                            placeholder="Driver Id"></select>
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="userID">User ID<span
-                                                                class="text-danger"></span></label>
+                                                            class="text-danger"></span></label>
                                                     <input class="form-control mt-1" id="userID" readonly
                                                            name="useID"
                                                            placeholder="User ID" type="text">
@@ -395,8 +396,8 @@
                                             <button type="button" class="btn btn-danger btn m-1 p-2" id="btnReject">
                                                 Reject
                                             </button>
-                                            <button type="button" class="btn btn-success btn m-1 p-2"
-                                                    id="btnClear">
+                                            <button type="button" class="btn btn-primary m-1 p-2" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">
                                                 Payment
                                             </button>
                                         </div>
@@ -412,7 +413,8 @@
                             <!-- start searchBar -->
                             <div class="search-bar mt-4 ms-4">
                                 <div class="search-form d-flex align-items-center">
-                                    <input type="search" name="car_Id" id="search_Id" placeholder="Search" title="Enter search keyword">
+                                    <input type="search" name="car_Id" id="search_Id" placeholder="Search"
+                                           title="Enter search keyword">
                                     <button type="button" title="Search"><i class="bi bi-search"></i></button>
                                 </div>
                             </div>
@@ -422,7 +424,8 @@
                             <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
                                 <div class="col-11 justify-content-around sectionBorder"
                                      style="height: 280px; background: white">
-                                    <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                    <div class="table-responsive customerTableDiv overflow-auto "
+                                         style="height: 300px;">
                                         <table class="text-nowrap table table-light table-striped table-bordered table-hover">
                                             <thead class="text-dark table-danger text-center  table-bordered sticky-top">
                                             <tr>
@@ -456,6 +459,87 @@
     </div>
     <!-- End Car Manage -->
 
+    <!-- Modal -->
+    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Payment Rent</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="rentPayement" class="row mb-3">
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="requestRentId">Payement ID<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="paymentID" readonly
+                                   name="paymentID"
+                                   placeholder="Payment ID" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="rentId">Rent ID<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="rentID" readonly
+                                   name="rentID"
+                                   placeholder="Rent ID" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="paymentType">Payment Type<span
+                                    class="text-danger"></span></label>
+                            <select aria-label="Default select example" class="form-select m-1"
+                                    id="paymentType" name="paymentType" placeholder="Payment Type"></select>
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="userID">Payment Date<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="date" readonly
+                                   name="date"
+                                   placeholder="User ID" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="requestState">Payment Time<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="time" readonly
+                                   name="time"
+                                   placeholder="Payment Time" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="lostDamage">Lost Damage<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="lostDamage"
+                                   name="lostDamage"
+                                   placeholder="Lost Damage" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="rentFee">Car Fee<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="rentFee"
+                                   name="rentFee"
+                                   placeholder="Car Fee" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="driverFee">Driver Fee<span
+                                    class="text-danger"></span></label>
+                            <select aria-label="Default select example" class="form-select m-1"
+                                    id="driverFee" name="driverFee" placeholder="Driver Fee"></select>
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="total">Total<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="total"
+                                   name="total"
+                                   placeholder="Total" type="text">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Pay</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <!-- End #main -->
 
