@@ -919,8 +919,6 @@ form .btn {
     font-weight: bolder;
     border: none;
     border-radius: 7px;
-    height: 2.5em;
-    width: 6.4em;
 }
 
 .btn-danger{
@@ -928,8 +926,6 @@ form .btn {
     font-weight: bolder;
     border: none;
     border-radius: 7px;
-    height: 2.5em;
-    width: 6.4em;
 }
 
 .btn-warning{
@@ -938,8 +934,6 @@ form .btn {
     color: white !important;
     border: none;
     border-radius: 7px;
-    height: 2.5em;
-    width: 6.4em;
 }
 
 .btn-primary{
@@ -947,8 +941,6 @@ form .btn {
     font-weight: bolder;
     border: none;
     border-radius: 7px;
-    height: 2.5em;
-    width: 6.4em;
 }
 
 .btn-secondary{
@@ -956,8 +948,6 @@ form .btn {
     font-weight: bolder;
     border: none;
     border-radius: 7px;
-    height: 2.5em;
-    width: 6.4em;
 }
 
 .modal-title{
