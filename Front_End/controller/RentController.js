@@ -133,6 +133,31 @@ function generatePaymentID() {
 
 generatePaymentID();
 
-$("#btnPay").on("click", function () {
-
+$(document).ready(function() {
+    var date = new Date(); // get current date and time
+    var localDate = date.toLocaleDateString(); // get local date in string format
+    var localTime = date.toLocaleTimeString(); // get local time in string format
+    $('#date').val(localDate); // set date text in element with ID "date"
+    $('#time').val(localTime); // set time text in element with ID "time"
 });
+
+$("#btnPay").on("click", function () {
+    let formData = new FormData($("#PayementToRent")[0]);
+    console.log(formData);
+    $.ajax({
+        url: RentAllManageBaseUrl + "payment",
+        method: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            console.log(res)
+            saveUpdateAlert("Payment", res.message);
+            generatePaymentID();
+        },
+        error: function (error) {
+            unSuccessUpdateAlert("Payment", JSON.parse(error.responseText).message);
+        }
+    });
+});
+
