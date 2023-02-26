@@ -27,10 +27,10 @@ public class PaymentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseUtil savePayment(@RequestBody PaymentDTO dto,@RequestParam String rentID) {
+    public ResponseUtil savePayment(@RequestBody PaymentDTO dto, @RequestParam String rentID) {
         System.out.println(dto);
         System.out.println(rentID);
-        service.savePayment(dto,rentID);
+        service.savePayment(dto, rentID);
         return new ResponseUtil("OK", "Successfully Payment.!", null);
     }
 
