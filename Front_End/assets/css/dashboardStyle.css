@@ -501,18 +501,7 @@ form .btn {
     border-radius: 10px;
 }
 
-.btn-warning {
-    background: #e1b12c !important;
-    color: white !important;
-}
 
-.btn-danger {
-    background: #ce1212 !important;
-}
-
-.btn-success {
-    background: #20bf6b !important;
-}
 /*--------------------------------------------------------------
 # Header Nav
 --------------------------------------------------------------*/
@@ -923,6 +912,62 @@ form .btn {
     top: 0;
     bottom: 0;
     background-color: #eceefe;
+}
+
+.btn-success{
+    background: #2eca6a!important;
+    font-weight: bolder;
+    border: none;
+    border-radius: 7px;
+    height: 2.5em;
+    width: 6.4em;
+}
+
+.btn-danger{
+    background: #eb3b5a!important;
+    font-weight: bolder;
+    border: none;
+    border-radius: 7px;
+    height: 2.5em;
+    width: 6.4em;
+}
+
+.btn-warning{
+    background: #fed330!important;
+    font-weight: bolder;
+    color: white !important;
+    border: none;
+    border-radius: 7px;
+    height: 2.5em;
+    width: 6.4em;
+}
+
+.btn-primary{
+    background: #4b7bec!important;
+    font-weight: bolder;
+    border: none;
+    border-radius: 7px;
+    height: 2.5em;
+    width: 6.4em;
+}
+
+.btn-secondary{
+    background: #778ca3!important;
+    font-weight: bolder;
+    border: none;
+    border-radius: 7px;
+    height: 2.5em;
+    width: 6.4em;
+}
+
+.modal-title{
+    font-weight: bolder;
+    color: #4b7bec;
+    font-family:"Open Sans", sans-serif;
+}
+
+.modal-content{
+    border-radius: 20px;
 }
 
 .dashboard .activity .activity-item .activity-badge {
