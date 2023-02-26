@@ -101,3 +101,33 @@ $("#btnReject").on("click", function () {
 
 });
 
+/**
+ * Payment ID Generator
+ * */
+function generatePaymentID() {
+    $("#paymentID").val("PAY-001");
+    $.ajax({
+        url: RentAllManageBaseUrl + "payment/paymentIdGenerate",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let id = resp.value;
+            console.log("id" + id);
+            let tempId = parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#paymentID").val("PAY-00" + tempId);
+            } else if (tempId <= 99) {
+                $("#paymentID").val("PAY-0" + tempId);
+            } else {
+                $("#paymentID").val("PAY-" + tempId);
+            }
+        },
+        error: function (ob, statusText, error) {
+        }
+    });
+}
+
+generatePaymentID();
+
