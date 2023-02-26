@@ -469,9 +469,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="rentPayement" class="row mb-3">
+                    <form id="PayementToRentt" class="row mb-3">
                         <div class="mb-2 col-xl-3 col-sm-6">
-                            <label class="form-label" for="requestRentId">Payement ID<span
+                            <label class="form-label" for="paymentID">Payement ID<span
                                     class="text-danger"></span></label>
                             <input class="form-control mt-1" id="paymentID" readonly
                                    name="paymentID"
@@ -498,7 +498,7 @@
                                    placeholder="User ID" type="text">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
-                            <label class="form-label" for="requestState">Payment Time<span
+                            <label class="form-label" for="time">Payment Time<span
                                     class="text-danger"></span></label>
                             <input class="form-control mt-1" id="time" readonly
                                    name="time"
@@ -521,8 +521,9 @@
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="driverFee">Driver Fee<span
                                     class="text-danger"></span></label>
-                            <select aria-label="Default select example" class="form-select m-1"
-                                    id="driverFee" name="driverFee" placeholder="Driver Fee"></select>
+                            <input class="form-control mt-1" id="driverFee"
+                                   name="driverFee"
+                                   placeholder="Driver Fee" type="text">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="total">Total<span

@@ -42,7 +42,7 @@ function blindClickEventsRent() {
 }
 
 $.ajax({
-    url: RentAllManageBaseUrl + "driver/loadAllDrivers",
+    url: RentAllManageBaseUrl + "driver/loadAvalabilityDrivers",
     method: "GET",
     contentType: "application/json",
     dataType: "json",

@@ -55,6 +55,12 @@ public class DriverController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/loadAvalabilityDrivers")
+    public ResponseUtil getAllAvalabileDriver() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllAvalabileDriver());
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/driverIdGenerate")
     public @ResponseBody CustomDTO customerIdGenerate() {
         return service.userIdGenerate();

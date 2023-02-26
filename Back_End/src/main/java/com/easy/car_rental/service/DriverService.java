@@ -17,6 +17,7 @@ public interface DriverService {
     void updateDriver(DriverDTO dto);
     void deleteDriver(String reg_ID);
     ArrayList<DriverDTO> getAllDriver();
+    ArrayList<DriverDTO> getAllAvalabileDriver();
     CustomDTO userIdGenerate();
     CustomDTO getSumAvailableDriver();
     CustomDTO getSumUnavailableDriver();
