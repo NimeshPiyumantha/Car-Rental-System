@@ -208,7 +208,7 @@ $("#btnPay").on("click", function () {
             generatePaymentID();
         },
         error: function (error) {
-            // unSuccessUpdateAlert("Payment", JSON.parse(error.responseText).message);
+            unSuccessUpdateAlert("Payment", JSON.parse(error.responseText).message);
         }
     });
 });
