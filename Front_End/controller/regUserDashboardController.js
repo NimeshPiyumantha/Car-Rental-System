@@ -272,8 +272,8 @@ $("#btnReservation").click(function () {
                 loadAllRent();
             },
             error: function (error) {
-                let message = JSON.parse(error.responseText).message;
-                unSuccessUpdateAlert("Rent", message);
+                // let message = JSON.parse(error.responseText).message;
+                // unSuccessUpdateAlert("Rent", message);
             }
 
         });
