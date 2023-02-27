@@ -22,7 +22,12 @@ public class IncomeController {
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/dailyIncome")
     public @ResponseBody ArrayList<IncomeDTO> dailyIncome() {
-        System.out.println(service.dailyIncome());
         return service.dailyIncome();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/monthlyIncome")
+    public @ResponseBody ArrayList<IncomeDTO> monthlyIncome() {
+        return service.monthlyIncome();
     }
 }
