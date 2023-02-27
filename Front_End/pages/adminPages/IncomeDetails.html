@@ -386,7 +386,7 @@
                                 <canvas id="dailyIncomeChart" style="max-height: 400px; display: block; box-sizing: border-box; height: 359px; width: 719px;" width="719" height="359"></canvas>
                                 <script>
                                     document.addEventListener("DOMContentLoaded", () => {
-                                        new Chart(document.querySelector('#lineChart'), {
+                                        new Chart(document.querySelector('#dailyIncomeChart'), {
                                             type: 'line',
                                             data: {
                                                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -417,7 +417,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Daily Income</h5>
+                                <h5 class="card-title">Monthly Income</h5>
                                 <div class="row mt-3 mt-md-2 mt-lg-4 justify-content-around"
                                      style="height: 340px;">
                                     <div class="col-11 justify-content-around sectionBorder"
@@ -427,9 +427,9 @@
                                             <table class="table text-nowrap table-light table-striped table-bordered table-hover">
                                                 <thead class="text-dark table-danger text-center  table-bordered">
                                                 <tr>
-                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Month</th>
                                                     <th scope="col">Bookings</th>
-                                                    <th scope="col"> Daily Income</th>
+                                                    <th scope="col"> Monthly Income</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody id="monthlyIncomeTable"></tbody>
@@ -444,13 +444,13 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Daily Income</h5>
+                                <h5 class="card-title">Monthly Income</h5>
 
                                 <!-- Line Chart -->
                                 <canvas id="monthlyIncomeChart" style="max-height: 400px; display: block; box-sizing: border-box; height: 359px; width: 719px;" width="719" height="359"></canvas>
                                 <script>
                                     document.addEventListener("DOMContentLoaded", () => {
-                                        new Chart(document.querySelector('#lineChart'), {
+                                        new Chart(document.querySelector('#monthlyIncomeChart'), {
                                             type: 'line',
                                             data: {
                                                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -481,7 +481,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Daily Income</h5>
+                                <h5 class="card-title">Annually Income</h5>
                                 <div class="row mt-3 mt-md-2 mt-lg-4 justify-content-around"
                                      style="height: 340px;">
                                     <div class="col-11 justify-content-around sectionBorder"
@@ -491,9 +491,9 @@
                                             <table class="table text-nowrap table-light table-striped table-bordered table-hover">
                                                 <thead class="text-dark table-danger text-center  table-bordered">
                                                 <tr>
-                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Year</th>
                                                     <th scope="col">Bookings</th>
-                                                    <th scope="col"> Daily Income</th>
+                                                    <th scope="col"> Annually Income</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody id="annuallyIncomeTable"></tbody>
@@ -508,13 +508,13 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Daily Income</h5>
+                                <h5 class="card-title">Annually Income</h5>
 
                                 <!-- Line Chart -->
                                 <canvas id="annuallyIncomeChart" style="max-height: 400px; display: block; box-sizing: border-box; height: 359px; width: 719px;" width="719" height="359"></canvas>
                                 <script>
                                     document.addEventListener("DOMContentLoaded", () => {
-                                        new Chart(document.querySelector('#lineChart'), {
+                                        new Chart(document.querySelector('#annuallyIncomeChart'), {
                                             type: 'line',
                                             data: {
                                                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],

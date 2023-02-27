@@ -17,6 +17,7 @@ import lombok.ToString;
 public class CustomDTO {
     private String value;
     private int count;
+    private double amount;
 
     public CustomDTO(String lastIndex) {
         this.value=lastIndex;
