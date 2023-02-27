@@ -43,3 +43,20 @@ $.ajax({
     }
 
 });
+
+$.ajax({
+    url: baseUrlIncome + "income/AnnuallyIncome",
+    method: "GET",
+    dataType: "json",
+    success: function (res) {
+        console.log(res);
+        for (let i=0; i<res.length; i++) {
+            let date = res[i][0];
+            let count = res[i][1];
+            let total = res[i][2];
+            let row = "<tr><td>" + date+ "</td><td>" + count + "</td><td>" + total + "</td></tr>";
+            $("#annuallyIncomeTable").append(row);
+        }
+    }
+
+});
