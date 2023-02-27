@@ -1,6 +1,6 @@
 package com.easy.car_rental.service;
 
-import com.easy.car_rental.dto.CustomDTO;
+import com.easy.car_rental.dto.IncomeDTO;
 
 import java.util.ArrayList;
 
@@ -9,5 +9,5 @@ import java.util.ArrayList;
  * @since : 0.1.0
  **/
 public interface IncomeService {
-    ArrayList<CustomDTO> dailyIncome();
+    ArrayList<IncomeDTO> dailyIncome();
 }

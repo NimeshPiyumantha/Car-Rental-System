@@ -1,7 +1,6 @@
 package com.easy.car_rental.controller;
 
-import com.easy.car_rental.dto.CustomDTO;
-import com.easy.car_rental.service.AdminService;
+import com.easy.car_rental.dto.IncomeDTO;
 import com.easy.car_rental.service.IncomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +21,8 @@ public class IncomeController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/dailyIncome")
-    public @ResponseBody ArrayList<CustomDTO> customerIdGenerate() {
+    public @ResponseBody ArrayList<IncomeDTO> dailyIncome() {
+        System.out.println(service.dailyIncome());
         return service.dailyIncome();
     }
 }

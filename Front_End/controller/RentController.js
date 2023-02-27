@@ -41,6 +41,7 @@ function blindClickEventsRent() {
         $("#requestState").val(requestState);
 
         $("#rentID").val(requestRentId);
+        $("#driverId").append(`<option>${driverId}</option>`);
     });
 }
 
