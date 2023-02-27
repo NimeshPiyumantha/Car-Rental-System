@@ -337,7 +337,7 @@
 <main id="main" class="main">
 
     <!-- ======= Income Details ======= -->
-    <div class="pageTitle" id="pageFour">
+    <div class="pageTitle" id="income">
         <h1>Manage</h1>
         <section class="container-fluid mt-3" id="manageCar">
             <nav>
@@ -347,11 +347,78 @@
                 </ol>
             </nav>
 
-            <div class="row mt-3">
-                <div class="card info-card">
+            <section class="section">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Daily Income</h5>
+                                <div class="row mt-3 mt-md-2 mt-lg-4 justify-content-around"
+                                     style="height: 340px;">
+                                    <div class="col-11 justify-content-around sectionBorder"
+                                         style="height: 325px; background: white">
+                                        <div class="table-responsive customerTableDiv overflow-auto "
+                                             style="height: 315px;">
+                                            <table class="table text-nowrap table-light table-striped table-bordered table-hover">
+                                                <thead class="text-dark table-danger text-center  table-bordered">
+                                                <tr>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Bookings</th>
+                                                    <th scope="col"> Daily Income</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="dailyIncomeTable"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Daily Income</h5>
+
+                                <!-- Line Chart -->
+                                <canvas id="dailyIncomeChart" style="max-height: 400px; display: block; box-sizing: border-box; height: 359px; width: 719px;" width="719" height="359"></canvas>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                        new Chart(document.querySelector('#lineChart'), {
+                                            type: 'line',
+                                            data: {
+                                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                                datasets: [{
+                                                    label: 'Line Chart',
+                                                    data: [65, 59, 80, 81, 56, 55, 40],
+                                                    fill: false,
+                                                    borderColor: 'rgb(75, 192, 192)',
+                                                    tension: 0.1
+                                                }]
+                                            },
+                                            options: {
+                                                scales: {
+                                                    y: {
+                                                        beginAtZero: true
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    });
+                                </script>
+                                <!-- End Line CHart -->
+
+                            </div>
+                        </div>
+                    </div>
+
+
 
                 </div>
-            </div>
+            </section>
+
         </section>
     </div>
     <!-- End Income Details -->
@@ -377,6 +444,7 @@
 <script src="../../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
 <script rel="script" src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+<script src="../../assets/vendor/chart.js/chart.umd.js"></script>
 
 <!-- Template Dashboard Main JS File -->
 <script src="../../assets/js/dashboardMain.js"></script>
