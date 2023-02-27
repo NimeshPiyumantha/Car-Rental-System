@@ -13,12 +13,12 @@ import java.util.List;
  * @since : 0.1.0
  **/
 public interface IncomeRepo extends JpaRepository<Rent, String> {
-    @Query(value = "SELECT Payment.date,count(payment.paymentID),sum(payment.total) FROM Rent INNER JOIN Payment ON Rent.rentID = Payment.rentID GROUP BY date", nativeQuery = true)
-    ArrayList<IncomeDTO> dailyIncome();
+    @Query(value = "SELECT payment.date,count(payment.paymentID),sum(payment.total) FROM Rent INNER JOIN Payment ON Rent.rentID = Payment.rentID GROUP BY date", nativeQuery = true)
+    ArrayList dailyIncome();
 
     @Query(value = "SELECT (MONTHNAME(date )) ,count(payment.paymentID),sum(payment.total)FROM Rent INNER JOIN Payment ON Rent.rentID = Payment.rentID  GROUP BY extract(MONTH FROM(date))", nativeQuery = true)
-    List<IncomeDTO> MonthlyIncome();
+    ArrayList MonthlyIncome();
 
     @Query(value = "SELECT (YEAR(date )) ,count(payment.paymentID),sum(payment.total)FROM Rent INNER JOIN Payment ON Rent.rentID = Payment.rentID  GROUP BY extract(YEAR FROM(date))", nativeQuery = true)
-    List<IncomeDTO> AnnuallyIncome();
+    ArrayList AnnuallyIncome();
 }
