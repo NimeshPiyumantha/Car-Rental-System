@@ -25,7 +25,11 @@ public class IncomeServiceImpl implements IncomeService {
 
     @Override
     public ArrayList<IncomeDTO> dailyIncome() {
-        System.out.println(incomeService.dailyIncome());
         return new ArrayList<IncomeDTO>(incomeService.dailyIncome());
+    }
+
+    @Override
+    public ArrayList<IncomeDTO> monthlyIncome() {
+        return new ArrayList<IncomeDTO>(incomeService.MonthlyIncome());
     }
 }
