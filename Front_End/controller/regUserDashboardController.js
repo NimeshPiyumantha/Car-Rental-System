@@ -491,6 +491,11 @@ $("#customerDriverEmail").on('keydown', function (event) {
     }
 });
 
+$("#customerNic").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExNIC, $("#customerNic"))) {
+        focusText($("#customerLicence"));
+    }
+});
 
 
 
