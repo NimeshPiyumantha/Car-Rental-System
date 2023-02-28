@@ -430,6 +430,9 @@ customerValidations.push({
 customerValidations.push({
     reg: regExEmailCusAddress, field: $('#customerDriverEmail'), error: 'Customer Email Address Pattern is Wrong'
 });
+customerValidations.push({
+    reg: regExNIC, field: $('#customerNic'), error: 'Customer NIC Pattern is Wrong'
+});
 
 
 
