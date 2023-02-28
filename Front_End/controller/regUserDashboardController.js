@@ -457,7 +457,13 @@ $("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerDri
     checkValidity(customerValidations);
 });
 
-
+$("#userFirstName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExFirstName, $("#userFirstName"))) {
+        $("#userLastName").focus();
+    } else {
+        focusText($("#userFirstName"));
+    }
+});
 
 
 
