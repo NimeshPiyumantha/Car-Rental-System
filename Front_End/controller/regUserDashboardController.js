@@ -522,3 +522,10 @@ $("#customerPassword").on('keydown', function (event) {
 });
 
 
+function setButtonState(value) {
+    if (value > 0) {
+        $("#updateCustomer").attr('disabled', true);
+    } else {
+        $("#updateCustomer").attr('disabled', false);
+    }
+}
