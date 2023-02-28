@@ -436,6 +436,9 @@ customerValidations.push({
 customerValidations.push({
     reg: regExDrivingNIC, field: $('#customerLicence'), error: 'Customer Driving License Pattern is Wrong'
 });
+customerValidations.push({
+    reg: regExUserName, field: $('#customerUserName'), error: 'Customer User Name Pattern is Wrong'
+});
 
 
 
