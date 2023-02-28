@@ -453,6 +453,9 @@ $("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerDri
     checkValidity(customerValidations);
 });
 
+$("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerDriverEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('blur', function (event) {
+    checkValidity(customerValidations);
+});
 
 
 
