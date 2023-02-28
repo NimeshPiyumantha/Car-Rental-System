@@ -465,6 +465,11 @@ $("#userFirstName").on('keydown', function (event) {
     }
 });
 
+$("#userLastName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExLastName, $("#userLastName"))) {
+        focusText($("#customerContactNo"));
+    }
+});
 
 
 
