@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 import static com.easy.car_rental.enums.AvailabilityType.AVAILABLE;
 import static com.easy.car_rental.enums.AvailabilityType.UNDER_MAINTAIN;
+import static com.easy.car_rental.enums.RentRequest.PAY;
 import static com.easy.car_rental.enums.RentRequest.REJECT;
 
 /**
@@ -62,13 +63,15 @@ public class PaymentServiceImpl implements PaymentService {
             car.setVehicleAvailabilityType(UNDER_MAINTAIN);
             carRepo.save(car);
 
+            rent.setRentType(PAY);
+            rentRepo.save(rent);
         }
         if (rent.getRentDetails().get(0).getDriverID() == null) {
             Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
             car.setVehicleAvailabilityType(UNDER_MAINTAIN);
             carRepo.save(car);
 
-            rent.setRentType(REJECT);
+            rent.setRentType(PAY);
             rentRepo.save(rent);
         }
         paymentRepo.save(payment);

@@ -5,5 +5,5 @@ package com.easy.car_rental.enums;
  * @since : 0.1.0
  **/
 public enum RentRequest {
-    PENDING,CONFORM,REJECT
+    PENDING,CONFORM,REJECT,PAY
 }
