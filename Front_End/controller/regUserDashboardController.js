@@ -497,6 +497,13 @@ $("#customerNic").on('keydown', function (event) {
     }
 });
 
+$("#customerLicence").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExDrivingNIC, $("#customerLicence"))) {
+        if (event.which === 13) {
+            focusText($("#customerUserName"));
+        }
+    }
+});
 
 
 
