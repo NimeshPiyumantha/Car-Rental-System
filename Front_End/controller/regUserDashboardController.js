@@ -414,7 +414,10 @@ const regExDrivingNIC = /^[A-Z0-9-]+$/;
 const regExUserName = /^[A-z0-9/ ]{4,30}$/;
 const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
-
+let customerValidations = [];
+customerValidations.push({
+    reg: regExFirstName, field: $('#userFirstName'), error: 'Customer First Name Pattern is Wrong'
+});
 
 
 
