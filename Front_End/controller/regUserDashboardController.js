@@ -471,7 +471,11 @@ $("#userLastName").on('keydown', function (event) {
     }
 });
 
-
+$("#customerContactNo").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExContactNum, $("#customerContactNo"))) {
+        focusText($("#customerAddress"));
+    }
+});
 
 
 
