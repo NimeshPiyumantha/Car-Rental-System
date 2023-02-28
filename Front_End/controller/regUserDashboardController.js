@@ -403,7 +403,16 @@ $("#btnDeleteRental").click(function () {
 /**
  * Auto Forces Input Fields Save
  * */
-
+$("#userFirstName").focus();
+const regExFirstName = /^[A-z ]{3,20}$/;
+const regExLastName = /^[A-z ]{3,20}$/;
+const regExContactNum = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
+const regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
+const regExEmailCusAddress = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regExNIC = /^([0-9]{12}|[0-9V]{10})$/;
+const regExDrivingNIC = /^[A-Z0-9-]+$/;
+const regExUserName = /^[A-z0-9/ ]{4,30}$/;
+const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
 
 
