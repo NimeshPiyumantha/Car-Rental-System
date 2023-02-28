@@ -505,7 +505,13 @@ $("#customerLicence").on('keydown', function (event) {
     }
 });
 
-
+$("#customerUserName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExUserName, $("#customerUserName"))) {
+        if (event.which === 13) {
+            focusText($("#customerPassword"));
+        }
+    }
+});
 
 
 
