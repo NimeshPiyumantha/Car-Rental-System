@@ -418,6 +418,9 @@ let customerValidations = [];
 customerValidations.push({
     reg: regExFirstName, field: $('#userFirstName'), error: 'Customer First Name Pattern is Wrong'
 });
+customerValidations.push({
+    reg: regExLastName, field: $('#userLastName'), error: 'Customer Last Name Pattern is Wrong'
+});
 
 
 
