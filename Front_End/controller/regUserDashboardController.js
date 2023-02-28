@@ -449,7 +449,9 @@ $("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerDri
     }
 });
 
-
+$("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerDriverEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('keyup', function (event) {
+    checkValidity(customerValidations);
+});
 
 
 
