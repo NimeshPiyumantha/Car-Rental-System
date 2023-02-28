@@ -485,7 +485,11 @@ $("#customerAddress").on('keydown', function (event) {
     }
 });
 
-
+$("#customerDriverEmail").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExEmailCusAddress, $("#customerDriverEmail"))) {
+        focusText($("#customerNic"));
+    }
+});
 
 
 
