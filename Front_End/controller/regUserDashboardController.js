@@ -477,7 +477,13 @@ $("#customerContactNo").on('keydown', function (event) {
     }
 });
 
-
+$("#customerAddress").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExCusAddress, $("#customerAddress"))) {
+        if (event.which === 13) {
+            focusText($("#customerDriverEmail"));
+        }
+    }
+});
 
 
 
