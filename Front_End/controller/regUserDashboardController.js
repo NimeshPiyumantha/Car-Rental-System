@@ -424,7 +424,9 @@ customerValidations.push({
 customerValidations.push({
     reg: regExContactNum, field: $('#customerContactNo'), error: 'Customer Contact Number Pattern is Wrong'
 });
-
+customerValidations.push({
+    reg: regExCusAddress, field: $('#customerAddress'), error: 'Customer Address Pattern is Wrong'
+});
 
 
 
