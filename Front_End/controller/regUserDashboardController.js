@@ -513,6 +513,12 @@ $("#customerUserName").on('keydown', function (event) {
     }
 });
 
-
+$("#customerPassword").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExPassword, $("#customerPassword"))) {
+        if (event.which === 13) {
+            $('#updateCustomer').focus();
+        }
+    }
+});
 
 
