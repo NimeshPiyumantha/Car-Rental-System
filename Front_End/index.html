@@ -214,22 +214,31 @@
                         <input id="cName" name="" placeholder="Car Name" type="search">
                     </div>
                     <div class="input-box">
-                        <span class="span m-1">Car Model</span>
-                        <input id="cModel" name="" placeholder="Car Model" type="search">
+                        <span class="span m-1">Fuel Type</span>
+                        <select class="form-control" id="fuelType">
+                        <option value="">Choose Type</option>
+                        <option value="DIESEL">DIESEL</option>
+                        <option value="PETROL">PETROL</option>
+                        </select>
                     </div>
                     <div class="input-box">
-                        <span class="span m-1">Car Color</span>
-                        <input id="cColor" name="" placeholder="Car Color" type="search">
+                        <span class="span m-1">Car Type</span>
+                        <select class="form-control" id="carType">
+                            <option value="">Choose Type</option>
+                            <option value="GENERAL">GENERAL</option>
+                            <option value="LUXURY">LUXURY</option>
+                            <option value="PREMIUM">PREMIUM</option>
+                        </select>
                     </div>
                     <div class="input-box">
                         <span class="span m-1">Transmission Type</span>
                         <select class="form-control" id="cTransmission">
                             <option value="">Choose Type</option>
-                            <option value="option1">Auto</option>
-                            <option value="option2">Manual</option>
+                            <option value="AUTO">AUTO</option>
+                            <option value="MANUAL">MANUAL</option>
                         </select>
                     </div>
-                    <button class="btn" id="submit" name="" type="submit">Search</button>
+                    <button class="btn" id="searchBtn" name="" type="button">Search</button>
                 </form>
             </div>
             <div id="carSection"></div>
@@ -341,7 +350,8 @@
                                 </div>
                                 <div class="col-lg-2 text-center">
                                     <img alt=""
-                                         class="img-fluid testimonial-img" src="assets/img/testimonials/testimonials-1.jpg">
+                                         class="img-fluid testimonial-img"
+                                         src="assets/img/testimonials/testimonials-1.jpg">
                                 </div>
                             </div>
                         </div>
@@ -371,7 +381,8 @@
                                 </div>
                                 <div class="col-lg-2 text-center">
                                     <img alt=""
-                                         class="img-fluid testimonial-img" src="assets/img/testimonials/testimonials-2.jpg">
+                                         class="img-fluid testimonial-img"
+                                         src="assets/img/testimonials/testimonials-2.jpg">
                                 </div>
                             </div>
                         </div>
@@ -401,7 +412,8 @@
                                 </div>
                                 <div class="col-lg-2 text-center">
                                     <img alt=""
-                                         class="img-fluid testimonial-img" src="assets/img/testimonials/testimonials-3.jpg">
+                                         class="img-fluid testimonial-img"
+                                         src="assets/img/testimonials/testimonials-3.jpg">
                                 </div>
                             </div>
                         </div>
@@ -431,7 +443,8 @@
                                 </div>
                                 <div class="col-lg-2 text-center">
                                     <img alt=""
-                                         class="img-fluid testimonial-img" src="assets/img/testimonials/testimonials-4.jpg">
+                                         class="img-fluid testimonial-img"
+                                         src="assets/img/testimonials/testimonials-4.jpg">
                                 </div>
                             </div>
                         </div>
@@ -462,7 +475,8 @@
                      style="background-image: url(assets/img/reg_Customer_main.jpg);"></div>
 
                 <div class="col-lg-8 d-flex align-items-center register-form-bg sectionBorder">
-                    <form action="customer" class="reg-customer-form" data-aos="fade-up" data-aos-delay="100" id="customerForm"
+                    <form action="customer" class="reg-customer-form" data-aos="fade-up" data-aos-delay="100"
+                          id="customerForm"
                           method="post" role="form">
                         <div class="row gy-3">
                             <div class="col-lg-6 col-md-8">
@@ -485,7 +499,8 @@
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="contact_No">Contact Number</label>
-                                <input class="form-control" id="contact_No" name="contact_No" placeholder="Contact Number"
+                                <input class="form-control" id="contact_No" name="contact_No"
+                                       placeholder="Contact Number"
                                        type="text">
                                 <span class="control-error"></span>
                             </div>
@@ -508,7 +523,8 @@
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="license_No">License Id</label>
-                                <input class="form-control" id="license_No" name="license_No" placeholder="Driving License"
+                                <input class="form-control" id="license_No" name="license_No"
+                                       placeholder="Driving License"
                                        type="text">
                                 <span class="control-error"></span>
                             </div>
@@ -623,7 +639,8 @@
             <div class="mb-3">
                 <iframe allowfullscreen
                         class="map sectionBorder"
-                        frameborder="0 " src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126794.64611613179!2d79.859393417323!3d6.729201708571183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676282273985!5m2!1sen!2slk "></iframe>
+                        frameborder="0 "
+                        src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126794.64611613179!2d79.859393417323!3d6.729201708571183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676282273985!5m2!1sen!2slk "></iframe>
             </div>
             <!-- End Google Maps -->
 
@@ -814,7 +831,7 @@
 
 <!-- Controller JS File -->
 <script rel="script" src="controller/Reg_UserController.js"></script>
-<script src="controller/indexController.js" rel="script"></script>
+<script rel="script" src="controller/indexController.js"></script>
 
 <!-- Util JS File -->
 <script rel="script" src="util/alert.js"></script>
