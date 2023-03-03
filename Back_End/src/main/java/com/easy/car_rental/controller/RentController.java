@@ -3,7 +3,9 @@ package com.easy.car_rental.controller;
 import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.RentDTO;
+import com.easy.car_rental.entity.Car;
 import com.easy.car_rental.entity.Reg_User;
+import com.easy.car_rental.entity.Rent;
 import com.easy.car_rental.service.Reg_UserService;
 import com.easy.car_rental.service.RentService;
 import com.easy.car_rental.util.ResponseUtil;
@@ -84,4 +86,11 @@ public class RentController {
         service.bookingReject(rentID,driverId);
         return new ResponseUtil("OK", "Successfully Conformed.!", null);
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/searchDtails", params = {"search_Id"})
+    public Rent searchCusId(String search_Id) {
+        return service.searchId(search_Id);
+    }
+
 }
