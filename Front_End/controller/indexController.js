@@ -3,19 +3,19 @@
  * @since : 0.1.0
  **/
 
-    let carBaseUrl = "http://localhost:8080/Back_End_war/";
+let carBaseUrl = "http://localhost:8080/Back_End_war/";
 
-    loadAllCars();
+loadAllCars();
 
-    function loadAllCars() {
+function loadAllCars() {
     $("#carSection").empty();
     $.ajax({
-    url: carBaseUrl + "car/loadAllCars", method: "GET", dataType: "json", success: function (res) {
-    console.log(res);
+        url: carBaseUrl + "car/loadAllCars", method: "GET", dataType: "json", success: function (res) {
+            console.log(res);
 
-    for (let i of res.data) {
-    let url1 = i.image.front_View;
-    $("#carSection").append(`<div data-aos="fade-up" id="carSection" class="position-relative d-flex justify-content-center mt-5 sectionBorder">
+            for (let i of res.data) {
+                let url1 = i.image.front_View;
+                $("#carSection").append(`<div data-aos="fade-up" id="carSection" class="position-relative d-flex justify-content-center mt-5 sectionBorder">
                 <div class="d-flex align-items-center col-lg-12 flex-wrap justify-content-center">
                     <img class="position-relative cars-img img-fluid m-3 p-2 col-lg-5" src="${carBaseUrl + url1}"
                          href="">
@@ -71,7 +71,7 @@
             </div>
  `);
 
-}
-}
-});
+            }
+        }
+    });
 }
