@@ -58,6 +58,7 @@ $("#search_Id").on("keypress", function (event) {
     }
 
 });
+let carID;
 
 function blindClickEventsRent() {
     $("#retManage>tr").on("click", function () {
@@ -65,6 +66,8 @@ function blindClickEventsRent() {
         let driverId = $(this).children().eq(3).text();
         let userID = $(this).children().eq(2).text();
         let requestState = $(this).children().eq(5).text();
+        carID = $(this).children().eq(1).text();
+
 
         $("#requestRentId").val(requestRentId);
         $("#driverId").val(driverId);
@@ -73,6 +76,7 @@ function blindClickEventsRent() {
 
         $("#rentID").val(requestRentId);
         $("#driverId").append(`<option>${driverId}</option>`);
+        loadAllCars();
     });
 }
 
@@ -193,7 +197,7 @@ $(document).ready(function () {
  * Enter Cash and Balance display
  * */
 
-$(document).on("change keyup blur", "#lostDamage,#rentFee,#driverFee,#days", function () {
+$(document).on("change keyup blur", "#lostDamage,#rentFee,#driverFee,#days,#mileage", function () {
     /**
      * Payment Details
      * */
@@ -209,13 +213,14 @@ $(document).on("change keyup blur", "#lostDamage,#rentFee,#driverFee,#days", fun
 
 });
 
-loadAllCars();
 
 function loadAllCars() {
     $.ajax({
-        url: carBaseUrl + "car/loadAllCars", method: "GET", dataType: "json", success: function (res) {
+        url: RentAllManageBaseUrl + "car/searchCar/?car_Id=" + carID,
+        method: "GET",
+        dataType: "json",
+        success: function (res) {
             console.log(res);
-
         }
     });
 }
