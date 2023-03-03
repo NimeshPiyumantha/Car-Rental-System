@@ -193,15 +193,19 @@ $(document).ready(function () {
  * Enter Cash and Balance display
  * */
 
-$(document).on("change keyup blur", "#lostDamage,#rentFee,#driverFee", function () {
+$(document).on("change keyup blur", "#lostDamage,#rentFee,#driverFee,#days", function () {
     /**
      * Payment Details
      * */
     let lostDamage = $('#lostDamage').val();
     let carFee = $('#rentFee').val();
     let driverFee = $('#driverFee').val();
+    let days = $('#days').val();
 
-    $("#total").val(parseFloat(lostDamage) + parseFloat(carFee) + parseFloat(driverFee));
+    let carTotal = parseFloat(carFee) * parseFloat(days);
+    let driverTotal = parseFloat(driverFee) * parseFloat(days);
+
+    $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal)+parseFloat(driverTotal));
 
 });
 
@@ -223,7 +227,7 @@ $("#btnPay").on("click", function () {
 
     var paymentOb = {
         paymentID: paymentId,
-        rentID:{
+        rentID: {
             rentID: rentID
         },
         paymentType: paymentType,
@@ -237,11 +241,11 @@ $("#btnPay").on("click", function () {
 
 
     $.ajax({
-        url: RentAllManageBaseUrl + "payment/?rentID="+rentID,
+        url: RentAllManageBaseUrl + "payment/?rentID=" + rentID,
         method: "POST",
         data: JSON.stringify(paymentOb),
         dataType: "json",
-        contentType:"application/json",
+        contentType: "application/json",
         success: function (res) {
             console.log(res)
             saveUpdateAlert("Payment", res.message);
@@ -257,7 +261,7 @@ $.ajax({
     url: RentAllManageBaseUrl + "payment",
     method: "GET",
     dataType: "json",
-    contentType:"application/json",
+    contentType: "application/json",
     success: function (res) {
         console.log(res.data);
         for (let i of res.data) {
