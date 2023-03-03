@@ -14,13 +14,13 @@
     <meta content="green" name="theme-color">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
           rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link rel="stylesheet" href="assets/vendor/normalize.css">
+    <link href="assets/vendor/normalize.css" rel="stylesheet">
     <link href="assets/fonts/css/all.min.css" rel="stylesheet">
 
     <link href="assets/vendor/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,13 +36,13 @@
 
 <body>
 <!-- ======= Header =======-->
-<header id="header" class="header fixed-top d-flex align-items-center">
+<header class="header fixed-top d-flex align-items-center" id="header">
     <div class="container d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <a class="logo d-flex align-items-center me-auto me-lg-0" href="index.html">
             <h1> EASY <span>RENT.</span></h1>
         </a>
 
-        <nav id="navbar" class="navbar">
+        <nav class="navbar" id="navbar">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -63,7 +63,7 @@
 <!-- End Header-->
 
 <!--======= Hero Section =======-->
-<section id="hero" class="hero d-flex align-items-center section-bg">
+<section class="hero d-flex align-items-center section-bg" id="hero">
     <div class="container">
         <div class="row justify-content-between gy-5">
             <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
@@ -74,13 +74,13 @@
                     Australia, Ireland, Switzerland.</p>
                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                     <a class="btn-Register-customer-new" href="#Register-customer-new">Register</a>
-                    <a href="https://vimeo.com/290450151" class="glightbox btn-watch-video d-flex align-items-center"><i
+                    <a class="glightbox btn-watch-video d-flex align-items-center" href="https://vimeo.com/290450151"><i
                             class="bi bi-play-circle"></i><span>Watch Video</span></a>
                 </div>
             </div>
             <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
-                <img src="assets/img/mainCar.png" class="img-fluid img-size" alt="" data-aos="zoom-out"
-                     data-aos-delay="300">
+                <img alt="" class="img-fluid img-size" data-aos="zoom-out" data-aos-delay="300"
+                     src="assets/img/mainCar.png">
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@
 <main id="main">
 
     <!--     ======= About Section =======-->
-    <section id="about" class="about">
+    <section class="about" id="about">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -101,7 +101,7 @@
 
             <div class="row gy-4">
                 <div class="col-lg-7 position-relative about-img"
-                     style="background-image: url(assets/img/about-1.jpg); " data-aos="fade-up" data-aos-delay="150">
+                     data-aos="fade-up" data-aos-delay="150" style="background-image: url(assets/img/about-1.jpg); ">
                     <div class="call-us position-absolute">
                         <h4>Have a Questions ?</h4>
                         <p>+94 11 420 7354</p>
@@ -138,8 +138,8 @@
                         </p>
 
                         <div class="position-relative mt-4">
-                            <img src="assets/img/about-image-2.jpg" class="img-fluid" alt="">
-                            <a href="" class="glightbox play-btn"></a>
+                            <img alt="" class="img-fluid" src="assets/img/about-image-2.jpg">
+                            <a class="glightbox play-btn" href=""></a>
                         </div>
                     </div>
                 </div>
@@ -150,15 +150,15 @@
     <!--     End About Section-->
 
     <!--     ======= Stats Counter Section =======-->
-    <section id="stats-counter" class="stats-counter">
+    <section class="stats-counter" id="stats-counter">
         <div class="container" data-aos="zoom-out">
 
             <div class="row gy-4">
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1"
-                              class="purecounter"> </span>
+                        <span class="purecounter" data-purecounter-duration="1" data-purecounter-end="200"
+                              data-purecounter-start="0"> </span>
 
                         <p>Clients</p>
                     </div>
@@ -167,8 +167,8 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="400" data-purecounter-duration="1"
-                              class="purecounter"></span>
+                        <span class="purecounter" data-purecounter-duration="1" data-purecounter-end="400"
+                              data-purecounter-start="0"></span>
                         <p>Rents</p>
                     </div>
                 </div>
@@ -176,8 +176,8 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="2480" data-purecounter-duration="1"
-                              class="purecounter"></span>
+                        <span class="purecounter" data-purecounter-duration="1" data-purecounter-end="2480"
+                              data-purecounter-start="0"></span>
                         <p>Hours Of Support</p>
                     </div>
                 </div>
@@ -185,8 +185,8 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
-                              class="purecounter"></span>
+                        <span class="purecounter" data-purecounter-duration="1" data-purecounter-end="15"
+                              data-purecounter-start="0"></span>
                         <p>Workers</p>
                     </div>
                 </div>
@@ -199,7 +199,7 @@
     <!--     End Stats Counter Section-->
 
     <!-- ======= Car Section ======= -->
-    <section id="cars" class="cars">
+    <section class="cars" id="cars">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -211,15 +211,15 @@
                 <form action="" id="form-control">
                     <div class="input-box">
                         <span class="span m-1"> Car Name</span>
-                        <input type="search" name="" id="cName" placeholder="Car Name">
+                        <input id="cName" name="" placeholder="Car Name" type="search">
                     </div>
                     <div class="input-box">
                         <span class="span m-1">Car Model</span>
-                        <input type="search" name="" id="cModel" placeholder="Car Model">
+                        <input id="cModel" name="" placeholder="Car Model" type="search">
                     </div>
                     <div class="input-box">
                         <span class="span m-1">Car Color</span>
-                        <input type="search" name="" id="cColor" placeholder="Car Color">
+                        <input id="cColor" name="" placeholder="Car Color" type="search">
                     </div>
                     <div class="input-box">
                         <span class="span m-1">Transmission Type</span>
@@ -229,65 +229,65 @@
                             <option value="option2">Manual</option>
                         </select>
                     </div>
-                    <button type="submit" name="" id="submit" class="btn">Search</button>
+                    <button class="btn" id="submit" name="" type="submit">Search</button>
                 </form>
             </div>
             <div id="carSection"></div>
-           <!-- <div data-aos="fade-up" class="position-relative d-flex justify-content-center mt-5 sectionBorder">
-                <div class="d-flex align-items-center col-lg-12 flex-wrap justify-content-center">
-                    <a href="assets/img/cars/bmwi8.png" class="glightbox"></a>
-                    <img class="position-relative cars-img img-fluid m-3 p-2 col-lg-5" src="assets/img/cars/bmwi8.png"
-                         href="">
+            <!-- <div data-aos="fade-up" class="position-relative d-flex justify-content-center mt-5 sectionBorder">
+                 <div class="d-flex align-items-center col-lg-12 flex-wrap justify-content-center">
+                     <a href="assets/img/cars/bmwi8.png" class="glightbox"></a>
+                     <img class="position-relative cars-img img-fluid m-3 p-2 col-lg-5" src="assets/img/cars/bmwi8.png"
+                          href="">
 
-                    <div class="position-relative col-xl-8 col-md-10 flex-wrap">
+                     <div class="position-relative col-xl-8 col-md-10 flex-wrap">
 
-                        <h4 class="m-2 p-2 text-center txt-head">BMW I 8 <br>
-                            <p><span>Luxury Package</span><span>&nbsp;- &nbsp;</span><span>Manual</span></p></h4>
-                        <div class="row listStyle m-1">
-                            <div class="col">
-                                <ul class="list-group">
-                                    <li class="list-group-item">Daily Rate (Rs) <strong>15000</strong></li>
-                                    <li class="list-group-item">Free <strong>100</strong> KM for a Day</li>
-                                    <li class="list-group-item">Price per Extra KM (Rs) <strong>800</strong>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <ul class="list-group">
-                                    <li class="list-group-item">Monthly Rate (Rs) <strong>35000</strong></li>
-                                    <li class="list-group-item">Free <strong>3500</strong> KM for a Month</li>
-                                    <li class="list-group-item">Modification</li>
-                                </ul>
-                            </div>
-                        </div>
+                         <h4 class="m-2 p-2 text-center txt-head">BMW I 8 <br>
+                             <p><span>Luxury Package</span><span>&nbsp;- &nbsp;</span><span>Manual</span></p></h4>
+                         <div class="row listStyle m-1">
+                             <div class="col">
+                                 <ul class="list-group">
+                                     <li class="list-group-item">Daily Rate (Rs) <strong>15000</strong></li>
+                                     <li class="list-group-item">Free <strong>100</strong> KM for a Day</li>
+                                     <li class="list-group-item">Price per Extra KM (Rs) <strong>800</strong>
+                                     </li>
+                                 </ul>
+                             </div>
+                             <div class="col">
+                                 <ul class="list-group">
+                                     <li class="list-group-item">Monthly Rate (Rs) <strong>35000</strong></li>
+                                     <li class="list-group-item">Free <strong>3500</strong> KM for a Month</li>
+                                     <li class="list-group-item">Modification</li>
+                                 </ul>
+                             </div>
+                         </div>
 
-                        <div class="d-flex mt-2 m-3 p-2 justify-content-around flex-wrap">
-                            <div class="d-flex justify-content-center mb-4">
-                                <div class="px-2">
-                                    <i class="fa-solid fa-car m-2 fontSize"></i>
-                                    <span class="span">2020</span>
-                                </div>
-                                <div class="px-2 border-left border-right">
-                                    <i class="fa-solid fa-gears m-2 fontSize"></i>
-                                    <span class="span">AUTO</span>
-                                </div>
-                                <div class="px-2">
-                                    <i class="fa-solid fa-chair m-2 fontSize"></i>
-                                    <span class="span">4</span>
-                                </div>
-                                <div class="px-2">
-                                    <i class="fa-solid fa-road m-2 fontSize"></i>
-                                    <span class="span">50</span>
-                                </div>
-                                <div class="px-2">
-                                    <i class="fa-sharp fa-solid fa-door-open m-2 fontSize"></i>
-                                    <span class="span">4</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
+                         <div class="d-flex mt-2 m-3 p-2 justify-content-around flex-wrap">
+                             <div class="d-flex justify-content-center mb-4">
+                                 <div class="px-2">
+                                     <i class="fa-solid fa-car m-2 fontSize"></i>
+                                     <span class="span">2020</span>
+                                 </div>
+                                 <div class="px-2 border-left border-right">
+                                     <i class="fa-solid fa-gears m-2 fontSize"></i>
+                                     <span class="span">AUTO</span>
+                                 </div>
+                                 <div class="px-2">
+                                     <i class="fa-solid fa-chair m-2 fontSize"></i>
+                                     <span class="span">4</span>
+                                 </div>
+                                 <div class="px-2">
+                                     <i class="fa-solid fa-road m-2 fontSize"></i>
+                                     <span class="span">50</span>
+                                 </div>
+                                 <div class="px-2">
+                                     <i class="fa-sharp fa-solid fa-door-open m-2 fontSize"></i>
+                                     <span class="span">4</span>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>-->
         </div>
 
         <div class="card-body mt-5 d-flex justify-content-center">
@@ -295,7 +295,7 @@
             <nav aria-label="Page navigation">
                 <ul class="pagination">
                     <li class="page-item"><a class="page-link" href="">Previous</a></li>
-                    <li class="page-item active" aria-current="page"><a class="page-link" href="">1</a></li>
+                    <li aria-current="page" class="page-item active"><a class="page-link" href="">1</a></li>
                     <li class="page-item"><a class="page-link" href="">2</a></li>
                     <li class="page-item"><a class="page-link" href="">3</a></li>
                     <li class="page-item"><a class="page-link" href="">Next</a></li>
@@ -307,7 +307,7 @@
     <!-- End Car Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <section class="testimonials section-bg" id="testimonials">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -340,8 +340,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-2 text-center">
-                                    <img src="assets/img/testimonials/testimonials-1.jpg"
-                                         class="img-fluid testimonial-img" alt="">
+                                    <img alt=""
+                                         class="img-fluid testimonial-img" src="assets/img/testimonials/testimonials-1.jpg">
                                 </div>
                             </div>
                         </div>
@@ -370,8 +370,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-2 text-center">
-                                    <img src="assets/img/testimonials/testimonials-2.jpg"
-                                         class="img-fluid testimonial-img" alt="">
+                                    <img alt=""
+                                         class="img-fluid testimonial-img" src="assets/img/testimonials/testimonials-2.jpg">
                                 </div>
                             </div>
                         </div>
@@ -400,8 +400,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-2 text-center">
-                                    <img src="assets/img/testimonials/testimonials-3.jpg"
-                                         class="img-fluid testimonial-img" alt="">
+                                    <img alt=""
+                                         class="img-fluid testimonial-img" src="assets/img/testimonials/testimonials-3.jpg">
                                 </div>
                             </div>
                         </div>
@@ -430,8 +430,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-2 text-center">
-                                    <img src="assets/img/testimonials/testimonials-4.jpg"
-                                         class="img-fluid testimonial-img" alt="">
+                                    <img alt=""
+                                         class="img-fluid testimonial-img" src="assets/img/testimonials/testimonials-4.jpg">
                                 </div>
                             </div>
                         </div>
@@ -447,7 +447,7 @@
     <!-- End Testimonials Section -->
 
     <!-- ======= Register A Customer ======= -->
-    <section id="Register-customer-new" class="Register-customer-new">
+    <section class="Register-customer-new" id="Register-customer-new">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -458,87 +458,87 @@
             <div class="row g-0">
 
                 <div class="col-lg-4 register-img sectionBorder"
-                     style="background-image: url(assets/img/reg_Customer_main.jpg);" data-aos="zoom-out"
-                     data-aos-delay="200"></div>
+                     data-aos="zoom-out" data-aos-delay="200"
+                     style="background-image: url(assets/img/reg_Customer_main.jpg);"></div>
 
                 <div class="col-lg-8 d-flex align-items-center register-form-bg sectionBorder">
-                    <form action="customer" method="post" role="form" class="reg-customer-form" id="customerForm"
-                          data-aos="fade-up" data-aos-delay="100">
+                    <form action="customer" class="reg-customer-form" data-aos="fade-up" data-aos-delay="100" id="customerForm"
+                          method="post" role="form">
                         <div class="row gy-3">
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="user_Id">User Id</label>
-                                <input type="text" name="user_Id" class="form-control" readonly id="user_Id"
-                                       placeholder="C00-001">
+                                <input class="form-control" id="user_Id" name="user_Id" placeholder="C00-001" readonly
+                                       type="text">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="firstName">First Name</label>
-                                <input type="text" name="firstName" class="form-control" id="firstName"
-                                       placeholder="First Name">
+                                <input class="form-control" id="firstName" name="firstName" placeholder="First Name"
+                                       type="text">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="lastName">Last Name</label>
-                                <input type="text" name="lastName" class="form-control" id="lastName"
-                                       placeholder="Last Name">
+                                <input class="form-control" id="lastName" name="lastName" placeholder="Last Name"
+                                       type="text">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="contact_No">Contact Number</label>
-                                <input type="text" name="contact_No" class="form-control" id="contact_No"
-                                       placeholder="Contact Number">
+                                <input class="form-control" id="contact_No" name="contact_No" placeholder="Contact Number"
+                                       type="text">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="address">Address</label>
-                                <input type="text" name="address" class="form-control" id="address"
-                                       placeholder="Address">
+                                <input class="form-control" id="address" name="address" placeholder="Address"
+                                       type="text">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="email">Email</label>
-                                <input type="text" name="email" class="form-control" id="email"
-                                       placeholder="Email Address">
+                                <input class="form-control" id="email" name="email" placeholder="Email Address"
+                                       type="text">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="nic">NIC</label>
-                                <input type="text" name="nic" class="form-control" id="nic" placeholder="National ID">
+                                <input class="form-control" id="nic" name="nic" placeholder="National ID" type="text">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="license_No">License Id</label>
-                                <input type="text" name="license_No" class="form-control" id="license_No"
-                                       placeholder="Driving License">
+                                <input class="form-control" id="license_No" name="license_No" placeholder="Driving License"
+                                       type="text">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="nic_Img">Upload NIC</label>
-                                <input type="file" name="nic_Img" class="form-control" id="nic_Img">
+                                <input class="form-control" id="nic_Img" name="nic_Img" type="file">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="license_Img">Upload License </label>
-                                <input type="file" name="license_Img" class="form-control" id="license_Img">
+                                <input class="form-control" id="license_Img" name="license_Img" type="file">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="role_Type">Role Type</label>
-                                <select class="form-control" style="height: 3.2em" id="role_Type" name="role_Type">
+                                <select class="form-control" id="role_Type" name="role_Type" style="height: 3.2em">
                                     <option value="REGISTERED_USER">REGISTERED_USER</option>
                                 </select>
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="user_Name">User Name</label>
-                                <input type="text" name="user_Name" class="form-control" id="user_Name"
-                                       placeholder="User Name">
+                                <input class="form-control" id="user_Name" name="user_Name" placeholder="User Name"
+                                       type="text">
                                 <span class="control-error"></span>
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <label class="form-label" for="password">Password</label>
-                                <input type="password" name="password" class="form-control" id="password"
-                                       placeholder="Enter Password">
+                                <input class="form-control" id="password" name="password" placeholder="Enter Password"
+                                       type="password">
                                 <span class="control-error"></span>
                             </div>
                         </div>
@@ -557,7 +557,7 @@
     <!-- End Register A Customer -->
 
     <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery section-bg">
+    <section class="gallery section-bg" id="gallery">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -569,39 +569,39 @@
                 <div class="swiper-wrapper align-items-center">
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-1.jpg"><img
-                                src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a>
+                                alt="" class="img-fluid" src="assets/img/gallery/gallery-1.jpg"></a>
                     </div>
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-2.jpg"><img
-                                src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a>
+                                alt="" class="img-fluid" src="assets/img/gallery/gallery-2.jpg"></a>
                     </div>
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-3.jpg"><img
-                                src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a>
+                                alt="" class="img-fluid" src="assets/img/gallery/gallery-3.jpg"></a>
                     </div>
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-4.jpg"><img
-                                src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a>
+                                alt="" class="img-fluid" src="assets/img/gallery/gallery-4.jpg"></a>
                     </div>
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-5.jpg"><img
-                                src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a>
+                                alt="" class="img-fluid" src="assets/img/gallery/gallery-5.jpg"></a>
                     </div>
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-6.jpg"><img
-                                src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a>
+                                alt="" class="img-fluid" src="assets/img/gallery/gallery-6.jpg"></a>
                     </div>
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-7.jpg"><img
-                                src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a>
+                                alt="" class="img-fluid" src="assets/img/gallery/gallery-7.jpg"></a>
                     </div>
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-8.jpg"><img
-                                src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a>
+                                alt="" class="img-fluid" src="assets/img/gallery/gallery-8.jpg"></a>
                     </div>
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-9.jpg"><img
-                                src="assets/img/gallery/gallery-9.jpg" class="img-fluid" alt=""></a>
+                                alt="" class="img-fluid" src="assets/img/gallery/gallery-9.jpg"></a>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -612,7 +612,7 @@
     <!-- End Gallery Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -621,9 +621,9 @@
             </div>
 
             <div class="mb-3">
-                <iframe class="map sectionBorder"
-                        src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126794.64611613179!2d79.859393417323!3d6.729201708571183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676282273985!5m2!1sen!2slk "
-                        frameborder="0 " allowfullscreen></iframe>
+                <iframe allowfullscreen
+                        class="map sectionBorder"
+                        frameborder="0 " src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126794.64611613179!2d79.859393417323!3d6.729201708571183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24616c169e7c3%3A0xd21e80c970651d56!2sPanadura!5e0!3m2!1sen!2slk!4v1676282273985!5m2!1sen!2slk "></iframe>
             </div>
             <!-- End Google Maps -->
 
@@ -678,24 +678,24 @@
 
             </div>
 
-            <form action=" " method="post " role="form " class="email-form p-3 p-md-4 ">
+            <form action=" " class="email-form p-3 p-md-4 " method="post " role="form ">
                 <div class="row ">
                     <div class="col-xl-6 form-group ">
-                        <input type="text " name="name " class="form-control " id="contactName "
-                               placeholder="Your Name " required>
+                        <input class="form-control " id="contactName " name="name " placeholder="Your Name "
+                               required type="text ">
                     </div>
                     <div class="col-xl-6 form-group ">
-                        <input type="email " class="form-control " name="email " id="contactEmail "
-                               placeholder="Your Email " required>
+                        <input class="form-control " id="contactEmail " name="email " placeholder="Your Email "
+                               required type="email ">
                     </div>
                 </div>
                 <div class="form-group ">
-                    <input type="text " class="form-control " name="subject " id="contactSubject "
-                           placeholder="Subject " required>
+                    <input class="form-control " id="contactSubject " name="subject " placeholder="Subject "
+                           required type="text ">
                 </div>
                 <div class="form-group ">
-                    <textarea class="form-control " name="message " rows="5 " placeholder="Message "
-                              required></textarea>
+                    <textarea class="form-control " name="message " placeholder="Message " required
+                              rows="5 "></textarea>
                 </div>
                 <div class="my-3 ">
                     <div class="loading ">Loading</div>
@@ -703,7 +703,7 @@
                     <div class="sent-message ">Your message has been sent. Thank you!</div>
                 </div>
                 <div class="text-center ">
-                    <button type="submit" class="btnSendForm">Send Message</button>
+                    <button class="btnSendForm" type="submit">Send Message</button>
                 </div>
             </form>
             <!--End Contact Form -->
@@ -716,7 +716,7 @@
 <!-- End #main -->
 
 <!-- ======= Footer ======= -->
-<footer id="footer " class="footer ">
+<footer class="footer " id="footer ">
 
     <div class="container ">
         <div class="row gy-3 ">
@@ -753,10 +753,10 @@
             <div class="col-lg-3 col-md-6 footer-links ">
                 <h4>Follow Us</h4>
                 <div class="social-links d-flex ">
-                    <a href="# " class="twitter "><i class="bi bi-twitter "></i></a>
-                    <a href="# " class="facebook "><i class="bi bi-facebook "></i></a>
-                    <a href="# " class="instagram "><i class="bi bi-instagram "></i></a>
-                    <a href="# " class="linkedin "><i class="bi bi-linkedin "></i></a>
+                    <a class="twitter " href="# "><i class="bi bi-twitter "></i></a>
+                    <a class="facebook " href="# "><i class="bi bi-facebook "></i></a>
+                    <a class="instagram " href="# "><i class="bi bi-instagram "></i></a>
+                    <a class="linkedin " href="# "><i class="bi bi-linkedin "></i></a>
                 </div>
             </div>
         </div>
@@ -794,7 +794,7 @@
 </footer>
 <!-- End Footer -->
 
-<a href="# " class="scroll-top d-flex align-items-center justify-content-center "><i class="bi bi-arrow-up-short "></i></a>
+<a class="scroll-top d-flex align-items-center justify-content-center " href="# "><i class="bi bi-arrow-up-short "></i></a>
 
 <div id="preloader "></div>
 
@@ -810,18 +810,19 @@
 
 
 <!-- Template Main JS File -->
-<script src="assets/js/main.js" rel="script"></script>
+<script rel="script" src="assets/js/main.js"></script>
 
 <!-- Controller JS File -->
-<script src="controller/Reg_UserController.js" rel="script"></script>
+<script rel="script" src="controller/Reg_UserController.js"></script>
 
 <!-- Util JS File -->
-<script src="util/alert.js" rel="script"></script>
-<script src="util/validation.js" rel="script"></script>
+<script rel="script" src="util/alert.js"></script>
+<script rel="script" src="util/validation.js"></script>
 <script>
     let carBaseUrl = "http://localhost:8080/Back_End_war/";
 
     loadAllCars();
+
     function loadAllCars() {
         $("#carSection").empty();
         $.ajax({
@@ -832,12 +833,12 @@
                     let url1 = i.image.front_View;
                     $("#carSection").append(`<div data-aos="fade-up" id="carSection" class="position-relative d-flex justify-content-center mt-5 sectionBorder">
                 <div class="d-flex align-items-center col-lg-12 flex-wrap justify-content-center">
-                    <img class="position-relative cars-img img-fluid m-3 p-2 col-lg-5" src="${carBaseUrl+url1}"
+                    <img class="position-relative cars-img img-fluid m-3 p-2 col-lg-5" src="${carBaseUrl + url1}"
                          href="">
 
                     <div class="position-relative col-xl-8 col-md-10 flex-wrap">
 
-                        <h4 class="m-2 p-2 text-center txt-head">${i.name +" "+i.brand} <br>
+                        <h4 class="m-2 p-2 text-center txt-head">${i.name + " " + i.brand} <br>
                             <p><span>${i.type}</span><span>&nbsp;- &nbsp;</span><span>${i.transmission_Type}</span></p></h4>
                         <div class="row listStyle m-1">
                             <div class="col">
@@ -851,7 +852,7 @@
                             <div class="col">
                                 <ul class="list-group">
                                     <li class="list-group-item">Monthly Rate (Rs) <strong>${i.rent_Duration_Price.monthly_Rate}</strong></li>
-                                    <li class="list-group-item">Free <strong>${(i.free_Mileage)*24}</strong> KM for a Month</li>
+                                    <li class="list-group-item">Free <strong>${(i.free_Mileage) * 24}</strong> KM for a Month</li>
                                     <li class="list-group-item">Modification</li>
                                 </ul>
                             </div>
@@ -885,7 +886,7 @@
                 </div>
             </div>
  `);
-                    // console.log(row);
+
                 }
             }
         });
