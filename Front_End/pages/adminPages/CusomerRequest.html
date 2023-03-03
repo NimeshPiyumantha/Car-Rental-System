@@ -30,10 +30,10 @@
 </head>
 <body>
 <!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center">
+<header class="header fixed-top d-flex align-items-center" id="header">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="../adminDashboard.html" class="logo d-flex align-items-center">
+        <a class="logo d-flex align-items-center" href="../adminDashboard.html">
             <span class="d-none d-lg-block">Easy <span>Rent.</span></span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -50,7 +50,7 @@
 
             <li class="nav-item dropdown">
 
-                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                <a class="nav-link nav-icon" data-bs-toggle="dropdown" href="#">
                     <i class="bi bi-bell"></i>
                     <span class="badge bg-primary badge-number">4</span>
                 </a><!-- End Notification Icon -->
@@ -125,7 +125,7 @@
 
             <li class="nav-item dropdown">
 
-                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                <a class="nav-link nav-icon" data-bs-toggle="dropdown" href="#">
                     <i class="bi bi-chat-left-text"></i>
                     <span class="badge bg-success badge-number">3</span>
                 </a><!-- End Messages Icon -->
@@ -141,7 +141,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="../../assets/img/massage/messages-1.jpg" alt="" class="rounded-circle">
+                            <img alt="" class="rounded-circle" src="../../assets/img/massage/messages-1.jpg">
                             <div>
                                 <h4>Maria Hudson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -155,7 +155,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="../../assets/img/massage/messages-2.jpg" alt="" class="rounded-circle">
+                            <img alt="" class="rounded-circle" src="../../assets/img/massage/messages-2.jpg">
                             <div>
                                 <h4>Anna Nelson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -169,7 +169,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="../../assets/img/massage/messages-3.jpg" alt="" class="rounded-circle">
+                            <img alt="" class="rounded-circle" src="../../assets/img/massage/messages-3.jpg">
                             <div>
                                 <h4>David Muldon</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -191,8 +191,8 @@
 
             <li class="nav-item dropdown pe-3">
 
-                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="../../assets/img/massage/profile-img.jpg" alt="Profile" class="rounded-circle">
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown" href="#">
+                    <img alt="Profile" class="rounded-circle" src="../../assets/img/massage/profile-img.jpg">
                     <span class="d-none d-md-block dropdown-toggle ps-2">K.L Samson</span>
                 </a><!-- End Profile Iamge Icon -->
 
@@ -252,7 +252,7 @@
 <!-- End Header -->
 
 <!-- ======= Sidebar ======= -->
-<aside id="sidebar" class="sidebar">
+<aside class="sidebar" id="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
@@ -267,7 +267,7 @@
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-kanban"></i><span>Manage</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="forms-nav">
                 <li>
                     <a href="../adminPages/Reg_UserManage.html">
                         <i class="bi bi-circle"></i><span>Customer</span>
@@ -292,7 +292,7 @@
                 <i class="bi bi-layout-text-window-reverse"></i><span>Details</span><i
                     class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="components-nav">
                 <a href="PaymentDetails.html">
                     <i class="bi bi-circle"></i><span>Payment Details</span>
                 </a>
@@ -333,7 +333,7 @@
 <!-- End Sidebar-->
 
 <!-- ======= Main ======= -->
-<main id="main" class="main">
+<main class="main" id="main">
 
     <!-- ======= Car Manage ======= -->
     <div class="pageTitle" id="pageFour">
@@ -360,14 +360,14 @@
                                     <!-- start col-->
                                     <div class="col-xl-12">
                                         <!-- start booking request details -->
-                                        <form id="customerRequestForm" class="row mb-3">
-                                            <section id="secResponseDetails" class="row mx-0">
+                                        <form class="row mb-3" id="customerRequestForm">
+                                            <section class="row mx-0" id="secResponseDetails">
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="requestRentId">Rent ID<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control mt-1" id="requestRentId" readonly
-                                                           name="rent_Id"
-                                                           placeholder="Rent ID" type="text">
+                                                    <input class="form-control mt-1" id="requestRentId" name="rent_Id"
+                                                           placeholder="Rent ID"
+                                                           readonly type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="driverId">Driver ID<span
@@ -379,16 +379,16 @@
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="userID">User ID<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control mt-1" id="userID" readonly
-                                                           name="useID"
-                                                           placeholder="User ID" type="text">
+                                                    <input class="form-control mt-1" id="userID" name="useID"
+                                                           placeholder="User ID"
+                                                           readonly type="text">
                                                 </div>
                                                 <div class="mb-2 col-xl-3 col-sm-6">
                                                     <label class="form-label" for="requestState">Request State<span
                                                             class="text-danger"></span></label>
-                                                    <input class="form-control mt-1" id="requestState" readonly
-                                                           name="requestState"
-                                                           placeholder="Request State" type="text">
+                                                    <input class="form-control mt-1" id="requestState" name="requestState"
+                                                           placeholder="Request State"
+                                                           readonly type="text">
                                                 </div>
 
                                             </section>
@@ -397,14 +397,14 @@
 
                                         <!-- start button content-->
                                         <div class="mb-3 mt-2 d-grid gap-1 d-md-flex justify-content-md-end">
-                                            <button type="button" class="btn btn-success btn m-1 p-2" id="btnAccept">
+                                            <button class="btn btn-success btn m-1 p-2" id="btnAccept" type="button">
                                                 Accept
                                             </button>
-                                            <button type="button" class="btn btn-danger btn m-1 p-2" id="btnReject">
+                                            <button class="btn btn-danger btn m-1 p-2" id="btnReject" type="button">
                                                 Reject
                                             </button>
-                                            <button type="button" class="btn btn-primary m-1 p-2" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal">
+                                            <button class="btn btn-primary m-1 p-2" data-bs-target="#exampleModal" data-bs-toggle="modal"
+                                                    type="button">
                                                 Payment
                                             </button>
                                         </div>
@@ -420,9 +420,9 @@
                             <!-- start searchBar -->
                             <div class="search-bar mt-4 ms-4">
                                 <div class="search-form d-flex align-items-center">
-                                    <input type="search" name="car_Id" id="search_Id" placeholder="Search"
-                                           title="Enter search keyword">
-                                    <button type="button" title="Search"><i class="bi bi-search"></i></button>
+                                    <input id="search_Id" name="car_Id" placeholder="Search" title="Enter search keyword"
+                                           type="search">
+                                    <button title="Search" type="button"><i class="bi bi-search"></i></button>
                                 </div>
                             </div>
                             <!-- end searchBar -->
@@ -467,29 +467,29 @@
     <!-- End Car Manage -->
 
     <!-- Modal -->
-    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade modal-lg" id="exampleModal"
+         tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Payment Rent</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="PayementToRent" action="payment" class="row mb-3">
+                    <form action="payment" class="row mb-3" id="PayementToRent">
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="paymentID">Payement ID<span
                                     class="text-danger"></span></label>
-                            <input class="form-control mt-1" id="paymentID" readonly
-                                   name="paymentID"
-                                   placeholder="Payment ID" type="text">
+                            <input class="form-control mt-1" id="paymentID" name="paymentID"
+                                   placeholder="Payment ID"
+                                   readonly type="text">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="rentId">Rent ID<span
                                     class="text-danger"></span></label>
-                            <input class="form-control mt-1" id="rentID" readonly
-                                   name="rentID"
-                                   placeholder="Rent ID" type="text">
+                            <input class="form-control mt-1" id="rentID" name="rentID"
+                                   placeholder="Rent ID"
+                                   readonly type="text">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="paymentType">Payment Type<span
@@ -505,15 +505,15 @@
                             <label class="form-label" for="userID">Payment Date<span
                                     class="text-danger"></span></label>
                             <input class="form-control mt-1" id="date"
-                                   name="date" readonly
-                                   placeholder="Payment Date" type="text">
+                                   name="date" placeholder="Payment Date"
+                                   readonly type="text">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="time">Payment Time<span
                                     class="text-danger"></span></label>
                             <input class="form-control mt-1" id="time"
-                                   name="time" readonly
-                                   placeholder="Payment Time" type="text">
+                                   name="time" placeholder="Payment Time"
+                                   readonly type="text">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="rentFee">Car Fee<span
@@ -521,10 +521,10 @@
                             <input class="form-control mt-1" id="rentFee"
                                    name="rentFee"
                                    placeholder="Rent Fee" type="text">
-                        <!--    <select aria-label="Default select example" class="form-select m-1"
-                                    id="rentFee" name="rentFee" placeholder="Car Fee Type">
-                                <option>&#45;&#45;Select Type&#45;&#45;</option>
-                            </select>-->
+                            <!--    <select aria-label="Default select example" class="form-select m-1"
+                                        id="rentFee" name="rentFee" placeholder="Car Fee Type">
+                                    <option>&#45;&#45;Select Type&#45;&#45;</option>
+                                </select>-->
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="lostDamage">Lost Damage<span
@@ -532,13 +532,6 @@
                             <input class="form-control mt-1" id="lostDamage"
                                    name="lostDamage"
                                    placeholder="Lost Damage" type="text">
-                        </div>
-                        <div class="mb-2 col-xl-3 col-sm-6">
-                            <label class="form-label" for="mileage">Mileage<span
-                                    class="text-danger"></span></label>
-                            <input class="form-control mt-1" id="mileage"
-                                   name="mileage"
-                                   placeholder="Mileage" type="text">
                         </div>
                         <div class="mb-2 col-xl-3 col-sm-6">
                             <label class="form-label" for="driverFee">Driver Fee<span
@@ -558,14 +551,14 @@
                             <label class="form-label" for="total">Total<span
                                     class="text-danger"></span></label>
                             <input class="form-control mt-1" id="total"
-                                   name="total" readonly
-                                   placeholder="Total" type="text">
+                                   name="total" placeholder="Total"
+                                   readonly type="text">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" form="PayementToRent" id="btnPay">Pay</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+                    <button class="btn btn-success" form="PayementToRent" id="btnPay" type="button">Pay</button>
                 </div>
             </div>
         </div>
@@ -574,7 +567,7 @@
 <!-- End #main -->
 
 <!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
+<footer class="footer" id="footer">
     <div class="copyright">
         &copy; Copyright <strong><span>Easy Car Rent</span></strong>. All Rights Reserved
     </div>
@@ -583,7 +576,7 @@
     </div>
 </footer><!-- End Footer -->
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+<a class="back-to-top d-flex align-items-center justify-content-center" href="#"><i
         class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
@@ -600,7 +593,7 @@
 <script src="../../controller/RentController.js"></script>
 
 <!-- Util JS File -->
-<script src="../../util/alert.js" rel="script"></script>
-<script src="../../util/validation.js" rel="script"></script>
+<script rel="script" src="../../util/alert.js"></script>
+<script rel="script" src="../../util/validation.js"></script>
 </body>
 </html>
