@@ -157,4 +157,10 @@ public class CarServiceImpl implements CarService {
         }.getType());
     }
 
+    @Override
+    public ArrayList<CarDTO> filterCarDetails(String name, String brand, String type, String color) {
+        return mapper.map(repo.filterCarDetails(name,brand,type,color), new TypeToken<ArrayList<Car>>() {
+        }.getType());
+    }
+
 }
