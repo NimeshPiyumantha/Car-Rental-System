@@ -4,6 +4,7 @@ import antlr.collections.List;
 import com.easy.car_rental.dto.CarDTO;
 import com.easy.car_rental.dto.CustomDTO;
 import com.easy.car_rental.dto.RentDTO;
+import com.easy.car_rental.entity.Car;
 import com.easy.car_rental.entity.Rent;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -31,4 +32,5 @@ public interface RentService {
     void bookingConform(String rentID, String driverId);
 
     void bookingReject(String rentID, String driverId);
+    Rent searchId(String id);
 }
