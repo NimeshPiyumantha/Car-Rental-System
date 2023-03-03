@@ -205,9 +205,20 @@ $(document).on("change keyup blur", "#lostDamage,#rentFee,#driverFee,#days", fun
     let carTotal = parseFloat(carFee) * parseFloat(days);
     let driverTotal = parseFloat(driverFee) * parseFloat(days);
 
-    $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal)+parseFloat(driverTotal));
+    $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal) + parseFloat(driverTotal));
 
 });
+
+loadAllCars();
+
+function loadAllCars() {
+    $.ajax({
+        url: carBaseUrl + "car/loadAllCars", method: "GET", dataType: "json", success: function (res) {
+            console.log(res);
+
+        }
+    });
+}
 
 $("#btnPay").on("click", function () {
     /*let rentID = $("#rentID").val();
