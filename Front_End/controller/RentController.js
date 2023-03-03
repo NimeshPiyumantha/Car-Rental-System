@@ -10,6 +10,7 @@ loadAllRentDetails();
  **/
 
 function loadAllRentDetails() {
+    $("#rentAllDetails").empty();
     $.ajax({
         url: RentAllManageBaseUrl + "rent/loadAllRents",
         method: "get",
@@ -17,6 +18,7 @@ function loadAllRentDetails() {
         dataType: "json",
         async: true,
         success: function (res) {
+            $("#rentAllDetails").empty();
             console.log(res.data)
             for (var i of res.data) {
                 let row = "<tr><td>" + i.rentID + "</td><td>" + i.rentDetails.at().carID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at().driverID + "</td><td>" + i.requestType + "</td><td>" + i.rentType + "</td><td>" + i.pickUpDate + "</td><td>" + i.pickUpTime + "</td><td>" + i.returnTime + "</td><td>" + i.returnDate + "</td><td>" + i.location + "</td></tr>";
@@ -42,11 +44,12 @@ $("#search_Id").on("keypress", function (event) {
             dataType: "json",
             success: function (res) {
                 console.log(res);
-                let row = "<tr><td>" + i.rentID + "</td><td>" + i.rentDetails.at().carID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at().driverID + "</td><td>" + i.requestType + "</td><td>" + i.rentType + "</td><td>" + i.pickUpDate + "</td><td>" + i.pickUpTime + "</td><td>" + i.returnTime + "</td><td>" + i.returnDate + "</td><td>" + i.location + "</td></tr>";
+                let row = "<tr><td>" + res.rentID + "</td><td>" + res.rentDetails.carID + "</td><td>" + res.regUser.user_Id + "</td><td>" + res.rentDetails.driverID + "</td><td>" + res.requestType + "</td><td>" + res.rentType + "</td><td>" + res.pickUpDate + "</td><td>" + res.pickUpTime + "</td><td>" + res.returnTime + "</td><td>" + res.returnDate + "</td><td>" + res.location + "</td></tr>";
                 $("#rentAllDetails").append(row);
             },
             error: function (error) {
-               loadAllRentDetails();
+                $("#rentAllDetails").empty();
+                loadAllRentDetails();
                 let message = JSON.parse(error.responseText).message;
                 emptyMassage(message);
             }

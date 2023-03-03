@@ -89,7 +89,7 @@ public class RentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/searchDtails", params = {"search_Id"})
-    public Rent searchCusId(String search_Id) {
+    public RentDTO searchId(String search_Id) {
         return service.searchId(search_Id);
     }
 

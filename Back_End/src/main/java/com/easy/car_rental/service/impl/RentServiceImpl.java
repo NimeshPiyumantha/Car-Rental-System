@@ -171,4 +171,13 @@ public class RentServiceImpl implements RentService {
             rentRepo.save(rent);
         }
     }
+
+    @Override
+    public RentDTO searchId(String id) {
+        if (!rentRepo.existsById(id)) {
+            throw new RuntimeException("Wrong ID. Please enter Valid id..!");
+        }
+        return mapper.map(rentRepo.findById(id).get(), RentDTO.class);
+
+    }
 }
