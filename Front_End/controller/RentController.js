@@ -250,6 +250,8 @@ $("#btnPay").on("click", function () {
             console.log(res)
             saveUpdateAlert("Payment", res.message);
             generatePaymentID();
+            loadAllRentDetails();
+            loadAllRent();
         },
         error: function (error) {
             unSuccessUpdateAlert("Payment", JSON.parse(error.responseText).message);
