@@ -58,6 +58,7 @@ $("#search_Id").on("keypress", function (event) {
     }
 
 });
+let carID;
 
 function blindClickEventsRent() {
     $("#retManage>tr").on("click", function () {
@@ -65,6 +66,8 @@ function blindClickEventsRent() {
         let driverId = $(this).children().eq(3).text();
         let userID = $(this).children().eq(2).text();
         let requestState = $(this).children().eq(5).text();
+        carID = $(this).children().eq(1).text();
+
 
         $("#requestRentId").val(requestRentId);
         $("#driverId").val(driverId);
@@ -73,6 +76,7 @@ function blindClickEventsRent() {
 
         $("#rentID").val(requestRentId);
         $("#driverId").append(`<option>${driverId}</option>`);
+        loadAllCars();
     });
 }
 
@@ -192,22 +196,51 @@ $(document).ready(function () {
  * Rent
  * Enter Cash and Balance display
  * */
+function loadAllCars() {
+    $.ajax({
+        url: RentAllManageBaseUrl + "car/searchCar/?car_Id=" + carID,
+        method: "GET",
+        dataType: "json",
+        success: function (res) {
+            console.log(res);
+            $('#rentFee').val(res.rent_Duration_Price.daily_Rate);
+            let mileagePrice = res.price_Extra_KM;
+            let freeMileage = res.free_Mileage;
 
-$(document).on("change keyup blur", "#lostDamage,#rentFee,#driverFee,#days", function () {
-    /**
-     * Payment Details
-     * */
-    let lostDamage = $('#lostDamage').val();
-    let carFee = $('#rentFee').val();
-    let driverFee = $('#driverFee').val();
-    let days = $('#days').val();
+            $(document).on("change keyup blur","#days,#lostDamage,#rentFee,#driverFee,#mileage", function () {
+                /**
+                 * Payment Details
+                 * */
+                let lostDamage = $('#lostDamage').val();
+                let carFee = $('#rentFee').val();
+                let driverFee = $('#driverFee').val();
+                let mileage = $('#mileage').val();
+                let days = $('#days').val();
+                let mileageCost;
+                let m = parseFloat(mileage) / parseFloat(days);
+                console.log(m);
+                if (m => freeMileage) {
+                    let mileageSize = parseFloat(mileage) - (parseFloat(days)*parseFloat(freeMileage));
+                    mileageCost = parseFloat(mileageSize) * parseFloat(mileagePrice);
 
-    let carTotal = parseFloat(carFee) * parseFloat(days);
-    let driverTotal = parseFloat(driverFee) * parseFloat(days);
+                    let carTotal = parseFloat(carFee) * parseFloat(days);
+                    let driverTotal = parseFloat(driverFee) * parseFloat(days);
 
-    $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal) + parseFloat(driverTotal));
+                    $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal) + parseFloat(driverTotal) + mileageCost);
 
-});
+                }
+                if (m < freeMileage) {
+
+                    let carTotal = parseFloat(carFee) * parseFloat(days);
+                    let driverTotal = parseFloat(driverFee) * parseFloat(days);
+
+                    $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal) + parseFloat(driverTotal));
+                }
+            });
+
+        }
+    });
+}
 
 $("#btnPay").on("click", function () {
     /*let rentID = $("#rentID").val();
@@ -250,8 +283,6 @@ $("#btnPay").on("click", function () {
             console.log(res)
             saveUpdateAlert("Payment", res.message);
             generatePaymentID();
-            loadAllRentDetails();
-            loadAllRent();
         },
         error: function (error) {
             unSuccessUpdateAlert("Payment", JSON.parse(error.responseText).message);
