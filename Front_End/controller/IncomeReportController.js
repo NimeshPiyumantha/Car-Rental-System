@@ -44,24 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-
     /**
      * Monthly Income
      **/
-    let dataPoints2 = [];
-    let options2 = {
-        animationEnabled: true, theme: "light2", title: {
-            text: "Monthly Sales Income"
-        }, axisX: {
-            valueFormatString: "MMM"
-        }, axisY: {
-            title: "LKR", titleFontSize: 20
-        }, data: [{
-            type: "spline", yValueFormatString: "$#,###.##", dataPoints: dataPoints2
-        }]
-    };
-
-
     $.ajax({
         url: baseUrlIncome + "income/monthlyIncome", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
@@ -72,30 +57,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 let row = "<tr><td>" + date + "</td><td>" + count + "</td><td>" + total + "</td></tr>";
                 $("#monthlyIncomeTable").append(row);
 
-                dataPoints2.push({
-                    x: new Date(res[i][0]), y: total
+                new Chart(document.querySelector('#monthlyIncomeChart'), {
+                    type: 'line', data: {
+                        labels: [date], datasets: [{
+                            label: 'Monthly Sales Income',
+                            data: [total],
+                            fill: false,
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                        }]
+                    }, options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
                 });
             }
-            $("#monthlyIncomeChart").CanvasJSChart(options2);
         }
     });
 
     /**
      * Annually Income
      **/
-    let dataPoints3 = [];
-    let options3 = {
-        animationEnabled: true, theme: "light2", title: {
-            text: "Annually Sales Income"
-        }, axisX: {
-            valueFormatString: "YYYY",
-        }, axisY: {
-            title: "LKR", titleFontSize: 20
-        }, data: [{
-            type: "spline", yValueFormatString: "$#,###.##", dataPoints: dataPoints3
-        }]
-    };
-
     $.ajax({
         url: baseUrlIncome + "income/AnnuallyIncome", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
@@ -106,11 +91,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 let row = "<tr><td>" + date + "</td><td>" + count + "</td><td>" + total + "</td></tr>";
                 $("#annuallyIncomeTable").append(row);
 
-                dataPoints3.push({
-                    x: new Date(res[i][0]), y: total
+                new Chart(document.querySelector('#annuallyIncomeChart'), {
+                    type: 'line', data: {
+                        labels: [date], datasets: [{
+                            label: 'Annually Sales Income',
+                            data: [total],
+                            fill: false,
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                        }]
+                    }, options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
                 });
             }
-            $("#annuallyIncomeChart").CanvasJSChart(options3);
         }
     });
 });
